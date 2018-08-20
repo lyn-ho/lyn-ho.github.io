@@ -73,7 +73,7 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: landscape
+theme: next
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
@@ -87,3 +87,27 @@ deploy:
 search:
   path: search.json
   field: post
+
+## Custom Setting
+
+# Menu configuration.
+menu:
+  home: /
+  archives: /archives
+
+# Favicon
+favicon: /favicon.ico
+
+# Avatar (put the image into next/source/images/)
+# can be any image format supported by web browsers (JPEG,PNG,GIF,SVG,..)
+avatar: /default_avatar.png
+
+# Code highlight theme
+# available: normal | night | night eighties | night blue | night bright
+highlight_theme: normal
+
+# Fancybox for image gallery
+fancybox: true
+
+# Specify the date when the site was setup
+since: 2018
