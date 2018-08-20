@@ -83,3 +83,7 @@ deploy:
   name: Lyn Ho
   email: lyn1107130806@gmail.com
   branch: master
+
+search:
+  path: search.json
+  field: post
