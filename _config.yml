@@ -84,10 +84,6 @@ deploy:
   email: lyn1107130806@gmail.com
   branch: master
 
-search:
-  path: search.json
-  field: post
-
 ## Custom Setting
 
 # Menu configuration.
@@ -111,20 +107,3 @@ fancybox: true
 
 # Specify the date when the site was setup
 since: 2018
-
-theme_config:
-  scheme: Pisces
-  sidebar:
-    position: right
-    display: post
-    offset: 12
-    b2t: false
-    scrollpercent: false
-    onmobile: false
-
-scroll_to_more: true
-save_scroll: false
-
-auto_excerpt:
-  enable: false
-  length: 150
