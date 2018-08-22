@@ -1,0 +1,970 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.4.0" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.4.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.4.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.4.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.4.0" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '6.4.0',
+    sidebar: {"position":"right","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="你能说出两个对 JavaScript 应用程序开发人员很重要的编程范式吗？JavaScript 是一个多范式语言，通过 OOP （面向对象编程）和 函数式 编程使其支持 命令式/过程式 编程。JavaScript 支持以原型链继承方式的 OOP。 加分点： 原型继承 （或者： 原型， OLOO）  函数式编程 （或者： 闭包，头等函数，lambdas）  减分点： 不知道编程范式是什么，没有提到基">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【译】JavaScript 工程师需要知道的十道面试题">
+<meta property="og:url" content="lyn-ho.github.io/2018/08/21/10-interview-questions-every-javascript-developer-should-know/index.html">
+<meta property="og:site_name" content="Blog">
+<meta property="og:description" content="你能说出两个对 JavaScript 应用程序开发人员很重要的编程范式吗？JavaScript 是一个多范式语言，通过 OOP （面向对象编程）和 函数式 编程使其支持 命令式/过程式 编程。JavaScript 支持以原型链继承方式的 OOP。 加分点： 原型继承 （或者： 原型， OLOO）  函数式编程 （或者： 闭包，头等函数，lambdas）  减分点： 不知道编程范式是什么，没有提到基">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-08-22T13:29:28.099Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="【译】JavaScript 工程师需要知道的十道面试题">
+<meta name="twitter:description" content="你能说出两个对 JavaScript 应用程序开发人员很重要的编程范式吗？JavaScript 是一个多范式语言，通过 OOP （面向对象编程）和 函数式 编程使其支持 命令式/过程式 编程。JavaScript 支持以原型链继承方式的 OOP。 加分点： 原型继承 （或者： 原型， OLOO）  函数式编程 （或者： 闭包，头等函数，lambdas）  减分点： 不知道编程范式是什么，没有提到基">
+
+
+
+
+
+
+  <link rel="canonical" href="lyn-ho.github.io/2018/08/21/10-interview-questions-every-javascript-developer-should-know/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>【译】JavaScript 工程师需要知道的十道面试题 | Blog</title>
+  
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-right page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="Toggle navigation bar">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />Home</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />Archives</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+    <a href="/tags/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />Tags</a>
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="lyn-ho.github.io/2018/08/21/10-interview-questions-every-javascript-developer-should-know/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Lyn Ho">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">【译】JavaScript 工程师需要知道的十道面试题
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2018-08-21 00:59:11" itemprop="dateCreated datePublished" datetime="2018-08-21T00:59:11+08:00">2018-08-21</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2018-08-22 21:29:28" itemprop="dateModified" datetime="2018-08-22T21:29:28+08:00">2018-08-22</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="你能说出两个对-JavaScript-应用程序开发人员很重要的编程范式吗？"><a href="#你能说出两个对-JavaScript-应用程序开发人员很重要的编程范式吗？" class="headerlink" title="你能说出两个对 JavaScript 应用程序开发人员很重要的编程范式吗？"></a>你能说出两个对 JavaScript 应用程序开发人员很重要的编程范式吗？</h2><p>JavaScript 是一个多范式语言，通过 <strong>OOP</strong> （面向对象编程）和 <strong>函数式</strong> 编程使其支持 <strong>命令式/过程式</strong> 编程。JavaScript 支持以原型链继承方式的 OOP。</p>
+<h3 id="加分点："><a href="#加分点：" class="headerlink" title="加分点："></a>加分点：</h3><ul>
+<li>原型继承 （或者： 原型， OLOO）</li>
+<li></li>
+<li>函数式编程 （或者： 闭包，头等函数，lambdas）</li>
+</ul>
+<h3 id="减分点："><a href="#减分点：" class="headerlink" title="减分点："></a>减分点：</h3><ul>
+<li>不知道编程范式是什么，没有提到基于原型的面向对象或函数式编程</li>
+</ul>
+<a id="more"></a>
+<h3 id="补充学习："><a href="#补充学习：" class="headerlink" title="补充学习："></a>补充学习：</h3><ul>
+<li><a href="https://medium.com/javascript-scene/the-two-pillars-of-javascript-ee6f3281e7f3" target="_blank" rel="noopener">The Two Pillars of JavaScript Part 1</a> – 基于原型的面向对象</li>
+<li><a href="https://medium.com/javascript-scene/the-two-pillars-of-javascript-pt-2-functional-programming-a63aa53a41a4" target="_blank" rel="noopener">The Two Pillars of JavaScript Part 2</a> – 函数式编程</li>
+</ul>
+<h2 id="什么是函数式编程？"><a href="#什么是函数式编程？" class="headerlink" title="什么是函数式编程？"></a>什么是函数式编程？</h2><p>函数式编程通过组合数学函数来生成程序，并且避免共享状态和可变数据。Lisp （1958年指定） 是最早支持函数式编程的语言之一，并且深受 lambda 演算的启发。至今 Lisp 以及很多衍生语言仍在普遍使用。</p>
+<p>函数式编程是 JavaScript 的一个基本概念（JavaScript 的两大支柱之一）。ES5 JavaScript 添加了一些常用工具方法。</p>
+<h3 id="加分点：-1"><a href="#加分点：-1" class="headerlink" title="加分点："></a>加分点：</h3><ul>
+<li><p>纯函数/函数纯度</p>
+</li>
+<li><p>避免副作用</p>
+</li>
+<li><p>简单函数组合</p>
+</li>
+<li><p>函数式语言的例子：Lisp，ML，Haskell，Erlang，Clojure，Elm，F Sharp，OCaml 等等。。。</p>
+</li>
+<li><p>提及支持函数式编程的特性：头等函数，高阶函数，函数作为参数/值。</p>
+</li>
+</ul>
+<h3 id="减分点：-1"><a href="#减分点：-1" class="headerlink" title="减分点："></a>减分点：</h3><ul>
+<li><p>没有提及纯函数/避免副作用</p>
+</li>
+<li><p>不能举出函数式编程语言的例子</p>
+</li>
+<li><p>不知道 JavaScript 作为函数式编程特性</p>
+</li>
+</ul>
+<h3 id="补充学习：-1"><a href="#补充学习：-1" class="headerlink" title="补充学习："></a>补充学习：</h3><ul>
+<li><p><a href="https://medium.com/javascript-scene/the-two-pillars-of-javascript-pt-2-functional-programming-a63aa53a41a4" target="_blank" rel="noopener">The Two Pillars of JavaScript Part 2</a> – 函数式编程</p>
+</li>
+<li><p><a href="https://medium.com/javascript-scene/the-dao-of-immutability-9f91a70c88cd" target="_blank" rel="noopener">The Dao of Immutability</a></p>
+</li>
+<li><p><a href="https://medium.com/javascript-scene/composing-software-an-introduction-27b72500d6ea" target="_blank" rel="noopener">Composing Software</a></p>
+</li>
+<li><p><a href="http://haskell.cs.yale.edu/wp-content/uploads/2015/03/HSoM.pdf" target="_blank" rel="noopener">The Haskell School of Music</a></p>
+</li>
+</ul>
+<h2 id="类继承和原型继承之间有什么区别？"><a href="#类继承和原型继承之间有什么区别？" class="headerlink" title="类继承和原型继承之间有什么区别？"></a>类继承和原型继承之间有什么区别？</h2><p><strong>类继承：</strong> 实例继承自类（如蓝图–类的描述），并创建子类关系：层级分类。实例通常对构造函数使用‘new’关键字进行实例化。类继承可以使用 ES6 中的 ‘class’ 关键字声明。</p>
+<p><strong>原型继承：</strong> 实例直接继承于其他对象。实例通常使用工厂函数或 ‘Object.create()’ 函数 进行实例化。实例可以由许多不同的对象组成，也可以方便的选择继承对象。</p>
+<blockquote>
+<p>In JavaScript, prototypal inheritance is simpler &amp;<br>more flexible than class inheritance.</p>
+</blockquote>
+<h3 id="加分点：-2"><a href="#加分点：-2" class="headerlink" title="加分点："></a>加分点：</h3><ul>
+<li><p>类：创建紧耦合或层级/分类</p>
+</li>
+<li><p>原型：提及拼接继承，原型委托，函数继承，对象组合。</p>
+</li>
+</ul>
+<h3 id="减分点：-2"><a href="#减分点：-2" class="headerlink" title="减分点："></a>减分点：</h3><ul>
+<li>没有提及原型继承和组合优于类继承</li>
+</ul>
+<h3 id="补充学习：-2"><a href="#补充学习：-2" class="headerlink" title="补充学习："></a>补充学习：</h3><ul>
+<li><p><a href="https://medium.com/javascript-scene/the-two-pillars-of-javascript-ee6f3281e7f3" target="_blank" rel="noopener">The Two Pillars of JavaScript Part 1 — Prototypal OO</a></p>
+</li>
+<li><p><a href="https://medium.com/javascript-scene/common-misconceptions-about-inheritance-in-javascript-d5d9bab29b0a" target="_blank" rel="noopener">Common Misconceptions About Inheritance in JavaScript</a></p>
+</li>
+</ul>
+<div class="video-container"><iframe src="//player.vimeo.com/video/69255635" frameborder="0" allowfullscreen></iframe></div>
+<h2 id="函数式编程和面向对象编程的优缺点是什么？"><a href="#函数式编程和面向对象编程的优缺点是什么？" class="headerlink" title="函数式编程和面向对象编程的优缺点是什么？"></a>函数式编程和面向对象编程的优缺点是什么？</h2><p><strong>OOP 优点：</strong> 容易理解对象的基本概念，并且易于解释方法调用的含义。OOP 倾向于使用命令式风格而不是声明式风格，它类似于计算机遵循的直接指令集。</p>
+<p><strong>OOP 缺点：</strong> 通常依赖于共享状态。对象和行为通常绑定在同一个实体上，这个实体可以由任意数量的函数随机访问，可能导致诸如竞争条件的不期望的行为。</p>
+<p><strong>FP 优点：</strong> 使用函数范式，程序员避免了共享状态和副作用，从而消除由多个函数竞争统一资源所导致的错误。由于具有像 point-free style 的特性，相比于 OOP 函数式倾向于从根本上简化和易于重新组合以获得更通用的可复用代码。</p>
+<p>FP 也倾向于声明式和指称式，它没有详细说明每一步的操作，而是集中精力在 <strong>做什么</strong> ，让底层函数去处理 <strong>如何做</strong> 。这为重构和性能优化留下了巨大的空间，甚至只需修改很少的代码就可以用更高效的算法替换整个算法。</p>
+<p>利用纯函数的计算可以很容易的扩展到跨多处理器或跨分布式计算集群，而不必担心线程资源冲突，条件竞争等。。。</p>
+<p><strong>FP 缺点：</strong> 过度利用 FP 特性（如 point-free style和大型组合）可能会降低可读性，因为生成的代码通常更抽象，更简洁，不具体。</p>
+<p>与函数式编程相比，更多人熟悉 OO 和命令式编程，因此即使是函数式编程中的常见习惯也会让新团队成员感到困惑。</p>
+<p>FP 比 OOP 有更陡峭的学习曲线，因为 OOP 的流行使得 OOP 的学习材料更易于交流，而 FP 更具学术性和正式性。FP 的概念经常被写成来自 lambda 演算，代数和范畴学所使用的习语和符号，所有这些都需要在这些领域的知识基础。</p>
+<h3 id="加分点：-3"><a href="#加分点：-3" class="headerlink" title="加分点："></a>加分点：</h3><ul>
+<li><p>提及共享状态的问题，不同事件竞争同一资源等等。。。</p>
+</li>
+<li><p>意识到 FP 能够从根本上简化很多应用</p>
+</li>
+<li><p>意识到不同的学习曲线</p>
+</li>
+<li><p>阐明副作用以及它如何影响程序的可维护性</p>
+</li>
+<li><p>意识到高函数式代码基础可能具有陡峭的学习曲线</p>
+</li>
+<li><p>意识到与同等的 FP 代码基础相比，高 OOP 代码基础会难以修改并且非常脆弱。</p>
+</li>
+<li><p>意识到不可变性对程序状态历史的获取和可塑性产生一个极大提高，允许轻松添加诸如无限撤销/重做，倒带/重放，时间旅行调试等功能。不可变性可以在任意编程范式中实现，但共享状态对象使不可变性在 OOP 中的实现变得复杂。</p>
+</li>
+</ul>
+<h3 id="减分点：-3"><a href="#减分点：-3" class="headerlink" title="减分点："></a>减分点：</h3><ul>
+<li>无法列出任一编程范式的缺点–任何一种范式的人都会遇到一些限制。</li>
+</ul>
+<h3 id="补充学习：-3"><a href="#补充学习：-3" class="headerlink" title="补充学习："></a>补充学习：</h3><ul>
+<li><p><a href="https://medium.com/javascript-scene/the-two-pillars-of-javascript-ee6f3281e7f3" target="_blank" rel="noopener">The Two Pillars of JavaScript Part 1</a> – 基于原型的面向对象</p>
+</li>
+<li><p><a href="https://medium.com/javascript-scene/the-two-pillars-of-javascript-pt-2-functional-programming-a63aa53a41a4" target="_blank" rel="noopener">The Two Pillars of JavaScript Part 2</a> – 函数式编程</p>
+</li>
+</ul>
+<h2 id="什么时候类继承是一个合适的选择"><a href="#什么时候类继承是一个合适的选择" class="headerlink" title="什么时候类继承是一个合适的选择"></a>什么时候类继承是一个合适的选择</h2><p>答案是从不，或者几乎从不。一定不能有超过一层的继承。多层类继承是反模式的。多年来我一直在发出这个挑战，我听过的答案都属于几个常见的误解之一。更常见的是，挑战遇见沉默。</p>
+<blockquote>
+<p>“If a feature is sometimes useful<br>and sometimes dangerous<br>and if there is a better option<br>then always use the better option.”<br>~ Douglas Crockford</p>
+</blockquote>
+<h3 id="加分点"><a href="#加分点" class="headerlink" title="加分点:"></a>加分点:</h3><ul>
+<li><p>很少,几乎从不,从不.</p>
+</li>
+<li><p>单一层级有时是可以接受的,一个基于类的框架,例如 React.Component</p>
+</li>
+<li><p>偏爱对象组合高于类继承.</p>
+</li>
+</ul>
+<h3 id="补充学习"><a href="#补充学习" class="headerlink" title="补充学习:"></a>补充学习:</h3><ul>
+<li><p><a href="https://medium.com/javascript-scene/the-two-pillars-of-javascript-ee6f3281e7f3" target="_blank" rel="noopener">The Two Pillars of JavaScript Part 1</a> – 基于原型的面向对象</p>
+</li>
+<li><p><a href="http://davidwalsh.name/javascript-objects" target="_blank" rel="noopener">JS Objects — Inherited a Mess</a></p>
+</li>
+</ul>
+<h2 id="什么时候原型继承是一个合适的选择"><a href="#什么时候原型继承是一个合适的选择" class="headerlink" title="什么时候原型继承是一个合适的选择"></a>什么时候原型继承是一个合适的选择</h2><p>原型继承有不止一个种类</p>
+<ul>
+<li><p><strong>委托</strong> (i.e.,原型链)</p>
+</li>
+<li><p><strong>拼接</strong> (i.e.,mixins, ’Object.assign()‘)</p>
+</li>
+<li><p><strong>函数化</strong> (不要和函数式编程混淆.用于为私有状态/封装创建闭包的函数)</p>
+</li>
+</ul>
+<p>每种类型的原型继承都有自己的一组用例，但它们在组合方式同样有用，它创建了 <strong>has-a</strong> 或 <strong>uses-a</strong> 或 <strong>can-do</strong> 的关系而不是由类继承创建的 <strong>is-a</strong> 的关系.</p>
+<h3 id="加分点-1"><a href="#加分点-1" class="headerlink" title="加分点:"></a>加分点:</h3><ul>
+<li><p>在模块或函数式编程没有提供明显解决方案的情况下</p>
+</li>
+<li><p>当你需要从多个资源组合对象</p>
+</li>
+<li><p>任何你需要继承的时候</p>
+</li>
+</ul>
+<h3 id="减分点"><a href="#减分点" class="headerlink" title="减分点:"></a>减分点:</h3><ul>
+<li><p>不知道何时使用原型</p>
+</li>
+<li><p>没有意识到 mixins 或 ’Object.assign()‘.</p>
+</li>
+</ul>
+<h3 id="补充学习-1"><a href="#补充学习-1" class="headerlink" title="补充学习:"></a>补充学习:</h3><ul>
+<li><a href="http://chimera.labs.oreilly.com/books/1234000000262/ch03.html#chcsrdou100015eilvj6l9inj" target="_blank" rel="noopener">“Programming JavaScript Applications”: Prototypes section</a></li>
+</ul>
+<h2 id="“优先使用对象组合高于类继承”是什么意思"><a href="#“优先使用对象组合高于类继承”是什么意思" class="headerlink" title="“优先使用对象组合高于类继承”是什么意思?"></a>“优先使用对象组合高于类继承”是什么意思?</h2><p>这是  <a href="http://www.amazon.com/Design-Patterns-Elements-Reusable-Object-Oriented/dp/0201633612" target="_blank" rel="noopener">“Design Patterns: Elements of Reusable Object-Oriented Software”</a> 的引用.这意味着代码复用应该是通过将较小的函数组合到新的对象中来实现,而不是通过类的继承来创建新的分类.</p>
+<p>换句话说,要使用 <strong>can-do</strong>, <strong>has-a</strong>,或 <strong>use-a</strong> 关系而不是 <strong>is-a</strong> 关系.</p>
+<h3 id="加分点-2"><a href="#加分点-2" class="headerlink" title="加分点:"></a>加分点:</h3><ul>
+<li><p>避免类继承</p>
+</li>
+<li><p>避免脆弱的基类问题</p>
+</li>
+<li><p>避免紧耦合</p>
+</li>
+<li><p>避免严格分类（强制 is-a 关系最终会在新的使用方案中出错）</p>
+</li>
+<li><p>避免大猩猩香蕉问题（“你想要的是一个香蕉，得到的是拿着香蕉的大猩猩和整个丛林”）</p>
+</li>
+<li><p>使代码更灵活</p>
+</li>
+</ul>
+<h3 id="减分点：-4"><a href="#减分点：-4" class="headerlink" title="减分点："></a>减分点：</h3><ul>
+<li><p>没有提到上面的任何问题</p>
+</li>
+<li><p>未能阐明组合和类继承的区别，或组合的优点</p>
+</li>
+</ul>
+<h3 id="补充学习：-4"><a href="#补充学习：-4" class="headerlink" title="补充学习："></a>补充学习：</h3><div class="video-container"><iframe src="//www.youtube.com/embed/wfMtDGfHWpA" frameborder="0" allowfullscreen></iframe></div>
+<blockquote><p>Move Over, ‘class’:<br>Composable Factory Functions Are Here</p>
+<footer><strong>Eric Elliott</strong><cite><a href="https://medium.com/p/77f8911c2fee" target="_blank" rel="noopener">Introducing the Stamp Specification</a></cite></footer></blockquote>
+<h2 id="什么是双向数据绑定和单向数据流，他们有何不同？"><a href="#什么是双向数据绑定和单向数据流，他们有何不同？" class="headerlink" title="什么是双向数据绑定和单向数据流，他们有何不同？"></a>什么是双向数据绑定和单向数据流，他们有何不同？</h2><p>双向数据绑定意味着 UI 和数据模型的动态绑定，当 UI 发生变化，数据模型也会发生变化，反之亦然。</p>
+<p>单向数据流意味着数据模型作为数据来源。改变 UI 会触发消息通知把用户意图发送给数据模型（类似 React 中的 “store”）。只有数据模型才能改变应用状态。结果是数据总是向单一方向流动，能够使代码易于理解。</p>
+<p>单向数据流是确定的，而双向绑定可能产生副作用使其难以跟踪和理解。</p>
+<h3 id="加分点：-4"><a href="#加分点：-4" class="headerlink" title="加分点："></a>加分点：</h3><ul>
+<li><p>Reac 是单向数据流的新典范，所以提及 Reac 是一个好的信号。 + + + Cycle.js 是另外一个流行的单向数据流实现。</p>
+</li>
+<li><p>Angular 是一种使用双向绑定的流行框架</p>
+</li>
+</ul>
+<h3 id="减分点：-5"><a href="#减分点：-5" class="headerlink" title="减分点："></a>减分点：</h3><ul>
+<li>不知道两者的意思。无法阐明两者的区别</li>
+</ul>
+<h3 id="补充学习：-5"><a href="#补充学习：-5" class="headerlink" title="补充学习："></a>补充学习：</h3><div class="video-container"><iframe src="//www.youtube.com/embed/XxVg_s8xAms" frameborder="0" allowfullscreen></iframe></div>
+<h2 id="一体化和微服务架构的优缺点"><a href="#一体化和微服务架构的优缺点" class="headerlink" title="一体化和微服务架构的优缺点"></a>一体化和微服务架构的优缺点</h2><p>一体化架构意味着你的应用代码是紧密结合的，所有组件协同工作，共享内存空间和资源。</p>
+<p>微服务架构意味着你的应用程序由许多较小的独立应用程序组成，这些应用程序能够在自己的内存空间中运行，并且它们彼此相互独立，甚至可以在不同机器下运行。</p>
+<p><strong>一体化架构优点：</strong> 一体化架构的主要优势是大多数应用程序有大量的交叉点，例如日志，限速以及审查跟踪和 DOS 保护等安全功能。</p>
+<p>当一切都在同一个应用程序中运行时，这样就很容易讲个组件串联起来。</p>
+<p>还有性能优势，因为共享内存比进程间通信 （IPC） 更快。</p>
+<p><strong>一体化架构缺点：</strong> 一体化架构通常是紧耦合的，应用版本迭代杂糅，使得独立扩展和代码可维护性的隔离服务困难。</p>
+<p>一体化结构也难以理解，因为当你查看特定服务或控制器时，可能存在一些不明显的依赖，副作用以及不可思议的问题。</p>
+<p><strong>微服务架构优点：</strong> 微服务架构通常有更好的组织结构，因为每个部分有自己特定的功能，且不需要关心其他部分的功能。为不同应用服务进行重构和重新配置的解藕服务也更简单。（例如同时提供给网页客户端和开放 API 的服务）</p>
+<p>有于微服务架构的组织方式，它还有性能优势，因为可以隔离热服务并且将其扩展为独立于应用程序的其余部分。</p>
+<p><strong>微服务架构缺点：</strong> 当你构建一个新的微服务架构时，你可能会发现很多在设计时没有预料到的跨组件问题。一体化结构可以轻松地通过共享方式或者中间件来处理跨组件问题。</p>
+<p>在微服务架构中，隔离组件之间通信的开销，封装的组件在另外一个服务层可以让所有路由通过。</p>
+<p>最后，一体化架构也需要外部服务来处理组间通信，但一体化架构可以把这个这个工作成本延迟到项目更加成熟的时候。</p>
+<p>微服务经常部署在它们自己的虚拟机或容器里，导致 VM 竞争的激增。这些任务经常通过容器管理工具自动完成。</p>
+<h3 id="加分点：-5"><a href="#加分点：-5" class="headerlink" title="加分点："></a>加分点：</h3><ul>
+<li><p>倾向于微服务架构，尽管微服务架构初始成本更高。意识到从长远看微服务性能好易扩展。</p>
+</li>
+<li><p>关于微服务架构和一体化架构的实用性。在构建程序方面，微服务在代码级别相互隔离，一体化在开始时就容易捆绑在一起。微服务的高成本可以延迟到更加成熟的时候。</p>
+</li>
+</ul>
+<h3 id="减分点：-6"><a href="#减分点：-6" class="headerlink" title="减分点："></a>减分点：</h3><ul>
+<li><p>不知道一体化和微服务之间的差别</p>
+</li>
+<li><p>对微服务架构额外高成本不清楚或一些不切实际的想法</p>
+</li>
+<li><p>对微服务架构， IPC （夸进程通信）和网络通信的额外成本不清楚</p>
+</li>
+<li><p>对微服务架构过于消极，不能明确表达如何通过结偶一体化架构来轻松分割成微服务</p>
+</li>
+<li><p>低估了独立可扩展的微服务架构的优势</p>
+</li>
+</ul>
+<h2 id="什么是异步编程，为什么它在-JavaScript-中很重要？"><a href="#什么是异步编程，为什么它在-JavaScript-中很重要？" class="headerlink" title=".什么是异步编程，为什么它在 JavaScript 中很重要？"></a>.什么是异步编程，为什么它在 JavaScript 中很重要？</h2><p>同步编程意味着，除了条件语句和函数调用，代码从上到下依次执行，例如网络请求和磁盘 I/O 这样长时间的任务会造成阻塞。</p>
+<p>异步编程意味着引擎运行在时间循环上。当需要阻塞操作时，请求开始后，代码继续运行不需要等待请求结果。当响应准备好，触发中断，导致事件处理运行，控制器在其后执行。通过这种方式，单线程就可以处理并发操作了。</p>
+<p>用户交互本质上是异步的，需要花费大部分时间等待用户输入中断事件循环触发事件回调。</p>
+<p>Node 默认时异步的，这意味着服务方式大致相同，循环等待网络请求，在处理第一个请求的同时接收更多到来的请求。</p>
+<p>异步在 JavaScript 中时非常重要的，因为他非常适合用户交互，并且有利于提高服务器的性能。</p>
+<h3 id="加分点：-6"><a href="#加分点：-6" class="headerlink" title="加分点："></a>加分点：</h3><ul>
+<li><p>知道什么是阻塞，以及性能的意义</p>
+</li>
+<li><p>知道事件回调，以及为什么对用户界面交互很重要</p>
+</li>
+</ul>
+<h3 id="减分点：-7"><a href="#减分点：-7" class="headerlink" title="减分点："></a>减分点：</h3><ul>
+<li><p>不熟悉异步或同步</p>
+</li>
+<li><p>无法表达用户交互和异步对性能的影响</p>
+</li>
+</ul>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Lyn Ho</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">1</span>
+                    <span class="site-state-item-name">posts</span>
+                  </a>
+                </div>
+              
+
+              
+
+              
+            </nav>
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/lyn-ho" target="_blank" title="GitHub"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="lyn4develop@gmail.com" target="_blank" title="E-Mail"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://twitter.com/Lyn_ho007" target="_blank" title="Twitter"><i class="fa fa-fw fa-twitter"></i>Twitter</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://www.facebook.com/lyn.ho.12576" target="_blank" title="FB Page"><i class="fa fa-fw fa-facebook"></i>FB Page</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://www.instagram.com/ho.lyn" target="_blank" title="Instagram"><i class="fa fa-fw fa-instagram"></i>Instagram</a>
+                  
+                </span>
+              
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#你能说出两个对-JavaScript-应用程序开发人员很重要的编程范式吗？"><span class="nav-number">1.</span> <span class="nav-text">你能说出两个对 JavaScript 应用程序开发人员很重要的编程范式吗？</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#加分点："><span class="nav-number">1.1.</span> <span class="nav-text">加分点：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#减分点："><span class="nav-number">1.2.</span> <span class="nav-text">减分点：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#补充学习："><span class="nav-number">1.3.</span> <span class="nav-text">补充学习：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是函数式编程？"><span class="nav-number">2.</span> <span class="nav-text">什么是函数式编程？</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#加分点：-1"><span class="nav-number">2.1.</span> <span class="nav-text">加分点：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#减分点：-1"><span class="nav-number">2.2.</span> <span class="nav-text">减分点：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#补充学习：-1"><span class="nav-number">2.3.</span> <span class="nav-text">补充学习：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#类继承和原型继承之间有什么区别？"><span class="nav-number">3.</span> <span class="nav-text">类继承和原型继承之间有什么区别？</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#加分点：-2"><span class="nav-number">3.1.</span> <span class="nav-text">加分点：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#减分点：-2"><span class="nav-number">3.2.</span> <span class="nav-text">减分点：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#补充学习：-2"><span class="nav-number">3.3.</span> <span class="nav-text">补充学习：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数式编程和面向对象编程的优缺点是什么？"><span class="nav-number">4.</span> <span class="nav-text">函数式编程和面向对象编程的优缺点是什么？</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#加分点：-3"><span class="nav-number">4.1.</span> <span class="nav-text">加分点：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#减分点：-3"><span class="nav-number">4.2.</span> <span class="nav-text">减分点：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#补充学习：-3"><span class="nav-number">4.3.</span> <span class="nav-text">补充学习：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#什么时候类继承是一个合适的选择"><span class="nav-number">5.</span> <span class="nav-text">什么时候类继承是一个合适的选择</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#加分点"><span class="nav-number">5.1.</span> <span class="nav-text">加分点:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#补充学习"><span class="nav-number">5.2.</span> <span class="nav-text">补充学习:</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#什么时候原型继承是一个合适的选择"><span class="nav-number">6.</span> <span class="nav-text">什么时候原型继承是一个合适的选择</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#加分点-1"><span class="nav-number">6.1.</span> <span class="nav-text">加分点:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#减分点"><span class="nav-number">6.2.</span> <span class="nav-text">减分点:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#补充学习-1"><span class="nav-number">6.3.</span> <span class="nav-text">补充学习:</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#“优先使用对象组合高于类继承”是什么意思"><span class="nav-number">7.</span> <span class="nav-text">“优先使用对象组合高于类继承”是什么意思?</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#加分点-2"><span class="nav-number">7.1.</span> <span class="nav-text">加分点:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#减分点：-4"><span class="nav-number">7.2.</span> <span class="nav-text">减分点：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#补充学习：-4"><span class="nav-number">7.3.</span> <span class="nav-text">补充学习：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是双向数据绑定和单向数据流，他们有何不同？"><span class="nav-number">8.</span> <span class="nav-text">什么是双向数据绑定和单向数据流，他们有何不同？</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#加分点：-4"><span class="nav-number">8.1.</span> <span class="nav-text">加分点：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#减分点：-5"><span class="nav-number">8.2.</span> <span class="nav-text">减分点：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#补充学习：-5"><span class="nav-number">8.3.</span> <span class="nav-text">补充学习：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一体化和微服务架构的优缺点"><span class="nav-number">9.</span> <span class="nav-text">一体化和微服务架构的优缺点</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#加分点：-5"><span class="nav-number">9.1.</span> <span class="nav-text">加分点：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#减分点：-6"><span class="nav-number">9.2.</span> <span class="nav-text">减分点：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是异步编程，为什么它在-JavaScript-中很重要？"><span class="nav-number">10.</span> <span class="nav-text">.什么是异步编程，为什么它在 JavaScript 中很重要？</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#加分点：-6"><span class="nav-number">10.1.</span> <span class="nav-text">加分点：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#减分点：-7"><span class="nav-number">10.2.</span> <span class="nav-text">减分点：</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Lyn Ho</span>
+
+  
+
+  
+</div>
+
+
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> v3.7.1</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme – <a class="theme-link" target="_blank" href="https://theme-next.org">NexT.Pisces</a> v6.4.0</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+	
+    
+
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.4.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.4.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=6.4.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.4.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.4.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.4.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.4.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
