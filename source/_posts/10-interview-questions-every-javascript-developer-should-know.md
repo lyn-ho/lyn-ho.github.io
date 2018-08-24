@@ -1,7 +1,7 @@
 ---
 title: 【译】JavaScript 工程师需要知道的十道面试题
 ---
-原文：[10 Interview Questions Every JavaScript Developer Should Know](https://medium.com/javascript-scene/10-interview-questions-every-javascript-developer-should-know-6fa6bdf5ad95)
+> 原文：[10 Interview Questions Every JavaScript Developer Should Know](https://medium.com/javascript-scene/10-interview-questions-every-javascript-developer-should-know-6fa6bdf5ad95)
 
 ## 你能说出两个对 JavaScript 应用程序开发人员很重要的编程范式吗？
 
