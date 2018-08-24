@@ -1,7 +1,7 @@
 ---
 title: 【译】精通 JavaScript： 什么是函数式编程（Functional Programming）？
-tag: 
-- JavaScript
+tags:
+    - JavaScript
 ---
 
 ![Structure Synth — Orihaus (CC BY 2.0)](https://cdn-images-1.medium.com/max/1600/1*1OxglOpkZHLITbIKEVCy2g.jpeg)
