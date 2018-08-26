@@ -1,11 +1,16 @@
 ---
 title: 【译】JavaScript 工程师需要知道的十道面试题
 ---
+
+![Bruce Lee](https://cdn-images-1.medium.com/max/2000/1*RPKQq3zYYddwJf9rSeQ4Dg.jpeg)
+
 > 原文：[10 Interview Questions Every JavaScript Developer Should Know](https://medium.com/javascript-scene/10-interview-questions-every-javascript-developer-should-know-6fa6bdf5ad95)
 
 ## 你能说出两个对 JavaScript 应用程序开发人员很重要的编程范式吗？
 
 JavaScript 是一个多范式语言，通过 __OOP__ （面向对象编程）和 __函数式__ 编程使其支持 __命令式/过程式__ 编程。JavaScript 支持以原型链继承方式的 OOP。
+
+<!-- more -->
 
 ### 加分点：
 
@@ -16,8 +21,6 @@ JavaScript 是一个多范式语言，通过 __OOP__ （面向对象编程）和
 ### 减分点：
 
 + 不知道编程范式是什么，没有提到基于原型的面向对象或函数式编程
-
-<!-- more -->
 
 ### 补充学习：
 
