@@ -581,7 +581,7 @@ needmoreshare2:
 
 # Baidu Webmaster tools verification setting
 # See: https://ziyuan.baidu.com/site/
-#baidu_site_verification:
+baidu_site_verification: 4jb2KswTIT
 
 # CNZZ count
 #cnzz_siteid:
