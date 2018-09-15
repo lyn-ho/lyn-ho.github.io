@@ -110,24 +110,34 @@
 
 
 
-  <meta name="description" content="Stay Hungry Stay Foolish">
-<meta property="og:type" content="website">
-<meta property="og:title" content="categories">
-<meta property="og:url" content="lyn-ho.github.io/categories/index.html">
+  <meta name="description" content="原文：How JavaScript works: an overview of the engine, the runtime, and the call stack  JavaScript 变得越来越流行，很多团队在他们技术栈的多个方面使用它：前端，后端，hybrid 应用，嵌入式设备等等。 这篇是本系列文章的第一篇，旨在深入挖掘 JavaScript 和其实际工作原理：我们认为，通过了解">
+<meta name="keywords" content="JavaScript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【译】JavaScript 工作原理：JS 引擎，runtime 和调用栈的概述">
+<meta property="og:url" content="lyn-ho.github.io/2018/09/10/trans-8/index.html">
 <meta property="og:site_name" content="Lyn&#39;s Blog">
-<meta property="og:description" content="Stay Hungry Stay Foolish">
+<meta property="og:description" content="原文：How JavaScript works: an overview of the engine, the runtime, and the call stack  JavaScript 变得越来越流行，很多团队在他们技术栈的多个方面使用它：前端，后端，hybrid 应用，嵌入式设备等等。 这篇是本系列文章的第一篇，旨在深入挖掘 JavaScript 和其实际工作原理：我们认为，通过了解">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-08-24T12:35:11.680Z">
+<meta property="og:image" content="https://cdn-images-1.medium.com/max/1600/1*Zf4reZZJ9DCKsXf5CSXghg.png">
+<meta property="og:image" content="https://cdn-images-1.medium.com/max/1600/1*OnH_DlbNAPvB9KLxUCyMsA.png">
+<meta property="og:image" content="https://cdn-images-1.medium.com/max/1600/1*4lHHyfEhVB0LnQ3HlhSs8g.png">
+<meta property="og:image" content="https://cdn-images-1.medium.com/max/1600/1*Yp1KOt_UJ47HChmS9y7KXw.png">
+<meta property="og:image" content="https://cdn-images-1.medium.com/max/1600/1*T-W_ihvl-9rG4dn18kP3Qw.png">
+<meta property="og:image" content="https://cdn-images-1.medium.com/max/1600/1*AycFMDy9tlDmNoc5LXd9-g.png">
+<meta property="og:image" content="https://cdn-images-1.medium.com/max/1600/1*e0nEd59RPKz9coyY8FX-uw.png">
+<meta property="og:image" content="https://cdn-images-1.medium.com/max/1600/1*WlMXK3rs_scqKTRV41au7g.jpeg">
+<meta property="og:updated_time" content="2018-09-10T11:14:17.491Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="categories">
-<meta name="twitter:description" content="Stay Hungry Stay Foolish">
+<meta name="twitter:title" content="【译】JavaScript 工作原理：JS 引擎，runtime 和调用栈的概述">
+<meta name="twitter:description" content="原文：How JavaScript works: an overview of the engine, the runtime, and the call stack  JavaScript 变得越来越流行，很多团队在他们技术栈的多个方面使用它：前端，后端，hybrid 应用，嵌入式设备等等。 这篇是本系列文章的第一篇，旨在深入挖掘 JavaScript 和其实际工作原理：我们认为，通过了解">
+<meta name="twitter:image" content="https://cdn-images-1.medium.com/max/1600/1*Zf4reZZJ9DCKsXf5CSXghg.png">
 
 
 
 
 
 
-  <link rel="canonical" href="lyn-ho.github.io/categories/"/>
+  <link rel="canonical" href="lyn-ho.github.io/2018/09/10/trans-8/"/>
 
 
 
@@ -137,7 +147,7 @@
   };
 </script>
 
-  <title>categories | Lyn's Blog</title>
+  <title>【译】JavaScript 工作原理：JS 引擎，runtime 和调用栈的概述 | Lyn's Blog</title>
   
 
 
@@ -245,7 +255,7 @@
         
         
           
-          <li class="menu-item menu-item-categories menu-item-active">
+          <li class="menu-item menu-item-categories">
     <a href="/categories/" rel="section">
       <i class="menu-item-icon fa fa-fw fa-th"></i> <br />Categories</a>
   </li>
@@ -309,77 +319,238 @@
           
             
 
-    
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-    
-
-  
-
-
           
           <div id="content" class="content">
             
 
   <div id="posts" class="posts-expand">
     
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="lyn-ho.github.io/2018/09/10/trans-8/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Lyn Ho">
+      <meta itemprop="description" content="Stay Hungry Stay Foolish">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Lyn's Blog">
+    </span>
+
     
-    
-    <div class="post-block page">
       <header class="post-header">
 
-<h1 class="post-title" itemprop="name headline">categories</h1>
-
-<div class="post-meta">
-  
-  
-
-
-
-</div>
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
         
         
-          <div class="category-all-page">
-            <div class="category-all-title">
-                
-                
-                No categories
-            </div>
-            <div class="category-all">
+          <h1 class="post-title" itemprop="name headline">【译】JavaScript 工作原理：JS 引擎，runtime 和调用栈的概述
               
-            </div>
-          </div>
+            
+          </h1>
         
-      </div>
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2018-09-10 19:14:17" itemprop="dateCreated datePublished" datetime="2018-09-10T19:14:17+08:00">2018-09-10</time>
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/09/10/trans-8/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">Comments: </span> <span class="post-comments-count gitment-comments-count" data-xid="/2018/09/10/trans-8/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2018/09/10/trans-8/" class="leancloud_visitors" data-flag-title="【译】JavaScript 工作原理：JS 引擎，runtime 和调用栈的概述">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Views: </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
       
+
+      
+        <blockquote>
+<p>原文：<a href="https://blog.sessionstack.com/how-does-javascript-actually-work-part-1-b0bacc073cf" target="_blank" rel="noopener">How JavaScript works: an overview of the engine, the runtime, and the call stack</a></p>
+</blockquote>
+<p>JavaScript 变得越来越流行，很多团队在他们技术栈的多个方面使用它：前端，后端，hybrid 应用，嵌入式设备等等。</p>
+<p>这篇是本系列文章的第一篇，旨在深入挖掘 JavaScript 和其实际工作原理：我们认为，通过了解 JavaScript 的构建块以及它们是如何协同工作的，你将能编写更好的代码和应用程序。我们还将分享我们在构建 <a href="https://www.sessionstack.com/?utm_source=medium&amp;utm_medium=source&amp;utm_content=javascript-series-post1-intro" target="_blank" rel="noopener">SessionStack</a> 时使用的一些经验规则，SessionStack 是一个轻量级 JavaScript 应用，它稳定且性能强大以保持竞争力。</p>
+<a id="more"></a>
+<p>根据 <a href="http://githut.info/" target="_blank" rel="noopener">GitHut stars</a> 显示，就 Active Repositories 和 Total Pushes 而言 JavaScript 在 GitHub 中是最高的。在其他类别中也没有落后很多。</p>
+<p><img src="https://cdn-images-1.medium.com/max/1600/1*Zf4reZZJ9DCKsXf5CSXghg.png" alt="GitHut"></p>
+<p><a href="https://madnight.github.io/githut/" target="_blank" rel="noopener">(Check out up-to-date GitHub language stats)</a></p>
+<p>如果项目越发的依赖于 JavaScript，这意味着为了构建令人惊叹的软件，开发人员必须利用 JS 语言和生态所提供的所有内容，对其内部深入理解。</p>
+<p>事实证明，有很多开发者每天都在使用 JavaScript ，但却不了解其内部原理。</p>
+<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>几乎所有开发人员都知道 V8 引擎的概念，并且大多数开发人员了解 JavaScript 是单线程 (single-threaded) 的或者说它使用了回调队列 (callback queue)。</p>
+<p>在这篇文章中，我们将详细介绍这些概念并解释 JavaScript 的实际运行方式。通过了解这些细节，你可以正确利用提供的 APIs 来编写更好的非阻塞的应用。</p>
+<p>如果你是 JavaScript 萌新，这篇文章将会帮助你理解为什么 JavaScript 与其他编程语言相比如此“奇怪”。</p>
+<p>如果你是一位资深 JavaScript 开发人员，希望这篇文章可以为你提供一些关于你每天使用的 JavaScript Runtime 实际工作原理的新见解。</p>
+<h2 id="JavaScript-引擎"><a href="#JavaScript-引擎" class="headerlink" title="JavaScript 引擎"></a>JavaScript 引擎</h2><p>Google 的 V8 引擎是一个流行的 JavaScript 引擎。V8 引擎应用与 Chrome 和 Node.js 。下面是它的一个非常简化的视图：</p>
+<p><img src="https://cdn-images-1.medium.com/max/1600/1*OnH_DlbNAPvB9KLxUCyMsA.png" alt="V8 engine"></p>
+<p>V8 引擎包含两个主要组件：</p>
+<ul>
+<li>内存堆 —— 进行内存分配</li>
+<li>调用栈 —— 代码执行/栈帧</li>
+</ul>
+<h2 id="运行时-Runtime"><a href="#运行时-Runtime" class="headerlink" title="运行时 (Runtime)"></a>运行时 (Runtime)</h2><p>几乎所有 JavaScript 开发人员都使用过浏览器中的 APIs (e.g. <code>setTimeout</code>) 。但是这些 APIs 不是由 JavaScript 引擎提供的。</p>
+<p>所以，它们从何而来？</p>
+<p>事实正面现实有点复杂。</p>
+<p><img src="https://cdn-images-1.medium.com/max/1600/1*4lHHyfEhVB0LnQ3HlhSs8g.png" alt="APIs"></p>
+<p>所以，我们有 JavaScript 引擎，但是实际上还有更多。我们有一些由浏览器提供的叫做 Web APIs 的东西，比如 DOM, AJAX, setTimeout 等等。</p>
+<p>然后，我们还有 <strong>事件循环 (event loop)</strong> 和 <strong>回调队列 (callback queue)</strong> 。</p>
+<h2 id="调用栈-Call-Stack"><a href="#调用栈-Call-Stack" class="headerlink" title="调用栈 (Call Stack)"></a>调用栈 (Call Stack)</h2><p>JavaScript 是一个单线程编程语言，这意味着它只有一个调用栈。因此在同一时间它执行一个任务。</p>
+<p>调用栈是一种我们程序中的基本记录的数据结构。如果进入一个函数，我们将它放在调用栈的顶层。如果返回一个函数，我们将其从调用栈的顶层弹出。这是调用栈能做的所有事情。</p>
+<p>让我们看一个示例。看下面的代码：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">multiply</span>(<span class="params">x, y</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> x * y</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">printSquare</span>(<span class="params">x</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> s = multiply(x, x)</span><br><span class="line">  <span class="built_in">console</span>.log(s)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">printSquare(<span class="number">5</span>)</span><br></pre></td></tr></table></figure>
+<p>当 JavaScript 引擎开始执行代码时，调用栈是空的。之后的步骤如下：</p>
+<p><img src="https://cdn-images-1.medium.com/max/1600/1*Yp1KOt_UJ47HChmS9y7KXw.png" alt="Call Stack"></p>
+<p>调用栈的每个入口称为 <strong>栈帧 (Stack Frame)</strong> 。</p>
+<p>当抛出异常可以看到堆栈追踪是如何构造的 —— 当发生异常时，它就是调用栈的状态。看下面的代码：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">'SessionStack will help you resolve crashes:'</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">bar</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  foo()</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">start</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  bar()</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">start()</span><br></pre></td></tr></table></figure>
+<p>如果在 Chrome 中执行 (假设是 foo.js 中的代码) ，将会生成下面的堆栈追踪：</p>
+<p><img src="https://cdn-images-1.medium.com/max/1600/1*T-W_ihvl-9rG4dn18kP3Qw.png" alt="Stack Trace"></p>
+<p>“<strong>堆栈溢出 (Blowing the stack)</strong>“ —— 当达到最大调用栈大小的时候发生。这很容易发生，特别是如果你使用递归但没有全面的测试。看下面的示例代码：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  foo()</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">foo()</span><br></pre></td></tr></table></figure>
+<p>当 JavaScript 引擎开始执行这段代码，开始调用 <code>foo</code> 函数。但是在没有终止条件的情况下 <code>foo</code> 会递归的调用自己。所以每执行一步，就会把这个相同的函数一次又一次的添加到调用栈中。看起来像下面这样：</p>
+<p><img src="https://cdn-images-1.medium.com/max/1600/1*AycFMDy9tlDmNoc5LXd9-g.png" alt="Blowing the stack"></p>
+<p>但是，在某一时刻，调用栈中的函数调用数量超过了调用栈的实际大小，浏览器通过抛出一个错误来结束它。如下所示：</p>
+<p><img src="https://cdn-images-1.medium.com/max/1600/1*e0nEd59RPKz9coyY8FX-uw.png" alt="Maximum"></p>
+<p>在单线程上运行代码非常简单，因为你不需处理多线程环境中出现的复杂场景 —— 例如 死锁 (deadlocks) 。</p>
+<p>但是单线程也有很大的限制。由于 JavaScript 只有一个调用栈，如果运行很慢会发生什么？</p>
+<h2 id="并发和事件循环-Concurrency-amp-Event-Loop"><a href="#并发和事件循环-Concurrency-amp-Event-Loop" class="headerlink" title="并发和事件循环 (Concurrency &amp; Event Loop)"></a>并发和事件循环 (Concurrency &amp; Event Loop)</h2><p>如果在调用栈中有函数需要花费大量时间才能处理，会发生什么？例如，假设你需要在浏览器中使用 JavaScript 进行一些复杂的图像转换。</p>
+<p>你可能会问，为什么这是一个问题？问题是，当调用栈有函数要执行，浏览器实际不会做其他任何事 —— 浏览器被阻塞了。这意味着浏览器不能渲染，不能运行任何其他代码，它被卡住了。如果你想要在 app 中拥有流畅的 UI 体验，这将是个问题。</p>
+<p>并且这不是唯一的问题。一旦你的浏览器开始在调用栈中处理如此多的任务，它可能在相当长的时间内停止响应。大多数浏览器会弹出一个错误，询问是否终止网页。</p>
+<p><img src="https://cdn-images-1.medium.com/max/1600/1*WlMXK3rs_scqKTRV41au7g.jpeg" alt="Unresponsive"></p>
+<p>这并不是最好的用户体验，不是吗？</p>
+<p>那么，如何在不阻塞 UI 和不弹出无响应的情况下执行复杂的代码？解决方法是 <strong>异步回调 (asynchronous callbacks)</strong> 。</p>
+<p>这将在 “How JavaScript actually works” 第2篇中详细解释：”<a href="https://blog.sessionstack.com/how-javascript-works-inside-the-v8-engine-5-tips-on-how-to-write-optimized-code-ac089e62b12e" target="_blank" rel="noopener">Inside the V8 engine + 5 tips on how to write optimized code</a>“ 。</p>
+
       
     </div>
-    
-
-
 
     
+
     
     
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/09/10/trans-5/" rel="next" title="【译】精通 JavaScript： 什么是 Promise？">
+                <i class="fa fa-chevron-left"></i> 【译】精通 JavaScript： 什么是 Promise？
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/09/10/trans-6/" rel="prev" title="【译】精通 JavaScript： 什么是纯函数（Pure Function）？">
+                【译】精通 JavaScript： 什么是纯函数（Pure Function）？ <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
   </div>
 
 
@@ -416,8 +587,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -509,6 +689,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#概述"><span class="nav-number">1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JavaScript-引擎"><span class="nav-number">2.</span> <span class="nav-text">JavaScript 引擎</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#运行时-Runtime"><span class="nav-number">3.</span> <span class="nav-text">运行时 (Runtime)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#调用栈-Call-Stack"><span class="nav-number">4.</span> <span class="nav-text">调用栈 (Call Stack)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#并发和事件循环-Concurrency-amp-Event-Loop"><span class="nav-number">5.</span> <span class="nav-text">并发和事件循环 (Concurrency &amp; Event Loop)</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -1035,43 +1231,37 @@
   
   <script>
     
-    function showTime(Counter) {
-      var entries = [];
+    function addCount(Counter) {
       var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
 
-      $visitors.each(function () {
-        entries.push( $(this).attr("id").trim() );
-      });
-
-      Counter('get', '/classes/Counter', { where: JSON.stringify({ url: { "$in": entries } }) })
+      Counter('get', '/classes/Counter', { where: JSON.stringify({ url }) })
         .done(function ({ results }) {
-          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
-
-          if (results.length === 0) {
-            $visitors.find(COUNT_CONTAINER_REF).text(0);
-            return;
-          }
-
-          for (var i = 0; i < results.length; i++) {
-            var item = results[i];
-            var url = item.url;
-            var time = item.time;
-            var element = document.getElementById(url);
-
-            $(element).find(COUNT_CONTAINER_REF).text(time);
-          }
-          for(var i = 0; i < entries.length; i++) {
-            var url = entries[i];
-            var element = document.getElementById(url);
-            var countSpan = $(element).find(COUNT_CONTAINER_REF);
-            if( countSpan.text() == '') {
-              countSpan.text(0);
-            }
+          if (results.length > 0) {
+            var counter = results[0];
+            
+            Counter('put', `/classes/Counter/${counter.objectId}`, JSON.stringify({ time: { "__op":"Increment", "amount":1 } }))
+            
+            .done(function () {
+                  var $element = $(document.getElementById(url));
+                  $element.find('.leancloud-visitors-count').text(counter.time + 1);
+            })
+            
+            .fail(function ({ responseJSON }) {
+                console.log('Failed to save Visitor num, with error message: ' + responseJSON.error);
+            })
+          } else {
+            
+              var $element = $(document.getElementById(url));
+              $element.find('.leancloud-visitors-count').text('Counter not initialized! See more at console err msg.');
+              console.error('ATTENTION! LeanCloud counter has security bug, see here how to solve it: https://github.com/theme-next/hexo-leancloud-counter-security. \n But you also can use LeanCloud without security, by set \'security\' option to \'false\'.');
+            
           }
         })
-        .fail(function ({ responseJSON }) {
-          console.log("LeanCloud Counter Error: " + responseJSON.code + " " + responseJSON.error);
-        });
+      .fail(function ({ responseJSON }) {
+        console.log('LeanCloud Counter Error:' + responseJSON.code + " " + responseJSON.error);
+      });
     }
     
 
@@ -1091,9 +1281,7 @@
             });
           };
           
-          if ($('.post-title-link').length >= 1) {
-            showTime(Counter);
-          }
+          addCount(Counter);
           
         })
     });
@@ -1122,7 +1310,7 @@
   <script src="/lib/bookmark/bookmark.min.js?v=1.0"></script>
   <script type="text/javascript">
   
-    bookmark.loadBookmark();
+    bookmark.scrollToMark('auto', "#more");
   
   </script>
 

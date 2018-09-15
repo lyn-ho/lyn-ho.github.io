@@ -1,0 +1,1432 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+  <meta name="baidu-site-verification" content="4jb2KswTIT" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.4.0" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.4.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.4.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.4.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.4.0" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '6.4.0',
+    sidebar: {"position":"right","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="原文：Master the JavaScript Interview: What is a Promise?    “精通 JavaScript 面试” 是一个系列的文章，旨在帮助面试者准备他们在申请中高级职位时可能遇到的常见问题。这些是我在现实面试中经常提出的问题。  什么是 Promise？Promise 是一个对象，在未来的某个时刻产生一个值：已完成 (resolved) 的值或者是未完">
+<meta name="keywords" content="JavaScript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【译】精通 JavaScript： 什么是 Promise？">
+<meta property="og:url" content="lyn-ho.github.io/2018/09/10/trans-5/index.html">
+<meta property="og:site_name" content="Lyn&#39;s Blog">
+<meta property="og:description" content="原文：Master the JavaScript Interview: What is a Promise?    “精通 JavaScript 面试” 是一个系列的文章，旨在帮助面试者准备他们在申请中高级职位时可能遇到的常见问题。这些是我在现实面试中经常提出的问题。  什么是 Promise？Promise 是一个对象，在未来的某个时刻产生一个值：已完成 (resolved) 的值或者是未完">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="https://cdn-images-1.medium.com/max/1600/1*agGENodMcD6hhwIFdqGwrw.jpeg">
+<meta property="og:image" content="https://cdn-images-1.medium.com/max/1600/1*5Z_vNz6xHn9mjTgvrqa2Aw.png">
+<meta property="og:image" content="https://cdn-images-1.medium.com/max/1600/1*vRaV9sYpYKdxBj3Ld7KM1Q.png">
+<meta property="og:updated_time" content="2018-09-10T11:14:17.490Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="【译】精通 JavaScript： 什么是 Promise？">
+<meta name="twitter:description" content="原文：Master the JavaScript Interview: What is a Promise?    “精通 JavaScript 面试” 是一个系列的文章，旨在帮助面试者准备他们在申请中高级职位时可能遇到的常见问题。这些是我在现实面试中经常提出的问题。  什么是 Promise？Promise 是一个对象，在未来的某个时刻产生一个值：已完成 (resolved) 的值或者是未完">
+<meta name="twitter:image" content="https://cdn-images-1.medium.com/max/1600/1*agGENodMcD6hhwIFdqGwrw.jpeg">
+
+
+
+
+
+
+  <link rel="canonical" href="lyn-ho.github.io/2018/09/10/trans-5/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>【译】精通 JavaScript： 什么是 Promise？ | Lyn's Blog</title>
+  
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-right page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Lyn's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="Toggle navigation bar">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />Home</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />Archives</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+    <a href="/tags/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />Tags</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+    <a href="/categories/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-th"></i> <br />Categories</a>
+  </li>
+
+      
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />Search</a>
+        </li>
+      
+    </ul>
+  
+
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="Searching..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="lyn-ho.github.io/2018/09/10/trans-5/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Lyn Ho">
+      <meta itemprop="description" content="Stay Hungry Stay Foolish">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Lyn's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">【译】精通 JavaScript： 什么是 Promise？
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2018-09-10 19:14:17" itemprop="dateCreated datePublished" datetime="2018-09-10T19:14:17+08:00">2018-09-10</time>
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/09/10/trans-5/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">Comments: </span> <span class="post-comments-count gitment-comments-count" data-xid="/2018/09/10/trans-5/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2018/09/10/trans-5/" class="leancloud_visitors" data-flag-title="【译】精通 JavaScript： 什么是 Promise？">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Views: </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>原文：<a href="https://medium.com/javascript-scene/master-the-javascript-interview-what-is-a-promise-27fc71e77261" target="_blank" rel="noopener">Master the JavaScript Interview: What is a Promise?</a></p>
+</blockquote>
+<p><img src="https://cdn-images-1.medium.com/max/1600/1*agGENodMcD6hhwIFdqGwrw.jpeg" alt="Photo by Kabun (CC BY NC SA 2.0)"></p>
+<blockquote>
+<p>“精通 JavaScript 面试” 是一个系列的文章，旨在帮助面试者准备他们在申请中高级职位时可能遇到的常见问题。这些是我在现实面试中经常提出的问题。</p>
+</blockquote>
+<h2 id="什么是-Promise？"><a href="#什么是-Promise？" class="headerlink" title="什么是 Promise？"></a>什么是 Promise？</h2><p>Promise 是一个对象，在未来的某个时刻产生一个值：已完成 (resolved) 的值或者是未完成的原因(e.g. 网络错误)。Promise 可能是下面三种状态中的一种：fulfilled，rejected，pending 。Promise 提供回调来处理 fulfilled 返回的值或者 rejection 的原因。</p>
+<a id="more"></a>
+<p>Promise 会立即执行，这意味着一旦 promise 构造函数被调用，promise 就会开始执行你给它的任何任务。如果你需要 promise 懒加载，参考 <a href="https://github.com/Reactive-Extensions/RxJS" target="_blank" rel="noopener">observables</a> 或者 <a href="https://github.com/rpominov/fun-task" target="_blank" rel="noopener">tasks</a>。</p>
+<h2 id="Promise-的不完全历史"><a href="#Promise-的不完全历史" class="headerlink" title="Promise 的不完全历史"></a>Promise 的不完全历史</h2><p>早在1980年代，promise 和 futures (类似/相关的想法) 的早期实现开始出现在 MultiLisp 和 Concurrent Prolog 等语言中。“promise” 这个概念是由 Barbara Liskov 和 Liuba Shrira 在1998年提出。</p>
+<p>我第一次听说 JavaScript 中的 promise，Node 才刚刚出现，Node 社区正在讨论异步行为的最佳方案。社区实验了一段时间 promise，但最终选择了 error-first 回调作为 Node 标准。</p>
+<p>大概在同一时间，Dojo 通过 Deferred API 添加了 promises 。不断增长的兴趣和活跃度最终导致了新的 Promises/A 规范的形成，提高了不同 promises 之间的互操作性。</p>
+<p>jQuery 的异步操作是围绕 promises 的重构。jQuery 的 promise 和 Dojo 的 Deferred 非常相似，并且由于 jQuery 的流行，它一度在 JavaScript 中被广泛使用。但是 <a href="https://blog.domenic.me/youre-missing-the-point-of-promises/" target="_blank" rel="noopener"> it did not support the two channel (fulfilled/rejected) chaining behavior &amp; exception management</a> 人们期望在 promise 上的构建工具。</p>
+<p>尽管有这些缺点，jQuery 让 JavaScript promise 成为主流，并且一下更好的独立的 promise 库，例如 Q ， When ， 和 Bluebird 变得非常流行。jQuery 的实现的不兼容性促使 promise 规范中的一些重要说明，它被重写并重命名为 <a href="https://promisesaplus.com/" target="_blank" rel="noopener">Promises/A+ specification</a> 。</p>
+<p>ES6 使用了遵循 Promises/A+ 兼容的 Promise 作为全局变量，并且一些非常重要的 API 构建在新的 Promise 标准之上：特别是 <a href="https://fetch.spec.whatwg.org/" target="_blank" rel="noopener">WHATWG Fetch</a> 规范和 <a href="https://tc39.github.io/ecmascript-asyncawait/" target="_blank" rel="noopener">Async Functions</a> 标准(第3阶段草案)</p>
+<p>本文描述的是与 Promises/A+ 规范兼容的 promise，着重于基于 ECMAScript 标准的 <code>Promise</code> 实现。</p>
+<h2 id="Promises-是如何工作的"><a href="#Promises-是如何工作的" class="headerlink" title="Promises 是如何工作的"></a>Promises 是如何工作的</h2><p>promise 是一个从异步函数同步返回的对象。它有3种可能的状态：</p>
+<ul>
+<li><p><strong>Fulfilled：</strong> 将会调用 <code>onFulfilled()</code> (e.g.， 调用 <code>resolve()</code>)</p>
+</li>
+<li><p><strong>Rejected：</strong> 将会调用 <code>onRejected()</code> (e.g.， 调用 <code>reject()</code>)</p>
+</li>
+<li><p><strong>Pending：</strong> 非 fulfilled 或者 rejected</p>
+</li>
+</ul>
+<p>如果 promise 不在 pending 状态，它就固定了(处于 fulfilled 或 rejected)。有时我们用 <em>resolved</em> 或 <em>settled</em> 表示同一件事：<em>not pending</em> 。</p>
+<p>promise 一旦被固定，就不能重新固定。调用 <code>resolve()</code> 或 <code>reject()</code> 将没有效果。被固定的 promise 的不可变性是一个重要的特性。</p>
+<p>原生 JavaScript promise 不暴露 promise 状态。相反，你应该把 promise 视为一个黑盒。只有创建这个 promise 的函数才知道 promise 的状态，或者说有 <code>resolve</code> 或 <code>reject</code> 的权限。</p>
+<p>这是一个返回一个 promise 的函数，并在制定的时间延迟后 <code>resolve</code> 。</p>
+<script src="//gist.github.com/2dbea5f98fde8a0a77eb93775aa97468.js?file=wait.js"></script>
+<p>调用 <code>wait(3000)</code> 会等待3000毫秒 (3秒) ，然后调用打印 <code>&#39;Hello!&#39;</code> 。所以与规范兼容的 promise 都定义了 <code>.then()</code> 方法，你可以传入一个函数来处理 <code>resolve</code> 或 <code>reject</code> 返回的值。</p>
+<p>ES6 promise 的构造函数需要一个函数。这个函数需要两个参数，<code>resovle()</code> 和 <code>reject()</code> 。在上面的例子中，我们只使用了 <code>resolve()</code> ,将 <code>reject()</code> 从参数列表中删除了。我们调用 <code>setTimeout()</code> 来创建延迟，并在完成后调用 <code>resolve()</code> 。</p>
+<p>你可以按需向 <code>resolve()</code> 或 <code>reject()</code> 中传值，这个值会作为参数传入 <code>.then()</code> 的回调函数。</p>
+<p>当我调用 <code>reject()</code> 并且传入一个值，我总是传入一个 <code>Error</code> 对象。一般来说，我想要两种可能的解决状态：正常的或异常的 (阻碍正常状态) 。传入一个 <code>Error</code> 对象来表示。</p>
+<h2 id="Promise-的重要规则"><a href="#Promise-的重要规则" class="headerlink" title="Promise 的重要规则"></a>Promise 的重要规则</h2><p>标准的 Promise 是由 <a href="https://promisesaplus.com/implementations" target="_blank" rel="noopener">Promises/A+ specification</a> 社区定义的。有很多符合标准的实现，包括 JavaScript ECMAScript promise。</p>
+<p>Promise 必须遵循下面的规则：</p>
+<ul>
+<li><p>Promise 或 “thenable” 需要提供标准的 <code>.then()</code> 方法。</p>
+</li>
+<li><p>pending 状态的 promise 可以转换为 fulfilled 或 rejected 状态。</p>
+</li>
+<li><p>fulfilled 或 rejected 状态的 promise 是固定的，不能转换为其他状态。</p>
+</li>
+<li><p>一旦 promise 固定，一定有一个值 (可以是 undefined) 。这个值不可变。</p>
+</li>
+</ul>
+<p>在这个上下午的变更指的是恒等 (===) 。fulfilled 的值可以是一个对象，这个对象的属性是可变的。</p>
+<p>所以的 promise 都必须实现具有下面方法签名的 <code>.then()</code> 方法：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">promise.then(</span><br><span class="line">    onFulfilled? : <span class="built_in">Function</span>,</span><br><span class="line">    onRejected? : <span class="built_in">Function</span></span><br><span class="line">) =&gt; <span class="built_in">Promise</span></span><br></pre></td></tr></table></figure>
+<p><code>.then()</code> 方法必须符合一下规则：</p>
+<ul>
+<li><p><code>onFulfilled()</code> 和 <code>onRejected()</code> 都是可选的。</p>
+</li>
+<li><p>如果提供的参数不是函数，必须忽略。</p>
+</li>
+<li><p><code>onFulfilled()</code> 在 promise 转换为 fulfilled 状态时被调用，promise 的值作为这个函数第一个参数。</p>
+</li>
+<li><p><code>onRejected()</code> 在 promise 转换为 rejected 状态后被调用，拒绝的原因作为第一个参数。原因可以是任何有效的 JavaScript 值，但是拒绝基本和异常是同义词，所以我建议使用 Error 对象。</p>
+</li>
+<li><p><code>onFulfilled()</code> 和 <code>onRejected()</code> 都不能多次调用。</p>
+</li>
+<li><p><code>.then()</code> 可以在同一个 promise 上多次调用。换句话说，可以使用 promise 来聚合回调。</p>
+</li>
+<li><p><code>.then()</code> 一定会返回一个 promise， <code>promise2</code> 。</p>
+</li>
+<li><p>如果 <code>onFulfilled()</code> 或 <code>onRejected()</code> 的返回值为 <code>x</code> ，并且 <code>x</code> 是一个 promise ， <code>promise2</code>  会被锁定 (假设和 <code>x</code> 有相同的状态和值) 。 否则， <code>promise2</code> 将会转换为 fulfilled 状态并且值为 <code>x</code> 。</p>
+</li>
+<li><p>不论 <code>onFulfilled</code> 或 <code>onRejected</code> 跑出一个异常 <code>e</code> ， <code>promise2</code> 一定会 rejected 并且 <code>e</code> 作为原因。</p>
+</li>
+<li><p>如果 <code>onFulfilled</code> 不是一个函数并且 <code>promise1</code> 处于 fulfilled 状态， <code>promise2</code> 一定是 fulfilled 状态并且和 <code>promise1</code> 有同样的值。</p>
+</li>
+<li><p>如果 <code>onRejected</code> 不是一个函数并且 <code>promise1</code> 处于 rejected 状态， <code>promise2</code> 一定是 rejected 状态并且和 <code>promise1</code> 的原因相同。</p>
+</li>
+</ul>
+<h2 id="Promise-链"><a href="#Promise-链" class="headerlink" title="Promise 链"></a>Promise 链</h2><p>因为 <code>.then()</code> 总是返回一个新的 promise ，所以可以链接 promises 并精确控制错误的处理方式和位置。Promises 允许你模仿同步代码的 <code>try/catch</code> 方式。</p>
+<p>链式调用会形成一个有序的序列，类似于同步代码。换句话说，你可以这么做：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">fetch(url)</span><br><span class="line">    .then(process)</span><br><span class="line">    .then(save)</span><br><span class="line">    .catch(handleErrors)</span><br></pre></td></tr></table></figure>
+<p>假设 <code>fetch()</code> <code>process()</code> <code>save()</code> 每个函数都返回 promises ， <code>fetch()</code> 完成后 <code>process()</code> 才开始执行， <code>process()</code> 完成后 <code>save()</code> 才开始执行。任何一个 promise reject 后 <code>handleErrors()</code> 才会执行。</p>
+<p>这是一个复杂的 promise 链 的例子，并具有多个 rejection：</p>
+<script src="//gist.github.com/8a49bbbf15e697182a5dd9edafd765e9.js?file=promise-chaining.js"></script>
+<h2 id="Error-处理"><a href="#Error-处理" class="headerlink" title="Error 处理"></a>Error 处理</h2><p>注意 promise 同时有成功和错误的 handler ，下面的代码很常见：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">save().then(</span><br><span class="line">    handleSuccess,</span><br><span class="line">    handleError</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<p>但是 <code>handleSuccess()</code> 抛出错误应该怎么做？从 <code>.then()</code> 返回的 promise 将会 rejected ，但是没有捕捉到这个 rejection 。意味着你的 app 的这个错误被吞了。</p>
+<p>出于这个原因，有些人认为上面的代码是反模式的，并推荐下面的代码：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">save()</span><br><span class="line">    .then(handleSuccess)</span><br><span class="line">    .catch(handleError)</span><br></pre></td></tr></table></figure>
+<p>差异很微妙但是很重要。在第一个示例中， 源自 <code>save()</code> 的错误将会被捕获， 但源自 <code>handleSuccess()</code> 的错误将会被吞掉。</p>
+<p><img src="https://cdn-images-1.medium.com/max/1600/1*5Z_vNz6xHn9mjTgvrqa2Aw.png" alt="Without .catch(), an error in the success handler is uncaught."></p>
+<p>在第二个示例中，<code>.catch()</code> 可以处理 <code>save()</code> 和 <code>handleSuccess()</code> 两者的 rejection 。</p>
+<p><img src="https://cdn-images-1.medium.com/max/1600/1*vRaV9sYpYKdxBj3Ld7KM1Q.png" alt="With .catch(), both error sources are handled."></p>
+<p>当然， <code>save()</code> 的错误可能是网络错误，但 <code>handleSuccess()</code> 的错误可能是开发人员忘记处理特定的状态码。如果你想以不同的方式处理它们，你可以选择这样处理：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">save()</span><br><span class="line">    .then(</span><br><span class="line">        handleSuccess,</span><br><span class="line">        handleNetworkError</span><br><span class="line">    )</span><br><span class="line">    .catch(handleProgrammerError)</span><br></pre></td></tr></table></figure>
+<p>无论你喜欢哪一种方式，我都建议在所有的 promise 链都是以 <code>.catch()</code> 结尾。重复这么做是值得的：</p>
+<blockquote>
+<p><em>I recommend ending all promise chains with a .catch().</em></p>
+</blockquote>
+<h2 id="如何取消一个-Promise？"><a href="#如何取消一个-Promise？" class="headerlink" title="如何取消一个 Promise？"></a>如何取消一个 Promise？</h2><p>promises 萌新经常想知道的第一件事是如何取消一个 promise。这是一个想法：以 “Cancelled” 为原因 reject promise 。如果你想和 “normal” 错误以不同的处理方式，在 error handler 中添加一个处理分支。</p>
+<p>以下是人们在取消 promise 时所犯的一些常见错误：</p>
+<h3 id="在-promise-中添加-cancel"><a href="#在-promise-中添加-cancel" class="headerlink" title="在 promise 中添加 .cancel()"></a>在 promise 中添加 .cancel()</h3><p>添加 .cancel() 使 promise 不符合标准，而且也违反了一些 promises 的规则：只有创建 promise 的函数才能 resolve， reject，或者 cancel 这个 promise 。暴露出来会破坏 promise 的封装，并且会鼓励人们在不应该知道 promise 的地方编写操作 promise 的代码。避免意大利面式的代码以及破坏 promises 。</p>
+<h3 id="忘记清理"><a href="#忘记清理" class="headerlink" title="忘记清理"></a>忘记清理</h3><p>有一些聪明的人发现可以使用 <code>Promise.race()</code> 组委取消机制。问题是使用了创建 promise 的函数来做取消控制，只有这个函数可以清理活动内容，例如清理 timeouts 或者清理数据引用的内存空间等等。</p>
+<h3 id="忘记处理-rejected-状态下取消-promise"><a href="#忘记处理-rejected-状态下取消-promise" class="headerlink" title="忘记处理 rejected 状态下取消 promise"></a>忘记处理 rejected 状态下取消 promise</h3><p>你知道吗当你忘记处理 promise rejection ， Chrome 控制台会抛出一个警告信息。</p>
+<h3 id="过度复杂"><a href="#过度复杂" class="headerlink" title="过度复杂"></a>过度复杂</h3><p><a href="https://github.com/tc39/proposal-cancelable-promises" target="_blank" rel="noopener">withdrawn TC39 proposal</a> 提出了使用独立的消息通道实现取消 promise 。它提出了一个叫做 cancellation token 的新概念。在我看来，这个解决方案会让 promise 规范变得臃肿，它的唯一作用是分离了 rejections 和 cancellations ，这是没有必要的。</p>
+<p>你是否希望基于 exception 或者 cancellation 来进行切换？这确实是 promise 的工作？我认为不是。</p>
+<h3 id="重新思考-Promise-Cancellation"><a href="#重新思考-Promise-Cancellation" class="headerlink" title="重新思考 Promise Cancellation"></a>重新思考 Promise Cancellation</h3><p>通常，在 promise 创建时传入所有需要的信息以确定如何 resolve / reject / cancel 这个promise 。这样就没有必要在 promise 上添加 <code>.cancel()</code> 函数了。你可能会有疑问，在 promise 创建的时候怎么知道是否可以取消。</p>
+<blockquote>
+<p><em>“If I don’t yet know whether or not to cancel, how will I know what to pass in when I create the promise?”</em></p>
+</blockquote>
+<p>如果只有某种对象可以代替未来的潜在的值…等一下。</p>
+<p>我们传入的那个代表是否取消的值可以是一个 promise 。可能是这样：</p>
+<script src="//gist.github.com/acb7f555a2f8b4ba93807105da5e11ae.js?file=cancellable-wait.js"></script>
+<p>我们使用的默认参数默认是不取消的。<code>cancel</code> 参数是可选的。像之前一样设定一个 settimeout ，不过会保存这个 timeout 的 ID 以便于在之后清理。</p>
+<p>我们使用 <code>cancel.then()</code> 方法来处理 cancellation 和资源清理。这个方法只会在 promise resolve 之前取消了才会执行。如果你太晚取消，你就错过了你的机会。火车已经驶离了车站。</p>
+<blockquote>
+<p><em>注意：你可能想知道 <code>noop()</code> 函数是做什么的。单词 noop 代表了 no-op，意思是空函数什么都不做。如果没有这个函数，V8 引擎会抛出警告：<code>UnhandledPromiseRejectionWarning: Unhandled promise rejection</code> 。永远都要处理 promise rejections 是一个好主意，即使是 <code>noop()</code> 函数。</em></p>
+</blockquote>
+<blockquote>
+<p><em>Note: You may be wondering what the noop() function is for. The word noop stands for no-op, meaning a function that does nothing. Without it, V8 will throw warnings: UnhandledPromiseRejectionWarning: Unhandled promise rejection. It’s a good idea to <strong>always handle promise rejections</strong>, even if your handler is a noop().</em></p>
+</blockquote>
+<h3 id="抽象-Promise-Cancellation"><a href="#抽象-Promise-Cancellation" class="headerlink" title="抽象 Promise Cancellation"></a>抽象 Promise Cancellation</h3><p>这对于 <code>wait()</code> 计时器是很好的，但是我们可以进一步抽象这个想法，封装所有你需要的：</p>
+<ol>
+<li><p>默认拒绝 cancel promise – 如果没有传入 cancel 到 promise ，我们不希望 cancel 或抛错。</p>
+</li>
+<li><p>记住因 cancellations 而 reject 时要进行清理。</p>
+</li>
+<li><p>记住 <code>onCancel</code> 的清理工作本身也会抛错，这个错误也需要处理。(注意上面的示例中省略了错误处理 – 很容易忘记！)</p>
+</li>
+</ol>
+<p>让我们来创建一个可取消的 promise 工具，你可以使用它来包装任何 promise 。例如，处理网络请求等… 方法前面如下所示：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">speculation(fn: SpecFunction, <span class="attr">shouldCancel</span>: <span class="built_in">Promise</span>) =&gt; <span class="built_in">Promise</span></span><br></pre></td></tr></table></figure>
+<p>SpecFunction 就像你传入 <code>Promis</code> 的构造函数一样，有一点不同 – 它有一个 <code>onCancel()</code> handler：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SpecFunction(resolve: <span class="built_in">Function</span>, <span class="attr">reject</span>: <span class="built_in">Function</span>, <span class="attr">onCancel</span>: <span class="built_in">Function</span>) =&gt; <span class="keyword">void</span></span><br></pre></td></tr></table></figure>
+<script src="//gist.github.com/3dcf478645b131c3259456794861840a.js?file=speculation.js"></script>
+<p>注意这个例子只是向你解释它是如何工作的。还有一些其他边界问题需要考虑。例如，这个版本的代码，promise 已经固定了，取消 promise 依然会调用 <code>handleCancel</code> 函数。</p>
+<p>我实现了一个生产版本，处理了边界问题的开源库，<a href="https://github.com/ericelliott/speculation" target="_blank" rel="noopener">Speculation</a> .</p>
+<p>让我们使用这个改进的抽象库来重写之前的 <code>wait()</code> 工具函数。首先安装 speculation：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --save speculation</span><br></pre></td></tr></table></figure>
+<p>现在你可以导入和使用它：</p>
+<script src="//gist.github.com/36ab3548b44a0833ddb3bb69745e18b9.js?file=wait-speculation.js"></script>
+<p>这简化了一些，因为你不需要关心 <code>noop()</code> ， 捕获 <code>onCancel()</code> ，函数或其他边界问题的错误。这些细节都被抽象到 <code>speculation()</code> 中了。随时在真实项目中使用它。</p>
+<h2 id="原生-JS-Promise-的附加内容"><a href="#原生-JS-Promise-的附加内容" class="headerlink" title="原生 JS Promise 的附加内容"></a>原生 JS Promise 的附加内容</h2><p>原生 Promise 对象有一些你可能感兴趣的附加内容：</p>
+<ul>
+<li><p><code>Promise.reject()</code> 返回一个 rejected promise 。</p>
+</li>
+<li><p><code>Promise.resolve()</code> 返回一个 resolved promise 。</p>
+</li>
+<li><p><code>Promise.race()</code> 接收一个 promise 数组 (或任何迭代器) 并且返回第一个 resolved (值) 或 rejected (原因) 的 promise 。</p>
+</li>
+<li><p><code>Promise.all()</code> 接收一个 promise 数组 (或任何迭代器) 并且当迭代器中所有 promises 都 resolved 后返回一个 promise ，或者返回第一个 rejected (原因) 的 promise。</p>
+</li>
+</ul>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>Promises 已称为 JavaScript 语法的重要部分，包括用于 ajax 请求的 <a href="https://fetch.spec.whatwg.org/" target="_blank" rel="noopener">WHATWG Fetch</a> 标准，用于让异步代码看起来像同步代码的 <a href="https://tc39.github.io/ecmascript-asyncawait/" target="_blank" rel="noopener">Async Functions</a> 标准。</p>
+<p>在撰写本文时 (2017.1.23)，Async functions 还处于第3阶段，但我预测它们很快将成为 JavaScript 中异步编程的一种非常流行，非常有效的解决方案 – 这意味着在不久的将来，学习 promises 对 JavaScript 开发人员来说将变得更加重要。</p>
+<p>例如，如果你正在使用 Redux ，我建议你看下 <a href="">redux-saga</a>：一个用于管理 Redux 中副作用的库，整个文档都依赖于异步函数。</p>
+<p>我希望即使是有着丰富 promise 使用经验的开发人员在阅读完本文之后，能够对 promise 有更好的理解和 promise 是如何工作的，以及更好地去使用 promise 。</p>
+<h2 id="探索-‘Master-the-JavaScript-Interview’-系列"><a href="#探索-‘Master-the-JavaScript-Interview’-系列" class="headerlink" title="探索 ‘Master the JavaScript Interview’ 系列"></a>探索 ‘Master the JavaScript Interview’ 系列</h2><ul>
+<li><p><a href="https://medium.com/javascript-scene/master-the-javascript-interview-what-is-a-closure-b2f0d2152b36" target="_blank" rel="noopener">What is a Closure?</a></p>
+</li>
+<li><p><a href="https://medium.com/javascript-scene/master-the-javascript-interview-what-s-the-difference-between-class-prototypal-inheritance-e4cd0a7562e9" target="_blank" rel="noopener">What is the Difference Between Class and Prototypal Inheritance?</a></p>
+</li>
+<li><p><a href="https://medium.com/javascript-scene/master-the-javascript-interview-what-is-a-pure-function-d1c076bec976" target="_blank" rel="noopener">What is a Pure Function?</a></p>
+</li>
+<li><p><a href="https://medium.com/javascript-scene/master-the-javascript-interview-what-is-function-composition-20dfb109a1a0" target="_blank" rel="noopener">What is a Function Composition?</a></p>
+</li>
+<li><p><a href="https://medium.com/javascript-scene/master-the-javascript-interview-what-is-functional-programming-7f218c68b3a0" target="_blank" rel="noopener">What is a Function Programming?</a></p>
+</li>
+<li><p><a href="https://medium.com/javascript-scene/master-the-javascript-interview-what-is-a-promise-27fc71e77261" target="_blank" rel="noopener">What is a Promise?</a></p>
+</li>
+<li><p><a href="https://medium.com/javascript-scene/master-the-javascript-interview-soft-skills-a8a5fb02c466" target="_blank" rel="noopener">Soft Skills</a></p>
+</li>
+</ul>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/08/29/trans-4/" rel="next" title="【译】精通 JavaScript： 类继承和原型继承的区别？">
+                <i class="fa fa-chevron-left"></i> 【译】精通 JavaScript： 类继承和原型继承的区别？
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/09/10/trans-8/" rel="prev" title="【译】JavaScript 工作原理：JS 引擎，runtime 和调用栈的概述">
+                【译】JavaScript 工作原理：JS 引擎，runtime 和调用栈的概述 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+    <div class="comments" id="comments">
+      
+        <div id="gitment-container"></div>
+      
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Lyn Ho</p>
+              <p class="site-description motion-element" itemprop="description">Stay Hungry Stay Foolish</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">9</span>
+                    <span class="site-state-item-name">posts</span>
+                  </a>
+                </div>
+              
+
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                    <span class="site-state-item-count">1</span>
+                    <span class="site-state-item-name">tags</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/lyn-ho" target="_blank" title="GitHub"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="lyn4develop@gmail.com" target="_blank" title="E-Mail"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://twitter.com/Lyn_ho007" target="_blank" title="Twitter"><i class="fa fa-fw fa-twitter"></i>Twitter</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://www.facebook.com/lyn.ho.12576" target="_blank" title="Facebook"><i class="fa fa-fw fa-facebook"></i>Facebook</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://www.linkedin.com/in/lyn-ho-112124108/" target="_blank" title="Linkedin"><i class="fa fa-fw fa-linkedin"></i>Linkedin</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://www.instagram.com/ho.lyn" target="_blank" title="Instagram"><i class="fa fa-fw fa-instagram"></i>Instagram</a>
+                  
+                </span>
+              
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是-Promise？"><span class="nav-number">1.</span> <span class="nav-text">什么是 Promise？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Promise-的不完全历史"><span class="nav-number">2.</span> <span class="nav-text">Promise 的不完全历史</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Promises-是如何工作的"><span class="nav-number">3.</span> <span class="nav-text">Promises 是如何工作的</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Promise-的重要规则"><span class="nav-number">4.</span> <span class="nav-text">Promise 的重要规则</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Promise-链"><span class="nav-number">5.</span> <span class="nav-text">Promise 链</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Error-处理"><span class="nav-number">6.</span> <span class="nav-text">Error 处理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#如何取消一个-Promise？"><span class="nav-number">7.</span> <span class="nav-text">如何取消一个 Promise？</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#在-promise-中添加-cancel"><span class="nav-number">7.1.</span> <span class="nav-text">在 promise 中添加 .cancel()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#忘记清理"><span class="nav-number">7.2.</span> <span class="nav-text">忘记清理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#忘记处理-rejected-状态下取消-promise"><span class="nav-number">7.3.</span> <span class="nav-text">忘记处理 rejected 状态下取消 promise</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#过度复杂"><span class="nav-number">7.4.</span> <span class="nav-text">过度复杂</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#重新思考-Promise-Cancellation"><span class="nav-number">7.5.</span> <span class="nav-text">重新思考 Promise Cancellation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#抽象-Promise-Cancellation"><span class="nav-number">7.6.</span> <span class="nav-text">抽象 Promise Cancellation</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#原生-JS-Promise-的附加内容"><span class="nav-number">8.</span> <span class="nav-text">原生 JS Promise 的附加内容</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">9.</span> <span class="nav-text">总结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#探索-‘Master-the-JavaScript-Interview’-系列"><span class="nav-number">10.</span> <span class="nav-text">探索 ‘Master the JavaScript Interview’ 系列</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Lyn Ho</span>
+
+  
+
+  
+</div>
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+	
+    
+
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.4.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.4.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=6.4.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.4.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.4.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.4.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.4.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+<!-- LOCAL: You can save these files to your site and update links -->
+    
+        
+        <link rel="stylesheet" href="https://aimingoo.github.io/gitmint/style/default.css">
+        <script src="https://aimingoo.github.io/gitmint/dist/gitmint.browser.js"></script>
+    
+<!-- END LOCAL -->
+
+    
+
+    
+      <script type="text/javascript">
+      function renderGitment(){
+        var gitment = new Gitmint({
+            id: window.location.pathname,
+            owner: 'lyn-ho',
+            repo: 'lyn-ho.github.io',
+            
+            lang: "" || navigator.language || navigator.systemLanguage || navigator.userLanguage,
+            
+            oauth: {
+            
+            
+                client_secret: '8c2e6d4bd597b72ed3a7746fff83510a86f0d7cf',
+            
+                client_id: 'c9d562b27e0fa8453124'
+            }});
+        gitment.render('gitment-container');
+      }
+
+      
+      renderGitment();
+      
+      </script>
+    
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+  <script>
+    
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+
+      Counter('get', '/classes/Counter', { where: JSON.stringify({ url }) })
+        .done(function ({ results }) {
+          if (results.length > 0) {
+            var counter = results[0];
+            
+            Counter('put', `/classes/Counter/${counter.objectId}`, JSON.stringify({ time: { "__op":"Increment", "amount":1 } }))
+            
+            .done(function () {
+                  var $element = $(document.getElementById(url));
+                  $element.find('.leancloud-visitors-count').text(counter.time + 1);
+            })
+            
+            .fail(function ({ responseJSON }) {
+                console.log('Failed to save Visitor num, with error message: ' + responseJSON.error);
+            })
+          } else {
+            
+              var $element = $(document.getElementById(url));
+              $element.find('.leancloud-visitors-count').text('Counter not initialized! See more at console err msg.');
+              console.error('ATTENTION! LeanCloud counter has security bug, see here how to solve it: https://github.com/theme-next/hexo-leancloud-counter-security. \n But you also can use LeanCloud without security, by set \'security\' option to \'false\'.');
+            
+          }
+        })
+      .fail(function ({ responseJSON }) {
+        console.log('LeanCloud Counter Error:' + responseJSON.code + " " + responseJSON.error);
+      });
+    }
+    
+
+    $(function() {
+      $.get('https://app-router.leancloud.cn/2/route?appId=' + "ddwFbeovSHu8b865RlXYBvKI-gzGzoHsz")
+        .done(function ({ api_server }) {
+          var Counter = function (method, url, data) {
+            return $.ajax({
+              method: method,
+              url: `https://${api_server}/1.1${url}`,
+              headers: {
+                'X-LC-Id': "ddwFbeovSHu8b865RlXYBvKI-gzGzoHsz",
+                'X-LC-Key': "udbWE7faUIW1BPvBgctXlUSH",
+                'Content-Type': 'application/json',
+              },
+              data: data,
+            });
+          };
+          
+          addCount(Counter);
+          
+        })
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+  
+  
+  <script src="/lib/bookmark/bookmark.min.js?v=1.0"></script>
+  <script type="text/javascript">
+  
+    bookmark.scrollToMark('auto', "#more");
+  
+  </script>
+
+
+  
+
+</body>
+</html>
