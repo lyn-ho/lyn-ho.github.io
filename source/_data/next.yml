@@ -566,7 +566,7 @@ needmoreshare2:
 
 # Google Webmaster tools verification setting
 # See: https://www.google.com/webmasters/
-#google_site_verification:
+google_site_verification: tRKwwbKaupN23inSkJrhDCZ4tuguoxh5yxt_IOEP14M
 
 # Google Analytics
 #google_analytics:
