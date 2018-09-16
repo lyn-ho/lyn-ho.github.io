@@ -1,11 +1,20 @@
 language: node_js
 node_js: 
   - 8.9.1
+branches:
+  only:
+  - gh-pages
+before_install:
+  - npm install -g hexo
+  - npm install -g hexo-cli
 before_script:
   - git config user.name "Lyn Ho"
   - git config user.email "lyn1107130806@gmail.com"
   - sed -i'' "s~https://github.com/lyn-ho/lyn-ho.github.io.git~https://${TravisCI}@github.com/lyn-ho/lyn-ho.github.io.git~" _config.yml
+install:
+  - npm install
 script:
   - hexo clean
-  - hexo g
-  - hexo d
+  - hexo generate
+after_success:
+  - hexo deploy
