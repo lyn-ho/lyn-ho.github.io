@@ -313,22 +313,26 @@
   
     <div class="site-search">
       
-  <div class="popup search-popup local-search-popup">
-  <div class="local-search-header clearfix">
-    <span class="search-icon">
-      <i class="fa fa-search"></i>
-    </span>
+  
+  <div class="algolia-popup popup search-popup">
+    <div class="algolia-search">
+      <div class="algolia-search-input-icon">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="algolia-search-input" id="algolia-search-input"></div>
+    </div>
+
+    <div class="algolia-results">
+      <div id="algolia-stats"></div>
+      <div id="algolia-hits"></div>
+      <div id="algolia-pagination" class="algolia-pagination"></div>
+    </div>
+
     <span class="popup-btn-close">
       <i class="fa fa-times-circle"></i>
     </span>
-    <div class="local-search-input-wrapper">
-      <input autocomplete="off"
-             placeholder="Searching..." spellcheck="false"
-             type="text" id="local-search-input">
-    </div>
   </div>
-  <div id="local-search-result"></div>
-</div>
+
 
 
 
@@ -630,8 +634,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/09/10/trans-7/" rel="next" title="【译】精通 JavaScript： 什么是函数组合（Function Composition）？">
-                <i class="fa fa-chevron-left"></i> 【译】精通 JavaScript： 什么是函数组合（Function Composition）？
+              <a href="/2018/09/10/trans-5/" rel="next" title="【译】精通 JavaScript： 什么是 Promise？">
+                <i class="fa fa-chevron-left"></i> 【译】精通 JavaScript： 什么是 Promise？
               </a>
             
           </div>
@@ -640,8 +644,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/09/15/trans-9/" rel="prev" title="【译】JavaScript 工作原理：V8 引擎中5个优化代码的技巧">
-                【译】JavaScript 工作原理：V8 引擎中5个优化代码的技巧 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/09/10/trans-8/" rel="prev" title="【译】JavaScript 工作原理：JS 引擎，runtime 和调用栈的概述">
+                【译】JavaScript 工作原理：JS 引擎，runtime 和调用栈的概述 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -1338,6 +1342,19 @@
   </script>
 
 
+
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
+
+  
+  
+  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
+  
+
+  <script src="/js/src/algolia-search.js?v=6.4.0"></script>
 
 
 
