@@ -144,33 +144,29 @@
 
 
 
-  <meta name="description" content="原文：How JavaScript works: inside the V8 engine + 5 tips on how to write optimized code  几个星期之前，我们开始了一个旨在深入挖掘 JavaScript 及其实际工作原理的系列文章，我们认为，通过了解 JavaScript 的底层构建以及它们是如何协作的，你将能够编写更好的代码和应用。 第一篇文章主要关注引擎，">
+  <meta name="description" content="原文：Master the JavaScript Interview: What is a Promise?    “精通 JavaScript 面试” 是一个系列的文章，旨在帮助面试者准备他们在申请中高级职位时可能遇到的常见问题。这些是我在现实面试中经常提出的问题。  什么是 Promise？Promise 是一个对象，在未来的某个时刻产生一个值：已完成 (resolved) 的值或者是未完">
 <meta name="keywords" content="JavaScript">
 <meta property="og:type" content="article">
-<meta property="og:title" content="【译】JavaScript 工作原理：V8 引擎中5个优化代码的技巧">
-<meta property="og:url" content="lyn-ho.github.io/2018/09/15/trans-9/index.html">
+<meta property="og:title" content="【译】精通 JavaScript： 什么是 Promise？">
+<meta property="og:url" content="lyn-ho.github.io/2018/08/30/trans-5/index.html">
 <meta property="og:site_name" content="Lyn&#39;s Blog">
-<meta property="og:description" content="原文：How JavaScript works: inside the V8 engine + 5 tips on how to write optimized code  几个星期之前，我们开始了一个旨在深入挖掘 JavaScript 及其实际工作原理的系列文章，我们认为，通过了解 JavaScript 的底层构建以及它们是如何协作的，你将能够编写更好的代码和应用。 第一篇文章主要关注引擎，">
+<meta property="og:description" content="原文：Master the JavaScript Interview: What is a Promise?    “精通 JavaScript 面试” 是一个系列的文章，旨在帮助面试者准备他们在申请中高级职位时可能遇到的常见问题。这些是我在现实面试中经常提出的问题。  什么是 Promise？Promise 是一个对象，在未来的某个时刻产生一个值：已完成 (resolved) 的值或者是未完">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="https://cdn-images-1.medium.com/max/1600/1*AKKvE3QmN_ZQmEzSj16oXg.png">
-<meta property="og:image" content="https://cdn-images-1.medium.com/max/1600/0*RRgTDdRfLGEhuR7U.png">
-<meta property="og:image" content="https://cdn-images-1.medium.com/max/1600/1*pVnIrMZiB9iAz5sW28AixA.png">
-<meta property="og:image" content="https://cdn-images-1.medium.com/max/1600/1*QsVUE3snZD9abYXccg6Sgw.png">
-<meta property="og:image" content="https://user-gold-cdn.xitu.io/2017/11/18/15fcec13180b6f2e?imageView2/0/w/1280/h/960/format/webp/ignore-error/1">
-<meta property="og:image" content="https://cdn-images-1.medium.com/max/1600/1*iHfI6MQ-YKQvWvo51J-P0w.png">
-<meta property="og:image" content="https://cdn-images-1.medium.com/max/1600/0*pohqKvj9psTPRlOv.png">
-<meta property="og:updated_time" content="2018-09-15T14:59:05.513Z">
+<meta property="og:image" content="https://cdn-images-1.medium.com/max/1600/1*agGENodMcD6hhwIFdqGwrw.jpeg">
+<meta property="og:image" content="https://cdn-images-1.medium.com/max/1600/1*5Z_vNz6xHn9mjTgvrqa2Aw.png">
+<meta property="og:image" content="https://cdn-images-1.medium.com/max/1600/1*vRaV9sYpYKdxBj3Ld7KM1Q.png">
+<meta property="og:updated_time" content="2018-09-16T10:06:06.248Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="【译】JavaScript 工作原理：V8 引擎中5个优化代码的技巧">
-<meta name="twitter:description" content="原文：How JavaScript works: inside the V8 engine + 5 tips on how to write optimized code  几个星期之前，我们开始了一个旨在深入挖掘 JavaScript 及其实际工作原理的系列文章，我们认为，通过了解 JavaScript 的底层构建以及它们是如何协作的，你将能够编写更好的代码和应用。 第一篇文章主要关注引擎，">
-<meta name="twitter:image" content="https://cdn-images-1.medium.com/max/1600/1*AKKvE3QmN_ZQmEzSj16oXg.png">
+<meta name="twitter:title" content="【译】精通 JavaScript： 什么是 Promise？">
+<meta name="twitter:description" content="原文：Master the JavaScript Interview: What is a Promise?    “精通 JavaScript 面试” 是一个系列的文章，旨在帮助面试者准备他们在申请中高级职位时可能遇到的常见问题。这些是我在现实面试中经常提出的问题。  什么是 Promise？Promise 是一个对象，在未来的某个时刻产生一个值：已完成 (resolved) 的值或者是未完">
+<meta name="twitter:image" content="https://cdn-images-1.medium.com/max/1600/1*agGENodMcD6hhwIFdqGwrw.jpeg">
 
 
 
 
 
 
-  <link rel="canonical" href="lyn-ho.github.io/2018/09/15/trans-9/"/>
+  <link rel="canonical" href="lyn-ho.github.io/2018/08/30/trans-5/"/>
 
 
 
@@ -180,7 +176,7 @@
   };
 </script>
 
-  <title>【译】JavaScript 工作原理：V8 引擎中5个优化代码的技巧 | Lyn's Blog</title>
+  <title>【译】精通 JavaScript： 什么是 Promise？ | Lyn's Blog</title>
   
 
 
@@ -384,7 +380,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="lyn-ho.github.io/2018/09/15/trans-9/">
+    <link itemprop="mainEntityOfPage" href="lyn-ho.github.io/2018/08/30/trans-5/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Lyn Ho">
@@ -401,7 +397,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">【译】JavaScript 工作原理：V8 引擎中5个优化代码的技巧
+          <h2 class="post-title" itemprop="name headline">【译】精通 JavaScript： 什么是 Promise？
               
             
           </h2>
@@ -426,9 +422,25 @@
                 
               
 
-              <time title="Created: 2018-09-15 22:59:05" itemprop="dateCreated datePublished" datetime="2018-09-15T22:59:05+08:00">2018-09-15</time>
+              <time title="Created: 2018-08-30 15:43:58" itemprop="dateCreated datePublished" datetime="2018-08-30T15:43:58+08:00">2018-08-30</time>
             
 
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2018-09-16 18:06:06" itemprop="dateModified" datetime="2018-09-16T18:06:06+08:00">2018-09-16</time>
+              
             
           </span>
 
@@ -441,8 +453,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/09/15/trans-9/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">Comments: </span> <span class="post-comments-count gitment-comments-count" data-xid="/2018/09/15/trans-9/" itemprop="commentsCount"></span>
+                <a href="/2018/08/30/trans-5/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">Comments: </span> <span class="post-comments-count gitment-comments-count" data-xid="/2018/08/30/trans-5/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -450,7 +462,7 @@
 
           
           
-             <span id="/2018/09/15/trans-9/" class="leancloud_visitors" data-flag-title="【译】JavaScript 工作原理：V8 引擎中5个优化代码的技巧">
+             <span id="/2018/08/30/trans-5/" class="leancloud_visitors" data-flag-title="【译】精通 JavaScript： 什么是 Promise？">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -482,119 +494,173 @@
 
       
         <blockquote>
-<p>原文：<a href="https://blog.sessionstack.com/how-javascript-works-inside-the-v8-engine-5-tips-on-how-to-write-optimized-code-ac089e62b12e" target="_blank" rel="noopener">How JavaScript works: inside the V8 engine + 5 tips on how to write optimized code</a></p>
+<p>原文：<a href="https://medium.com/javascript-scene/master-the-javascript-interview-what-is-a-promise-27fc71e77261" target="_blank" rel="noopener">Master the JavaScript Interview: What is a Promise?</a></p>
 </blockquote>
-<p>几个星期之前，我们开始了一个旨在深入挖掘 JavaScript 及其实际工作原理的系列文章，我们认为，通过了解 JavaScript 的底层构建以及它们是如何协作的，你将能够编写更好的代码和应用。</p>
-<p><a href="https://blog.sessionstack.com/how-does-javascript-actually-work-part-1-b0bacc073cf" target="_blank" rel="noopener">第一篇文章</a>主要关注引擎，运行时和调用栈的概述。 第二篇文章将深入探讨 Google’s V8 引擎内部。我们还提供了一些关于如何编写更好的 JavaScript 代码的快速提示 —— 我们 <a href="https://www.sessionstack.com/" target="_blank" rel="noopener">SessionStack</a> 开发团队在构建产品时  遵循的最佳实践。</p>
-<h2 id="概述-Overview"><a href="#概述-Overview" class="headerlink" title="概述 (Overview)"></a>概述 (Overview)</h2><p><strong>JavaScript 引擎</strong>是一个可以执行 JavaScript 代码的程序或解释器。 JavaScript 引擎可以是标准实现解释器或者是可以以某种方式实现编译 JavaScript 为字节码的即时编译器。</p>
+<p><img src="https://cdn-images-1.medium.com/max/1600/1*agGENodMcD6hhwIFdqGwrw.jpeg" alt="Photo by Kabun (CC BY NC SA 2.0)"></p>
+<blockquote>
+<p>“精通 JavaScript 面试” 是一个系列的文章，旨在帮助面试者准备他们在申请中高级职位时可能遇到的常见问题。这些是我在现实面试中经常提出的问题。</p>
+</blockquote>
+<h2 id="什么是-Promise？"><a href="#什么是-Promise？" class="headerlink" title="什么是 Promise？"></a>什么是 Promise？</h2><p>Promise 是一个对象，在未来的某个时刻产生一个值：已完成 (resolved) 的值或者是未完成的原因(e.g. 网络错误)。Promise 可能是下面三种状态中的一种：fulfilled，rejected，pending 。Promise 提供回调来处理 fulfilled 返回的值或者 rejection 的原因。</p>
 <a id="more"></a>
-<p>下面是流行 JavaScript 引擎列表：</p>
+<p>Promise 会立即执行，这意味着一旦 promise 构造函数被调用，promise 就会开始执行你给它的任何任务。如果你需要 promise 懒加载，参考 <a href="https://github.com/Reactive-Extensions/RxJS" target="_blank" rel="noopener">observables</a> 或者 <a href="https://github.com/rpominov/fun-task" target="_blank" rel="noopener">tasks</a>。</p>
+<h2 id="Promise-的不完全历史"><a href="#Promise-的不完全历史" class="headerlink" title="Promise 的不完全历史"></a>Promise 的不完全历史</h2><p>早在1980年代，promise 和 futures (类似/相关的想法) 的早期实现开始出现在 MultiLisp 和 Concurrent Prolog 等语言中。“promise” 这个概念是由 Barbara Liskov 和 Liuba Shrira 在1998年提出。</p>
+<p>我第一次听说 JavaScript 中的 promise，Node 才刚刚出现，Node 社区正在讨论异步行为的最佳方案。社区实验了一段时间 promise，但最终选择了 error-first 回调作为 Node 标准。</p>
+<p>大概在同一时间，Dojo 通过 Deferred API 添加了 promises 。不断增长的兴趣和活跃度最终导致了新的 Promises/A 规范的形成，提高了不同 promises 之间的互操作性。</p>
+<p>jQuery 的异步操作是围绕 promises 的重构。jQuery 的 promise 和 Dojo 的 Deferred 非常相似，并且由于 jQuery 的流行，它一度在 JavaScript 中被广泛使用。但是 <a href="https://blog.domenic.me/youre-missing-the-point-of-promises/" target="_blank" rel="noopener"> it did not support the two channel (fulfilled/rejected) chaining behavior &amp; exception management</a> 人们期望在 promise 上的构建工具。</p>
+<p>尽管有这些缺点，jQuery 让 JavaScript promise 成为主流，并且一下更好的独立的 promise 库，例如 Q ， When ， 和 Bluebird 变得非常流行。jQuery 的实现的不兼容性促使 promise 规范中的一些重要说明，它被重写并重命名为 <a href="https://promisesaplus.com/" target="_blank" rel="noopener">Promises/A+ specification</a> 。</p>
+<p>ES6 使用了遵循 Promises/A+ 兼容的 Promise 作为全局变量，并且一些非常重要的 API 构建在新的 Promise 标准之上：特别是 <a href="https://fetch.spec.whatwg.org/" target="_blank" rel="noopener">WHATWG Fetch</a> 规范和 <a href="https://tc39.github.io/ecmascript-asyncawait/" target="_blank" rel="noopener">Async Functions</a> 标准(第3阶段草案)</p>
+<p>本文描述的是与 Promises/A+ 规范兼容的 promise，着重于基于 ECMAScript 标准的 <code>Promise</code> 实现。</p>
+<h2 id="Promises-是如何工作的"><a href="#Promises-是如何工作的" class="headerlink" title="Promises 是如何工作的"></a>Promises 是如何工作的</h2><p>promise 是一个从异步函数同步返回的对象。它有3种可能的状态：</p>
 <ul>
-<li><p><a href="https://en.wikipedia.org/wiki/V8_%28JavaScript_engine%29" target="_blank" rel="noopener"><strong>V8</strong></a> —— 开源， Google 开发， C++ 编写</p>
+<li><p><strong>Fulfilled：</strong> 将会调用 <code>onFulfilled()</code> (e.g.， 调用 <code>resolve()</code>)</p>
 </li>
-<li><p><a href="https://en.wikipedia.org/wiki/Rhino_%28JavaScript_engine%29" target="_blank" rel="noopener"><strong>Rhino</strong></a> —— Mozilla 基金会管理，开源，全 Java 开发</p>
+<li><p><strong>Rejected：</strong> 将会调用 <code>onRejected()</code> (e.g.， 调用 <code>reject()</code>)</p>
 </li>
-<li><p><a href="https://en.wikipedia.org/wiki/SpiderMonkey_%28JavaScript_engine%29" target="_blank" rel="noopener"><strong>SpiderMonkey</strong></a> —— 第一个 JavaScript 引擎，当时支持 Netscape Navigator ， 现在支持 FireFox</p>
-</li>
-<li><p><a href="https://en.wikipedia.org/wiki/JavaScriptCore" target="_blank" rel="noopener"><strong>JavaScriptCore</strong></a> —— 开源， Apple 公司 为 Safari 浏览器开发并以 Nitro 为名字推广</p>
-</li>
-<li><p><a href="https://en.wikipedia.org/wiki/KJS_%28KDE%29" target="_blank" rel="noopener"><strong>KJS</strong></a> ——  KDE 的引擎，最初是由 Harri Porten 为 KDE 项目的 Konqueror 网络浏览器开发</p>
-</li>
-<li><p><a href="https://en.wikipedia.org/wiki/Chakra_%28JScript_engine%29" target="_blank" rel="noopener"><strong>Chakra</strong> (JScript9)</a> —— Internet Explorer</p>
-</li>
-<li><p><a href="https://en.wikipedia.org/wiki/Chakra_%28JavaScript_engine%29" target="_blank" rel="noopener"><strong>Chakra</strong> (JavaScript)</a> —— Microsoft Edge</p>
-</li>
-<li><p><a href="https://en.wikipedia.org/wiki/Nashorn_%28JavaScript_engine%29" target="_blank" rel="noopener"><strong>Nashorn</strong></a> —— 开源，由 Oracle 的 Java 语言工具组开发，是 OpenJDK 的一部分</p>
-</li>
-<li><p><a href="https://en.wikipedia.org/wiki/JerryScript" target="_blank" rel="noopener"><strong>JerryScript</strong></a> —— 物联网轻量级引擎</p>
+<li><p><strong>Pending：</strong> 非 fulfilled 或者 rejected</p>
 </li>
 </ul>
-<h2 id="为什么创建了-V8-引擎"><a href="#为什么创建了-V8-引擎" class="headerlink" title="为什么创建了 V8 引擎"></a>为什么创建了 V8 引擎</h2><p>V8 引擎是由 Google 开发 C++ 编写的开源引擎。它被用于 Google Chrome 。但是，和其他引擎不一样，V8 也被用于 Node.js runtime 。</p>
-<p><img src="https://cdn-images-1.medium.com/max/1600/1*AKKvE3QmN_ZQmEzSj16oXg.png" alt="V8"></p>
-<p>V8 最初是为了提高 Web 浏览器中 JavaScript 执行的性能。为了获得更快的速度，V8 将 JavaScript 转换为更高效的机器码，而不是使用解释器。它像 SpiderMonkey 或者 Rhino (Mozilla) 等很多现代 JavaScript 引擎一样，通过 <strong>JIT(Just-In-Time)编译器</strong> 将 JavaScript 代码编译成机器码。区别是 V8 不生成字节码或任何中间代码。</p>
-<h2 id="V8-曾经有两个编译器"><a href="#V8-曾经有两个编译器" class="headerlink" title="V8 曾经有两个编译器"></a>V8 曾经有两个编译器</h2><p>在 V8 的 v5.9 版本出来之前，它曾经拥有两个  编译器：</p>
+<p>如果 promise 不在 pending 状态，它就固定了(处于 fulfilled 或 rejected)。有时我们用 <em>resolved</em> 或 <em>settled</em> 表示同一件事：<em>not pending</em> 。</p>
+<p>promise 一旦被固定，就不能重新固定。调用 <code>resolve()</code> 或 <code>reject()</code> 将没有效果。被固定的 promise 的不可变性是一个重要的特性。</p>
+<p>原生 JavaScript promise 不暴露 promise 状态。相反，你应该把 promise 视为一个黑盒。只有创建这个 promise 的函数才知道 promise 的状态，或者说有 <code>resolve</code> 或 <code>reject</code> 的权限。</p>
+<p>这是一个返回一个 promise 的函数，并在制定的时间延迟后 <code>resolve</code> 。</p>
+<script src="//gist.github.com/2dbea5f98fde8a0a77eb93775aa97468.js?file=wait.js"></script>
+<p>调用 <code>wait(3000)</code> 会等待3000毫秒 (3秒) ，然后调用打印 <code>&#39;Hello!&#39;</code> 。所以与规范兼容的 promise 都定义了 <code>.then()</code> 方法，你可以传入一个函数来处理 <code>resolve</code> 或 <code>reject</code> 返回的值。</p>
+<p>ES6 promise 的构造函数需要一个函数。这个函数需要两个参数，<code>resovle()</code> 和 <code>reject()</code> 。在上面的例子中，我们只使用了 <code>resolve()</code> ,将 <code>reject()</code> 从参数列表中删除了。我们调用 <code>setTimeout()</code> 来创建延迟，并在完成后调用 <code>resolve()</code> 。</p>
+<p>你可以按需向 <code>resolve()</code> 或 <code>reject()</code> 中传值，这个值会作为参数传入 <code>.then()</code> 的回调函数。</p>
+<p>当我调用 <code>reject()</code> 并且传入一个值，我总是传入一个 <code>Error</code> 对象。一般来说，我想要两种可能的解决状态：正常的或异常的 (阻碍正常状态) 。传入一个 <code>Error</code> 对象来表示。</p>
+<h2 id="Promise-的重要规则"><a href="#Promise-的重要规则" class="headerlink" title="Promise 的重要规则"></a>Promise 的重要规则</h2><p>标准的 Promise 是由 <a href="https://promisesaplus.com/implementations" target="_blank" rel="noopener">Promises/A+ specification</a> 社区定义的。有很多符合标准的实现，包括 JavaScript ECMAScript promise。</p>
+<p>Promise 必须遵循下面的规则：</p>
 <ul>
-<li><p>full-codegen —— 一个简单且快速的编译器，可以生成简单但相对  较慢的机器码。</p>
+<li><p>Promise 或 “thenable” 需要提供标准的 <code>.then()</code> 方法。</p>
 </li>
-<li><p>Grankshaft —— 一个较复杂的即时优化编译器，可以生成  高度优化的代码</p>
+<li><p>pending 状态的 promise 可以转换为 fulfilled 或 rejected 状态。</p>
+</li>
+<li><p>fulfilled 或 rejected 状态的 promise 是固定的，不能转换为其他状态。</p>
+</li>
+<li><p>一旦 promise 固定，一定有一个值 (可以是 undefined) 。这个值不可变。</p>
 </li>
 </ul>
-<p>V8 引擎内部使用了多线程：</p>
+<p>在这个上下午的变更指的是恒等 (===) 。fulfilled 的值可以是一个对象，这个对象的属性是可变的。</p>
+<p>所以的 promise 都必须实现具有下面方法签名的 <code>.then()</code> 方法：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">promise.then(</span><br><span class="line">    onFulfilled? : <span class="built_in">Function</span>,</span><br><span class="line">    onRejected? : <span class="built_in">Function</span></span><br><span class="line">) =&gt; <span class="built_in">Promise</span></span><br></pre></td></tr></table></figure>
+<p><code>.then()</code> 方法必须符合一下规则：</p>
 <ul>
-<li><p>主线程完成你所期望的任务：获取你的代码，编译执行</p>
+<li><p><code>onFulfilled()</code> 和 <code>onRejected()</code> 都是可选的。</p>
 </li>
-<li><p>还有一个单独的线程用于编译，以便主线程可以继续执行，而前者可以优化代码</p>
+<li><p>如果提供的参数不是函数，必须忽略。</p>
 </li>
-<li><p>Profiler 线程，它将通知  运行时  哪些  方法花费大量时间，以便 Crankshaft 可以优化它们</p>
+<li><p><code>onFulfilled()</code> 在 promise 转换为 fulfilled 状态时被调用，promise 的值作为这个函数第一个参数。</p>
 </li>
-<li><p> 少许线程来处理垃圾收集器扫描</p>
+<li><p><code>onRejected()</code> 在 promise 转换为 rejected 状态后被调用，拒绝的原因作为第一个参数。原因可以是任何有效的 JavaScript 值，但是拒绝基本和异常是同义词，所以我建议使用 Error 对象。</p>
+</li>
+<li><p><code>onFulfilled()</code> 和 <code>onRejected()</code> 都不能多次调用。</p>
+</li>
+<li><p><code>.then()</code> 可以在同一个 promise 上多次调用。换句话说，可以使用 promise 来聚合回调。</p>
+</li>
+<li><p><code>.then()</code> 一定会返回一个 promise， <code>promise2</code> 。</p>
+</li>
+<li><p>如果 <code>onFulfilled()</code> 或 <code>onRejected()</code> 的返回值为 <code>x</code> ，并且 <code>x</code> 是一个 promise ， <code>promise2</code>  会被锁定 (假设和 <code>x</code> 有相同的状态和值) 。 否则， <code>promise2</code> 将会转换为 fulfilled 状态并且值为 <code>x</code> 。</p>
+</li>
+<li><p>不论 <code>onFulfilled</code> 或 <code>onRejected</code> 跑出一个异常 <code>e</code> ， <code>promise2</code> 一定会 rejected 并且 <code>e</code> 作为原因。</p>
+</li>
+<li><p>如果 <code>onFulfilled</code> 不是一个函数并且 <code>promise1</code> 处于 fulfilled 状态， <code>promise2</code> 一定是 fulfilled 状态并且和 <code>promise1</code> 有同样的值。</p>
+</li>
+<li><p>如果 <code>onRejected</code> 不是一个函数并且 <code>promise1</code> 处于 rejected 状态， <code>promise2</code> 一定是 rejected 状态并且和 <code>promise1</code> 的原因相同。</p>
 </li>
 </ul>
-<p>首次执行 JavaScript 代码，V8 利用 <strong>full-codegen</strong> 直接将解析后的 JavaScript 不经任何转换地编译为机器码。这使它可以非常快速地  开始执行机器码。注意， V8 不使用中间字节码，因此不需要解释器。</p>
-<p>当代码运行一段时间后， profiler 线程以及收集来足够的数据来通知运行时应该优化哪个方法。</p>
-<p>然后， <strong>Crankshaft</strong> 在另一个线程开始优化。它将 JavaScript 抽象语法树转换为名为 <strong>Hydrogen</strong> 的高级静态单元分配表示 (SSA) ，并尝试去优化这个 Hydrogen 图。大多数优化在这个层级完成。</p>
-<h2 id="代码嵌入-Inlining"><a href="#代码嵌入-Inlining" class="headerlink" title="代码嵌入 (Inlining)"></a>代码嵌入 (Inlining)</h2><p>首次优化是尽可能的提前嵌入更多的代码。代码嵌入就是将使用函数的地方( 函数被调用的那一行代码)替换成调用函数的本体。这个简单的步骤使下面的优化更有意义。</p>
-<p><img src="https://cdn-images-1.medium.com/max/1600/0*RRgTDdRfLGEhuR7U.png" alt="inlining"></p>
-<h2 id="隐藏类-Hidden-class"><a href="#隐藏类-Hidden-class" class="headerlink" title="隐藏类 (Hidden class)"></a>隐藏类 (Hidden class)</h2><p>JavaScript 是一门基于原型的语言：没有通过克隆创建的类和对象。 JavaScript 也是一门动态语言，这意味着可以在对象实例化后轻易地向它添加或删除属性。</p>
-<p> 大多数 JavaScript 解释器使用类似字典的结构 (基于<a href="http://en.wikipedia.org/wiki/Hash_function" target="_blank" rel="noopener">散列函数</a>) 来存储对象属性在内存中的位置。这种结构使得在 JavaScript 中检索属性的值比在 Java 或 C＃ 等非动态编程语言中的计算成本更高。在 Java 中，所有对象属性都是在编译之前由固定对象布局确定的，并且无法在运行时动态添加或删除 (C＃具有 <a href="https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/dynamic" target="_blank" rel="noopener">动态类型</a>，这是另一个主题) 。因此，属性值（或指向这些属性的指针）可以作为连续 buffer 存储在存储器中，每个值之间具有固定偏移值。可以根据属性类型轻易确定偏移的长度，而在运行时可以更改属性类型的 JavaScript 中，这是不可能的。</p>
-<p>由于使用字典在内存中查找对象属性的位置效率非常低，因此 V8 使用不同的方法：<strong>隐藏类 (hidden classes)</strong> 。隐藏类的工作方式类似于 Java 等语言中使用的固定对象布局（类），除了它们是在运行时创建的。现在，让我们看看它们实际上是什么样的：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Point</span>(<span class="params">x, y</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.x = x</span><br><span class="line">  <span class="keyword">this</span>.y = y</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> p1 = <span class="keyword">new</span> Point(<span class="number">1</span>, <span class="number">2</span>)</span><br></pre></td></tr></table></figure>
-<p>一旦 <code>new Point(1, 2)</code> 被调用，V8 会生成一个 <code>C0</code> 的隐藏类。</p>
-<p><img src="https://cdn-images-1.medium.com/max/1600/1*pVnIrMZiB9iAz5sW28AixA.png" alt="C0"></p>
-<p>到现在还没有为 <code>Point</code> 定义任何属性，所以 <code>C0</code> 是空的。</p>
-<p> 一旦第一条语句 <code>this.x = x</code> (<code>Point</code> 函数内的) 执行后，V8 将创建一个基于 <code>C0</code> 的第二个隐藏类 <code>C1</code> 。<code>C1</code> 描述了属性值 <code>x</code> 在内存中的位置(相对于对象指针) 。在这个例子中，<code>x</code> 存储在<a href="">偏移值</a>为 0 的地方，这意味着当在内存中把 <code>point</code> 对象视为一段连续的 buffer 时，它的第一偏移量对应的属性就是 <code>x</code> 。V8  还会使用 “ 类转换 (class transition)” 更新 <code>C0</code> ，如果将属性 <code>x</code> 添加到 <code>Point</code> 对象， 隐藏类就会从 <code>C0</code> 切换到 <code>C1</code> 。现在 <code>Point</code> 对象的隐藏类为 <code>C1</code> 。</p>
-<p><img src="https://cdn-images-1.medium.com/max/1600/1*QsVUE3snZD9abYXccg6Sgw.png" alt="C1"></p>
-<p>每当一个新属性添加到对象，旧的隐藏类就会通过一个转换路径更新成一个新的隐藏类。隐藏类转换非常重要，因为它们允许在以相同方式创建的对象之间共享隐藏类。如果两个对象共享一个隐藏类，并给它们添加相同的属性，隐藏类转换能够确保这两个对象都获得新的隐藏类以及与之相关联的优化代码。</p>
-<p>当执行语句 <code>this.y = y</code> (同样，在 <code>Point</code> 函数内部，<code>this.x = x</code> 语句之后) 时，将重复此过程。</p>
-<p>一个新的隐藏类 <code>C2</code> 被创建了，如果属性 <code>y</code> 被添加到 Point 对象(已经包含了 <code>x</code> 属性)，同样的过程，类型转换被添加到 <code>C1</code> 上，然后隐藏类开始更新成 <code>C2</code>，并且 Point 对象的隐藏类就要更新成 <code>C2</code> 了。</p>
-<p><img src="https://user-gold-cdn.xitu.io/2017/11/18/15fcec13180b6f2e?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" alt="C2"></p>
-<p>隐藏类转换是根据属性被添加到对象上的顺序而发生变化。我们看看下面这一小段代码：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Point</span>(<span class="params">x, y</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.x = x</span><br><span class="line">  <span class="keyword">this</span>.y = y</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> p1 = <span class="keyword">new</span> Point(<span class="number">1</span>, <span class="number">2</span>)</span><br><span class="line">p1.a = <span class="number">5</span></span><br><span class="line">p1.b = <span class="number">6</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> p2 = <span class="keyword">new</span> Point(<span class="number">3</span>, <span class="number">4</span>)</span><br><span class="line">p2.b = <span class="number">7</span></span><br><span class="line">p2.a = <span class="number">8</span></span><br></pre></td></tr></table></figure>
-<p>现在，你可能认为 <code>p1</code> 和 <code>p2</code> 使用了相同的隐藏类和类转换。其实不然，对于 <code>p1</code> 先添加属性 <code>a</code> 再添加属性 <code>b</code> ，但是 <code>p2</code> 先添加 <code>b</code> 后添加 <code>a</code> 。因此，<code>p1</code> 和 <code>p2</code> 以不同转换路径的结束，它们的隐藏类也不同。<strong>在这种情况下， 最好以相同的顺序初始化动态属性，以便可以复用隐藏类。</strong></p>
-<h2 id="内联缓存-Inline-caching"><a href="#内联缓存-Inline-caching" class="headerlink" title="内联缓存 (Inline caching)"></a>内联缓存 (Inline caching)</h2><p>V8 利用另一种被称为内联缓存的技术来优化动态类型语言。内联缓存依赖于观察到：发生在相同类型的对象上的同一个方法的重复调用。关于内联缓存深入解释请看<a href="https://github.com/sq/JSIL/wiki/Optimizing-dynamic-JavaScript-with-inline-caches" target="_blank" rel="noopener">这里</a>。</p>
-<p>我们将讨论内联缓存的一般概念（如果您没有时间进行上面的深入解释）。</p>
-<p>那么它是怎样工作的？V8 会维护一个在最近的方法调用的参数的对象类型的缓存，并使用这些信息去预测将要传入参数的对象类型。如果 V8 对传递给方法的对象类型做出了很好的预测，那么它就能够绕开获取对象属性的计算过程，取而代之的是使用先前查找这个对象的隐藏类时所存储的信息。</p>
-<p>那么隐藏类和内联缓存的概念是如何  关联的？每当在特定对象上调用方法时，V8 引擎必须执行对该对象的隐藏类的查找，以确定访问特定属性的偏移量。在将同一方法成功调用两次到同一个隐藏类之后，，V8 就会略过查找隐藏类，将这个属性的偏移值添加到对象本身的指针上。未来这个方法的所有调用，V8 引擎都会假设隐藏类没有更改，并使用先前查找中存储的偏移  值直接跳转到特定属性的内存地址。这极大的提高了 V8 的执行速度。</p>
-<p>内联缓存也是同类型对象共享隐藏类非常重要的原因。如果创建两个相同类型且具有不同隐藏类的对象(如同我们之前的示例)，V8 将无法使用内联缓存，因为即使两个对象属于同一类型，其对应的隐藏类也会为其属性分配不同的偏移值。</p>
-<p><img src="https://cdn-images-1.medium.com/max/1600/1*iHfI6MQ-YKQvWvo51J-P0w.png" alt="inline caching"></p>
-<p>这两个对象基本相同，但 <code>a</code> 和 <code>b</code> 属性的创建顺序不同。</p>
-<h2 id="编译成机器码-Compilation-to-machine-code"><a href="#编译成机器码-Compilation-to-machine-code" class="headerlink" title="编译成机器码 (Compilation to machine code)"></a>编译成机器码 (Compilation to machine code)</h2><p>经 Hydrogen graph 优化后，Crankshaft 将其降低到一个较低层次 Lithium 。大多数 Lithium 实现都是特定于体系结构的。寄存器分配发生在这个级别。</p>
-<p>最后， Lithium 会被编译成机器码。然后，触发 OSR 一种运行时替换正在运行的栈帧的技术 (on-stack replacement) 。这我们开始编译和优化一个明显耗时的方法之前，我们可能正在运行它。V8 不会  遗弃  正在缓慢执行的代码而直接开始执行优化  后的。相反，它将转换所有的上下文环境 (堆栈，寄存器) ，以便我们可以这执行过程中切换到优化的版本。这是一项非常复杂的任务，请记住，在其他优化中，V8 原来已经内联了代码。V8 并不是唯一能够做到这一点的引擎。</p>
-<p>V8 有一种称为去优化的保护措施可以进行相反的转换，并在发动机制造的假设不再适用的情况下恢复到非优化代码。</p>
-<h2 id="垃圾回收-Garbage-collection"><a href="#垃圾回收-Garbage-collection" class="headerlink" title="垃圾回收 (Garbage collection)"></a>垃圾回收 (Garbage collection)</h2><p>对于垃圾收集，V8 采用传统的标记和扫描方式来清理旧数据。标记阶段会阻止 JavaScript 执行。为了控制 GC 成本并使运行更稳定，V8 使用增量标记：不是遍历整个堆，尝试标记每个可能的对象，它只是遍历堆的一部分，然后恢复正常执行。下一个 GC 将从上一个堆遍历停止的位置继续。这允许在正常执行期间非常短暂的暂停。如前所述，扫描阶段由单独的线程处理。</p>
-<h2 id="Ignition-和-TurboFan"><a href="#Ignition-和-TurboFan" class="headerlink" title="Ignition 和 TurboFan"></a>Ignition 和 TurboFan</h2><p>随着 2017 年早些时候发布 V8 v5.9，引入了新的执行管道。这个新的管道在实际的 JavaScript 应用程序中实现了更大的性能提升和显着的内存节省。</p>
-<p>新的执行管道建立在 V8 解释器 <a href="https://github.com/v8/v8/wiki/Interpreter" target="_blank" rel="noopener">Ignition</a>，和最新优化的 V8 编译器 <a href="https://github.com/v8/v8/wiki/TurboFan" target="_blank" rel="noopener">TurboFan</a> 之上。</p>
-<p>您可以在<a href="https://v8project.blogspot.bg/2017/05/launching-ignition-and-turbofan.html" target="_blank" rel="noopener">这里</a>查看 V8 团队关于该主题的博客文章。</p>
-<p>自从 V8 的 v5.9 版本问世以来，V8 已经不再使用 full-codegen 和 Crankshaft（自 2010 年以来为 V8 提供服务的技术）用于执行 JavaScript，因为 V8 团队一直在努力跟上新的 JavaScript 语言功能以及功能优化。</p>
-<p>这意味着整体 V8 将具有更简单，更易维护的架构。</p>
-<p><img src="https://cdn-images-1.medium.com/max/1600/0*pohqKvj9psTPRlOv.png" alt="Improvements on Web and Node.js benchmarks
-"></p>
-<p>这些改进只是一个开始。新的 Ignition 和 TurboFan 管道为进一步优化铺平了道路，这些优化将在未来几年内提升 JavaScript 性能并缩小 V8 在 Chrome 和 Node.js 中的占用空间。</p>
-<p>最后，这里有一些关于如何编写优化良好的 JavaScript 的技巧和窍门。您可以从上面的内容中轻松地推导出这些内容，但是，这里是为方便起见的摘要：</p>
-<h2 id="如何编写优化的-JavaScript"><a href="#如何编写优化的-JavaScript" class="headerlink" title="如何编写优化的 JavaScript"></a>如何编写优化的 JavaScript</h2><ol>
-<li><p><strong>对象属性的顺序</strong> ：始终以相同的顺序实例化对象属性，以便可以共享隐藏类和随后优化的代码。</p>
+<h2 id="Promise-链"><a href="#Promise-链" class="headerlink" title="Promise 链"></a>Promise 链</h2><p>因为 <code>.then()</code> 总是返回一个新的 promise ，所以可以链接 promises 并精确控制错误的处理方式和位置。Promises 允许你模仿同步代码的 <code>try/catch</code> 方式。</p>
+<p>链式调用会形成一个有序的序列，类似于同步代码。换句话说，你可以这么做：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">fetch(url)</span><br><span class="line">    .then(process)</span><br><span class="line">    .then(save)</span><br><span class="line">    .catch(handleErrors)</span><br></pre></td></tr></table></figure>
+<p>假设 <code>fetch()</code> <code>process()</code> <code>save()</code> 每个函数都返回 promises ， <code>fetch()</code> 完成后 <code>process()</code> 才开始执行， <code>process()</code> 完成后 <code>save()</code> 才开始执行。任何一个 promise reject 后 <code>handleErrors()</code> 才会执行。</p>
+<p>这是一个复杂的 promise 链 的例子，并具有多个 rejection：</p>
+<script src="//gist.github.com/8a49bbbf15e697182a5dd9edafd765e9.js?file=promise-chaining.js"></script>
+<h2 id="Error-处理"><a href="#Error-处理" class="headerlink" title="Error 处理"></a>Error 处理</h2><p>注意 promise 同时有成功和错误的 handler ，下面的代码很常见：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">save().then(</span><br><span class="line">    handleSuccess,</span><br><span class="line">    handleError</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<p>但是 <code>handleSuccess()</code> 抛出错误应该怎么做？从 <code>.then()</code> 返回的 promise 将会 rejected ，但是没有捕捉到这个 rejection 。意味着你的 app 的这个错误被吞了。</p>
+<p>出于这个原因，有些人认为上面的代码是反模式的，并推荐下面的代码：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">save()</span><br><span class="line">    .then(handleSuccess)</span><br><span class="line">    .catch(handleError)</span><br></pre></td></tr></table></figure>
+<p>差异很微妙但是很重要。在第一个示例中， 源自 <code>save()</code> 的错误将会被捕获， 但源自 <code>handleSuccess()</code> 的错误将会被吞掉。</p>
+<p><img src="https://cdn-images-1.medium.com/max/1600/1*5Z_vNz6xHn9mjTgvrqa2Aw.png" alt="Without .catch(), an error in the success handler is uncaught."></p>
+<p>在第二个示例中，<code>.catch()</code> 可以处理 <code>save()</code> 和 <code>handleSuccess()</code> 两者的 rejection 。</p>
+<p><img src="https://cdn-images-1.medium.com/max/1600/1*vRaV9sYpYKdxBj3Ld7KM1Q.png" alt="With .catch(), both error sources are handled."></p>
+<p>当然， <code>save()</code> 的错误可能是网络错误，但 <code>handleSuccess()</code> 的错误可能是开发人员忘记处理特定的状态码。如果你想以不同的方式处理它们，你可以选择这样处理：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">save()</span><br><span class="line">    .then(</span><br><span class="line">        handleSuccess,</span><br><span class="line">        handleNetworkError</span><br><span class="line">    )</span><br><span class="line">    .catch(handleProgrammerError)</span><br></pre></td></tr></table></figure>
+<p>无论你喜欢哪一种方式，我都建议在所有的 promise 链都是以 <code>.catch()</code> 结尾。重复这么做是值得的：</p>
+<blockquote>
+<p><em>I recommend ending all promise chains with a .catch().</em></p>
+</blockquote>
+<h2 id="如何取消一个-Promise？"><a href="#如何取消一个-Promise？" class="headerlink" title="如何取消一个 Promise？"></a>如何取消一个 Promise？</h2><p>promises 萌新经常想知道的第一件事是如何取消一个 promise。这是一个想法：以 “Cancelled” 为原因 reject promise 。如果你想和 “normal” 错误以不同的处理方式，在 error handler 中添加一个处理分支。</p>
+<p>以下是人们在取消 promise 时所犯的一些常见错误：</p>
+<h3 id="在-promise-中添加-cancel"><a href="#在-promise-中添加-cancel" class="headerlink" title="在 promise 中添加 .cancel()"></a>在 promise 中添加 .cancel()</h3><p>添加 .cancel() 使 promise 不符合标准，而且也违反了一些 promises 的规则：只有创建 promise 的函数才能 resolve， reject，或者 cancel 这个 promise 。暴露出来会破坏 promise 的封装，并且会鼓励人们在不应该知道 promise 的地方编写操作 promise 的代码。避免意大利面式的代码以及破坏 promises 。</p>
+<h3 id="忘记清理"><a href="#忘记清理" class="headerlink" title="忘记清理"></a>忘记清理</h3><p>有一些聪明的人发现可以使用 <code>Promise.race()</code> 组委取消机制。问题是使用了创建 promise 的函数来做取消控制，只有这个函数可以清理活动内容，例如清理 timeouts 或者清理数据引用的内存空间等等。</p>
+<h3 id="忘记处理-rejected-状态下取消-promise"><a href="#忘记处理-rejected-状态下取消-promise" class="headerlink" title="忘记处理 rejected 状态下取消 promise"></a>忘记处理 rejected 状态下取消 promise</h3><p>你知道吗当你忘记处理 promise rejection ， Chrome 控制台会抛出一个警告信息。</p>
+<h3 id="过度复杂"><a href="#过度复杂" class="headerlink" title="过度复杂"></a>过度复杂</h3><p><a href="https://github.com/tc39/proposal-cancelable-promises" target="_blank" rel="noopener">withdrawn TC39 proposal</a> 提出了使用独立的消息通道实现取消 promise 。它提出了一个叫做 cancellation token 的新概念。在我看来，这个解决方案会让 promise 规范变得臃肿，它的唯一作用是分离了 rejections 和 cancellations ，这是没有必要的。</p>
+<p>你是否希望基于 exception 或者 cancellation 来进行切换？这确实是 promise 的工作？我认为不是。</p>
+<h3 id="重新思考-Promise-Cancellation"><a href="#重新思考-Promise-Cancellation" class="headerlink" title="重新思考 Promise Cancellation"></a>重新思考 Promise Cancellation</h3><p>通常，在 promise 创建时传入所有需要的信息以确定如何 resolve / reject / cancel 这个promise 。这样就没有必要在 promise 上添加 <code>.cancel()</code> 函数了。你可能会有疑问，在 promise 创建的时候怎么知道是否可以取消。</p>
+<blockquote>
+<p><em>“If I don’t yet know whether or not to cancel, how will I know what to pass in when I create the promise?”</em></p>
+</blockquote>
+<p>如果只有某种对象可以代替未来的潜在的值…等一下。</p>
+<p>我们传入的那个代表是否取消的值可以是一个 promise 。可能是这样：</p>
+<script src="//gist.github.com/acb7f555a2f8b4ba93807105da5e11ae.js?file=cancellable-wait.js"></script>
+<p>我们使用的默认参数默认是不取消的。<code>cancel</code> 参数是可选的。像之前一样设定一个 settimeout ，不过会保存这个 timeout 的 ID 以便于在之后清理。</p>
+<p>我们使用 <code>cancel.then()</code> 方法来处理 cancellation 和资源清理。这个方法只会在 promise resolve 之前取消了才会执行。如果你太晚取消，你就错过了你的机会。火车已经驶离了车站。</p>
+<blockquote>
+<p><em>注意：你可能想知道 <code>noop()</code> 函数是做什么的。单词 noop 代表了 no-op，意思是空函数什么都不做。如果没有这个函数，V8 引擎会抛出警告：<code>UnhandledPromiseRejectionWarning: Unhandled promise rejection</code> 。永远都要处理 promise rejections 是一个好主意，即使是 <code>noop()</code> 函数。</em></p>
+</blockquote>
+<blockquote>
+<p><em>Note: You may be wondering what the noop() function is for. The word noop stands for no-op, meaning a function that does nothing. Without it, V8 will throw warnings: UnhandledPromiseRejectionWarning: Unhandled promise rejection. It’s a good idea to <strong>always handle promise rejections</strong>, even if your handler is a noop().</em></p>
+</blockquote>
+<h3 id="抽象-Promise-Cancellation"><a href="#抽象-Promise-Cancellation" class="headerlink" title="抽象 Promise Cancellation"></a>抽象 Promise Cancellation</h3><p>这对于 <code>wait()</code> 计时器是很好的，但是我们可以进一步抽象这个想法，封装所有你需要的：</p>
+<ol>
+<li><p>默认拒绝 cancel promise – 如果没有传入 cancel 到 promise ，我们不希望 cancel 或抛错。</p>
 </li>
-<li><p><strong>动态属性</strong> ：在向实例化的对象添加属性将强制更改隐藏类并减慢为先前隐藏类优化的任何方法。而是在其构造函数中分配所有对象的属性。</p>
+<li><p>记住因 cancellations 而 reject 时要进行清理。</p>
 </li>
-<li><p><strong>方法</strong> ：重复执行相同方法的代码将比仅执行一次许多不同方法的代码运行得更快（因为内联缓存）。</p>
-</li>
-<li><p><strong> 数组</strong> ：避免 keys 不是增量数字的稀疏数组。含有空元素的稀疏数组是<strong>哈希表</strong>。这种数组中的元素访问起来更加昂贵。另外，尽量避免预先分配大数组。最好的做法是随着你的需要慢慢的增大数组。最后，不要删除数组中的元素。它使 keys 稀疏。</p>
-</li>
-<li><p><strong>标记值</strong> ：V8 使用 32 位表示对象和数字。它使用一个位来知道它是一个对象（flag = 1）还是一个称为 SMI（SMall Integer）的整数（flag = 0），因为它是 31 位的。然后，如果数值大于 31 位，V8 将对该数字进行  封装 (box) ，将其变为双精度 (double) 并创建一个新对象以将数字放入其中。尽可能使用 31 位带符号的数字，以避免对 JS 对象进行昂贵的装箱操作。尽可能使用 31 位带符号的数字，以避免对 JS 对象进行昂贵的封装操作。</p>
+<li><p>记住 <code>onCancel</code> 的清理工作本身也会抛错，这个错误也需要处理。(注意上面的示例中省略了错误处理 – 很容易忘记！)</p>
 </li>
 </ol>
-<h2 id="资源-Resources"><a href="#资源-Resources" class="headerlink" title="资源 (Resources)"></a>资源 (Resources)</h2><ul>
-<li><p><a href="https://docs.google.com/document/u/1/d/1hOaE7vbwdLLXWj3C8hTnnkpE0qSa2P--dtDvwXXEeD0/pub" target="_blank" rel="noopener">Crankshafting from the ground up</a></p>
+<p>让我们来创建一个可取消的 promise 工具，你可以使用它来包装任何 promise 。例如，处理网络请求等… 方法前面如下所示：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">speculation(fn: SpecFunction, <span class="attr">shouldCancel</span>: <span class="built_in">Promise</span>) =&gt; <span class="built_in">Promise</span></span><br></pre></td></tr></table></figure>
+<p>SpecFunction 就像你传入 <code>Promis</code> 的构造函数一样，有一点不同 – 它有一个 <code>onCancel()</code> handler：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SpecFunction(resolve: <span class="built_in">Function</span>, <span class="attr">reject</span>: <span class="built_in">Function</span>, <span class="attr">onCancel</span>: <span class="built_in">Function</span>) =&gt; <span class="keyword">void</span></span><br></pre></td></tr></table></figure>
+<script src="//gist.github.com/3dcf478645b131c3259456794861840a.js?file=speculation.js"></script>
+<p>注意这个例子只是向你解释它是如何工作的。还有一些其他边界问题需要考虑。例如，这个版本的代码，promise 已经固定了，取消 promise 依然会调用 <code>handleCancel</code> 函数。</p>
+<p>我实现了一个生产版本，处理了边界问题的开源库，<a href="https://github.com/ericelliott/speculation" target="_blank" rel="noopener">Speculation</a> .</p>
+<p>让我们使用这个改进的抽象库来重写之前的 <code>wait()</code> 工具函数。首先安装 speculation：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --save speculation</span><br></pre></td></tr></table></figure>
+<p>现在你可以导入和使用它：</p>
+<script src="//gist.github.com/36ab3548b44a0833ddb3bb69745e18b9.js?file=wait-speculation.js"></script>
+<p>这简化了一些，因为你不需要关心 <code>noop()</code> ， 捕获 <code>onCancel()</code> ，函数或其他边界问题的错误。这些细节都被抽象到 <code>speculation()</code> 中了。随时在真实项目中使用它。</p>
+<h2 id="原生-JS-Promise-的附加内容"><a href="#原生-JS-Promise-的附加内容" class="headerlink" title="原生 JS Promise 的附加内容"></a>原生 JS Promise 的附加内容</h2><p>原生 Promise 对象有一些你可能感兴趣的附加内容：</p>
+<ul>
+<li><p><code>Promise.reject()</code> 返回一个 rejected promise 。</p>
 </li>
-<li><p><a href="https://github.com/thlorenz/v8-perf" target="_blank" rel="noopener">Notes and resources related to V8 and thus Node.js performance</a></p>
+<li><p><code>Promise.resolve()</code> 返回一个 resolved promise 。</p>
 </li>
-<li><p><a href="https://bugs.chromium.org/p/v8/adminIntro" target="_blank" rel="noopener">Project: v8</a></p>
+<li><p><code>Promise.race()</code> 接收一个 promise 数组 (或任何迭代器) 并且返回第一个 resolved (值) 或 rejected (原因) 的 promise 。</p>
 </li>
-<li><p><a href="https://mrale.ph/v8/resources.html" target="_blank" rel="noopener">V8 Resources</a></p>
+<li><p><code>Promise.all()</code> 接收一个 promise 数组 (或任何迭代器) 并且当迭代器中所有 promises 都 resolved 后返回一个 promise ，或者返回第一个 rejected (原因) 的 promise。</p>
 </li>
-<li><p><a href="https://www.youtube.com/watch?v=UJPdhx5zTaw" target="_blank" rel="noopener">Google I/O 2012 - Breaking the JavaScript Speed Limit with V8</a></p>
+</ul>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>Promises 已称为 JavaScript 语法的重要部分，包括用于 ajax 请求的 <a href="https://fetch.spec.whatwg.org/" target="_blank" rel="noopener">WHATWG Fetch</a> 标准，用于让异步代码看起来像同步代码的 <a href="https://tc39.github.io/ecmascript-asyncawait/" target="_blank" rel="noopener">Async Functions</a> 标准。</p>
+<p>在撰写本文时 (2017.1.23)，Async functions 还处于第3阶段，但我预测它们很快将成为 JavaScript 中异步编程的一种非常流行，非常有效的解决方案 – 这意味着在不久的将来，学习 promises 对 JavaScript 开发人员来说将变得更加重要。</p>
+<p>例如，如果你正在使用 Redux ，我建议你看下 <a href="">redux-saga</a>：一个用于管理 Redux 中副作用的库，整个文档都依赖于异步函数。</p>
+<p>我希望即使是有着丰富 promise 使用经验的开发人员在阅读完本文之后，能够对 promise 有更好的理解和 promise 是如何工作的，以及更好地去使用 promise 。</p>
+<h2 id="探索-‘Master-the-JavaScript-Interview’-系列"><a href="#探索-‘Master-the-JavaScript-Interview’-系列" class="headerlink" title="探索 ‘Master the JavaScript Interview’ 系列"></a>探索 ‘Master the JavaScript Interview’ 系列</h2><ul>
+<li><p><a href="https://medium.com/javascript-scene/master-the-javascript-interview-what-is-a-closure-b2f0d2152b36" target="_blank" rel="noopener">What is a Closure?</a></p>
 </li>
-<li><p><a href="https://www.youtube.com/watch?v=hWhMKalEicY" target="_blank" rel="noopener">V8: an open source JavaScript engine</a></p>
+<li><p><a href="https://medium.com/javascript-scene/master-the-javascript-interview-what-s-the-difference-between-class-prototypal-inheritance-e4cd0a7562e9" target="_blank" rel="noopener">What is the Difference Between Class and Prototypal Inheritance?</a></p>
+</li>
+<li><p><a href="https://medium.com/javascript-scene/master-the-javascript-interview-what-is-a-pure-function-d1c076bec976" target="_blank" rel="noopener">What is a Pure Function?</a></p>
+</li>
+<li><p><a href="https://medium.com/javascript-scene/master-the-javascript-interview-what-is-function-composition-20dfb109a1a0" target="_blank" rel="noopener">What is a Function Composition?</a></p>
+</li>
+<li><p><a href="https://medium.com/javascript-scene/master-the-javascript-interview-what-is-functional-programming-7f218c68b3a0" target="_blank" rel="noopener">What is a Function Programming?</a></p>
+</li>
+<li><p><a href="https://medium.com/javascript-scene/master-the-javascript-interview-what-is-a-promise-27fc71e77261" target="_blank" rel="noopener">What is a Promise?</a></p>
+</li>
+<li><p><a href="https://medium.com/javascript-scene/master-the-javascript-interview-soft-skills-a8a5fb02c466" target="_blank" rel="noopener">Soft Skills</a></p>
 </li>
 </ul>
 
@@ -650,8 +716,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/09/10/trans-6/" rel="next" title="【译】精通 JavaScript： 什么是纯函数（Pure Function）？">
-                <i class="fa fa-chevron-left"></i> 【译】精通 JavaScript： 什么是纯函数（Pure Function）？
+              <a href="/2018/08/29/trans-4/" rel="next" title="【译】精通 JavaScript： 类继承和原型继承的区别？">
+                <i class="fa fa-chevron-left"></i> 【译】精通 JavaScript： 类继承和原型继承的区别？
               </a>
             
           </div>
@@ -659,6 +725,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/09/03/trans-6/" rel="prev" title="【译】精通 JavaScript： 什么是纯函数（Pure Function）？">
+                【译】精通 JavaScript： 什么是纯函数（Pure Function）？ <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -822,7 +892,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#概述-Overview"><span class="nav-number">1.</span> <span class="nav-text">概述 (Overview)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#为什么创建了-V8-引擎"><span class="nav-number">2.</span> <span class="nav-text">为什么创建了 V8 引擎</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#V8-曾经有两个编译器"><span class="nav-number">3.</span> <span class="nav-text">V8 曾经有两个编译器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码嵌入-Inlining"><span class="nav-number">4.</span> <span class="nav-text">代码嵌入 (Inlining)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#隐藏类-Hidden-class"><span class="nav-number">5.</span> <span class="nav-text">隐藏类 (Hidden class)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#内联缓存-Inline-caching"><span class="nav-number">6.</span> <span class="nav-text">内联缓存 (Inline caching)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#编译成机器码-Compilation-to-machine-code"><span class="nav-number">7.</span> <span class="nav-text">编译成机器码 (Compilation to machine code)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#垃圾回收-Garbage-collection"><span class="nav-number">8.</span> <span class="nav-text">垃圾回收 (Garbage collection)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Ignition-和-TurboFan"><span class="nav-number">9.</span> <span class="nav-text">Ignition 和 TurboFan</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#如何编写优化的-JavaScript"><span class="nav-number">10.</span> <span class="nav-text">如何编写优化的 JavaScript</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#资源-Resources"><span class="nav-number">11.</span> <span class="nav-text">资源 (Resources)</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是-Promise？"><span class="nav-number">1.</span> <span class="nav-text">什么是 Promise？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Promise-的不完全历史"><span class="nav-number">2.</span> <span class="nav-text">Promise 的不完全历史</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Promises-是如何工作的"><span class="nav-number">3.</span> <span class="nav-text">Promises 是如何工作的</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Promise-的重要规则"><span class="nav-number">4.</span> <span class="nav-text">Promise 的重要规则</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Promise-链"><span class="nav-number">5.</span> <span class="nav-text">Promise 链</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Error-处理"><span class="nav-number">6.</span> <span class="nav-text">Error 处理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#如何取消一个-Promise？"><span class="nav-number">7.</span> <span class="nav-text">如何取消一个 Promise？</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#在-promise-中添加-cancel"><span class="nav-number">7.1.</span> <span class="nav-text">在 promise 中添加 .cancel()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#忘记清理"><span class="nav-number">7.2.</span> <span class="nav-text">忘记清理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#忘记处理-rejected-状态下取消-promise"><span class="nav-number">7.3.</span> <span class="nav-text">忘记处理 rejected 状态下取消 promise</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#过度复杂"><span class="nav-number">7.4.</span> <span class="nav-text">过度复杂</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#重新思考-Promise-Cancellation"><span class="nav-number">7.5.</span> <span class="nav-text">重新思考 Promise Cancellation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#抽象-Promise-Cancellation"><span class="nav-number">7.6.</span> <span class="nav-text">抽象 Promise Cancellation</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#原生-JS-Promise-的附加内容"><span class="nav-number">8.</span> <span class="nav-text">原生 JS Promise 的附加内容</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">9.</span> <span class="nav-text">总结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#探索-‘Master-the-JavaScript-Interview’-系列"><span class="nav-number">10.</span> <span class="nav-text">探索 ‘Master the JavaScript Interview’ 系列</span></a></li></ol></div>
             
 
           </div>

@@ -375,7 +375,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="lyn-ho.github.io/2018/09/15/trans-9/">
+    <link itemprop="mainEntityOfPage" href="lyn-ho.github.io/2018/09/14/trans-9/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Lyn Ho">
@@ -394,7 +394,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/09/15/trans-9/" itemprop="url">
+                <a class="post-title-link" href="/2018/09/14/trans-9/" itemprop="url">
                   【译】JavaScript 工作原理：V8 引擎中5个优化代码的技巧
                 </a>
               
@@ -421,9 +421,25 @@
                 
               
 
-              <time title="Created: 2018-09-15 22:59:05" itemprop="dateCreated datePublished" datetime="2018-09-15T22:59:05+08:00">2018-09-15</time>
+              <time title="Created: 2018-09-14 14:50:58" itemprop="dateCreated datePublished" datetime="2018-09-14T14:50:58+08:00">2018-09-14</time>
             
 
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2018-09-16 18:07:54" itemprop="dateModified" datetime="2018-09-16T18:07:54+08:00">2018-09-16</time>
+              
             
           </span>
 
@@ -435,7 +451,7 @@
 
           
           
-             <span id="/2018/09/15/trans-9/" class="leancloud_visitors" data-flag-title="【译】JavaScript 工作原理：V8 引擎中5个优化代码的技巧">
+             <span id="/2018/09/14/trans-9/" class="leancloud_visitors" data-flag-title="【译】JavaScript 工作原理：V8 引擎中5个优化代码的技巧">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -475,321 +491,7 @@
 <h2 id="概述-Overview"><a href="#概述-Overview" class="headerlink" title="概述 (Overview)"></a>概述 (Overview)</h2><p><strong>JavaScript 引擎</strong>是一个可以执行 JavaScript 代码的程序或解释器。 JavaScript 引擎可以是标准实现解释器或者是可以以某种方式实现编译 JavaScript 为字节码的即时编译器。</p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/09/15/trans-9/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="lyn-ho.github.io/2018/09/10/trans-6/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Lyn Ho">
-      <meta itemprop="description" content="Stay Hungry Stay Foolish">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Lyn's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/09/10/trans-6/" itemprop="url">
-                  【译】精通 JavaScript： 什么是纯函数（Pure Function）？
-                </a>
-              
-            
-          </h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2018-09-10 19:14:17" itemprop="dateCreated datePublished" datetime="2018-09-10T19:14:17+08:00">2018-09-10</time>
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2018/09/10/trans-6/" class="leancloud_visitors" data-flag-title="【译】精通 JavaScript： 什么是纯函数（Pure Function）？">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">Views: </span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <blockquote>
-<p>原文：<a href="https://medium.com/javascript-scene/master-the-javascript-interview-what-is-a-pure-function-d1c076bec976" target="_blank" rel="noopener">Master the JavaScript Interview: What is Pure Function?</a></p>
-</blockquote>
-<p><img src="https://cdn-images-1.medium.com/max/2000/1*gF8oCkYNvktBbAAG-nxYrg.jpeg" alt="Image: Pure - carnagenyc (CC BY 2.0)"></p>
-<p>纯函数对于包括函数式编程，可靠并发和 React+Redux apps 等用途至关重要。但是 “pure function” 是什么意思呢？</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/09/10/trans-6/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="lyn-ho.github.io/2018/09/10/trans-7/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Lyn Ho">
-      <meta itemprop="description" content="Stay Hungry Stay Foolish">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Lyn's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/09/10/trans-7/" itemprop="url">
-                  【译】精通 JavaScript： 什么是函数组合（Function Composition）？
-                </a>
-              
-            
-          </h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2018-09-10 19:14:17" itemprop="dateCreated datePublished" datetime="2018-09-10T19:14:17+08:00">2018-09-10</time>
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2018/09/10/trans-7/" class="leancloud_visitors" data-flag-title="【译】精通 JavaScript： 什么是函数组合（Function Composition）？">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">Views: </span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <blockquote>
-<p>原文：<a href="https://medium.com/javascript-scene/master-the-javascript-interview-what-is-function-composition-20dfb109a1a0" target="_blank" rel="noopener">Master the JavaScript Interview: What is Function Composition?</a></p>
-</blockquote>
-<p><img src="https://cdn-images-1.medium.com/max/2000/1*4trMikhKRHhSUlI2D6h_mA.jpeg" alt="Google Datacenter Pipes — Jorge Jorquera — (CC-BY-NC-ND-2.0)"></p>
-<blockquote>
-<p>“精通 JavaScript 面试” 是一个系列的文章，旨在帮助面试者准备他们在申请中高级职位时可能遇到的常见问题。这些是我在现实面试中经常提出的问题。</p>
-</blockquote>
-<p>函数式编程已经成为了 JavaScript 世界的一个热门话题。仅仅在几年前，甚至只有很少 JavaScript 开发者知道函数式编程，但是在过去的3年中我看到了大量使用函数式编程思维构建的应用。</p>
-<p>函数组合是将两个或多个函数组合以产生新函数的过程。将函数组合在一起就像是将一系列管道拼凑在一起，以便我们的数据流过。</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/09/10/trans-7/#more" rel="contents">
+            <a class="btn" href="/2018/09/14/trans-9/#more" rel="contents">
               Read more &raquo;
             </a>
           </div>
@@ -891,9 +593,25 @@
                 
               
 
-              <time title="Created: 2018-09-10 19:14:17" itemprop="dateCreated datePublished" datetime="2018-09-10T19:14:17+08:00">2018-09-10</time>
+              <time title="Created: 2018-09-10 16:58:58" itemprop="dateCreated datePublished" datetime="2018-09-10T16:58:58+08:00">2018-09-10</time>
             
 
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2018-09-16 18:07:23" itemprop="dateModified" datetime="2018-09-16T18:07:23+08:00">2018-09-16</time>
+              
             
           </span>
 
@@ -1000,7 +718,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="lyn-ho.github.io/2018/09/10/trans-5/">
+    <link itemprop="mainEntityOfPage" href="lyn-ho.github.io/2018/09/04/trans-7/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Lyn Ho">
@@ -1019,7 +737,353 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/09/10/trans-5/" itemprop="url">
+                <a class="post-title-link" href="/2018/09/04/trans-7/" itemprop="url">
+                  【译】精通 JavaScript： 什么是函数组合（Function Composition）？
+                </a>
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2018-09-04 17:08:58" itemprop="dateCreated datePublished" datetime="2018-09-04T17:08:58+08:00">2018-09-04</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2018-09-16 18:07:01" itemprop="dateModified" datetime="2018-09-16T18:07:01+08:00">2018-09-16</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2018/09/04/trans-7/" class="leancloud_visitors" data-flag-title="【译】精通 JavaScript： 什么是函数组合（Function Composition）？">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Views: </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <blockquote>
+<p>原文：<a href="https://medium.com/javascript-scene/master-the-javascript-interview-what-is-function-composition-20dfb109a1a0" target="_blank" rel="noopener">Master the JavaScript Interview: What is Function Composition?</a></p>
+</blockquote>
+<p><img src="https://cdn-images-1.medium.com/max/2000/1*4trMikhKRHhSUlI2D6h_mA.jpeg" alt="Google Datacenter Pipes — Jorge Jorquera — (CC-BY-NC-ND-2.0)"></p>
+<blockquote>
+<p>“精通 JavaScript 面试” 是一个系列的文章，旨在帮助面试者准备他们在申请中高级职位时可能遇到的常见问题。这些是我在现实面试中经常提出的问题。</p>
+</blockquote>
+<p>函数式编程已经成为了 JavaScript 世界的一个热门话题。仅仅在几年前，甚至只有很少 JavaScript 开发者知道函数式编程，但是在过去的3年中我看到了大量使用函数式编程思维构建的应用。</p>
+<p>函数组合是将两个或多个函数组合以产生新函数的过程。将函数组合在一起就像是将一系列管道拼凑在一起，以便我们的数据流过。</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/09/04/trans-7/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="lyn-ho.github.io/2018/09/03/trans-6/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Lyn Ho">
+      <meta itemprop="description" content="Stay Hungry Stay Foolish">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Lyn's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/09/03/trans-6/" itemprop="url">
+                  【译】精通 JavaScript： 什么是纯函数（Pure Function）？
+                </a>
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2018-09-03 17:13:58" itemprop="dateCreated datePublished" datetime="2018-09-03T17:13:58+08:00">2018-09-03</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2018-09-16 18:06:38" itemprop="dateModified" datetime="2018-09-16T18:06:38+08:00">2018-09-16</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2018/09/03/trans-6/" class="leancloud_visitors" data-flag-title="【译】精通 JavaScript： 什么是纯函数（Pure Function）？">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Views: </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <blockquote>
+<p>原文：<a href="https://medium.com/javascript-scene/master-the-javascript-interview-what-is-a-pure-function-d1c076bec976" target="_blank" rel="noopener">Master the JavaScript Interview: What is Pure Function?</a></p>
+</blockquote>
+<p><img src="https://cdn-images-1.medium.com/max/2000/1*gF8oCkYNvktBbAAG-nxYrg.jpeg" alt="Image: Pure - carnagenyc (CC BY 2.0)"></p>
+<p>纯函数对于包括函数式编程，可靠并发和 React+Redux apps 等用途至关重要。但是 “pure function” 是什么意思呢？</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/09/03/trans-6/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="lyn-ho.github.io/2018/08/30/trans-5/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Lyn Ho">
+      <meta itemprop="description" content="Stay Hungry Stay Foolish">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Lyn's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/08/30/trans-5/" itemprop="url">
                   【译】精通 JavaScript： 什么是 Promise？
                 </a>
               
@@ -1046,9 +1110,25 @@
                 
               
 
-              <time title="Created: 2018-09-10 19:14:17" itemprop="dateCreated datePublished" datetime="2018-09-10T19:14:17+08:00">2018-09-10</time>
+              <time title="Created: 2018-08-30 15:43:58" itemprop="dateCreated datePublished" datetime="2018-08-30T15:43:58+08:00">2018-08-30</time>
             
 
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2018-09-16 18:06:06" itemprop="dateModified" datetime="2018-09-16T18:06:06+08:00">2018-09-16</time>
+              
             
           </span>
 
@@ -1060,7 +1140,7 @@
 
           
           
-             <span id="/2018/09/10/trans-5/" class="leancloud_visitors" data-flag-title="【译】精通 JavaScript： 什么是 Promise？">
+             <span id="/2018/08/30/trans-5/" class="leancloud_visitors" data-flag-title="【译】精通 JavaScript： 什么是 Promise？">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -1102,7 +1182,7 @@
 <h2 id="什么是-Promise？"><a href="#什么是-Promise？" class="headerlink" title="什么是 Promise？"></a>什么是 Promise？</h2><p>Promise 是一个对象，在未来的某个时刻产生一个值：已完成 (resolved) 的值或者是未完成的原因(e.g. 网络错误)。Promise 可能是下面三种状态中的一种：fulfilled，rejected，pending 。Promise 提供回调来处理 fulfilled 返回的值或者 rejection 的原因。</p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/09/10/trans-5/#more" rel="contents">
+            <a class="btn" href="/2018/08/30/trans-5/#more" rel="contents">
               Read more &raquo;
             </a>
           </div>
@@ -1204,9 +1284,25 @@
                 
               
 
-              <time title="Created: 2018-08-29 21:31:15" itemprop="dateCreated datePublished" datetime="2018-08-29T21:31:15+08:00">2018-08-29</time>
+              <time title="Created: 2018-08-29 14:38:58" itemprop="dateCreated datePublished" datetime="2018-08-29T14:38:58+08:00">2018-08-29</time>
             
 
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2018-09-16 18:05:41" itemprop="dateModified" datetime="2018-09-16T18:05:41+08:00">2018-09-16</time>
+              
             
           </span>
 
@@ -1363,12 +1459,24 @@
                 
               
 
-              <time title="Created: 2018-08-27 00:25:59 / Modified: 00:32:37" itemprop="dateCreated datePublished" datetime="2018-08-27T00:25:59+08:00">2018-08-27</time>
+              <time title="Created: 2018-08-27 12:34:58" itemprop="dateCreated datePublished" datetime="2018-08-27T12:34:58+08:00">2018-08-27</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2018-09-16 18:05:19" itemprop="dateModified" datetime="2018-09-16T18:05:19+08:00">2018-09-16</time>
               
             
           </span>
@@ -1525,7 +1633,7 @@
                 
               
 
-              <time title="Created: 2018-08-24 20:35:11" itemprop="dateCreated datePublished" datetime="2018-08-24T20:35:11+08:00">2018-08-24</time>
+              <time title="Created: 2018-08-24 15:26:58" itemprop="dateCreated datePublished" datetime="2018-08-24T15:26:58+08:00">2018-08-24</time>
             
 
             
@@ -1542,7 +1650,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2018-08-27 00:28:16" itemprop="dateModified" datetime="2018-08-27T00:28:16+08:00">2018-08-27</time>
+                <time title="Modified: 2018-09-16 18:04:32" itemprop="dateModified" datetime="2018-09-16T18:04:32+08:00">2018-09-16</time>
               
             
           </span>
@@ -1653,7 +1761,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="lyn-ho.github.io/2018/08/24/trans-1/">
+    <link itemprop="mainEntityOfPage" href="lyn-ho.github.io/2018/08/22/trans-1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Lyn Ho">
@@ -1672,7 +1780,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/08/24/trans-1/" itemprop="url">
+                <a class="post-title-link" href="/2018/08/22/trans-1/" itemprop="url">
                   【译】JavaScript 工程师需要知道的十道面试题
                 </a>
               
@@ -1699,7 +1807,7 @@
                 
               
 
-              <time title="Created: 2018-08-24 20:35:11" itemprop="dateCreated datePublished" datetime="2018-08-24T20:35:11+08:00">2018-08-24</time>
+              <time title="Created: 2018-08-22 09:34:58" itemprop="dateCreated datePublished" datetime="2018-08-22T09:34:58+08:00">2018-08-22</time>
             
 
             
@@ -1716,7 +1824,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2018-08-27 00:29:45" itemprop="dateModified" datetime="2018-08-27T00:29:45+08:00">2018-08-27</time>
+                <time title="Modified: 2018-09-16 18:03:41" itemprop="dateModified" datetime="2018-09-16T18:03:41+08:00">2018-09-16</time>
               
             
           </span>
@@ -1729,7 +1837,7 @@
 
           
           
-             <span id="/2018/08/24/trans-1/" class="leancloud_visitors" data-flag-title="【译】JavaScript 工程师需要知道的十道面试题">
+             <span id="/2018/08/22/trans-1/" class="leancloud_visitors" data-flag-title="【译】JavaScript 工程师需要知道的十道面试题">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -1768,7 +1876,7 @@
 <h2 id="你能说出两个对-JavaScript-应用程序开发人员很重要的编程范式吗？"><a href="#你能说出两个对-JavaScript-应用程序开发人员很重要的编程范式吗？" class="headerlink" title="你能说出两个对 JavaScript 应用程序开发人员很重要的编程范式吗？"></a>你能说出两个对 JavaScript 应用程序开发人员很重要的编程范式吗？</h2><p>JavaScript 是一个多范式语言，通过 <strong>OOP</strong> （面向对象编程）和 <strong>函数式</strong> 编程使其支持 <strong>命令式/过程式</strong> 编程。JavaScript 支持以原型链继承方式的 OOP。</p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/08/24/trans-1/#more" rel="contents">
+            <a class="btn" href="/2018/08/22/trans-1/#more" rel="contents">
               Read more &raquo;
             </a>
           </div>

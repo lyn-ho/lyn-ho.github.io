@@ -4,12 +4,12 @@
 
     
   <url>
-    <loc>lyn-ho.github.io/2018/09/15/trans-9/</loc>
-    <lastmod>2018-09-15T14:59:05.513Z</lastmod>
+    <loc>lyn-ho.github.io/2018/09/14/trans-9/</loc>
+    <lastmod>2018-09-16T10:07:54.850Z</lastmod>
     <data>
         <display>
         <title>【译】JavaScript 工作原理：V8 引擎中5个优化代码的技巧</title>
-        <pubTime>2018-09-15T14:59:05.513Z</pubTime>
+        <pubTime>2018-09-14T06:50:58.000Z</pubTime>
         
         <tag>JavaScript</tag>
          
@@ -22,11 +22,11 @@
     
   <url>
     <loc>lyn-ho.github.io/2018/09/10/trans-8/</loc>
-    <lastmod>2018-09-10T11:14:17.491Z</lastmod>
+    <lastmod>2018-09-16T10:07:23.577Z</lastmod>
     <data>
         <display>
         <title>【译】JavaScript 工作原理：JS 引擎，runtime 和调用栈的概述</title>
-        <pubTime>2018-09-10T11:14:17.490Z</pubTime>
+        <pubTime>2018-09-10T08:58:58.000Z</pubTime>
         
         <tag>JavaScript</tag>
          
@@ -38,46 +38,46 @@
 
     
   <url>
-    <loc>lyn-ho.github.io/2018/09/10/trans-6/</loc>
-    <lastmod>2018-09-10T11:14:17.490Z</lastmod>
-    <data>
-        <display>
-        <title>【译】精通 JavaScript： 什么是纯函数（Pure Function）？</title>
-        <pubTime>2018-09-10T11:14:17.490Z</pubTime>
-        
-        <tag>JavaScript</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>lyn-ho.github.io/2018/09/10/trans-5/</loc>
-    <lastmod>2018-09-10T11:14:17.490Z</lastmod>
-    <data>
-        <display>
-        <title>【译】精通 JavaScript： 什么是 Promise？</title>
-        <pubTime>2018-09-10T11:14:17.489Z</pubTime>
-        
-        <tag>JavaScript</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>lyn-ho.github.io/2018/09/10/trans-7/</loc>
-    <lastmod>2018-09-10T11:14:17.490Z</lastmod>
+    <loc>lyn-ho.github.io/2018/09/04/trans-7/</loc>
+    <lastmod>2018-09-16T10:07:01.162Z</lastmod>
     <data>
         <display>
         <title>【译】精通 JavaScript： 什么是函数组合（Function Composition）？</title>
-        <pubTime>2018-09-10T11:14:17.490Z</pubTime>
+        <pubTime>2018-09-04T09:08:58.000Z</pubTime>
+        
+        <tag>JavaScript</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>lyn-ho.github.io/2018/09/03/trans-6/</loc>
+    <lastmod>2018-09-16T10:06:38.958Z</lastmod>
+    <data>
+        <display>
+        <title>【译】精通 JavaScript： 什么是纯函数（Pure Function）？</title>
+        <pubTime>2018-09-03T09:13:58.000Z</pubTime>
+        
+        <tag>JavaScript</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>lyn-ho.github.io/2018/08/30/trans-5/</loc>
+    <lastmod>2018-09-16T10:06:06.248Z</lastmod>
+    <data>
+        <display>
+        <title>【译】精通 JavaScript： 什么是 Promise？</title>
+        <pubTime>2018-08-30T07:43:58.000Z</pubTime>
         
         <tag>JavaScript</tag>
          
@@ -90,11 +90,11 @@
     
   <url>
     <loc>lyn-ho.github.io/2018/08/29/trans-4/</loc>
-    <lastmod>2018-08-29T13:31:15.025Z</lastmod>
+    <lastmod>2018-09-16T10:05:41.914Z</lastmod>
     <data>
         <display>
         <title>【译】精通 JavaScript： 类继承和原型继承的区别？</title>
-        <pubTime>2018-08-29T13:31:15.025Z</pubTime>
+        <pubTime>2018-08-29T06:38:58.000Z</pubTime>
         
         <tag>JavaScript</tag>
          
@@ -107,11 +107,11 @@
     
   <url>
     <loc>lyn-ho.github.io/2018/08/27/trans-3/</loc>
-    <lastmod>2018-08-26T16:32:37.330Z</lastmod>
+    <lastmod>2018-09-16T10:05:19.942Z</lastmod>
     <data>
         <display>
         <title>【译】精通 JavaScript： 什么是闭包（Closure）？</title>
-        <pubTime>2018-08-26T16:25:59.103Z</pubTime>
+        <pubTime>2018-08-27T04:34:58.000Z</pubTime>
         
         <tag>JavaScript</tag>
          
@@ -123,13 +123,15 @@
 
     
   <url>
-    <loc>lyn-ho.github.io/2018/08/24/trans-1/</loc>
-    <lastmod>2018-08-26T16:29:45.743Z</lastmod>
+    <loc>lyn-ho.github.io/2018/08/24/trans-2/</loc>
+    <lastmod>2018-09-16T10:04:32.575Z</lastmod>
     <data>
         <display>
-        <title>【译】JavaScript 工程师需要知道的十道面试题</title>
-        <pubTime>2018-08-24T12:35:11.679Z</pubTime>
+        <title>【译】精通 JavaScript： 什么是函数式编程（Functional Programming）？</title>
+        <pubTime>2018-08-24T07:26:58.000Z</pubTime>
         
+        <tag>JavaScript</tag>
+         
          
            
         </display>
@@ -138,12 +140,12 @@
 
     
   <url>
-    <loc>lyn-ho.github.io/2018/08/24/trans-2/</loc>
-    <lastmod>2018-08-26T16:28:16.522Z</lastmod>
+    <loc>lyn-ho.github.io/2018/08/22/trans-1/</loc>
+    <lastmod>2018-09-16T10:03:41.178Z</lastmod>
     <data>
         <display>
-        <title>【译】精通 JavaScript： 什么是函数式编程（Functional Programming）？</title>
-        <pubTime>2018-08-24T12:35:11.680Z</pubTime>
+        <title>【译】JavaScript 工程师需要知道的十道面试题</title>
+        <pubTime>2018-08-22T01:34:58.000Z</pubTime>
         
         <tag>JavaScript</tag>
          
