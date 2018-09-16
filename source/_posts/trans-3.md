@@ -1,7 +1,8 @@
 ---
 title: 【译】精通 JavaScript： 什么是闭包（Closure）？
 tags:
-    - JavaScript
+  - JavaScript
+abbrlink: 3b887bb4
 date: 2018-08-27 12:34:58
 ---
 

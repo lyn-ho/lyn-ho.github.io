@@ -1,7 +1,8 @@
 ---
 title: 【译】精通 JavaScript： 什么是函数组合（Function Composition）？
 tags:
-    - JavaScript
+  - JavaScript
+abbrlink: 8e5d7b3b
 date: 2018-09-04 17:08:58
 ---
 

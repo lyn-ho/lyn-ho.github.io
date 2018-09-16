@@ -1,7 +1,8 @@
 ---
 title: 【译】精通 JavaScript： 什么是函数式编程（Functional Programming）？
 tags:
-    - JavaScript
+  - JavaScript
+abbrlink: 25329c80
 date: 2018-08-24 15:26:58
 ---
 

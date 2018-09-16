@@ -1,7 +1,8 @@
 ---
 title: 【译】JavaScript 工作原理：JS 引擎，runtime 和调用栈的概述
 tags:
-    - JavaScript
+  - JavaScript
+abbrlink: b2f2d94f
 date: 2018-09-10 16:58:58
 ---
 

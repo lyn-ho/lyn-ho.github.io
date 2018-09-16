@@ -2,6 +2,7 @@
 title: 【译】JavaScript 工作原理：V8 引擎中5个优化代码的技巧
 tags:
   - JavaScript
+abbrlink: 4d26265b
 date: 2018-09-14 14:50:58
 ---
 

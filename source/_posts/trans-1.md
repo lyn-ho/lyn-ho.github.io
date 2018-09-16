@@ -1,7 +1,8 @@
 ---
 title: 【译】JavaScript 工程师需要知道的十道面试题
 tags:
-    - JavaScript
+  - JavaScript
+abbrlink: 637b26df
 date: 2018-08-22 09:34:58
 ---
 

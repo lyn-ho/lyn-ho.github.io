@@ -1,7 +1,8 @@
 ---
 title: 【译】精通 JavaScript： 类继承和原型继承的区别？
-tag: 
-    - JavaScript
+tag:
+  - JavaScript
+abbrlink: 48b81a71
 date: 2018-08-29 14:38:58
 ---
 

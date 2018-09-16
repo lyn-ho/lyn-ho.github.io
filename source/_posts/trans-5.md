@@ -1,7 +1,8 @@
 ---
 title: 【译】精通 JavaScript： 什么是 Promise？
 tags:
-    - JavaScript
+  - JavaScript
+abbrlink: 6a904bf2
 date: 2018-08-30 15:43:58
 ---
 

@@ -1,7 +1,8 @@
 ---
 title: 【译】精通 JavaScript： 什么是纯函数（Pure Function）？
 tags:
-    - JavaScript
+  - JavaScript
+abbrlink: b4cbde14
 date: 2018-09-03 17:13:58
 ---
 
