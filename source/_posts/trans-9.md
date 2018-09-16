@@ -2,6 +2,7 @@
 title: 【译】JavaScript 工作原理：V8 引擎中5个优化代码的技巧
 tags:
   - JavaScript
+date: 2018-09-14 14:50:58
 ---
 
 > 原文：[How JavaScript works: inside the V8 engine + 5 tips on how to write optimized code](https://blog.sessionstack.com/how-javascript-works-inside-the-v8-engine-5-tips-on-how-to-write-optimized-code-ac089e62b12e)

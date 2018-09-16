@@ -2,6 +2,7 @@
 title: 【译】精通 JavaScript： 类继承和原型继承的区别？
 tag: 
     - JavaScript
+date: 2018-08-29 14:38:58
 ---
 
 ![Electric Guitar](https://cdn-images-1.medium.com/max/2000/1*rtVyaoswTo9iljufAz7Y8A.jpeg)

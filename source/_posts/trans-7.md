@@ -2,6 +2,7 @@
 title: 【译】精通 JavaScript： 什么是函数组合（Function Composition）？
 tags:
     - JavaScript
+date: 2018-09-04 17:08:58
 ---
 
 > 原文：[Master the JavaScript Interview: What is Function Composition?](https://medium.com/javascript-scene/master-the-javascript-interview-what-is-function-composition-20dfb109a1a0)

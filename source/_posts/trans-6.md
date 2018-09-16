@@ -2,6 +2,7 @@
 title: 【译】精通 JavaScript： 什么是纯函数（Pure Function）？
 tags:
     - JavaScript
+date: 2018-09-03 17:13:58
 ---
 
 > 原文：[Master the JavaScript Interview: What is Pure Function?](https://medium.com/javascript-scene/master-the-javascript-interview-what-is-a-pure-function-d1c076bec976)

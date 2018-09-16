@@ -1,5 +1,8 @@
 ---
 title: 【译】JavaScript 工程师需要知道的十道面试题
+tags:
+    - JavaScript
+date: 2018-08-22 09:34:58
 ---
 
 ![Bruce Lee](https://cdn-images-1.medium.com/max/2000/1*RPKQq3zYYddwJf9rSeQ4Dg.jpeg)

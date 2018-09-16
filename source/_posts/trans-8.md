@@ -2,6 +2,7 @@
 title: 【译】JavaScript 工作原理：JS 引擎，runtime 和调用栈的概述
 tags:
     - JavaScript
+date: 2018-09-10 16:58:58
 ---
 
 > 原文：[How JavaScript works: an overview of the engine, the runtime, and the call stack](https://blog.sessionstack.com/how-does-javascript-actually-work-part-1-b0bacc073cf)

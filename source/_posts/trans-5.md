@@ -2,6 +2,7 @@
 title: 【译】精通 JavaScript： 什么是 Promise？
 tags:
     - JavaScript
+date: 2018-08-30 15:43:58
 ---
 
 > 原文：[Master the JavaScript Interview: What is a Promise?](https://medium.com/javascript-scene/master-the-javascript-interview-what-is-a-promise-27fc71e77261)
