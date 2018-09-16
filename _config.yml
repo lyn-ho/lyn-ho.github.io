@@ -79,7 +79,7 @@ theme: next
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repo: https://8006d74c5adb8963c73e6934b656cb7ab692c8e1@github.com/lyn-ho/lyn-ho.github.io.git
+  repo: https://github.com/lyn-ho/lyn-ho.github.io.git
   name: Lyn Ho
   email: lyn1107130806@gmail.com
   branch: master
