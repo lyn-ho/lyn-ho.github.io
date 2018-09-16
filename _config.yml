@@ -113,5 +113,5 @@ fancybox: true
 # Specify the date when the site was setup
 since: 2018
 
-plugins:
-  - hexo-footnotes
+# plugins:
+#   - hexo-footnotes
