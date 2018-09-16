@@ -1,28 +1,11 @@
 language: node_js
-node_js: 8.9.1
-
-# S: Build Lifecycle
-install:
-  - npm install
-
+node_js: 
+  - 8.9.1
+before_script:
+  - git config user.name "Lyn Ho"
+  - git config user.email "lyn1107130806@gmail.com"
+  - sed -i'' "s~https://github.com/lyn-ho/lyn-ho.github.io.git~https://${TravisCI}@github.com/lyn-ho/lyn-ho.github.io.git~" _config.yml
 script:
   - hexo clean
   - hexo g
-
-after_script:
-  - cd ./public
-  - git init
-  - git config user.name "Lyn Ho" 
-  - git config user.email "lyn1107130806@gmail.com"
-  - git add .
-  - git commit -m "Update docs"
-  - git push --force --quiet "https://${GH_TOKEN}@${GH_REF}" master:master
-# E: Build LifeCycle
-
-branches:
-  only:
-    - gh-pages
-env:
- global:
-   - GH_REF: https://github.com/lyn-ho/lyn-ho.github.io.git
-   - GH_TOKEN: 8006d74c5adb8963c73e6934b656cb7ab692c8e1
+  - hexo d
