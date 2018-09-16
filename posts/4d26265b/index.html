@@ -144,27 +144,33 @@
 
 
 
-  <meta name="description" content="原文：Master the JavaScript Interview: What is a Closure?   “精通 JavaScript 面试” 是一个系列的文章，旨在帮助面试者准备他们在申请中高级职位时可能遇到的常见问题。这些是我在现实面试中经常提出的问题。  什么是闭包通常是我 JavaScript 面试的第一个和最后一个问题。坦白说，如果你不理解闭包你就不能深入掌握 JavaSc">
+  <meta name="description" content="原文：How JavaScript works: inside the V8 engine + 5 tips on how to write optimized code  几个星期之前，我们开始了一个旨在深入挖掘 JavaScript 及其实际工作原理的系列文章，我们认为，通过了解 JavaScript 的底层构建以及它们是如何协作的，你将能够编写更好的代码和应用。 第一篇文章主要关注引擎，">
 <meta name="keywords" content="JavaScript">
 <meta property="og:type" content="article">
-<meta property="og:title" content="【译】精通 JavaScript： 什么是闭包（Closure）？">
-<meta property="og:url" content="lyn-ho.github.io/2018/08/27/trans-3/index.html">
+<meta property="og:title" content="【译】JavaScript 工作原理：V8 引擎中5个优化代码的技巧">
+<meta property="og:url" content="lyn-ho.github.io/posts/4d26265b/index.html">
 <meta property="og:site_name" content="Lyn&#39;s Blog">
-<meta property="og:description" content="原文：Master the JavaScript Interview: What is a Closure?   “精通 JavaScript 面试” 是一个系列的文章，旨在帮助面试者准备他们在申请中高级职位时可能遇到的常见问题。这些是我在现实面试中经常提出的问题。  什么是闭包通常是我 JavaScript 面试的第一个和最后一个问题。坦白说，如果你不理解闭包你就不能深入掌握 JavaSc">
+<meta property="og:description" content="原文：How JavaScript works: inside the V8 engine + 5 tips on how to write optimized code  几个星期之前，我们开始了一个旨在深入挖掘 JavaScript 及其实际工作原理的系列文章，我们认为，通过了解 JavaScript 的底层构建以及它们是如何协作的，你将能够编写更好的代码和应用。 第一篇文章主要关注引擎，">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="https://cdn-images-1.medium.com/max/2000/1*J-jjDviwGUfzka1HX5LG9A.jpeg">
-<meta property="og:updated_time" content="2018-09-16T10:05:19.942Z">
+<meta property="og:image" content="https://cdn-images-1.medium.com/max/1600/1*AKKvE3QmN_ZQmEzSj16oXg.png">
+<meta property="og:image" content="https://cdn-images-1.medium.com/max/1600/0*RRgTDdRfLGEhuR7U.png">
+<meta property="og:image" content="https://cdn-images-1.medium.com/max/1600/1*pVnIrMZiB9iAz5sW28AixA.png">
+<meta property="og:image" content="https://cdn-images-1.medium.com/max/1600/1*QsVUE3snZD9abYXccg6Sgw.png">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2017/11/18/15fcec13180b6f2e?imageView2/0/w/1280/h/960/format/webp/ignore-error/1">
+<meta property="og:image" content="https://cdn-images-1.medium.com/max/1600/1*iHfI6MQ-YKQvWvo51J-P0w.png">
+<meta property="og:image" content="https://cdn-images-1.medium.com/max/1600/0*pohqKvj9psTPRlOv.png">
+<meta property="og:updated_time" content="2018-09-16T10:07:54.850Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="【译】精通 JavaScript： 什么是闭包（Closure）？">
-<meta name="twitter:description" content="原文：Master the JavaScript Interview: What is a Closure?   “精通 JavaScript 面试” 是一个系列的文章，旨在帮助面试者准备他们在申请中高级职位时可能遇到的常见问题。这些是我在现实面试中经常提出的问题。  什么是闭包通常是我 JavaScript 面试的第一个和最后一个问题。坦白说，如果你不理解闭包你就不能深入掌握 JavaSc">
-<meta name="twitter:image" content="https://cdn-images-1.medium.com/max/2000/1*J-jjDviwGUfzka1HX5LG9A.jpeg">
+<meta name="twitter:title" content="【译】JavaScript 工作原理：V8 引擎中5个优化代码的技巧">
+<meta name="twitter:description" content="原文：How JavaScript works: inside the V8 engine + 5 tips on how to write optimized code  几个星期之前，我们开始了一个旨在深入挖掘 JavaScript 及其实际工作原理的系列文章，我们认为，通过了解 JavaScript 的底层构建以及它们是如何协作的，你将能够编写更好的代码和应用。 第一篇文章主要关注引擎，">
+<meta name="twitter:image" content="https://cdn-images-1.medium.com/max/1600/1*AKKvE3QmN_ZQmEzSj16oXg.png">
 
 
 
 
 
 
-  <link rel="canonical" href="lyn-ho.github.io/2018/08/27/trans-3/"/>
+  <link rel="canonical" href="lyn-ho.github.io/posts/4d26265b/"/>
 
 
 
@@ -174,7 +180,7 @@
   };
 </script>
 
-  <title>【译】精通 JavaScript： 什么是闭包（Closure）？ | Lyn's Blog</title>
+  <title>【译】JavaScript 工作原理：V8 引擎中5个优化代码的技巧 | Lyn's Blog</title>
   
 
 
@@ -378,7 +384,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="lyn-ho.github.io/2018/08/27/trans-3/">
+    <link itemprop="mainEntityOfPage" href="lyn-ho.github.io/posts/4d26265b/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Lyn Ho">
@@ -395,7 +401,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">【译】精通 JavaScript： 什么是闭包（Closure）？
+          <h2 class="post-title" itemprop="name headline">【译】JavaScript 工作原理：V8 引擎中5个优化代码的技巧
               
             
           </h2>
@@ -420,7 +426,7 @@
                 
               
 
-              <time title="Created: 2018-08-27 12:34:58" itemprop="dateCreated datePublished" datetime="2018-08-27T12:34:58+08:00">2018-08-27</time>
+              <time title="Created: 2018-09-14 14:50:58" itemprop="dateCreated datePublished" datetime="2018-09-14T14:50:58+08:00">2018-09-14</time>
             
 
             
@@ -437,7 +443,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2018-09-16 18:05:19" itemprop="dateModified" datetime="2018-09-16T18:05:19+08:00">2018-09-16</time>
+                <time title="Modified: 2018-09-16 18:07:54" itemprop="dateModified" datetime="2018-09-16T18:07:54+08:00">2018-09-16</time>
               
             
           </span>
@@ -451,8 +457,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/08/27/trans-3/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">Comments: </span> <span class="post-comments-count gitment-comments-count" data-xid="/2018/08/27/trans-3/" itemprop="commentsCount"></span>
+                <a href="/posts/4d26265b/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">Comments: </span> <span class="post-comments-count gitment-comments-count" data-xid="/posts/4d26265b/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -460,7 +466,7 @@
 
           
           
-             <span id="/2018/08/27/trans-3/" class="leancloud_visitors" data-flag-title="【译】精通 JavaScript： 什么是闭包（Closure）？">
+             <span id="/posts/4d26265b/" class="leancloud_visitors" data-flag-title="【译】JavaScript 工作原理：V8 引擎中5个优化代码的技巧">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -491,56 +497,122 @@
       
 
       
-        <p><img src="https://cdn-images-1.medium.com/max/2000/1*J-jjDviwGUfzka1HX5LG9A.jpeg" alt="closure"></p>
-<blockquote>
-<p>原文：<a href="https://medium.com/javascript-scene/master-the-javascript-interview-what-is-a-closure-b2f0d2152b36" target="_blank" rel="noopener">Master the JavaScript Interview: What is a Closure?</a></p>
+        <blockquote>
+<p>原文：<a href="https://blog.sessionstack.com/how-javascript-works-inside-the-v8-engine-5-tips-on-how-to-write-optimized-code-ac089e62b12e" target="_blank" rel="noopener">How JavaScript works: inside the V8 engine + 5 tips on how to write optimized code</a></p>
 </blockquote>
-<blockquote>
-<p>“精通 JavaScript 面试” 是一个系列的文章，旨在帮助面试者准备他们在申请中高级职位时可能遇到的常见问题。这些是我在现实面试中经常提出的问题。</p>
-</blockquote>
-<p>什么是闭包通常是我 JavaScript 面试的第一个和最后一个问题。坦白说，如果你不理解闭包你就不能深入掌握 JavaScript。</p>
+<p>几个星期之前，我们开始了一个旨在深入挖掘 JavaScript 及其实际工作原理的系列文章，我们认为，通过了解 JavaScript 的底层构建以及它们是如何协作的，你将能够编写更好的代码和应用。</p>
+<p><a href="https://blog.sessionstack.com/how-does-javascript-actually-work-part-1-b0bacc073cf" target="_blank" rel="noopener">第一篇文章</a>主要关注引擎，运行时和调用栈的概述。 第二篇文章将深入探讨 Google’s V8 引擎内部。我们还提供了一些关于如何编写更好的 JavaScript 代码的快速提示 —— 我们 <a href="https://www.sessionstack.com/" target="_blank" rel="noopener">SessionStack</a> 开发团队在构建产品时  遵循的最佳实践。</p>
+<h2 id="概述-Overview"><a href="#概述-Overview" class="headerlink" title="概述 (Overview)"></a>概述 (Overview)</h2><p><strong>JavaScript 引擎</strong>是一个可以执行 JavaScript 代码的程序或解释器。 JavaScript 引擎可以是标准实现解释器或者是可以以某种方式实现编译 JavaScript 为字节码的即时编译器。</p>
 <a id="more"></a>
-<p>你别含糊其辞，但是你真的理解如何构建一个严肃的 JavaScript 程序吗？你真的明白发生了什么，或者程序是如何运行的。我有疑虑，如果不知道这个问题的答案是一个非常危险的信号。</p>
-<p>你不仅应该知道闭包的机制，还应该知道闭包为什么重要，并且可以轻易回答闭包的几个应用场景。</p>
-<p>在 JavaScript 中，闭包通常用于数据私有，事件处理和毁掉函数，以及 <a href="https://medium.com/javascript-scene/curry-or-partial-application-8150044c78b8#.l4b6l1i3x" target="_blank" rel="noopener">偏函数应用(Partial Applications)和柯里化(Currying)</a> ,还有其他函数式编程模式。</p>
-<p>我不在乎面试者是否知道 “closure” 这个单词或它的专业定义。我只想知道他们是否知道闭包的基本原理。如果不知道，通常代表他们没有很多构建真正 JavaScript 应用的经验。</p>
-<blockquote>
-<p><em>If you can’t answer this question, you’re a junior developer. I don’t care how long you’ve been coding.</em></p>
-</blockquote>
-<blockquote>
-<p>That may sound mean, but it’s not. What I mean is that most competent interviewers will ask you what a closure is, and most of the time, getting the answer wrong will cost you the job. Or if you’re lucky enough to get an offer anyway, it will cost you potentially tens of thousands of dollars per year in pay because you’ll be hired as a junior instead of a senior level developer, regardless of how long you’ve been coding.</p>
-</blockquote>
-<p>快速准备一下：“你能说出两种闭包的通用场景？”</p>
-<h2 id="什么是闭包"><a href="#什么是闭包" class="headerlink" title="什么是闭包"></a>什么是闭包</h2><p>闭包是绑定函数和引用其周围的状态的组合 <strong>(词法环境 lexical environment)</strong>。换句话说，闭包可以让内部函数访问外部函数的作用域。在 JavaScript 中，每次创建函数时，都会在创建函数时创建闭包。</p>
-<p>使用闭包，只需在另一个函数内定义一个函数并且公开出来。通过返回或传递给另一个函数来公开这个函数。</p>
-<p>内部函数可以访问外部函数作用域的变量，即使外部函数完成返回了。</p>
-<h2 id="使用闭包-例子"><a href="#使用闭包-例子" class="headerlink" title="使用闭包 (例子)"></a>使用闭包 (例子)</h2><p>闭包通常用于对象数据私有化。数据私有是让我们能够面向接口编程而不是实现编程的基础。这是可以帮助我们构建强壮软件的一个重要概念。因为实现细节比接口更容易改变。</p>
-<blockquote>
-<p><em>“Program to an interface, not an implementation.”</em></p>
-</blockquote>
-<blockquote>
-<p><em><a href="http://www.amazon.com/gp/product/B000SEIBB8?ie=UTF8&amp;camp=213733&amp;creative=393177&amp;creativeASIN=B000SEIBB8&amp;linkCode=shr&amp;tag=eejs-20&amp;linkId=CSQYBHTUP625XI4T" target="_blank" rel="noopener">Design Patterns: Elements of Reusable Object Oriented Software</a></em></p>
-</blockquote>
-<p>在 JavaScript 中，闭包是用于实现数据私有的主要机制。当你使用闭包实现数据私有时，被封装的数据只能在闭包函数作用域中使用。你无法绕过对象 <strong>被授权的方法(privileged methods)</strong> 在外部访问这些数据。任何在闭包作用域内定义的公开方法都是特权方法。例如：</p>
-<script src="//gist.github.com/6fb9890ce1ffb14bad9f059adc4a2f0d.js?file=data-privacy-example.js"></script>
-<p>在上面的例子中，’.get()’ 方法定义在 <code>getSecret()</code> 方法的作用域内，它可以访问<code>getSecret()</code> 中的任何变量，于是它就是一个被授权的方法。在这个例子中，它可以访问参数 <code>secret</code>。</p>
-<p>对象不是产生数据私有的唯一方法。闭包也可以用于创建有状态函数，其返回值可能受其内部状态影响，e.g.:</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> secret = <span class="function"><span class="params">msg</span> =&gt;</span> () =&gt; msg;</span><br></pre></td></tr></table></figure>
-<script src="//gist.github.com/b16af817ec53ad8bbb49875aa4795e74.js?file=secret.js"></script>
-<p>在函数式编程中，闭包通常用于偏函数应用和柯里化。为了理解这些，我们需要一些定义：</p>
-<p><strong>应用程序</strong>：一个应用给定参数并产生一个返回值的过程。</p>
-<p><strong>偏函数应用</strong>：一个应用部分参数的函数的过程。并返回一个新函数作为参数。换句话说，应用一个具有多个参数的函数并返回一个较少参数的函数。偏函数应用先使用一个或部分参数在将要返回的函数中，等待返回的函数调用剩余的参数来完成整个应用。</p>
-<p>偏函数应用利用闭包作用域来提前使用部分参数。你可以实现一个通用函数来赋予指定函数部分参数。如下所示：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">partialApply(targetFunction: <span class="built_in">Function</span>, ...fixedArgs: Any[]) =&gt;</span><br><span class="line">  functionWithFewerParams(...remainingArgs: Any[])</span><br></pre></td></tr></table></figure>
-<p>如果你想进一步了解，请看 <a href="https://github.com/ericelliott/rtype#reading-function-signatures" target="_blank" rel="noopener">Rtype: Reading Function Signatures</a></p>
-<p>利用一个接受任意参数的函数，赋予我们指定的参数。并且返回一个新函数接受剩余的参数。</p>
-<p>这个例子将会帮助你理解。你现在又一个 求两个数的和 的函数：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> add = <span class="function">(<span class="params">a, b</span>) =&gt;</span> a + b;</span><br></pre></td></tr></table></figure>
-<p>现在你想要一个 10 加任意数字的函数。我们称它为 <code>add10()</code>。<code>add10(5)</code> 的结果应该是15. <code>partialApply()</code> 函数将会实现它。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> add10 = partialApply(add, <span class="number">10</span>)</span><br><span class="line">add10(<span class="number">5</span>)</span><br></pre></td></tr></table></figure>
-<p>在这个例子中，’10‘ 作为 <strong>固定参数(fixed parameter)</strong> 通过闭包作用域提前赋予给 <code>add()</code>, 从而我们获得了 <code>add10()</code>。</p>
-<p>让我们来看一下如何实现 <code>partialApply()</code>：<br><br><script src="//gist.github.com/543442825c8519c03e19584daab41bc9.js?file=partial-apply.js"></script></p>
-<p>如你所见，它只是简单地返回一个函数，这个函数通过闭包访问了传给 <code>partialApply()</code> 函数的 fixedArgs 参数。</p>
+<p>下面是流行 JavaScript 引擎列表：</p>
+<ul>
+<li><p><a href="https://en.wikipedia.org/wiki/V8_%28JavaScript_engine%29" target="_blank" rel="noopener"><strong>V8</strong></a> —— 开源， Google 开发， C++ 编写</p>
+</li>
+<li><p><a href="https://en.wikipedia.org/wiki/Rhino_%28JavaScript_engine%29" target="_blank" rel="noopener"><strong>Rhino</strong></a> —— Mozilla 基金会管理，开源，全 Java 开发</p>
+</li>
+<li><p><a href="https://en.wikipedia.org/wiki/SpiderMonkey_%28JavaScript_engine%29" target="_blank" rel="noopener"><strong>SpiderMonkey</strong></a> —— 第一个 JavaScript 引擎，当时支持 Netscape Navigator ， 现在支持 FireFox</p>
+</li>
+<li><p><a href="https://en.wikipedia.org/wiki/JavaScriptCore" target="_blank" rel="noopener"><strong>JavaScriptCore</strong></a> —— 开源， Apple 公司 为 Safari 浏览器开发并以 Nitro 为名字推广</p>
+</li>
+<li><p><a href="https://en.wikipedia.org/wiki/KJS_%28KDE%29" target="_blank" rel="noopener"><strong>KJS</strong></a> ——  KDE 的引擎，最初是由 Harri Porten 为 KDE 项目的 Konqueror 网络浏览器开发</p>
+</li>
+<li><p><a href="https://en.wikipedia.org/wiki/Chakra_%28JScript_engine%29" target="_blank" rel="noopener"><strong>Chakra</strong> (JScript9)</a> —— Internet Explorer</p>
+</li>
+<li><p><a href="https://en.wikipedia.org/wiki/Chakra_%28JavaScript_engine%29" target="_blank" rel="noopener"><strong>Chakra</strong> (JavaScript)</a> —— Microsoft Edge</p>
+</li>
+<li><p><a href="https://en.wikipedia.org/wiki/Nashorn_%28JavaScript_engine%29" target="_blank" rel="noopener"><strong>Nashorn</strong></a> —— 开源，由 Oracle 的 Java 语言工具组开发，是 OpenJDK 的一部分</p>
+</li>
+<li><p><a href="https://en.wikipedia.org/wiki/JerryScript" target="_blank" rel="noopener"><strong>JerryScript</strong></a> —— 物联网轻量级引擎</p>
+</li>
+</ul>
+<h2 id="为什么创建了-V8-引擎"><a href="#为什么创建了-V8-引擎" class="headerlink" title="为什么创建了 V8 引擎"></a>为什么创建了 V8 引擎</h2><p>V8 引擎是由 Google 开发 C++ 编写的开源引擎。它被用于 Google Chrome 。但是，和其他引擎不一样，V8 也被用于 Node.js runtime 。</p>
+<p><img src="https://cdn-images-1.medium.com/max/1600/1*AKKvE3QmN_ZQmEzSj16oXg.png" alt="V8"></p>
+<p>V8 最初是为了提高 Web 浏览器中 JavaScript 执行的性能。为了获得更快的速度，V8 将 JavaScript 转换为更高效的机器码，而不是使用解释器。它像 SpiderMonkey 或者 Rhino (Mozilla) 等很多现代 JavaScript 引擎一样，通过 <strong>JIT(Just-In-Time)编译器</strong> 将 JavaScript 代码编译成机器码。区别是 V8 不生成字节码或任何中间代码。</p>
+<h2 id="V8-曾经有两个编译器"><a href="#V8-曾经有两个编译器" class="headerlink" title="V8 曾经有两个编译器"></a>V8 曾经有两个编译器</h2><p>在 V8 的 v5.9 版本出来之前，它曾经拥有两个  编译器：</p>
+<ul>
+<li><p>full-codegen —— 一个简单且快速的编译器，可以生成简单但相对  较慢的机器码。</p>
+</li>
+<li><p>Grankshaft —— 一个较复杂的即时优化编译器，可以生成  高度优化的代码</p>
+</li>
+</ul>
+<p>V8 引擎内部使用了多线程：</p>
+<ul>
+<li><p>主线程完成你所期望的任务：获取你的代码，编译执行</p>
+</li>
+<li><p>还有一个单独的线程用于编译，以便主线程可以继续执行，而前者可以优化代码</p>
+</li>
+<li><p>Profiler 线程，它将通知  运行时  哪些  方法花费大量时间，以便 Crankshaft 可以优化它们</p>
+</li>
+<li><p> 少许线程来处理垃圾收集器扫描</p>
+</li>
+</ul>
+<p>首次执行 JavaScript 代码，V8 利用 <strong>full-codegen</strong> 直接将解析后的 JavaScript 不经任何转换地编译为机器码。这使它可以非常快速地  开始执行机器码。注意， V8 不使用中间字节码，因此不需要解释器。</p>
+<p>当代码运行一段时间后， profiler 线程以及收集来足够的数据来通知运行时应该优化哪个方法。</p>
+<p>然后， <strong>Crankshaft</strong> 在另一个线程开始优化。它将 JavaScript 抽象语法树转换为名为 <strong>Hydrogen</strong> 的高级静态单元分配表示 (SSA) ，并尝试去优化这个 Hydrogen 图。大多数优化在这个层级完成。</p>
+<h2 id="代码嵌入-Inlining"><a href="#代码嵌入-Inlining" class="headerlink" title="代码嵌入 (Inlining)"></a>代码嵌入 (Inlining)</h2><p>首次优化是尽可能的提前嵌入更多的代码。代码嵌入就是将使用函数的地方( 函数被调用的那一行代码)替换成调用函数的本体。这个简单的步骤使下面的优化更有意义。</p>
+<p><img src="https://cdn-images-1.medium.com/max/1600/0*RRgTDdRfLGEhuR7U.png" alt="inlining"></p>
+<h2 id="隐藏类-Hidden-class"><a href="#隐藏类-Hidden-class" class="headerlink" title="隐藏类 (Hidden class)"></a>隐藏类 (Hidden class)</h2><p>JavaScript 是一门基于原型的语言：没有通过克隆创建的类和对象。 JavaScript 也是一门动态语言，这意味着可以在对象实例化后轻易地向它添加或删除属性。</p>
+<p> 大多数 JavaScript 解释器使用类似字典的结构 (基于<a href="http://en.wikipedia.org/wiki/Hash_function" target="_blank" rel="noopener">散列函数</a>) 来存储对象属性在内存中的位置。这种结构使得在 JavaScript 中检索属性的值比在 Java 或 C＃ 等非动态编程语言中的计算成本更高。在 Java 中，所有对象属性都是在编译之前由固定对象布局确定的，并且无法在运行时动态添加或删除 (C＃具有 <a href="https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/dynamic" target="_blank" rel="noopener">动态类型</a>，这是另一个主题) 。因此，属性值（或指向这些属性的指针）可以作为连续 buffer 存储在存储器中，每个值之间具有固定偏移值。可以根据属性类型轻易确定偏移的长度，而在运行时可以更改属性类型的 JavaScript 中，这是不可能的。</p>
+<p>由于使用字典在内存中查找对象属性的位置效率非常低，因此 V8 使用不同的方法：<strong>隐藏类 (hidden classes)</strong> 。隐藏类的工作方式类似于 Java 等语言中使用的固定对象布局（类），除了它们是在运行时创建的。现在，让我们看看它们实际上是什么样的：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Point</span>(<span class="params">x, y</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.x = x</span><br><span class="line">  <span class="keyword">this</span>.y = y</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> p1 = <span class="keyword">new</span> Point(<span class="number">1</span>, <span class="number">2</span>)</span><br></pre></td></tr></table></figure>
+<p>一旦 <code>new Point(1, 2)</code> 被调用，V8 会生成一个 <code>C0</code> 的隐藏类。</p>
+<p><img src="https://cdn-images-1.medium.com/max/1600/1*pVnIrMZiB9iAz5sW28AixA.png" alt="C0"></p>
+<p>到现在还没有为 <code>Point</code> 定义任何属性，所以 <code>C0</code> 是空的。</p>
+<p> 一旦第一条语句 <code>this.x = x</code> (<code>Point</code> 函数内的) 执行后，V8 将创建一个基于 <code>C0</code> 的第二个隐藏类 <code>C1</code> 。<code>C1</code> 描述了属性值 <code>x</code> 在内存中的位置(相对于对象指针) 。在这个例子中，<code>x</code> 存储在<a href="">偏移值</a>为 0 的地方，这意味着当在内存中把 <code>point</code> 对象视为一段连续的 buffer 时，它的第一偏移量对应的属性就是 <code>x</code> 。V8  还会使用 “ 类转换 (class transition)” 更新 <code>C0</code> ，如果将属性 <code>x</code> 添加到 <code>Point</code> 对象， 隐藏类就会从 <code>C0</code> 切换到 <code>C1</code> 。现在 <code>Point</code> 对象的隐藏类为 <code>C1</code> 。</p>
+<p><img src="https://cdn-images-1.medium.com/max/1600/1*QsVUE3snZD9abYXccg6Sgw.png" alt="C1"></p>
+<p>每当一个新属性添加到对象，旧的隐藏类就会通过一个转换路径更新成一个新的隐藏类。隐藏类转换非常重要，因为它们允许在以相同方式创建的对象之间共享隐藏类。如果两个对象共享一个隐藏类，并给它们添加相同的属性，隐藏类转换能够确保这两个对象都获得新的隐藏类以及与之相关联的优化代码。</p>
+<p>当执行语句 <code>this.y = y</code> (同样，在 <code>Point</code> 函数内部，<code>this.x = x</code> 语句之后) 时，将重复此过程。</p>
+<p>一个新的隐藏类 <code>C2</code> 被创建了，如果属性 <code>y</code> 被添加到 Point 对象(已经包含了 <code>x</code> 属性)，同样的过程，类型转换被添加到 <code>C1</code> 上，然后隐藏类开始更新成 <code>C2</code>，并且 Point 对象的隐藏类就要更新成 <code>C2</code> 了。</p>
+<p><img src="https://user-gold-cdn.xitu.io/2017/11/18/15fcec13180b6f2e?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" alt="C2"></p>
+<p>隐藏类转换是根据属性被添加到对象上的顺序而发生变化。我们看看下面这一小段代码：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Point</span>(<span class="params">x, y</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.x = x</span><br><span class="line">  <span class="keyword">this</span>.y = y</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> p1 = <span class="keyword">new</span> Point(<span class="number">1</span>, <span class="number">2</span>)</span><br><span class="line">p1.a = <span class="number">5</span></span><br><span class="line">p1.b = <span class="number">6</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> p2 = <span class="keyword">new</span> Point(<span class="number">3</span>, <span class="number">4</span>)</span><br><span class="line">p2.b = <span class="number">7</span></span><br><span class="line">p2.a = <span class="number">8</span></span><br></pre></td></tr></table></figure>
+<p>现在，你可能认为 <code>p1</code> 和 <code>p2</code> 使用了相同的隐藏类和类转换。其实不然，对于 <code>p1</code> 先添加属性 <code>a</code> 再添加属性 <code>b</code> ，但是 <code>p2</code> 先添加 <code>b</code> 后添加 <code>a</code> 。因此，<code>p1</code> 和 <code>p2</code> 以不同转换路径的结束，它们的隐藏类也不同。<strong>在这种情况下， 最好以相同的顺序初始化动态属性，以便可以复用隐藏类。</strong></p>
+<h2 id="内联缓存-Inline-caching"><a href="#内联缓存-Inline-caching" class="headerlink" title="内联缓存 (Inline caching)"></a>内联缓存 (Inline caching)</h2><p>V8 利用另一种被称为内联缓存的技术来优化动态类型语言。内联缓存依赖于观察到：发生在相同类型的对象上的同一个方法的重复调用。关于内联缓存深入解释请看<a href="https://github.com/sq/JSIL/wiki/Optimizing-dynamic-JavaScript-with-inline-caches" target="_blank" rel="noopener">这里</a>。</p>
+<p>我们将讨论内联缓存的一般概念（如果您没有时间进行上面的深入解释）。</p>
+<p>那么它是怎样工作的？V8 会维护一个在最近的方法调用的参数的对象类型的缓存，并使用这些信息去预测将要传入参数的对象类型。如果 V8 对传递给方法的对象类型做出了很好的预测，那么它就能够绕开获取对象属性的计算过程，取而代之的是使用先前查找这个对象的隐藏类时所存储的信息。</p>
+<p>那么隐藏类和内联缓存的概念是如何  关联的？每当在特定对象上调用方法时，V8 引擎必须执行对该对象的隐藏类的查找，以确定访问特定属性的偏移量。在将同一方法成功调用两次到同一个隐藏类之后，，V8 就会略过查找隐藏类，将这个属性的偏移值添加到对象本身的指针上。未来这个方法的所有调用，V8 引擎都会假设隐藏类没有更改，并使用先前查找中存储的偏移  值直接跳转到特定属性的内存地址。这极大的提高了 V8 的执行速度。</p>
+<p>内联缓存也是同类型对象共享隐藏类非常重要的原因。如果创建两个相同类型且具有不同隐藏类的对象(如同我们之前的示例)，V8 将无法使用内联缓存，因为即使两个对象属于同一类型，其对应的隐藏类也会为其属性分配不同的偏移值。</p>
+<p><img src="https://cdn-images-1.medium.com/max/1600/1*iHfI6MQ-YKQvWvo51J-P0w.png" alt="inline caching"></p>
+<p>这两个对象基本相同，但 <code>a</code> 和 <code>b</code> 属性的创建顺序不同。</p>
+<h2 id="编译成机器码-Compilation-to-machine-code"><a href="#编译成机器码-Compilation-to-machine-code" class="headerlink" title="编译成机器码 (Compilation to machine code)"></a>编译成机器码 (Compilation to machine code)</h2><p>经 Hydrogen graph 优化后，Crankshaft 将其降低到一个较低层次 Lithium 。大多数 Lithium 实现都是特定于体系结构的。寄存器分配发生在这个级别。</p>
+<p>最后， Lithium 会被编译成机器码。然后，触发 OSR 一种运行时替换正在运行的栈帧的技术 (on-stack replacement) 。这我们开始编译和优化一个明显耗时的方法之前，我们可能正在运行它。V8 不会  遗弃  正在缓慢执行的代码而直接开始执行优化  后的。相反，它将转换所有的上下文环境 (堆栈，寄存器) ，以便我们可以这执行过程中切换到优化的版本。这是一项非常复杂的任务，请记住，在其他优化中，V8 原来已经内联了代码。V8 并不是唯一能够做到这一点的引擎。</p>
+<p>V8 有一种称为去优化的保护措施可以进行相反的转换，并在发动机制造的假设不再适用的情况下恢复到非优化代码。</p>
+<h2 id="垃圾回收-Garbage-collection"><a href="#垃圾回收-Garbage-collection" class="headerlink" title="垃圾回收 (Garbage collection)"></a>垃圾回收 (Garbage collection)</h2><p>对于垃圾收集，V8 采用传统的标记和扫描方式来清理旧数据。标记阶段会阻止 JavaScript 执行。为了控制 GC 成本并使运行更稳定，V8 使用增量标记：不是遍历整个堆，尝试标记每个可能的对象，它只是遍历堆的一部分，然后恢复正常执行。下一个 GC 将从上一个堆遍历停止的位置继续。这允许在正常执行期间非常短暂的暂停。如前所述，扫描阶段由单独的线程处理。</p>
+<h2 id="Ignition-和-TurboFan"><a href="#Ignition-和-TurboFan" class="headerlink" title="Ignition 和 TurboFan"></a>Ignition 和 TurboFan</h2><p>随着 2017 年早些时候发布 V8 v5.9，引入了新的执行管道。这个新的管道在实际的 JavaScript 应用程序中实现了更大的性能提升和显着的内存节省。</p>
+<p>新的执行管道建立在 V8 解释器 <a href="https://github.com/v8/v8/wiki/Interpreter" target="_blank" rel="noopener">Ignition</a>，和最新优化的 V8 编译器 <a href="https://github.com/v8/v8/wiki/TurboFan" target="_blank" rel="noopener">TurboFan</a> 之上。</p>
+<p>您可以在<a href="https://v8project.blogspot.bg/2017/05/launching-ignition-and-turbofan.html" target="_blank" rel="noopener">这里</a>查看 V8 团队关于该主题的博客文章。</p>
+<p>自从 V8 的 v5.9 版本问世以来，V8 已经不再使用 full-codegen 和 Crankshaft（自 2010 年以来为 V8 提供服务的技术）用于执行 JavaScript，因为 V8 团队一直在努力跟上新的 JavaScript 语言功能以及功能优化。</p>
+<p>这意味着整体 V8 将具有更简单，更易维护的架构。</p>
+<p><img src="https://cdn-images-1.medium.com/max/1600/0*pohqKvj9psTPRlOv.png" alt="Improvements on Web and Node.js benchmarks
+"></p>
+<p>这些改进只是一个开始。新的 Ignition 和 TurboFan 管道为进一步优化铺平了道路，这些优化将在未来几年内提升 JavaScript 性能并缩小 V8 在 Chrome 和 Node.js 中的占用空间。</p>
+<p>最后，这里有一些关于如何编写优化良好的 JavaScript 的技巧和窍门。您可以从上面的内容中轻松地推导出这些内容，但是，这里是为方便起见的摘要：</p>
+<h2 id="如何编写优化的-JavaScript"><a href="#如何编写优化的-JavaScript" class="headerlink" title="如何编写优化的 JavaScript"></a>如何编写优化的 JavaScript</h2><ol>
+<li><p><strong>对象属性的顺序</strong> ：始终以相同的顺序实例化对象属性，以便可以共享隐藏类和随后优化的代码。</p>
+</li>
+<li><p><strong>动态属性</strong> ：在向实例化的对象添加属性将强制更改隐藏类并减慢为先前隐藏类优化的任何方法。而是在其构造函数中分配所有对象的属性。</p>
+</li>
+<li><p><strong>方法</strong> ：重复执行相同方法的代码将比仅执行一次许多不同方法的代码运行得更快（因为内联缓存）。</p>
+</li>
+<li><p><strong> 数组</strong> ：避免 keys 不是增量数字的稀疏数组。含有空元素的稀疏数组是<strong>哈希表</strong>。这种数组中的元素访问起来更加昂贵。另外，尽量避免预先分配大数组。最好的做法是随着你的需要慢慢的增大数组。最后，不要删除数组中的元素。它使 keys 稀疏。</p>
+</li>
+<li><p><strong>标记值</strong> ：V8 使用 32 位表示对象和数字。它使用一个位来知道它是一个对象（flag = 1）还是一个称为 SMI（SMall Integer）的整数（flag = 0），因为它是 31 位的。然后，如果数值大于 31 位，V8 将对该数字进行  封装 (box) ，将其变为双精度 (double) 并创建一个新对象以将数字放入其中。尽可能使用 31 位带符号的数字，以避免对 JS 对象进行昂贵的装箱操作。尽可能使用 31 位带符号的数字，以避免对 JS 对象进行昂贵的封装操作。</p>
+</li>
+</ol>
+<h2 id="资源-Resources"><a href="#资源-Resources" class="headerlink" title="资源 (Resources)"></a>资源 (Resources)</h2><ul>
+<li><p><a href="https://docs.google.com/document/u/1/d/1hOaE7vbwdLLXWj3C8hTnnkpE0qSa2P--dtDvwXXEeD0/pub" target="_blank" rel="noopener">Crankshafting from the ground up</a></p>
+</li>
+<li><p><a href="https://github.com/thlorenz/v8-perf" target="_blank" rel="noopener">Notes and resources related to V8 and thus Node.js performance</a></p>
+</li>
+<li><p><a href="https://bugs.chromium.org/p/v8/adminIntro" target="_blank" rel="noopener">Project: v8</a></p>
+</li>
+<li><p><a href="https://mrale.ph/v8/resources.html" target="_blank" rel="noopener">V8 Resources</a></p>
+</li>
+<li><p><a href="https://www.youtube.com/watch?v=UJPdhx5zTaw" target="_blank" rel="noopener">Google I/O 2012 - Breaking the JavaScript Speed Limit with V8</a></p>
+</li>
+<li><p><a href="https://www.youtube.com/watch?v=hWhMKalEicY" target="_blank" rel="noopener">V8: an open source JavaScript engine</a></p>
+</li>
+</ul>
 
       
     </div>
@@ -594,8 +666,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/08/24/trans-2/" rel="next" title="【译】精通 JavaScript： 什么是函数式编程（Functional Programming）？">
-                <i class="fa fa-chevron-left"></i> 【译】精通 JavaScript： 什么是函数式编程（Functional Programming）？
+              <a href="/posts/b2f2d94f/" rel="next" title="【译】JavaScript 工作原理：JS 引擎，runtime 和调用栈的概述">
+                <i class="fa fa-chevron-left"></i> 【译】JavaScript 工作原理：JS 引擎，runtime 和调用栈的概述
               </a>
             
           </div>
@@ -603,10 +675,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/08/29/trans-4/" rel="prev" title="【译】精通 JavaScript： 类继承和原型继承的区别？">
-                【译】精通 JavaScript： 类继承和原型继承的区别？ <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -770,7 +838,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是闭包"><span class="nav-number">1.</span> <span class="nav-text">什么是闭包</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用闭包-例子"><span class="nav-number">2.</span> <span class="nav-text">使用闭包 (例子)</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#概述-Overview"><span class="nav-number">1.</span> <span class="nav-text">概述 (Overview)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#为什么创建了-V8-引擎"><span class="nav-number">2.</span> <span class="nav-text">为什么创建了 V8 引擎</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#V8-曾经有两个编译器"><span class="nav-number">3.</span> <span class="nav-text">V8 曾经有两个编译器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码嵌入-Inlining"><span class="nav-number">4.</span> <span class="nav-text">代码嵌入 (Inlining)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#隐藏类-Hidden-class"><span class="nav-number">5.</span> <span class="nav-text">隐藏类 (Hidden class)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#内联缓存-Inline-caching"><span class="nav-number">6.</span> <span class="nav-text">内联缓存 (Inline caching)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#编译成机器码-Compilation-to-machine-code"><span class="nav-number">7.</span> <span class="nav-text">编译成机器码 (Compilation to machine code)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#垃圾回收-Garbage-collection"><span class="nav-number">8.</span> <span class="nav-text">垃圾回收 (Garbage collection)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Ignition-和-TurboFan"><span class="nav-number">9.</span> <span class="nav-text">Ignition 和 TurboFan</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#如何编写优化的-JavaScript"><span class="nav-number">10.</span> <span class="nav-text">如何编写优化的 JavaScript</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#资源-Resources"><span class="nav-number">11.</span> <span class="nav-text">资源 (Resources)</span></a></li></ol></div>
             
 
           </div>
