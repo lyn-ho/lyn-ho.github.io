@@ -4,6 +4,23 @@
 
     
   <url>
+    <loc>lyn-ho.github.io/posts/977269ff/</loc>
+    <lastmod>2018-09-20T15:40:53.277Z</lastmod>
+    <data>
+        <display>
+        <title>【译】JavaScript 工作原理：内存管理+如何处理4个常见的内存泄漏</title>
+        <pubTime>2018-09-20T15:39:34.411Z</pubTime>
+        
+        <tag>JavaScript</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>lyn-ho.github.io/posts/b2f2d94f/</loc>
     <lastmod>2018-09-16T13:06:35.363Z</lastmod>
     <data>
@@ -55,12 +72,12 @@
 
     
   <url>
-    <loc>lyn-ho.github.io/posts/6a904bf2/</loc>
+    <loc>lyn-ho.github.io/posts/b4cbde14/</loc>
     <lastmod>2018-09-16T13:06:35.361Z</lastmod>
     <data>
         <display>
-        <title>【译】精通 JavaScript： 什么是 Promise？</title>
-        <pubTime>2018-08-30T07:43:58.000Z</pubTime>
+        <title>【译】精通 JavaScript： 什么是纯函数（Pure Function）？</title>
+        <pubTime>2018-09-03T09:13:58.000Z</pubTime>
         
         <tag>JavaScript</tag>
          
@@ -72,12 +89,12 @@
 
     
   <url>
-    <loc>lyn-ho.github.io/posts/b4cbde14/</loc>
+    <loc>lyn-ho.github.io/posts/6a904bf2/</loc>
     <lastmod>2018-09-16T13:06:35.361Z</lastmod>
     <data>
         <display>
-        <title>【译】精通 JavaScript： 什么是纯函数（Pure Function）？</title>
-        <pubTime>2018-09-03T09:13:58.000Z</pubTime>
+        <title>【译】精通 JavaScript： 什么是 Promise？</title>
+        <pubTime>2018-08-30T07:43:58.000Z</pubTime>
         
         <tag>JavaScript</tag>
          
