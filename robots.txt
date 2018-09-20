@@ -14,7 +14,7 @@ Disallow: /fancybox/
 
 
 Sitemap: https://lyn-ho.github.io/sitemap.xml
-Sitemap: https://lyn-ho.github.io/post-sitemap.xml.xml
-Sitemap: https://lyn-ho.github.io/page-sitemap.xml.xml
-Sitemap: https://lyn-ho.github.io/tag-sitemap.xml.xml
+Sitemap: https://lyn-ho.github.io/post-sitemap.xml
+Sitemap: https://lyn-ho.github.io/page-sitemap.xml
+Sitemap: https://lyn-ho.github.io/tag-sitemap.xml
 Sitemap: https://lyn-ho.github.io/baidusitemap.xml
