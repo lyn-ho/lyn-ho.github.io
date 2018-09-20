@@ -144,27 +144,33 @@
 
 
 
-  <meta name="description" content="原文：10 Interview Questions Every JavaScript Developer Should Know  你能说出两个对 JavaScript 应用程序开发人员很重要的编程范式吗？JavaScript 是一个多范式语言，通过 OOP （面向对象编程）和 函数式 编程使其支持 命令式/过程式 编程。JavaScript 支持以原型链继承方式的 OOP。">
+  <meta name="description" content="原文：How JavaScript works: inside the V8 engine + 5 tips on how to write optimized code  几个星期之前，我们开始了一个旨在深入挖掘 JavaScript 及其实际工作原理的系列文章，我们认为，通过了解 JavaScript 的底层构建以及它们是如何协作的，你将能够编写更好的代码和应用。 第一篇文章主要关注引擎，">
 <meta name="keywords" content="JavaScript">
 <meta property="og:type" content="article">
-<meta property="og:title" content="【译】JavaScript 工程师需要知道的十道面试题">
-<meta property="og:url" content="lyn-ho.github.io/posts/637b26df">
+<meta property="og:title" content="【译】JavaScript 工作原理：V8 引擎中5个优化代码的技巧">
+<meta property="og:url" content="lyn-ho.github.io/posts/4d26265b/index.html">
 <meta property="og:site_name" content="Lyn&#39;s Blog">
-<meta property="og:description" content="原文：10 Interview Questions Every JavaScript Developer Should Know  你能说出两个对 JavaScript 应用程序开发人员很重要的编程范式吗？JavaScript 是一个多范式语言，通过 OOP （面向对象编程）和 函数式 编程使其支持 命令式/过程式 编程。JavaScript 支持以原型链继承方式的 OOP。">
+<meta property="og:description" content="原文：How JavaScript works: inside the V8 engine + 5 tips on how to write optimized code  几个星期之前，我们开始了一个旨在深入挖掘 JavaScript 及其实际工作原理的系列文章，我们认为，通过了解 JavaScript 的底层构建以及它们是如何协作的，你将能够编写更好的代码和应用。 第一篇文章主要关注引擎，">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="https://cdn-images-1.medium.com/max/2000/1*RPKQq3zYYddwJf9rSeQ4Dg.jpeg">
-<meta property="og:updated_time" content="2018-09-16T13:06:35.358Z">
+<meta property="og:image" content="https://cdn-images-1.medium.com/max/1600/1*AKKvE3QmN_ZQmEzSj16oXg.png">
+<meta property="og:image" content="https://cdn-images-1.medium.com/max/1600/0*RRgTDdRfLGEhuR7U.png">
+<meta property="og:image" content="https://cdn-images-1.medium.com/max/1600/1*pVnIrMZiB9iAz5sW28AixA.png">
+<meta property="og:image" content="https://cdn-images-1.medium.com/max/1600/1*QsVUE3snZD9abYXccg6Sgw.png">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2017/11/18/15fcec13180b6f2e?imageView2/0/w/1280/h/960/format/webp/ignore-error/1">
+<meta property="og:image" content="https://cdn-images-1.medium.com/max/1600/1*iHfI6MQ-YKQvWvo51J-P0w.png">
+<meta property="og:image" content="https://cdn-images-1.medium.com/max/1600/0*pohqKvj9psTPRlOv.png">
+<meta property="og:updated_time" content="2018-09-16T13:06:35.363Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="【译】JavaScript 工程师需要知道的十道面试题">
-<meta name="twitter:description" content="原文：10 Interview Questions Every JavaScript Developer Should Know  你能说出两个对 JavaScript 应用程序开发人员很重要的编程范式吗？JavaScript 是一个多范式语言，通过 OOP （面向对象编程）和 函数式 编程使其支持 命令式/过程式 编程。JavaScript 支持以原型链继承方式的 OOP。">
-<meta name="twitter:image" content="https://cdn-images-1.medium.com/max/2000/1*RPKQq3zYYddwJf9rSeQ4Dg.jpeg">
+<meta name="twitter:title" content="【译】JavaScript 工作原理：V8 引擎中5个优化代码的技巧">
+<meta name="twitter:description" content="原文：How JavaScript works: inside the V8 engine + 5 tips on how to write optimized code  几个星期之前，我们开始了一个旨在深入挖掘 JavaScript 及其实际工作原理的系列文章，我们认为，通过了解 JavaScript 的底层构建以及它们是如何协作的，你将能够编写更好的代码和应用。 第一篇文章主要关注引擎，">
+<meta name="twitter:image" content="https://cdn-images-1.medium.com/max/1600/1*AKKvE3QmN_ZQmEzSj16oXg.png">
 
 
 
 
 
 
-  <link rel="canonical" href="lyn-ho.github.io/posts/637b26df"/>
+  <link rel="canonical" href="lyn-ho.github.io/posts/4d26265b/"/>
 
 
 
@@ -174,7 +180,7 @@
   };
 </script>
 
-  <title>【译】JavaScript 工程师需要知道的十道面试题 | Lyn's Blog</title>
+  <title>【译】JavaScript 工作原理：V8 引擎中5个优化代码的技巧 | Lyn's Blog</title>
   
 
 
@@ -366,7 +372,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="lyn-ho.github.io/posts/637b26df">
+    <link itemprop="mainEntityOfPage" href="lyn-ho.github.io/posts/4d26265b/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Lyn Ho">
@@ -383,7 +389,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">【译】JavaScript 工程师需要知道的十道面试题
+          <h2 class="post-title" itemprop="name headline">【译】JavaScript 工作原理：V8 引擎中5个优化代码的技巧
               
             
           </h2>
@@ -408,7 +414,7 @@
                 
               
 
-              <time title="Created: 2018-08-22 09:34:58" itemprop="dateCreated datePublished" datetime="2018-08-22T09:34:58+08:00">2018-08-22</time>
+              <time title="Created: 2018-09-14 14:50:58" itemprop="dateCreated datePublished" datetime="2018-09-14T14:50:58+08:00">2018-09-14</time>
             
 
             
@@ -439,8 +445,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/posts/637b26df#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">Comments: </span> <span class="post-comments-count gitment-comments-count" data-xid="/posts/637b26df" itemprop="commentsCount"></span>
+                <a href="/posts/4d26265b/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">Comments: </span> <span class="post-comments-count gitment-comments-count" data-xid="/posts/4d26265b/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -448,7 +454,7 @@
 
           
           
-             <span id="/posts/637b26df" class="leancloud_visitors" data-flag-title="【译】JavaScript 工程师需要知道的十道面试题">
+             <span id="/posts/4d26265b/" class="leancloud_visitors" data-flag-title="【译】JavaScript 工作原理：V8 引擎中5个优化代码的技巧">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -479,240 +485,120 @@
       
 
       
-        <p><img src="https://cdn-images-1.medium.com/max/2000/1*RPKQq3zYYddwJf9rSeQ4Dg.jpeg" alt="Bruce Lee"></p>
-<blockquote>
-<p>原文：<a href="https://medium.com/javascript-scene/10-interview-questions-every-javascript-developer-should-know-6fa6bdf5ad95" target="_blank" rel="noopener">10 Interview Questions Every JavaScript Developer Should Know</a></p>
+        <blockquote>
+<p>原文：<a href="https://blog.sessionstack.com/how-javascript-works-inside-the-v8-engine-5-tips-on-how-to-write-optimized-code-ac089e62b12e" target="_blank" rel="noopener">How JavaScript works: inside the V8 engine + 5 tips on how to write optimized code</a></p>
 </blockquote>
-<h2 id="你能说出两个对-JavaScript-应用程序开发人员很重要的编程范式吗？"><a href="#你能说出两个对-JavaScript-应用程序开发人员很重要的编程范式吗？" class="headerlink" title="你能说出两个对 JavaScript 应用程序开发人员很重要的编程范式吗？"></a>你能说出两个对 JavaScript 应用程序开发人员很重要的编程范式吗？</h2><p>JavaScript 是一个多范式语言，通过 <strong>OOP</strong> （面向对象编程）和 <strong>函数式</strong> 编程使其支持 <strong>命令式/过程式</strong> 编程。JavaScript 支持以原型链继承方式的 OOP。</p>
+<p>几个星期之前，我们开始了一个旨在深入挖掘 JavaScript 及其实际工作原理的系列文章，我们认为，通过了解 JavaScript 的底层构建以及它们是如何协作的，你将能够编写更好的代码和应用。</p>
+<p><a href="https://blog.sessionstack.com/how-does-javascript-actually-work-part-1-b0bacc073cf" target="_blank" rel="noopener">第一篇文章</a>主要关注引擎，运行时和调用栈的概述。 第二篇文章将深入探讨 Google’s V8 引擎内部。我们还提供了一些关于如何编写更好的 JavaScript 代码的快速提示 —— 我们 <a href="https://www.sessionstack.com/" target="_blank" rel="noopener">SessionStack</a> 开发团队在构建产品时  遵循的最佳实践。</p>
+<h2 id="概述-Overview"><a href="#概述-Overview" class="headerlink" title="概述 (Overview)"></a>概述 (Overview)</h2><p><strong>JavaScript 引擎</strong>是一个可以执行 JavaScript 代码的程序或解释器。 JavaScript 引擎可以是标准实现解释器或者是可以以某种方式实现编译 JavaScript 为字节码的即时编译器。</p>
 <a id="more"></a>
-<h3 id="加分点："><a href="#加分点：" class="headerlink" title="加分点："></a>加分点：</h3><ul>
-<li><p>原型继承 （或者： 原型， OLOO）</p>
-</li>
-<li><p>函数式编程 （或者： 闭包，头等函数，lambdas）</p>
-</li>
-</ul>
-<h3 id="减分点："><a href="#减分点：" class="headerlink" title="减分点："></a>减分点：</h3><ul>
-<li>不知道编程范式是什么，没有提到基于原型的面向对象或函数式编程</li>
-</ul>
-<h3 id="补充学习："><a href="#补充学习：" class="headerlink" title="补充学习："></a>补充学习：</h3><ul>
-<li><a href="https://medium.com/javascript-scene/the-two-pillars-of-javascript-ee6f3281e7f3" target="_blank" rel="noopener">The Two Pillars of JavaScript Part 1</a> – 基于原型的面向对象</li>
-<li><a href="https://medium.com/javascript-scene/the-two-pillars-of-javascript-pt-2-functional-programming-a63aa53a41a4" target="_blank" rel="noopener">The Two Pillars of JavaScript Part 2</a> – 函数式编程</li>
-</ul>
-<h2 id="什么是函数式编程？"><a href="#什么是函数式编程？" class="headerlink" title="什么是函数式编程？"></a>什么是函数式编程？</h2><p>函数式编程通过组合数学函数来生成程序，并且避免共享状态和可变数据。Lisp （1958年指定） 是最早支持函数式编程的语言之一，并且深受 lambda 演算的启发。至今 Lisp 以及很多衍生语言仍在普遍使用。</p>
-<p>函数式编程是 JavaScript 的一个基本概念（JavaScript 的两大支柱之一）。ES5 JavaScript 添加了一些常用工具方法。</p>
-<h3 id="加分点：-1"><a href="#加分点：-1" class="headerlink" title="加分点："></a>加分点：</h3><ul>
-<li><p>纯函数/函数纯度</p>
-</li>
-<li><p>避免副作用</p>
-</li>
-<li><p>简单函数组合</p>
-</li>
-<li><p>函数式语言的例子：Lisp，ML，Haskell，Erlang，Clojure，Elm，F Sharp，OCaml 等等。。。</p>
-</li>
-<li><p>提及支持函数式编程的特性：头等函数，高阶函数，函数作为参数/值。</p>
-</li>
-</ul>
-<h3 id="减分点：-1"><a href="#减分点：-1" class="headerlink" title="减分点："></a>减分点：</h3><ul>
-<li><p>没有提及纯函数/避免副作用</p>
-</li>
-<li><p>不能举出函数式编程语言的例子</p>
-</li>
-<li><p>不知道 JavaScript 作为函数式编程特性</p>
-</li>
-</ul>
-<h3 id="补充学习：-1"><a href="#补充学习：-1" class="headerlink" title="补充学习："></a>补充学习：</h3><ul>
-<li><p><a href="https://medium.com/javascript-scene/the-two-pillars-of-javascript-pt-2-functional-programming-a63aa53a41a4" target="_blank" rel="noopener">The Two Pillars of JavaScript Part 2</a> – 函数式编程</p>
-</li>
-<li><p><a href="https://medium.com/javascript-scene/the-dao-of-immutability-9f91a70c88cd" target="_blank" rel="noopener">The Dao of Immutability</a></p>
-</li>
-<li><p><a href="https://medium.com/javascript-scene/composing-software-an-introduction-27b72500d6ea" target="_blank" rel="noopener">Composing Software</a></p>
-</li>
-<li><p><a href="http://haskell.cs.yale.edu/wp-content/uploads/2015/03/HSoM.pdf" target="_blank" rel="noopener">The Haskell School of Music</a></p>
-</li>
-</ul>
-<h2 id="类继承和原型继承之间有什么区别？"><a href="#类继承和原型继承之间有什么区别？" class="headerlink" title="类继承和原型继承之间有什么区别？"></a>类继承和原型继承之间有什么区别？</h2><p><strong>类继承：</strong> 实例继承自类（如蓝图–类的描述），并创建子类关系：层级分类。实例通常对构造函数使用‘new’关键字进行实例化。类继承可以使用 ES6 中的 ‘class’ 关键字声明。</p>
-<p><strong>原型继承：</strong> 实例直接继承于其他对象。实例通常使用工厂函数或 ‘Object.create()’ 函数 进行实例化。实例可以由许多不同的对象组成，也可以方便的选择继承对象。</p>
-<blockquote>
-<p>In JavaScript, prototypal inheritance is simpler &amp;<br>more flexible than class inheritance.</p>
-</blockquote>
-<h3 id="加分点：-2"><a href="#加分点：-2" class="headerlink" title="加分点："></a>加分点：</h3><ul>
-<li><p>类：创建紧耦合或层级/分类</p>
-</li>
-<li><p>原型：提及拼接继承，原型委托，函数继承，对象组合。</p>
-</li>
-</ul>
-<h3 id="减分点：-2"><a href="#减分点：-2" class="headerlink" title="减分点："></a>减分点：</h3><ul>
-<li>没有提及原型继承和组合优于类继承</li>
-</ul>
-<h3 id="补充学习：-2"><a href="#补充学习：-2" class="headerlink" title="补充学习："></a>补充学习：</h3><ul>
-<li><p><a href="https://medium.com/javascript-scene/the-two-pillars-of-javascript-ee6f3281e7f3" target="_blank" rel="noopener">The Two Pillars of JavaScript Part 1 — Prototypal OO</a></p>
-</li>
-<li><p><a href="https://medium.com/javascript-scene/common-misconceptions-about-inheritance-in-javascript-d5d9bab29b0a" target="_blank" rel="noopener">Common Misconceptions About Inheritance in JavaScript</a></p>
-</li>
-</ul>
-<div class="video-container"><iframe src="//player.vimeo.com/video/69255635" frameborder="0" allowfullscreen></iframe></div>
-<h2 id="函数式编程和面向对象编程的优缺点是什么？"><a href="#函数式编程和面向对象编程的优缺点是什么？" class="headerlink" title="函数式编程和面向对象编程的优缺点是什么？"></a>函数式编程和面向对象编程的优缺点是什么？</h2><p><strong>OOP 优点：</strong> 容易理解对象的基本概念，并且易于解释方法调用的含义。OOP 倾向于使用命令式风格而不是声明式风格，它类似于计算机遵循的直接指令集。</p>
-<p><strong>OOP 缺点：</strong> 通常依赖于共享状态。对象和行为通常绑定在同一个实体上，这个实体可以由任意数量的函数随机访问，可能导致诸如竞争条件的不期望的行为。</p>
-<p><strong>FP 优点：</strong> 使用函数范式，程序员避免了共享状态和副作用，从而消除由多个函数竞争统一资源所导致的错误。由于具有像 point-free style 的特性，相比于 OOP 函数式倾向于从根本上简化和易于重新组合以获得更通用的可复用代码。</p>
-<p>FP 也倾向于声明式和指称式，它没有详细说明每一步的操作，而是集中精力在 <strong>做什么</strong> ，让底层函数去处理 <strong>如何做</strong> 。这为重构和性能优化留下了巨大的空间，甚至只需修改很少的代码就可以用更高效的算法替换整个算法。</p>
-<p>利用纯函数的计算可以很容易的扩展到跨多处理器或跨分布式计算集群，而不必担心线程资源冲突，条件竞争等。。。</p>
-<p><strong>FP 缺点：</strong> 过度利用 FP 特性（如 point-free style和大型组合）可能会降低可读性，因为生成的代码通常更抽象，更简洁，不具体。</p>
-<p>与函数式编程相比，更多人熟悉 OO 和命令式编程，因此即使是函数式编程中的常见习惯也会让新团队成员感到困惑。</p>
-<p>FP 比 OOP 有更陡峭的学习曲线，因为 OOP 的流行使得 OOP 的学习材料更易于交流，而 FP 更具学术性和正式性。FP 的概念经常被写成来自 lambda 演算，代数和范畴学所使用的习语和符号，所有这些都需要在这些领域的知识基础。</p>
-<h3 id="加分点：-3"><a href="#加分点：-3" class="headerlink" title="加分点："></a>加分点：</h3><ul>
-<li><p>提及共享状态的问题，不同事件竞争同一资源等等。。。</p>
-</li>
-<li><p>意识到 FP 能够从根本上简化很多应用</p>
-</li>
-<li><p>意识到不同的学习曲线</p>
-</li>
-<li><p>阐明副作用以及它如何影响程序的可维护性</p>
-</li>
-<li><p>意识到高函数式代码基础可能具有陡峭的学习曲线</p>
-</li>
-<li><p>意识到与同等的 FP 代码基础相比，高 OOP 代码基础会难以修改并且非常脆弱。</p>
-</li>
-<li><p>意识到不可变性对程序状态历史的获取和可塑性产生一个极大提高，允许轻松添加诸如无限撤销/重做，倒带/重放，时间旅行调试等功能。不可变性可以在任意编程范式中实现，但共享状态对象使不可变性在 OOP 中的实现变得复杂。</p>
-</li>
-</ul>
-<h3 id="减分点：-3"><a href="#减分点：-3" class="headerlink" title="减分点："></a>减分点：</h3><ul>
-<li>无法列出任一编程范式的缺点–任何一种范式的人都会遇到一些限制。</li>
-</ul>
-<h3 id="补充学习：-3"><a href="#补充学习：-3" class="headerlink" title="补充学习："></a>补充学习：</h3><ul>
-<li><p><a href="https://medium.com/javascript-scene/the-two-pillars-of-javascript-ee6f3281e7f3" target="_blank" rel="noopener">The Two Pillars of JavaScript Part 1</a> – 基于原型的面向对象</p>
-</li>
-<li><p><a href="https://medium.com/javascript-scene/the-two-pillars-of-javascript-pt-2-functional-programming-a63aa53a41a4" target="_blank" rel="noopener">The Two Pillars of JavaScript Part 2</a> – 函数式编程</p>
-</li>
-</ul>
-<h2 id="什么时候类继承是一个合适的选择"><a href="#什么时候类继承是一个合适的选择" class="headerlink" title="什么时候类继承是一个合适的选择"></a>什么时候类继承是一个合适的选择</h2><p>答案是从不，或者几乎从不。一定不能有超过一层的继承。多层类继承是反模式的。多年来我一直在发出这个挑战，我听过的答案都属于几个常见的误解之一。更常见的是，挑战遇见沉默。</p>
-<blockquote>
-<p>“If a feature is sometimes useful<br>and sometimes dangerous<br>and if there is a better option<br>then always use the better option.”<br>~ Douglas Crockford</p>
-</blockquote>
-<h3 id="加分点"><a href="#加分点" class="headerlink" title="加分点:"></a>加分点:</h3><ul>
-<li><p>很少,几乎从不,从不.</p>
-</li>
-<li><p>单一层级有时是可以接受的,一个基于类的框架,例如 React.Component</p>
-</li>
-<li><p>偏爱对象组合高于类继承.</p>
-</li>
-</ul>
-<h3 id="补充学习"><a href="#补充学习" class="headerlink" title="补充学习:"></a>补充学习:</h3><ul>
-<li><p><a href="https://medium.com/javascript-scene/the-two-pillars-of-javascript-ee6f3281e7f3" target="_blank" rel="noopener">The Two Pillars of JavaScript Part 1</a> – 基于原型的面向对象</p>
-</li>
-<li><p><a href="http://davidwalsh.name/javascript-objects" target="_blank" rel="noopener">JS Objects — Inherited a Mess</a></p>
-</li>
-</ul>
-<h2 id="什么时候原型继承是一个合适的选择"><a href="#什么时候原型继承是一个合适的选择" class="headerlink" title="什么时候原型继承是一个合适的选择"></a>什么时候原型继承是一个合适的选择</h2><p>原型继承有不止一个种类</p>
+<p>下面是流行 JavaScript 引擎列表：</p>
 <ul>
-<li><p><strong>委托</strong> (i.e.,原型链)</p>
+<li><p><a href="https://en.wikipedia.org/wiki/V8_%28JavaScript_engine%29" target="_blank" rel="noopener"><strong>V8</strong></a> —— 开源， Google 开发， C++ 编写</p>
 </li>
-<li><p><strong>拼接</strong> (i.e.,mixins, ’Object.assign()‘)</p>
+<li><p><a href="https://en.wikipedia.org/wiki/Rhino_%28JavaScript_engine%29" target="_blank" rel="noopener"><strong>Rhino</strong></a> —— Mozilla 基金会管理，开源，全 Java 开发</p>
 </li>
-<li><p><strong>函数化</strong> (不要和函数式编程混淆.用于为私有状态/封装创建闭包的函数)</p>
+<li><p><a href="https://en.wikipedia.org/wiki/SpiderMonkey_%28JavaScript_engine%29" target="_blank" rel="noopener"><strong>SpiderMonkey</strong></a> —— 第一个 JavaScript 引擎，当时支持 Netscape Navigator ， 现在支持 FireFox</p>
 </li>
-</ul>
-<p>每种类型的原型继承都有自己的一组用例，但它们在组合方式同样有用，它创建了 <strong>has-a</strong> 或 <strong>uses-a</strong> 或 <strong>can-do</strong> 的关系而不是由类继承创建的 <strong>is-a</strong> 的关系.</p>
-<h3 id="加分点-1"><a href="#加分点-1" class="headerlink" title="加分点:"></a>加分点:</h3><ul>
-<li><p>在模块或函数式编程没有提供明显解决方案的情况下</p>
+<li><p><a href="https://en.wikipedia.org/wiki/JavaScriptCore" target="_blank" rel="noopener"><strong>JavaScriptCore</strong></a> —— 开源， Apple 公司 为 Safari 浏览器开发并以 Nitro 为名字推广</p>
 </li>
-<li><p>当你需要从多个资源组合对象</p>
+<li><p><a href="https://en.wikipedia.org/wiki/KJS_%28KDE%29" target="_blank" rel="noopener"><strong>KJS</strong></a> ——  KDE 的引擎，最初是由 Harri Porten 为 KDE 项目的 Konqueror 网络浏览器开发</p>
 </li>
-<li><p>任何你需要继承的时候</p>
+<li><p><a href="https://en.wikipedia.org/wiki/Chakra_%28JScript_engine%29" target="_blank" rel="noopener"><strong>Chakra</strong> (JScript9)</a> —— Internet Explorer</p>
 </li>
-</ul>
-<h3 id="减分点"><a href="#减分点" class="headerlink" title="减分点:"></a>减分点:</h3><ul>
-<li><p>不知道何时使用原型</p>
+<li><p><a href="https://en.wikipedia.org/wiki/Chakra_%28JavaScript_engine%29" target="_blank" rel="noopener"><strong>Chakra</strong> (JavaScript)</a> —— Microsoft Edge</p>
 </li>
-<li><p>没有意识到 mixins 或 ’Object.assign()‘.</p>
+<li><p><a href="https://en.wikipedia.org/wiki/Nashorn_%28JavaScript_engine%29" target="_blank" rel="noopener"><strong>Nashorn</strong></a> —— 开源，由 Oracle 的 Java 语言工具组开发，是 OpenJDK 的一部分</p>
+</li>
+<li><p><a href="https://en.wikipedia.org/wiki/JerryScript" target="_blank" rel="noopener"><strong>JerryScript</strong></a> —— 物联网轻量级引擎</p>
 </li>
 </ul>
-<h3 id="补充学习-1"><a href="#补充学习-1" class="headerlink" title="补充学习:"></a>补充学习:</h3><ul>
-<li><a href="http://chimera.labs.oreilly.com/books/1234000000262/ch03.html#chcsrdou100015eilvj6l9inj" target="_blank" rel="noopener">“Programming JavaScript Applications”: Prototypes section</a></li>
-</ul>
-<h2 id="“优先使用对象组合高于类继承”是什么意思"><a href="#“优先使用对象组合高于类继承”是什么意思" class="headerlink" title="“优先使用对象组合高于类继承”是什么意思?"></a>“优先使用对象组合高于类继承”是什么意思?</h2><p>这是  <a href="http://www.amazon.com/Design-Patterns-Elements-Reusable-Object-Oriented/dp/0201633612" target="_blank" rel="noopener">“Design Patterns: Elements of Reusable Object-Oriented Software”</a> 的引用.这意味着代码复用应该是通过将较小的函数组合到新的对象中来实现,而不是通过类的继承来创建新的分类.</p>
-<p>换句话说,要使用 <strong>can-do</strong>, <strong>has-a</strong>,或 <strong>use-a</strong> 关系而不是 <strong>is-a</strong> 关系.</p>
-<h3 id="加分点-2"><a href="#加分点-2" class="headerlink" title="加分点:"></a>加分点:</h3><ul>
-<li><p>避免类继承</p>
+<h2 id="为什么创建了-V8-引擎"><a href="#为什么创建了-V8-引擎" class="headerlink" title="为什么创建了 V8 引擎"></a>为什么创建了 V8 引擎</h2><p>V8 引擎是由 Google 开发 C++ 编写的开源引擎。它被用于 Google Chrome 。但是，和其他引擎不一样，V8 也被用于 Node.js runtime 。</p>
+<p><img src="https://cdn-images-1.medium.com/max/1600/1*AKKvE3QmN_ZQmEzSj16oXg.png" alt="V8"></p>
+<p>V8 最初是为了提高 Web 浏览器中 JavaScript 执行的性能。为了获得更快的速度，V8 将 JavaScript 转换为更高效的机器码，而不是使用解释器。它像 SpiderMonkey 或者 Rhino (Mozilla) 等很多现代 JavaScript 引擎一样，通过 <strong>JIT(Just-In-Time)编译器</strong> 将 JavaScript 代码编译成机器码。区别是 V8 不生成字节码或任何中间代码。</p>
+<h2 id="V8-曾经有两个编译器"><a href="#V8-曾经有两个编译器" class="headerlink" title="V8 曾经有两个编译器"></a>V8 曾经有两个编译器</h2><p>在 V8 的 v5.9 版本出来之前，它曾经拥有两个  编译器：</p>
+<ul>
+<li><p>full-codegen —— 一个简单且快速的编译器，可以生成简单但相对  较慢的机器码。</p>
 </li>
-<li><p>避免脆弱的基类问题</p>
-</li>
-<li><p>避免紧耦合</p>
-</li>
-<li><p>避免严格分类（强制 is-a 关系最终会在新的使用方案中出错）</p>
-</li>
-<li><p>避免大猩猩香蕉问题（“你想要的是一个香蕉，得到的是拿着香蕉的大猩猩和整个丛林”）</p>
-</li>
-<li><p>使代码更灵活</p>
+<li><p>Grankshaft —— 一个较复杂的即时优化编译器，可以生成  高度优化的代码</p>
 </li>
 </ul>
-<h3 id="减分点：-4"><a href="#减分点：-4" class="headerlink" title="减分点："></a>减分点：</h3><ul>
-<li><p>没有提到上面的任何问题</p>
+<p>V8 引擎内部使用了多线程：</p>
+<ul>
+<li><p>主线程完成你所期望的任务：获取你的代码，编译执行</p>
 </li>
-<li><p>未能阐明组合和类继承的区别，或组合的优点</p>
+<li><p>还有一个单独的线程用于编译，以便主线程可以继续执行，而前者可以优化代码</p>
 </li>
-</ul>
-<h3 id="补充学习：-4"><a href="#补充学习：-4" class="headerlink" title="补充学习："></a>补充学习：</h3><div class="video-container"><iframe src="//www.youtube.com/embed/wfMtDGfHWpA" frameborder="0" allowfullscreen></iframe></div>
-<blockquote><p>Move Over, ‘class’:<br>Composable Factory Functions Are Here</p>
-<footer><strong>Eric Elliott</strong><cite><a href="https://medium.com/p/77f8911c2fee" target="_blank" rel="noopener">Introducing the Stamp Specification</a></cite></footer></blockquote>
-<h2 id="什么是双向数据绑定和单向数据流，他们有何不同？"><a href="#什么是双向数据绑定和单向数据流，他们有何不同？" class="headerlink" title="什么是双向数据绑定和单向数据流，他们有何不同？"></a>什么是双向数据绑定和单向数据流，他们有何不同？</h2><p>双向数据绑定意味着 UI 和数据模型的动态绑定，当 UI 发生变化，数据模型也会发生变化，反之亦然。</p>
-<p>单向数据流意味着数据模型作为数据来源。改变 UI 会触发消息通知把用户意图发送给数据模型（类似 React 中的 “store”）。只有数据模型才能改变应用状态。结果是数据总是向单一方向流动，能够使代码易于理解。</p>
-<p>单向数据流是确定的，而双向绑定可能产生副作用使其难以跟踪和理解。</p>
-<h3 id="加分点：-4"><a href="#加分点：-4" class="headerlink" title="加分点："></a>加分点：</h3><ul>
-<li><p>Reac 是单向数据流的新典范，所以提及 Reac 是一个好的信号。 + + + Cycle.js 是另外一个流行的单向数据流实现。</p>
+<li><p>Profiler 线程，它将通知  运行时  哪些  方法花费大量时间，以便 Crankshaft 可以优化它们</p>
 </li>
-<li><p>Angular 是一种使用双向绑定的流行框架</p>
+<li><p> 少许线程来处理垃圾收集器扫描</p>
 </li>
 </ul>
-<h3 id="减分点：-5"><a href="#减分点：-5" class="headerlink" title="减分点："></a>减分点：</h3><ul>
-<li>不知道两者的意思。无法阐明两者的区别</li>
-</ul>
-<h3 id="补充学习：-5"><a href="#补充学习：-5" class="headerlink" title="补充学习："></a>补充学习：</h3><div class="video-container"><iframe src="//www.youtube.com/embed/XxVg_s8xAms" frameborder="0" allowfullscreen></iframe></div>
-<h2 id="一体化和微服务架构的优缺点"><a href="#一体化和微服务架构的优缺点" class="headerlink" title="一体化和微服务架构的优缺点"></a>一体化和微服务架构的优缺点</h2><p>一体化架构意味着你的应用代码是紧密结合的，所有组件协同工作，共享内存空间和资源。</p>
-<p>微服务架构意味着你的应用程序由许多较小的独立应用程序组成，这些应用程序能够在自己的内存空间中运行，并且它们彼此相互独立，甚至可以在不同机器下运行。</p>
-<p><strong>一体化架构优点：</strong> 一体化架构的主要优势是大多数应用程序有大量的交叉点，例如日志，限速以及审查跟踪和 DOS 保护等安全功能。</p>
-<p>当一切都在同一个应用程序中运行时，这样就很容易讲个组件串联起来。</p>
-<p>还有性能优势，因为共享内存比进程间通信 （IPC） 更快。</p>
-<p><strong>一体化架构缺点：</strong> 一体化架构通常是紧耦合的，应用版本迭代杂糅，使得独立扩展和代码可维护性的隔离服务困难。</p>
-<p>一体化结构也难以理解，因为当你查看特定服务或控制器时，可能存在一些不明显的依赖，副作用以及不可思议的问题。</p>
-<p><strong>微服务架构优点：</strong> 微服务架构通常有更好的组织结构，因为每个部分有自己特定的功能，且不需要关心其他部分的功能。为不同应用服务进行重构和重新配置的解藕服务也更简单。（例如同时提供给网页客户端和开放 API 的服务）</p>
-<p>有于微服务架构的组织方式，它还有性能优势，因为可以隔离热服务并且将其扩展为独立于应用程序的其余部分。</p>
-<p><strong>微服务架构缺点：</strong> 当你构建一个新的微服务架构时，你可能会发现很多在设计时没有预料到的跨组件问题。一体化结构可以轻松地通过共享方式或者中间件来处理跨组件问题。</p>
-<p>在微服务架构中，隔离组件之间通信的开销，封装的组件在另外一个服务层可以让所有路由通过。</p>
-<p>最后，一体化架构也需要外部服务来处理组间通信，但一体化架构可以把这个这个工作成本延迟到项目更加成熟的时候。</p>
-<p>微服务经常部署在它们自己的虚拟机或容器里，导致 VM 竞争的激增。这些任务经常通过容器管理工具自动完成。</p>
-<h3 id="加分点：-5"><a href="#加分点：-5" class="headerlink" title="加分点："></a>加分点：</h3><ul>
-<li><p>倾向于微服务架构，尽管微服务架构初始成本更高。意识到从长远看微服务性能好易扩展。</p>
+<p>首次执行 JavaScript 代码，V8 利用 <strong>full-codegen</strong> 直接将解析后的 JavaScript 不经任何转换地编译为机器码。这使它可以非常快速地  开始执行机器码。注意， V8 不使用中间字节码，因此不需要解释器。</p>
+<p>当代码运行一段时间后， profiler 线程以及收集来足够的数据来通知运行时应该优化哪个方法。</p>
+<p>然后， <strong>Crankshaft</strong> 在另一个线程开始优化。它将 JavaScript 抽象语法树转换为名为 <strong>Hydrogen</strong> 的高级静态单元分配表示 (SSA) ，并尝试去优化这个 Hydrogen 图。大多数优化在这个层级完成。</p>
+<h2 id="代码嵌入-Inlining"><a href="#代码嵌入-Inlining" class="headerlink" title="代码嵌入 (Inlining)"></a>代码嵌入 (Inlining)</h2><p>首次优化是尽可能的提前嵌入更多的代码。代码嵌入就是将使用函数的地方( 函数被调用的那一行代码)替换成调用函数的本体。这个简单的步骤使下面的优化更有意义。</p>
+<p><img src="https://cdn-images-1.medium.com/max/1600/0*RRgTDdRfLGEhuR7U.png" alt="inlining"></p>
+<h2 id="隐藏类-Hidden-class"><a href="#隐藏类-Hidden-class" class="headerlink" title="隐藏类 (Hidden class)"></a>隐藏类 (Hidden class)</h2><p>JavaScript 是一门基于原型的语言：没有通过克隆创建的类和对象。 JavaScript 也是一门动态语言，这意味着可以在对象实例化后轻易地向它添加或删除属性。</p>
+<p> 大多数 JavaScript 解释器使用类似字典的结构 (基于<a href="http://en.wikipedia.org/wiki/Hash_function" target="_blank" rel="noopener">散列函数</a>) 来存储对象属性在内存中的位置。这种结构使得在 JavaScript 中检索属性的值比在 Java 或 C＃ 等非动态编程语言中的计算成本更高。在 Java 中，所有对象属性都是在编译之前由固定对象布局确定的，并且无法在运行时动态添加或删除 (C＃具有 <a href="https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/dynamic" target="_blank" rel="noopener">动态类型</a>，这是另一个主题) 。因此，属性值（或指向这些属性的指针）可以作为连续 buffer 存储在存储器中，每个值之间具有固定偏移值。可以根据属性类型轻易确定偏移的长度，而在运行时可以更改属性类型的 JavaScript 中，这是不可能的。</p>
+<p>由于使用字典在内存中查找对象属性的位置效率非常低，因此 V8 使用不同的方法：<strong>隐藏类 (hidden classes)</strong> 。隐藏类的工作方式类似于 Java 等语言中使用的固定对象布局（类），除了它们是在运行时创建的。现在，让我们看看它们实际上是什么样的：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Point</span>(<span class="params">x, y</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.x = x</span><br><span class="line">  <span class="keyword">this</span>.y = y</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> p1 = <span class="keyword">new</span> Point(<span class="number">1</span>, <span class="number">2</span>)</span><br></pre></td></tr></table></figure>
+<p>一旦 <code>new Point(1, 2)</code> 被调用，V8 会生成一个 <code>C0</code> 的隐藏类。</p>
+<p><img src="https://cdn-images-1.medium.com/max/1600/1*pVnIrMZiB9iAz5sW28AixA.png" alt="C0"></p>
+<p>到现在还没有为 <code>Point</code> 定义任何属性，所以 <code>C0</code> 是空的。</p>
+<p> 一旦第一条语句 <code>this.x = x</code> (<code>Point</code> 函数内的) 执行后，V8 将创建一个基于 <code>C0</code> 的第二个隐藏类 <code>C1</code> 。<code>C1</code> 描述了属性值 <code>x</code> 在内存中的位置(相对于对象指针) 。在这个例子中，<code>x</code> 存储在<a href="">偏移值</a>为 0 的地方，这意味着当在内存中把 <code>point</code> 对象视为一段连续的 buffer 时，它的第一偏移量对应的属性就是 <code>x</code> 。V8  还会使用 “ 类转换 (class transition)” 更新 <code>C0</code> ，如果将属性 <code>x</code> 添加到 <code>Point</code> 对象， 隐藏类就会从 <code>C0</code> 切换到 <code>C1</code> 。现在 <code>Point</code> 对象的隐藏类为 <code>C1</code> 。</p>
+<p><img src="https://cdn-images-1.medium.com/max/1600/1*QsVUE3snZD9abYXccg6Sgw.png" alt="C1"></p>
+<p>每当一个新属性添加到对象，旧的隐藏类就会通过一个转换路径更新成一个新的隐藏类。隐藏类转换非常重要，因为它们允许在以相同方式创建的对象之间共享隐藏类。如果两个对象共享一个隐藏类，并给它们添加相同的属性，隐藏类转换能够确保这两个对象都获得新的隐藏类以及与之相关联的优化代码。</p>
+<p>当执行语句 <code>this.y = y</code> (同样，在 <code>Point</code> 函数内部，<code>this.x = x</code> 语句之后) 时，将重复此过程。</p>
+<p>一个新的隐藏类 <code>C2</code> 被创建了，如果属性 <code>y</code> 被添加到 Point 对象(已经包含了 <code>x</code> 属性)，同样的过程，类型转换被添加到 <code>C1</code> 上，然后隐藏类开始更新成 <code>C2</code>，并且 Point 对象的隐藏类就要更新成 <code>C2</code> 了。</p>
+<p><img src="https://user-gold-cdn.xitu.io/2017/11/18/15fcec13180b6f2e?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" alt="C2"></p>
+<p>隐藏类转换是根据属性被添加到对象上的顺序而发生变化。我们看看下面这一小段代码：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Point</span>(<span class="params">x, y</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.x = x</span><br><span class="line">  <span class="keyword">this</span>.y = y</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> p1 = <span class="keyword">new</span> Point(<span class="number">1</span>, <span class="number">2</span>)</span><br><span class="line">p1.a = <span class="number">5</span></span><br><span class="line">p1.b = <span class="number">6</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> p2 = <span class="keyword">new</span> Point(<span class="number">3</span>, <span class="number">4</span>)</span><br><span class="line">p2.b = <span class="number">7</span></span><br><span class="line">p2.a = <span class="number">8</span></span><br></pre></td></tr></table></figure>
+<p>现在，你可能认为 <code>p1</code> 和 <code>p2</code> 使用了相同的隐藏类和类转换。其实不然，对于 <code>p1</code> 先添加属性 <code>a</code> 再添加属性 <code>b</code> ，但是 <code>p2</code> 先添加 <code>b</code> 后添加 <code>a</code> 。因此，<code>p1</code> 和 <code>p2</code> 以不同转换路径的结束，它们的隐藏类也不同。<strong>在这种情况下， 最好以相同的顺序初始化动态属性，以便可以复用隐藏类。</strong></p>
+<h2 id="内联缓存-Inline-caching"><a href="#内联缓存-Inline-caching" class="headerlink" title="内联缓存 (Inline caching)"></a>内联缓存 (Inline caching)</h2><p>V8 利用另一种被称为内联缓存的技术来优化动态类型语言。内联缓存依赖于观察到：发生在相同类型的对象上的同一个方法的重复调用。关于内联缓存深入解释请看<a href="https://github.com/sq/JSIL/wiki/Optimizing-dynamic-JavaScript-with-inline-caches" target="_blank" rel="noopener">这里</a>。</p>
+<p>我们将讨论内联缓存的一般概念（如果您没有时间进行上面的深入解释）。</p>
+<p>那么它是怎样工作的？V8 会维护一个在最近的方法调用的参数的对象类型的缓存，并使用这些信息去预测将要传入参数的对象类型。如果 V8 对传递给方法的对象类型做出了很好的预测，那么它就能够绕开获取对象属性的计算过程，取而代之的是使用先前查找这个对象的隐藏类时所存储的信息。</p>
+<p>那么隐藏类和内联缓存的概念是如何  关联的？每当在特定对象上调用方法时，V8 引擎必须执行对该对象的隐藏类的查找，以确定访问特定属性的偏移量。在将同一方法成功调用两次到同一个隐藏类之后，，V8 就会略过查找隐藏类，将这个属性的偏移值添加到对象本身的指针上。未来这个方法的所有调用，V8 引擎都会假设隐藏类没有更改，并使用先前查找中存储的偏移  值直接跳转到特定属性的内存地址。这极大的提高了 V8 的执行速度。</p>
+<p>内联缓存也是同类型对象共享隐藏类非常重要的原因。如果创建两个相同类型且具有不同隐藏类的对象(如同我们之前的示例)，V8 将无法使用内联缓存，因为即使两个对象属于同一类型，其对应的隐藏类也会为其属性分配不同的偏移值。</p>
+<p><img src="https://cdn-images-1.medium.com/max/1600/1*iHfI6MQ-YKQvWvo51J-P0w.png" alt="inline caching"></p>
+<p>这两个对象基本相同，但 <code>a</code> 和 <code>b</code> 属性的创建顺序不同。</p>
+<h2 id="编译成机器码-Compilation-to-machine-code"><a href="#编译成机器码-Compilation-to-machine-code" class="headerlink" title="编译成机器码 (Compilation to machine code)"></a>编译成机器码 (Compilation to machine code)</h2><p>经 Hydrogen graph 优化后，Crankshaft 将其降低到一个较低层次 Lithium 。大多数 Lithium 实现都是特定于体系结构的。寄存器分配发生在这个级别。</p>
+<p>最后， Lithium 会被编译成机器码。然后，触发 OSR 一种运行时替换正在运行的栈帧的技术 (on-stack replacement) 。这我们开始编译和优化一个明显耗时的方法之前，我们可能正在运行它。V8 不会  遗弃  正在缓慢执行的代码而直接开始执行优化  后的。相反，它将转换所有的上下文环境 (堆栈，寄存器) ，以便我们可以这执行过程中切换到优化的版本。这是一项非常复杂的任务，请记住，在其他优化中，V8 原来已经内联了代码。V8 并不是唯一能够做到这一点的引擎。</p>
+<p>V8 有一种称为去优化的保护措施可以进行相反的转换，并在发动机制造的假设不再适用的情况下恢复到非优化代码。</p>
+<h2 id="垃圾回收-Garbage-collection"><a href="#垃圾回收-Garbage-collection" class="headerlink" title="垃圾回收 (Garbage collection)"></a>垃圾回收 (Garbage collection)</h2><p>对于垃圾收集，V8 采用传统的标记和扫描方式来清理旧数据。标记阶段会阻止 JavaScript 执行。为了控制 GC 成本并使运行更稳定，V8 使用增量标记：不是遍历整个堆，尝试标记每个可能的对象，它只是遍历堆的一部分，然后恢复正常执行。下一个 GC 将从上一个堆遍历停止的位置继续。这允许在正常执行期间非常短暂的暂停。如前所述，扫描阶段由单独的线程处理。</p>
+<h2 id="Ignition-和-TurboFan"><a href="#Ignition-和-TurboFan" class="headerlink" title="Ignition 和 TurboFan"></a>Ignition 和 TurboFan</h2><p>随着 2017 年早些时候发布 V8 v5.9，引入了新的执行管道。这个新的管道在实际的 JavaScript 应用程序中实现了更大的性能提升和显着的内存节省。</p>
+<p>新的执行管道建立在 V8 解释器 <a href="https://github.com/v8/v8/wiki/Interpreter" target="_blank" rel="noopener">Ignition</a>，和最新优化的 V8 编译器 <a href="https://github.com/v8/v8/wiki/TurboFan" target="_blank" rel="noopener">TurboFan</a> 之上。</p>
+<p>您可以在<a href="https://v8project.blogspot.bg/2017/05/launching-ignition-and-turbofan.html" target="_blank" rel="noopener">这里</a>查看 V8 团队关于该主题的博客文章。</p>
+<p>自从 V8 的 v5.9 版本问世以来，V8 已经不再使用 full-codegen 和 Crankshaft（自 2010 年以来为 V8 提供服务的技术）用于执行 JavaScript，因为 V8 团队一直在努力跟上新的 JavaScript 语言功能以及功能优化。</p>
+<p>这意味着整体 V8 将具有更简单，更易维护的架构。</p>
+<p><img src="https://cdn-images-1.medium.com/max/1600/0*pohqKvj9psTPRlOv.png" alt="Improvements on Web and Node.js benchmarks
+"></p>
+<p>这些改进只是一个开始。新的 Ignition 和 TurboFan 管道为进一步优化铺平了道路，这些优化将在未来几年内提升 JavaScript 性能并缩小 V8 在 Chrome 和 Node.js 中的占用空间。</p>
+<p>最后，这里有一些关于如何编写优化良好的 JavaScript 的技巧和窍门。您可以从上面的内容中轻松地推导出这些内容，但是，这里是为方便起见的摘要：</p>
+<h2 id="如何编写优化的-JavaScript"><a href="#如何编写优化的-JavaScript" class="headerlink" title="如何编写优化的 JavaScript"></a>如何编写优化的 JavaScript</h2><ol>
+<li><p><strong>对象属性的顺序</strong> ：始终以相同的顺序实例化对象属性，以便可以共享隐藏类和随后优化的代码。</p>
 </li>
-<li><p>关于微服务架构和一体化架构的实用性。在构建程序方面，微服务在代码级别相互隔离，一体化在开始时就容易捆绑在一起。微服务的高成本可以延迟到更加成熟的时候。</p>
+<li><p><strong>动态属性</strong> ：在向实例化的对象添加属性将强制更改隐藏类并减慢为先前隐藏类优化的任何方法。而是在其构造函数中分配所有对象的属性。</p>
 </li>
-</ul>
-<h3 id="减分点：-6"><a href="#减分点：-6" class="headerlink" title="减分点："></a>减分点：</h3><ul>
-<li><p>不知道一体化和微服务之间的差别</p>
+<li><p><strong>方法</strong> ：重复执行相同方法的代码将比仅执行一次许多不同方法的代码运行得更快（因为内联缓存）。</p>
 </li>
-<li><p>对微服务架构额外高成本不清楚或一些不切实际的想法</p>
+<li><p><strong> 数组</strong> ：避免 keys 不是增量数字的稀疏数组。含有空元素的稀疏数组是<strong>哈希表</strong>。这种数组中的元素访问起来更加昂贵。另外，尽量避免预先分配大数组。最好的做法是随着你的需要慢慢的增大数组。最后，不要删除数组中的元素。它使 keys 稀疏。</p>
 </li>
-<li><p>对微服务架构， IPC （夸进程通信）和网络通信的额外成本不清楚</p>
+<li><p><strong>标记值</strong> ：V8 使用 32 位表示对象和数字。它使用一个位来知道它是一个对象（flag = 1）还是一个称为 SMI（SMall Integer）的整数（flag = 0），因为它是 31 位的。然后，如果数值大于 31 位，V8 将对该数字进行  封装 (box) ，将其变为双精度 (double) 并创建一个新对象以将数字放入其中。尽可能使用 31 位带符号的数字，以避免对 JS 对象进行昂贵的装箱操作。尽可能使用 31 位带符号的数字，以避免对 JS 对象进行昂贵的封装操作。</p>
 </li>
-<li><p>对微服务架构过于消极，不能明确表达如何通过结偶一体化架构来轻松分割成微服务</p>
+</ol>
+<h2 id="资源-Resources"><a href="#资源-Resources" class="headerlink" title="资源 (Resources)"></a>资源 (Resources)</h2><ul>
+<li><p><a href="https://docs.google.com/document/u/1/d/1hOaE7vbwdLLXWj3C8hTnnkpE0qSa2P--dtDvwXXEeD0/pub" target="_blank" rel="noopener">Crankshafting from the ground up</a></p>
 </li>
-<li><p>低估了独立可扩展的微服务架构的优势</p>
+<li><p><a href="https://github.com/thlorenz/v8-perf" target="_blank" rel="noopener">Notes and resources related to V8 and thus Node.js performance</a></p>
 </li>
-</ul>
-<h2 id="什么是异步编程，为什么它在-JavaScript-中很重要？"><a href="#什么是异步编程，为什么它在-JavaScript-中很重要？" class="headerlink" title="什么是异步编程，为什么它在 JavaScript 中很重要？"></a>什么是异步编程，为什么它在 JavaScript 中很重要？</h2><p>同步编程意味着，除了条件语句和函数调用，代码从上到下依次执行，例如网络请求和磁盘 I/O 这样长时间的任务会造成阻塞。</p>
-<p>异步编程意味着引擎运行在时间循环上。当需要阻塞操作时，请求开始后，代码继续运行不需要等待请求结果。当响应准备好，触发中断，导致事件处理运行，控制器在其后执行。通过这种方式，单线程就可以处理并发操作了。</p>
-<p>用户交互本质上是异步的，需要花费大部分时间等待用户输入中断事件循环触发事件回调。</p>
-<p>Node 默认时异步的，这意味着服务方式大致相同，循环等待网络请求，在处理第一个请求的同时接收更多到来的请求。</p>
-<p>异步在 JavaScript 中时非常重要的，因为他非常适合用户交互，并且有利于提高服务器的性能。</p>
-<h3 id="加分点：-6"><a href="#加分点：-6" class="headerlink" title="加分点："></a>加分点：</h3><ul>
-<li><p>知道什么是阻塞，以及性能的意义</p>
+<li><p><a href="https://bugs.chromium.org/p/v8/adminIntro" target="_blank" rel="noopener">Project: v8</a></p>
 </li>
-<li><p>知道事件回调，以及为什么对用户界面交互很重要</p>
+<li><p><a href="https://mrale.ph/v8/resources.html" target="_blank" rel="noopener">V8 Resources</a></p>
 </li>
-</ul>
-<h3 id="减分点：-7"><a href="#减分点：-7" class="headerlink" title="减分点："></a>减分点：</h3><ul>
-<li><p>不熟悉异步或同步</p>
+<li><p><a href="https://www.youtube.com/watch?v=UJPdhx5zTaw" target="_blank" rel="noopener">Google I/O 2012 - Breaking the JavaScript Speed Limit with V8</a></p>
 </li>
-<li><p>无法表达用户交互和异步对性能的影响</p>
+<li><p><a href="https://www.youtube.com/watch?v=hWhMKalEicY" target="_blank" rel="noopener">V8: an open source JavaScript engine</a></p>
 </li>
 </ul>
 
@@ -768,14 +654,18 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/posts/b2f2d94f/" rel="next" title="【译】JavaScript 工作原理：JS 引擎，runtime 和调用栈的概述">
+                <i class="fa fa-chevron-left"></i> 【译】JavaScript 工作原理：JS 引擎，runtime 和调用栈的概述
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/posts/25329c80" rel="prev" title="【译】精通 JavaScript： 什么是函数式编程（Functional Programming）？">
-                【译】精通 JavaScript： 什么是函数式编程（Functional Programming）？ <i class="fa fa-chevron-right"></i>
+              <a href="/posts/977269ff/" rel="prev" title="【译】JavaScript 工作原理：内存管理+如何处理4个常见的内存泄漏">
+                【译】JavaScript 工作原理：内存管理+如何处理4个常见的内存泄漏 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -940,7 +830,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#你能说出两个对-JavaScript-应用程序开发人员很重要的编程范式吗？"><span class="nav-number">1.</span> <span class="nav-text">你能说出两个对 JavaScript 应用程序开发人员很重要的编程范式吗？</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#加分点："><span class="nav-number">1.1.</span> <span class="nav-text">加分点：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#减分点："><span class="nav-number">1.2.</span> <span class="nav-text">减分点：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#补充学习："><span class="nav-number">1.3.</span> <span class="nav-text">补充学习：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是函数式编程？"><span class="nav-number">2.</span> <span class="nav-text">什么是函数式编程？</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#加分点：-1"><span class="nav-number">2.1.</span> <span class="nav-text">加分点：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#减分点：-1"><span class="nav-number">2.2.</span> <span class="nav-text">减分点：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#补充学习：-1"><span class="nav-number">2.3.</span> <span class="nav-text">补充学习：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#类继承和原型继承之间有什么区别？"><span class="nav-number">3.</span> <span class="nav-text">类继承和原型继承之间有什么区别？</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#加分点：-2"><span class="nav-number">3.1.</span> <span class="nav-text">加分点：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#减分点：-2"><span class="nav-number">3.2.</span> <span class="nav-text">减分点：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#补充学习：-2"><span class="nav-number">3.3.</span> <span class="nav-text">补充学习：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数式编程和面向对象编程的优缺点是什么？"><span class="nav-number">4.</span> <span class="nav-text">函数式编程和面向对象编程的优缺点是什么？</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#加分点：-3"><span class="nav-number">4.1.</span> <span class="nav-text">加分点：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#减分点：-3"><span class="nav-number">4.2.</span> <span class="nav-text">减分点：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#补充学习：-3"><span class="nav-number">4.3.</span> <span class="nav-text">补充学习：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#什么时候类继承是一个合适的选择"><span class="nav-number">5.</span> <span class="nav-text">什么时候类继承是一个合适的选择</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#加分点"><span class="nav-number">5.1.</span> <span class="nav-text">加分点:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#补充学习"><span class="nav-number">5.2.</span> <span class="nav-text">补充学习:</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#什么时候原型继承是一个合适的选择"><span class="nav-number">6.</span> <span class="nav-text">什么时候原型继承是一个合适的选择</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#加分点-1"><span class="nav-number">6.1.</span> <span class="nav-text">加分点:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#减分点"><span class="nav-number">6.2.</span> <span class="nav-text">减分点:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#补充学习-1"><span class="nav-number">6.3.</span> <span class="nav-text">补充学习:</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#“优先使用对象组合高于类继承”是什么意思"><span class="nav-number">7.</span> <span class="nav-text">“优先使用对象组合高于类继承”是什么意思?</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#加分点-2"><span class="nav-number">7.1.</span> <span class="nav-text">加分点:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#减分点：-4"><span class="nav-number">7.2.</span> <span class="nav-text">减分点：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#补充学习：-4"><span class="nav-number">7.3.</span> <span class="nav-text">补充学习：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是双向数据绑定和单向数据流，他们有何不同？"><span class="nav-number">8.</span> <span class="nav-text">什么是双向数据绑定和单向数据流，他们有何不同？</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#加分点：-4"><span class="nav-number">8.1.</span> <span class="nav-text">加分点：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#减分点：-5"><span class="nav-number">8.2.</span> <span class="nav-text">减分点：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#补充学习：-5"><span class="nav-number">8.3.</span> <span class="nav-text">补充学习：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一体化和微服务架构的优缺点"><span class="nav-number">9.</span> <span class="nav-text">一体化和微服务架构的优缺点</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#加分点：-5"><span class="nav-number">9.1.</span> <span class="nav-text">加分点：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#减分点：-6"><span class="nav-number">9.2.</span> <span class="nav-text">减分点：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是异步编程，为什么它在-JavaScript-中很重要？"><span class="nav-number">10.</span> <span class="nav-text">什么是异步编程，为什么它在 JavaScript 中很重要？</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#加分点：-6"><span class="nav-number">10.1.</span> <span class="nav-text">加分点：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#减分点：-7"><span class="nav-number">10.2.</span> <span class="nav-text">减分点：</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#概述-Overview"><span class="nav-number">1.</span> <span class="nav-text">概述 (Overview)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#为什么创建了-V8-引擎"><span class="nav-number">2.</span> <span class="nav-text">为什么创建了 V8 引擎</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#V8-曾经有两个编译器"><span class="nav-number">3.</span> <span class="nav-text">V8 曾经有两个编译器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码嵌入-Inlining"><span class="nav-number">4.</span> <span class="nav-text">代码嵌入 (Inlining)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#隐藏类-Hidden-class"><span class="nav-number">5.</span> <span class="nav-text">隐藏类 (Hidden class)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#内联缓存-Inline-caching"><span class="nav-number">6.</span> <span class="nav-text">内联缓存 (Inline caching)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#编译成机器码-Compilation-to-machine-code"><span class="nav-number">7.</span> <span class="nav-text">编译成机器码 (Compilation to machine code)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#垃圾回收-Garbage-collection"><span class="nav-number">8.</span> <span class="nav-text">垃圾回收 (Garbage collection)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Ignition-和-TurboFan"><span class="nav-number">9.</span> <span class="nav-text">Ignition 和 TurboFan</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#如何编写优化的-JavaScript"><span class="nav-number">10.</span> <span class="nav-text">如何编写优化的 JavaScript</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#资源-Resources"><span class="nav-number">11.</span> <span class="nav-text">资源 (Resources)</span></a></li></ol></div>
             
 
           </div>

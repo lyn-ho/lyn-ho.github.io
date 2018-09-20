@@ -144,27 +144,27 @@
 
 
 
-  <meta name="description" content="原文：Master the JavaScript Interview: What is a Closure?   “精通 JavaScript 面试” 是一个系列的文章，旨在帮助面试者准备他们在申请中高级职位时可能遇到的常见问题。这些是我在现实面试中经常提出的问题。  什么是闭包通常是我 JavaScript 面试的第一个和最后一个问题。坦白说，如果你不理解闭包你就不能深入掌握 JavaSc">
+  <meta name="description" content="原文：Master the JavaScript Interview: What is Function Composition?    “精通 JavaScript 面试” 是一个系列的文章，旨在帮助面试者准备他们在申请中高级职位时可能遇到的常见问题。这些是我在现实面试中经常提出的问题。  函数式编程已经成为了 JavaScript 世界的一个热门话题。仅仅在几年前，甚至只有很少 JavaS">
 <meta name="keywords" content="JavaScript">
 <meta property="og:type" content="article">
-<meta property="og:title" content="【译】精通 JavaScript： 什么是闭包（Closure）？">
-<meta property="og:url" content="lyn-ho.github.io/posts/3b887bb4">
+<meta property="og:title" content="【译】精通 JavaScript： 什么是函数组合（Function Composition）？">
+<meta property="og:url" content="lyn-ho.github.io/posts/8e5d7b3b/index.html">
 <meta property="og:site_name" content="Lyn&#39;s Blog">
-<meta property="og:description" content="原文：Master the JavaScript Interview: What is a Closure?   “精通 JavaScript 面试” 是一个系列的文章，旨在帮助面试者准备他们在申请中高级职位时可能遇到的常见问题。这些是我在现实面试中经常提出的问题。  什么是闭包通常是我 JavaScript 面试的第一个和最后一个问题。坦白说，如果你不理解闭包你就不能深入掌握 JavaSc">
+<meta property="og:description" content="原文：Master the JavaScript Interview: What is Function Composition?    “精通 JavaScript 面试” 是一个系列的文章，旨在帮助面试者准备他们在申请中高级职位时可能遇到的常见问题。这些是我在现实面试中经常提出的问题。  函数式编程已经成为了 JavaScript 世界的一个热门话题。仅仅在几年前，甚至只有很少 JavaS">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="https://cdn-images-1.medium.com/max/2000/1*J-jjDviwGUfzka1HX5LG9A.jpeg">
-<meta property="og:updated_time" content="2018-09-16T13:06:35.359Z">
+<meta property="og:image" content="https://cdn-images-1.medium.com/max/2000/1*4trMikhKRHhSUlI2D6h_mA.jpeg">
+<meta property="og:updated_time" content="2018-09-16T13:06:35.362Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="【译】精通 JavaScript： 什么是闭包（Closure）？">
-<meta name="twitter:description" content="原文：Master the JavaScript Interview: What is a Closure?   “精通 JavaScript 面试” 是一个系列的文章，旨在帮助面试者准备他们在申请中高级职位时可能遇到的常见问题。这些是我在现实面试中经常提出的问题。  什么是闭包通常是我 JavaScript 面试的第一个和最后一个问题。坦白说，如果你不理解闭包你就不能深入掌握 JavaSc">
-<meta name="twitter:image" content="https://cdn-images-1.medium.com/max/2000/1*J-jjDviwGUfzka1HX5LG9A.jpeg">
+<meta name="twitter:title" content="【译】精通 JavaScript： 什么是函数组合（Function Composition）？">
+<meta name="twitter:description" content="原文：Master the JavaScript Interview: What is Function Composition?    “精通 JavaScript 面试” 是一个系列的文章，旨在帮助面试者准备他们在申请中高级职位时可能遇到的常见问题。这些是我在现实面试中经常提出的问题。  函数式编程已经成为了 JavaScript 世界的一个热门话题。仅仅在几年前，甚至只有很少 JavaS">
+<meta name="twitter:image" content="https://cdn-images-1.medium.com/max/2000/1*4trMikhKRHhSUlI2D6h_mA.jpeg">
 
 
 
 
 
 
-  <link rel="canonical" href="lyn-ho.github.io/posts/3b887bb4"/>
+  <link rel="canonical" href="lyn-ho.github.io/posts/8e5d7b3b/"/>
 
 
 
@@ -174,7 +174,7 @@
   };
 </script>
 
-  <title>【译】精通 JavaScript： 什么是闭包（Closure）？ | Lyn's Blog</title>
+  <title>【译】精通 JavaScript： 什么是函数组合（Function Composition）？ | Lyn's Blog</title>
   
 
 
@@ -366,7 +366,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="lyn-ho.github.io/posts/3b887bb4">
+    <link itemprop="mainEntityOfPage" href="lyn-ho.github.io/posts/8e5d7b3b/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Lyn Ho">
@@ -383,7 +383,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">【译】精通 JavaScript： 什么是闭包（Closure）？
+          <h2 class="post-title" itemprop="name headline">【译】精通 JavaScript： 什么是函数组合（Function Composition）？
               
             
           </h2>
@@ -408,7 +408,7 @@
                 
               
 
-              <time title="Created: 2018-08-27 12:34:58" itemprop="dateCreated datePublished" datetime="2018-08-27T12:34:58+08:00">2018-08-27</time>
+              <time title="Created: 2018-09-04 17:08:58" itemprop="dateCreated datePublished" datetime="2018-09-04T17:08:58+08:00">2018-09-04</time>
             
 
             
@@ -439,8 +439,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/posts/3b887bb4#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">Comments: </span> <span class="post-comments-count gitment-comments-count" data-xid="/posts/3b887bb4" itemprop="commentsCount"></span>
+                <a href="/posts/8e5d7b3b/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">Comments: </span> <span class="post-comments-count gitment-comments-count" data-xid="/posts/8e5d7b3b/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -448,7 +448,7 @@
 
           
           
-             <span id="/posts/3b887bb4" class="leancloud_visitors" data-flag-title="【译】精通 JavaScript： 什么是闭包（Closure）？">
+             <span id="/posts/8e5d7b3b/" class="leancloud_visitors" data-flag-title="【译】精通 JavaScript： 什么是函数组合（Function Composition）？">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -479,56 +479,99 @@
       
 
       
-        <p><img src="https://cdn-images-1.medium.com/max/2000/1*J-jjDviwGUfzka1HX5LG9A.jpeg" alt="closure"></p>
-<blockquote>
-<p>原文：<a href="https://medium.com/javascript-scene/master-the-javascript-interview-what-is-a-closure-b2f0d2152b36" target="_blank" rel="noopener">Master the JavaScript Interview: What is a Closure?</a></p>
+        <blockquote>
+<p>原文：<a href="https://medium.com/javascript-scene/master-the-javascript-interview-what-is-function-composition-20dfb109a1a0" target="_blank" rel="noopener">Master the JavaScript Interview: What is Function Composition?</a></p>
 </blockquote>
+<p><img src="https://cdn-images-1.medium.com/max/2000/1*4trMikhKRHhSUlI2D6h_mA.jpeg" alt="Google Datacenter Pipes — Jorge Jorquera — (CC-BY-NC-ND-2.0)"></p>
 <blockquote>
 <p>“精通 JavaScript 面试” 是一个系列的文章，旨在帮助面试者准备他们在申请中高级职位时可能遇到的常见问题。这些是我在现实面试中经常提出的问题。</p>
 </blockquote>
-<p>什么是闭包通常是我 JavaScript 面试的第一个和最后一个问题。坦白说，如果你不理解闭包你就不能深入掌握 JavaScript。</p>
+<p>函数式编程已经成为了 JavaScript 世界的一个热门话题。仅仅在几年前，甚至只有很少 JavaScript 开发者知道函数式编程，但是在过去的3年中我看到了大量使用函数式编程思维构建的应用。</p>
+<p>函数组合是将两个或多个函数组合以产生新函数的过程。将函数组合在一起就像是将一系列管道拼凑在一起，以便我们的数据流过。</p>
 <a id="more"></a>
-<p>你别含糊其辞，但是你真的理解如何构建一个严肃的 JavaScript 程序吗？你真的明白发生了什么，或者程序是如何运行的。我有疑虑，如果不知道这个问题的答案是一个非常危险的信号。</p>
-<p>你不仅应该知道闭包的机制，还应该知道闭包为什么重要，并且可以轻易回答闭包的几个应用场景。</p>
-<p>在 JavaScript 中，闭包通常用于数据私有，事件处理和毁掉函数，以及 <a href="https://medium.com/javascript-scene/curry-or-partial-application-8150044c78b8#.l4b6l1i3x" target="_blank" rel="noopener">偏函数应用(Partial Applications)和柯里化(Currying)</a> ,还有其他函数式编程模式。</p>
-<p>我不在乎面试者是否知道 “closure” 这个单词或它的专业定义。我只想知道他们是否知道闭包的基本原理。如果不知道，通常代表他们没有很多构建真正 JavaScript 应用的经验。</p>
-<blockquote>
-<p><em>If you can’t answer this question, you’re a junior developer. I don’t care how long you’ve been coding.</em></p>
-</blockquote>
-<blockquote>
-<p>That may sound mean, but it’s not. What I mean is that most competent interviewers will ask you what a closure is, and most of the time, getting the answer wrong will cost you the job. Or if you’re lucky enough to get an offer anyway, it will cost you potentially tens of thousands of dollars per year in pay because you’ll be hired as a junior instead of a senior level developer, regardless of how long you’ve been coding.</p>
-</blockquote>
-<p>快速准备一下：“你能说出两种闭包的通用场景？”</p>
-<h2 id="什么是闭包"><a href="#什么是闭包" class="headerlink" title="什么是闭包"></a>什么是闭包</h2><p>闭包是绑定函数和引用其周围的状态的组合 <strong>(词法环境 lexical environment)</strong>。换句话说，闭包可以让内部函数访问外部函数的作用域。在 JavaScript 中，每次创建函数时，都会在创建函数时创建闭包。</p>
-<p>使用闭包，只需在另一个函数内定义一个函数并且公开出来。通过返回或传递给另一个函数来公开这个函数。</p>
-<p>内部函数可以访问外部函数作用域的变量，即使外部函数完成返回了。</p>
-<h2 id="使用闭包-例子"><a href="#使用闭包-例子" class="headerlink" title="使用闭包 (例子)"></a>使用闭包 (例子)</h2><p>闭包通常用于对象数据私有化。数据私有是让我们能够面向接口编程而不是实现编程的基础。这是可以帮助我们构建强壮软件的一个重要概念。因为实现细节比接口更容易改变。</p>
-<blockquote>
-<p><em>“Program to an interface, not an implementation.”</em></p>
-</blockquote>
-<blockquote>
-<p><em><a href="http://www.amazon.com/gp/product/B000SEIBB8?ie=UTF8&amp;camp=213733&amp;creative=393177&amp;creativeASIN=B000SEIBB8&amp;linkCode=shr&amp;tag=eejs-20&amp;linkId=CSQYBHTUP625XI4T" target="_blank" rel="noopener">Design Patterns: Elements of Reusable Object Oriented Software</a></em></p>
-</blockquote>
-<p>在 JavaScript 中，闭包是用于实现数据私有的主要机制。当你使用闭包实现数据私有时，被封装的数据只能在闭包函数作用域中使用。你无法绕过对象 <strong>被授权的方法(privileged methods)</strong> 在外部访问这些数据。任何在闭包作用域内定义的公开方法都是特权方法。例如：</p>
-<script src="//gist.github.com/6fb9890ce1ffb14bad9f059adc4a2f0d.js?file=data-privacy-example.js"></script>
-<p>在上面的例子中，’.get()’ 方法定义在 <code>getSecret()</code> 方法的作用域内，它可以访问<code>getSecret()</code> 中的任何变量，于是它就是一个被授权的方法。在这个例子中，它可以访问参数 <code>secret</code>。</p>
-<p>对象不是产生数据私有的唯一方法。闭包也可以用于创建有状态函数，其返回值可能受其内部状态影响，e.g.:</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> secret = <span class="function"><span class="params">msg</span> =&gt;</span> () =&gt; msg;</span><br></pre></td></tr></table></figure>
-<script src="//gist.github.com/b16af817ec53ad8bbb49875aa4795e74.js?file=secret.js"></script>
-<p>在函数式编程中，闭包通常用于偏函数应用和柯里化。为了理解这些，我们需要一些定义：</p>
-<p><strong>应用程序</strong>：一个应用给定参数并产生一个返回值的过程。</p>
-<p><strong>偏函数应用</strong>：一个应用部分参数的函数的过程。并返回一个新函数作为参数。换句话说，应用一个具有多个参数的函数并返回一个较少参数的函数。偏函数应用先使用一个或部分参数在将要返回的函数中，等待返回的函数调用剩余的参数来完成整个应用。</p>
-<p>偏函数应用利用闭包作用域来提前使用部分参数。你可以实现一个通用函数来赋予指定函数部分参数。如下所示：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">partialApply(targetFunction: <span class="built_in">Function</span>, ...fixedArgs: Any[]) =&gt;</span><br><span class="line">  functionWithFewerParams(...remainingArgs: Any[])</span><br></pre></td></tr></table></figure>
-<p>如果你想进一步了解，请看 <a href="https://github.com/ericelliott/rtype#reading-function-signatures" target="_blank" rel="noopener">Rtype: Reading Function Signatures</a></p>
-<p>利用一个接受任意参数的函数，赋予我们指定的参数。并且返回一个新函数接受剩余的参数。</p>
-<p>这个例子将会帮助你理解。你现在又一个 求两个数的和 的函数：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> add = <span class="function">(<span class="params">a, b</span>) =&gt;</span> a + b;</span><br></pre></td></tr></table></figure>
-<p>现在你想要一个 10 加任意数字的函数。我们称它为 <code>add10()</code>。<code>add10(5)</code> 的结果应该是15. <code>partialApply()</code> 函数将会实现它。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> add10 = partialApply(add, <span class="number">10</span>)</span><br><span class="line">add10(<span class="number">5</span>)</span><br></pre></td></tr></table></figure>
-<p>在这个例子中，’10‘ 作为 <strong>固定参数(fixed parameter)</strong> 通过闭包作用域提前赋予给 <code>add()</code>, 从而我们获得了 <code>add10()</code>。</p>
-<p>让我们来看一下如何实现 <code>partialApply()</code>：<br><br><script src="//gist.github.com/543442825c8519c03e19584daab41bc9.js?file=partial-apply.js"></script></p>
-<p>如你所见，它只是简单地返回一个函数，这个函数通过闭包访问了传给 <code>partialApply()</code> 函数的 fixedArgs 参数。</p>
+<p>简而言之，函数 <code>f</code> 和 <code>g</code> 的组合可以定义为 <code>f(g(x))</code> ，它从内到外，从右到左进行求值。换句话说，求值顺序是：</p>
+<ol>
+<li><p><code>x</code></p>
+</li>
+<li><p><code>g</code></p>
+</li>
+<li><p><code>f</code></p>
+</li>
+</ol>
+<p>让我们在代码中进一步观察这个概念。想象一下，你希望将用户的全名转换为 URL slugs ，以便为每个用户提供一个 profile 页面。为了实现这一点，你需要完成一系列的步骤：</p>
+<ol>
+<li><p>将姓名以空格拆分到一个数组中</p>
+</li>
+<li><p>将名字映射为小写</p>
+</li>
+<li><p>用破折号 <code>-</code> 链接数组中的名字</p>
+</li>
+<li><p>编码为 URI component</p>
+</li>
+</ol>
+<p>下面是一个简单的实现：</p>
+<script src="//gist.github.com/abc20e52b727ad246be4afe8dcf21f16.js?file=toSlug.js"></script>
+<p>还不错，但如果我告诉你让它更具可读性呢？</p>
+<p>想象一下，每个操作都对应一个可组合的函数。它可以写成这样：</p>
+<script src="//gist.github.com/ad816466c9540132b59561b56cb7720f.js?file=nesting-composition.js"></script>
+<p>这看起来比我们的第一次尝试更难阅读，但先忍一下，我们就要解决了。</p>
+<p>为了实现这一点，我们使用可组合形式的常用工具函数，例如 <code>split()</code> <code>join()</code> 和 <code>map()</code> 。下面是它们的实现：</p>
+<script src="//gist.github.com/a51511a34c803c758422ed4e5fcd2efe.js?file=composables.js"></script>
+<p>除了 <code>toLowerCase()</code> 之外，这些函数都可以从 Lodash/fp 获得。你可以像这样导入它们：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; curry, map, join, split &#125; <span class="keyword">from</span> <span class="string">'lodash/fp'</span></span><br></pre></td></tr></table></figure>
+<p>或者像这样：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> curry = <span class="built_in">require</span>(<span class="string">'lodash/fp/curry'</span>)</span><br><span class="line"><span class="keyword">const</span> map = <span class="built_in">require</span>(<span class="string">'lodash/fp/map'</span>)</span><br><span class="line"><span class="comment">//...</span></span><br></pre></td></tr></table></figure>
+<p>在这我偷懒了。注意这个 curry 不是真正的技术上的柯里化函数，真正的柯里化函数总是产生一元函数。这里的 curry 只是一个简单的偏函数应用。参考 <a href="https://medium.com/javascript-scene/curry-or-partial-application-8150044c78b8" target="_blank" rel="noopener"> “What’s the Difference Between Curry and Partial Application?”</a> ,但是为了这次演示的目的，将它作为真正的柯里化函数。</p>
+<p>回头看我们的 <code>toSlug()</code> 的实现，有一些东西真的困扰了我：</p>
+<script src="//gist.github.com/ad816466c9540132b59561b56cb7720f.js?file=nesting-composition.js"></script>
+<p>在我看来它似乎有很深的嵌套，读起来有点混乱。我们可以使用一个自动组合这些函数的函数来展平嵌套，这意味着它将从一个函数获得输出并自动传入到下一个函数的输入，直到输出最终值。</p>
+<p>想想看，好像数组中有一个函数可以做到差不多的事情。这个函数就是 <code>reduce()</code> ，它拿到一个值的列表并对这每个值应用一个函数，累计得出一个结果。这些值可以是函数。但是为了和上面的行为组合相匹配，我们需要 <code>reduce()</code> 从右向左递减而不是从左到右递减。</p>
+<p>好事情是有一个 <code>reduceRight()</code> 函数做到了我们需要的事情：</p>
+<script src="//gist.github.com/fce3416828f389618623fcfcef387756.js?file=compose.js"></script>
+<p>和 <code>.reduce()</code> 一样， <code>.reduceRight()</code> 方法也有一个 reducer 函数和初始值 <code>x</code> 。我们从右向左迭代数组中的函数，依次将每个函数应用后的值累计到最终值 <code>v</code> 。</p>
+<p>使用 compose ， 我们可以不使用嵌套来重写上面的组合函数：</p>
+<script src="//gist.github.com/e9c02710a62e68683b6aa38d7729408f.js?file=using-compose.js"></script>
+<p>当然， <code>compose()</code> 在 lodash/fp 中也有：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; compose &#125; <span class="keyword">from</span> <span class="string">'lodash/fp'</span></span><br></pre></td></tr></table></figure>
+<p>或者：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> compose = <span class="built_in">require</span>(<span class="string">'lodash/fp/compose'</span>)</span><br></pre></td></tr></table></figure>
+<p>当以数学形式从内到外的角度思考时， compose 是很棒的，但是如果你想从左到右顺序的角度来思考，该如何去做？</p>
+<p>通常还有另外一种方式称作 <code>pipe()</code> 。在 Lodash 中称作 <code>flow()</code> 。</p>
+<script src="//gist.github.com/8287dd95e9d7be38e9c33a948dfc63e2.js?file=pipe.js"></script>
+<p>注意，<code>pipe()</code> 和 <code>compose()</code> 的实现完全相同，除了使用了 <code>.reduce()</code> 而不是 <code>.reduceRight()</code> ，即是从左到右缩减而不是从右到左。</p>
+<p>让我们看看用 <code>pipe()</code> 实现的 <code>toSlug()</code> 函数：</p>
+<script src="//gist.github.com/c0ce31c7534a5b693c32547877aac2ac.js?file=using-pipe.js"></script>
+<p>这对我来说更易阅读。</p>
+<p>硬核函数式程序员使用函数组合定义他们的整个应用程序。我经常使用它来消除对临时变量的需求。仔细观察 <code>pipe()</code> 版本的 <code>toSlug()</code> 函数，你可能会注意到一些特别的事情。</p>
+<p>在命令式编程中，当您对某个变量执行转换时，您将在转换的每个步骤中找到对该变量的引用。上面 <code>pipe()</code> 的实现是以 <strong>无参(points-free)</strong> 风格的方式编写，这意味着它根本不识别它运行的参数。</p>
+<p>我经常在单元测试和 Redux state reducers 之类的实现中使用 pipes 来消除对中间变量的需求，这些中间变量仅存于一个操作和下一个操作之间的瞬间值。</p>
+<p>这听起来可能很奇怪，但是随着你使用它，你会发现在函数式编程中，你是在和相当抽象广义的函数打交道，其中事物的名称并不重要。名称只是妨碍。你可能开始将变量视为不必要的样板。</p>
+<p>也就是说，我认为无参风格可能被过度使用。它可能变得过于密集，难以理解，但是如果你感到困惑，这里有一个小小的建议，你可以进入流程来跟踪发生了什么：</p>
+<script src="//gist.github.com/6f354876134011f0fbcb1355ce9da6f4.js?file=trace.js"></script>
+<p>下面如何使用它：</p>
+<script src="//gist.github.com/16fd8336b32ab0ec71e6c4be61ce355f.js?file=using-trace.js"></script>
+<p><code>trace()</code> 只是更通用的 <code>tap()</code> 的一种特殊形式，它允许你为流经管道的每个值执行一些操作。明白了吗？ Pipe ？ Tap ？ 你可以这么编写 <code>tap()</code> ：</p>
+<script src="//gist.github.com/459b2bc590b89c2e0bea27ebac385e7f.js?file=tap.js"></script>
+<p>现在你知道为什么 <code>trace()</code> 是 <code>tap()</code> 的一个特例：</p>
+<script src="//gist.github.com/4981bbb10a15deab96ecbf34da3c9f34.js?file=tapped-trace.js"></script>
+<p>你应该开始了解函数式编程是什么了，以及 <strong>偏函数应用(partial application)</strong> 和 <strong>柯里化(currying)</strong> 是如何协同 <strong>函数组合(function composition)</strong> 来帮助你编写更易读且更少样板的程序。</p>
+<p><strong>探索 ‘Master the JavaScript Interview’ 系列</strong></p>
+<ul>
+<li><p><a href="https://medium.com/javascript-scene/master-the-javascript-interview-what-is-a-closure-b2f0d2152b36" target="_blank" rel="noopener">What is a Closure?</a></p>
+</li>
+<li><p><a href="https://medium.com/javascript-scene/master-the-javascript-interview-what-s-the-difference-between-class-prototypal-inheritance-e4cd0a7562e9" target="_blank" rel="noopener">What is the Difference Between Class and Prototypal Inheritance?</a></p>
+</li>
+<li><p><a href="https://medium.com/javascript-scene/master-the-javascript-interview-what-is-a-pure-function-d1c076bec976" target="_blank" rel="noopener">What is a Pure Function?</a></p>
+</li>
+<li><p><a href="https://medium.com/javascript-scene/master-the-javascript-interview-what-is-function-composition-20dfb109a1a0" target="_blank" rel="noopener">What is a Function Composition?</a></p>
+</li>
+<li><p><a href="https://medium.com/javascript-scene/master-the-javascript-interview-what-is-functional-programming-7f218c68b3a0" target="_blank" rel="noopener">What is a Function Programming?</a></p>
+</li>
+<li><p><a href="https://medium.com/javascript-scene/master-the-javascript-interview-what-is-a-promise-27fc71e77261" target="_blank" rel="noopener">What is a Promise?</a></p>
+</li>
+<li><p><a href="https://medium.com/javascript-scene/master-the-javascript-interview-soft-skills-a8a5fb02c466" target="_blank" rel="noopener">Soft Skills</a></p>
+</li>
+</ul>
 
       
     </div>
@@ -582,8 +625,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/posts/25329c80" rel="next" title="【译】精通 JavaScript： 什么是函数式编程（Functional Programming）？">
-                <i class="fa fa-chevron-left"></i> 【译】精通 JavaScript： 什么是函数式编程（Functional Programming）？
+              <a href="/posts/b4cbde14/" rel="next" title="【译】精通 JavaScript： 什么是纯函数（Pure Function）？">
+                <i class="fa fa-chevron-left"></i> 【译】精通 JavaScript： 什么是纯函数（Pure Function）？
               </a>
             
           </div>
@@ -592,8 +635,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/posts/48b81a71" rel="prev" title="【译】精通 JavaScript： 类继承和原型继承的区别？">
-                【译】精通 JavaScript： 类继承和原型继承的区别？ <i class="fa fa-chevron-right"></i>
+              <a href="/posts/b2f2d94f/" rel="prev" title="【译】JavaScript 工作原理：JS 引擎，runtime 和调用栈的概述">
+                【译】JavaScript 工作原理：JS 引擎，runtime 和调用栈的概述 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -646,17 +689,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            Table of Contents
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            Overview
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -748,22 +782,6 @@
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是闭包"><span class="nav-number">1.</span> <span class="nav-text">什么是闭包</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用闭包-例子"><span class="nav-number">2.</span> <span class="nav-text">使用闭包 (例子)</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
