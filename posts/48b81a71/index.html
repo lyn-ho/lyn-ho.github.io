@@ -25,7 +25,7 @@
 
   
   
-  <link rel="stylesheet" href="/posts/lib/needsharebutton/needsharebutton.css">
+  <link rel="stylesheet" href="/lib/needsharebutton/needsharebutton.css">
 
 
 
@@ -92,21 +92,21 @@
 
 
 
-<link href="/posts/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
 
-<link href="/posts/css/main.css?v=6.4.0" rel="stylesheet" type="text/css" />
-
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/posts/images/apple-touch-icon-next.png?v=6.4.0">
+<link href="/css/main.css?v=6.4.0" rel="stylesheet" type="text/css" />
 
 
-  <link rel="icon" type="image/png" sizes="32x32" href="/posts/images/favicon-32x32-next.png?v=6.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.4.0">
 
 
-  <link rel="icon" type="image/png" sizes="16x16" href="/posts/images/favicon-16x16-next.png?v=6.4.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.4.0">
 
 
-  <link rel="mask-icon" href="/posts/images/logo.svg?v=6.4.0" color="#222">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.4.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.4.0" color="#222">
 
 
 
@@ -119,7 +119,7 @@
 <script type="text/javascript" id="hexo.configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
-    root: '/posts/',
+    root: '/',
     scheme: 'Pisces',
     version: '6.4.0',
     sidebar: {"position":"right","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
@@ -144,34 +144,27 @@
 
 
 
-  <meta name="description" content="原文：How JavaScript works: an overview of the engine, the runtime, and the call stack  JavaScript 变得越来越流行，很多团队在他们技术栈的多个方面使用它：前端，后端，hybrid 应用，嵌入式设备等等。 这篇是本系列文章的第一篇，旨在深入挖掘 JavaScript 和其实际工作原理：我们认为，通过了解">
+  <meta name="description" content="原文：Master the JavaScript Interview: What’s the Difference Between Class &amp;amp; Prototypal Inheritance?  “精通 JavaScript 面试” 是一个系列的文章，旨在帮助面试者准备他们在申请中高级职位时可能遇到的常见问题。这些是我在现实面试中经常提出的问题。如果你想从头开始，可以看 “What">
 <meta name="keywords" content="JavaScript">
 <meta property="og:type" content="article">
-<meta property="og:title" content="【译】JavaScript 工作原理：JS 引擎，runtime 和调用栈的概述">
-<meta property="og:url" content="lyn-ho.github.io/posts/b2f2d94f/index.html">
+<meta property="og:title" content="【译】精通 JavaScript： 类继承和原型继承的区别？">
+<meta property="og:url" content="lyn-ho.github.io/posts/48b81a71/index.html">
 <meta property="og:site_name" content="Lyn&#39;s Blog">
-<meta property="og:description" content="原文：How JavaScript works: an overview of the engine, the runtime, and the call stack  JavaScript 变得越来越流行，很多团队在他们技术栈的多个方面使用它：前端，后端，hybrid 应用，嵌入式设备等等。 这篇是本系列文章的第一篇，旨在深入挖掘 JavaScript 和其实际工作原理：我们认为，通过了解">
+<meta property="og:description" content="原文：Master the JavaScript Interview: What’s the Difference Between Class &amp;amp; Prototypal Inheritance?  “精通 JavaScript 面试” 是一个系列的文章，旨在帮助面试者准备他们在申请中高级职位时可能遇到的常见问题。这些是我在现实面试中经常提出的问题。如果你想从头开始，可以看 “What">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="https://cdn-images-1.medium.com/max/1600/1*Zf4reZZJ9DCKsXf5CSXghg.png">
-<meta property="og:image" content="https://cdn-images-1.medium.com/max/1600/1*OnH_DlbNAPvB9KLxUCyMsA.png">
-<meta property="og:image" content="https://cdn-images-1.medium.com/max/1600/1*4lHHyfEhVB0LnQ3HlhSs8g.png">
-<meta property="og:image" content="https://cdn-images-1.medium.com/max/1600/1*Yp1KOt_UJ47HChmS9y7KXw.png">
-<meta property="og:image" content="https://cdn-images-1.medium.com/max/1600/1*T-W_ihvl-9rG4dn18kP3Qw.png">
-<meta property="og:image" content="https://cdn-images-1.medium.com/max/1600/1*AycFMDy9tlDmNoc5LXd9-g.png">
-<meta property="og:image" content="https://cdn-images-1.medium.com/max/1600/1*e0nEd59RPKz9coyY8FX-uw.png">
-<meta property="og:image" content="https://cdn-images-1.medium.com/max/1600/1*WlMXK3rs_scqKTRV41au7g.jpeg">
-<meta property="og:updated_time" content="2018-09-16T13:06:35.363Z">
+<meta property="og:image" content="https://cdn-images-1.medium.com/max/2000/1*rtVyaoswTo9iljufAz7Y8A.jpeg">
+<meta property="og:updated_time" content="2018-09-16T13:06:35.360Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="【译】JavaScript 工作原理：JS 引擎，runtime 和调用栈的概述">
-<meta name="twitter:description" content="原文：How JavaScript works: an overview of the engine, the runtime, and the call stack  JavaScript 变得越来越流行，很多团队在他们技术栈的多个方面使用它：前端，后端，hybrid 应用，嵌入式设备等等。 这篇是本系列文章的第一篇，旨在深入挖掘 JavaScript 和其实际工作原理：我们认为，通过了解">
-<meta name="twitter:image" content="https://cdn-images-1.medium.com/max/1600/1*Zf4reZZJ9DCKsXf5CSXghg.png">
+<meta name="twitter:title" content="【译】精通 JavaScript： 类继承和原型继承的区别？">
+<meta name="twitter:description" content="原文：Master the JavaScript Interview: What’s the Difference Between Class &amp;amp; Prototypal Inheritance?  “精通 JavaScript 面试” 是一个系列的文章，旨在帮助面试者准备他们在申请中高级职位时可能遇到的常见问题。这些是我在现实面试中经常提出的问题。如果你想从头开始，可以看 “What">
+<meta name="twitter:image" content="https://cdn-images-1.medium.com/max/2000/1*rtVyaoswTo9iljufAz7Y8A.jpeg">
 
 
 
 
 
 
-  <link rel="canonical" href="lyn-ho.github.io/posts/b2f2d94f/"/>
+  <link rel="canonical" href="lyn-ho.github.io/posts/48b81a71/"/>
 
 
 
@@ -181,7 +174,7 @@
   };
 </script>
 
-  <title>【译】JavaScript 工作原理：JS 引擎，runtime 和调用栈的概述 | Lyn's Blog</title>
+  <title>【译】精通 JavaScript： 类继承和原型继承的区别？ | Lyn's Blog</title>
   
 
 
@@ -237,7 +230,7 @@
     
 
     <div class="custom-logo-site-title">
-      <a href="/posts/" class="brand" rel="start">
+      <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">Lyn's Blog</span>
         <span class="logo-line-after"><i></i></span>
@@ -266,7 +259,7 @@
         
           
           <li class="menu-item menu-item-home">
-    <a href="/posts/" rel="section">
+    <a href="/" rel="section">
       <i class="menu-item-icon fa fa-fw fa-home"></i> <br />Home</a>
   </li>
         
@@ -274,7 +267,7 @@
         
           
           <li class="menu-item menu-item-archives">
-    <a href="/posts/archives/" rel="section">
+    <a href="/archives/" rel="section">
       <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />Archives</a>
   </li>
         
@@ -282,7 +275,7 @@
         
           
           <li class="menu-item menu-item-tags">
-    <a href="/posts/tags/" rel="section">
+    <a href="/tags/" rel="section">
       <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />Tags</a>
   </li>
         
@@ -290,7 +283,7 @@
         
           
           <li class="menu-item menu-item-categories">
-    <a href="/posts/categories/" rel="section">
+    <a href="/categories/" rel="section">
       <i class="menu-item-icon fa fa-fw fa-th"></i> <br />Categories</a>
   </li>
 
@@ -373,12 +366,12 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="lyn-ho.github.io/posts/posts/b2f2d94f/">
+    <link itemprop="mainEntityOfPage" href="lyn-ho.github.io/posts/48b81a71/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Lyn Ho">
       <meta itemprop="description" content="Stay Hungry Stay Foolish">
-      <meta itemprop="image" content="/posts/images/avatar.gif">
+      <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -390,7 +383,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">【译】JavaScript 工作原理：JS 引擎，runtime 和调用栈的概述
+          <h2 class="post-title" itemprop="name headline">【译】精通 JavaScript： 类继承和原型继承的区别？
               
             
           </h2>
@@ -415,7 +408,7 @@
                 
               
 
-              <time title="Created: 2018-09-10 16:58:58" itemprop="dateCreated datePublished" datetime="2018-09-10T16:58:58+08:00">2018-09-10</time>
+              <time title="Created: 2018-08-29 14:38:58" itemprop="dateCreated datePublished" datetime="2018-08-29T14:38:58+08:00">2018-08-29</time>
             
 
             
@@ -446,8 +439,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/posts/b2f2d94f/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">Comments: </span> <span class="post-comments-count gitment-comments-count" data-xid="/posts/b2f2d94f/" itemprop="commentsCount"></span>
+                <a href="/posts/48b81a71/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">Comments: </span> <span class="post-comments-count gitment-comments-count" data-xid="/posts/48b81a71/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -455,7 +448,7 @@
 
           
           
-             <span id="/posts/b2f2d94f/" class="leancloud_visitors" data-flag-title="【译】JavaScript 工作原理：JS 引擎，runtime 和调用栈的概述">
+             <span id="/posts/48b81a71/" class="leancloud_visitors" data-flag-title="【译】精通 JavaScript： 类继承和原型继承的区别？">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -486,60 +479,118 @@
       
 
       
-        <blockquote>
-<p>原文：<a href="https://blog.sessionstack.com/how-does-javascript-actually-work-part-1-b0bacc073cf" target="_blank" rel="noopener">How JavaScript works: an overview of the engine, the runtime, and the call stack</a></p>
+        <p><img src="https://cdn-images-1.medium.com/max/2000/1*rtVyaoswTo9iljufAz7Y8A.jpeg" alt="Electric Guitar"></p>
+<p>原文：<a href="https://medium.com/javascript-scene/master-the-javascript-interview-what-s-the-difference-between-class-prototypal-inheritance-e4cd0a7562e9" target="_blank" rel="noopener">Master the JavaScript Interview: What’s the Difference Between Class &amp; Prototypal Inheritance?</a></p>
+<blockquote>
+<p>“精通 JavaScript 面试” 是一个系列的文章，旨在帮助面试者准备他们在申请中高级职位时可能遇到的常见问题。这些是我在现实面试中经常提出的问题。如果你想从头开始，可以看 <a href="https://medium.com/javascript-scene/master-the-javascript-interview-what-is-a-closure-b2f0d2152b36#.6xq65f6f5" target="_blank" rel="noopener">“What is a Closure?”</a> 开始。</p>
 </blockquote>
-<p>JavaScript 变得越来越流行，很多团队在他们技术栈的多个方面使用它：前端，后端，hybrid 应用，嵌入式设备等等。</p>
-<p>这篇是本系列文章的第一篇，旨在深入挖掘 JavaScript 和其实际工作原理：我们认为，通过了解 JavaScript 的构建块以及它们是如何协同工作的，你将能编写更好的代码和应用程序。我们还将分享我们在构建 <a href="https://www.sessionstack.com/?utm_source=medium&amp;utm_medium=source&amp;utm_content=javascript-series-post1-intro" target="_blank" rel="noopener">SessionStack</a> 时使用的一些经验规则，SessionStack 是一个轻量级 JavaScript 应用，它稳定且性能强大以保持竞争力。</p>
+<blockquote>
+<p>注意：这篇文章的例子使用的是 ES6。如果你不知从何开始， 可以参阅 <a href="https://medium.com/javascript-scene/how-to-learn-es6-47d9a1ac2620" target="_blank" rel="noopener">“How to Learn ES6”</a></p>
+</blockquote>
+<p>与其他大多数语言不同的是， JavaScript 的对象系统是基于 <strong>原型(prototypes)</strong> ， 而不是 <strong>类(classes)</strong> 。不幸的是，大多数 JavaScript 开发人员都不能深入了解 JavaScript 的对象系统，或者不能充分利用它。其他人确实理解，但是希望它表现得更像基于类继承。导致 JavaScript 中的对象系统十分混乱，这意味着 JavaScript 开发者对 <strong>原型(prototypes)和类(classes)</strong> 都要了解。</p>
 <a id="more"></a>
-<p>根据 <a href="http://githut.info/" target="_blank" rel="noopener">GitHut stars</a> 显示，就 Active Repositories 和 Total Pushes 而言 JavaScript 在 GitHub 中是最高的。在其他类别中也没有落后很多。</p>
-<p><img src="https://cdn-images-1.medium.com/max/1600/1*Zf4reZZJ9DCKsXf5CSXghg.png" alt="GitHut"></p>
-<p><a href="https://madnight.github.io/githut/" target="_blank" rel="noopener">(Check out up-to-date GitHub language stats)</a></p>
-<p>如果项目越发的依赖于 JavaScript，这意味着为了构建令人惊叹的软件，开发人员必须利用 JS 语言和生态所提供的所有内容，对其内部深入理解。</p>
-<p>事实证明，有很多开发者每天都在使用 JavaScript ，但却不了解其内部原理。</p>
-<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>几乎所有开发人员都知道 V8 引擎的概念，并且大多数开发人员了解 JavaScript 是单线程 (single-threaded) 的或者说它使用了回调队列 (callback queue)。</p>
-<p>在这篇文章中，我们将详细介绍这些概念并解释 JavaScript 的实际运行方式。通过了解这些细节，你可以正确利用提供的 APIs 来编写更好的非阻塞的应用。</p>
-<p>如果你是 JavaScript 萌新，这篇文章将会帮助你理解为什么 JavaScript 与其他编程语言相比如此“奇怪”。</p>
-<p>如果你是一位资深 JavaScript 开发人员，希望这篇文章可以为你提供一些关于你每天使用的 JavaScript Runtime 实际工作原理的新见解。</p>
-<h2 id="JavaScript-引擎"><a href="#JavaScript-引擎" class="headerlink" title="JavaScript 引擎"></a>JavaScript 引擎</h2><p>Google 的 V8 引擎是一个流行的 JavaScript 引擎。V8 引擎应用与 Chrome 和 Node.js 。下面是它的一个非常简化的视图：</p>
-<p><img src="https://cdn-images-1.medium.com/max/1600/1*OnH_DlbNAPvB9KLxUCyMsA.png" alt="V8 engine"></p>
-<p>V8 引擎包含两个主要组件：</p>
+<h2 id="类继承和原型继承的区别是什么？"><a href="#类继承和原型继承的区别是什么？" class="headerlink" title="类继承和原型继承的区别是什么？"></a>类继承和原型继承的区别是什么？</h2><p>这可能是一个棘手的问题，你可能需要后续的问答来完善这个答案，因此要特别注意了解它们的差异，以及如何利用这些知识来写出更好的代码。</p>
+<p><strong>类继承：类相当于蓝图–对将要创建的对象的描述。</strong></p>
+<p>实例通常是使用构建函数和 <code>new</code> 关键字来创建的。ES6 中新增了 <code>class</code> 关键字可以使用。从技术上来说，像 Java 中的类这个概念在 JavaScript 中是不存在的。而是使用构造函数。ES6 中的 <code>class</code> 关键字就是构造函数的语法糖：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Foo</span> </span>&#123;&#125;</span><br><span class="line"><span class="keyword">typeof</span> Foo <span class="comment">// 'function'</span></span><br></pre></td></tr></table></figure>
+<p>在 JavaScript 中，类继承的实现建立在原型继承之上，但这并不意味着它们做了同样的事情：</p>
+<p>JavaScript 类继承是使用原型链链接子 <code>Constructor.prototype</code> 和父  <code>Constructor.prototype</code> 的委托关系。通常，<code>super()</code>构造器也会被调用。这种机制，形成了<strong>单一继承结构</strong>，并且创建了<strong>面向对象设计的最紧密耦合行为</strong>。</p>
+<blockquote>
+<p><em>“Classes inherit from classes and create subclass relationships: hierarchical class taxonomies.”</em></p>
+</blockquote>
+<blockquote>
+<p><strong>Prototypal Inheritance: A prototype is a working object instance.</strong> Objects inherit directly from other objects.</p>
+</blockquote>
+<p>原型继承模式下，对象实例可以由多个对象源组成，这样使继承更灵活且 [[Prototype]] 委托继承层次浅。换句话说，基于原型继承的面向对象设计不会产生层级分类这样的副作用–这是决定性的区别。</p>
+<p>JavaScript 中的实例通常是通过构造函数，对象字面量或 <code>Object.create()</code> 来创建。</p>
+<blockquote>
+<p><em>“A prototype is a working object instance. Objects inherit directly from other objects.”</em></p>
+</blockquote>
+<h2 id="为什么这个问题很重要？"><a href="#为什么这个问题很重要？" class="headerlink" title="为什么这个问题很重要？"></a>为什么这个问题很重要？</h2><p>继承是代码重用机制的根本：不同对象分享代码的方式。分享代码的方式的重要性是因为如果你弄错了，会产生很多问题，特别是：</p>
+<p><strong>类继承产生的 parent/child 对象分类是一个副作用。</strong></p>
+<p>这些分类几乎不可能适用于所有的新实例，并且基类的广泛使用导致了<strong>脆弱的基类问题</strong>，这导致了修复 bug 的难度。事实上，类继承在面向对象设计中引起了许多众所周知的问题：</p>
 <ul>
-<li>内存堆 —— 进行内存分配</li>
-<li>调用栈 —— 代码执行/栈帧</li>
+<li><p><strong>紧耦合问题</strong> (类继承是面向对象设计中耦合度最高的)，这导致了下一个问题</p>
+</li>
+<li><p>脆弱基类问题</p>
+</li>
+<li><p>不灵活的层级问题 (新实例最终会导致所有的类都是错误的)</p>
+</li>
+<li><p>必要的重复问题 (由于层次机构不灵活，新的实例通常是通过复制而不是调整现有代码来实现)</p>
+</li>
+<li><p>猩猩/香蕉问题 (你需要的是一个香蕉，但是得到的是一个拿着香蕉的猩猩以及整个丛林)</p>
+</li>
 </ul>
-<h2 id="运行时-Runtime"><a href="#运行时-Runtime" class="headerlink" title="运行时 (Runtime)"></a>运行时 (Runtime)</h2><p>几乎所有 JavaScript 开发人员都使用过浏览器中的 APIs (e.g. <code>setTimeout</code>) 。但是这些 APIs 不是由 JavaScript 引擎提供的。</p>
-<p>所以，它们从何而来？</p>
-<p>事实正面现实有点复杂。</p>
-<p><img src="https://cdn-images-1.medium.com/max/1600/1*4lHHyfEhVB0LnQ3HlhSs8g.png" alt="APIs"></p>
-<p>所以，我们有 JavaScript 引擎，但是实际上还有更多。我们有一些由浏览器提供的叫做 Web APIs 的东西，比如 DOM, AJAX, setTimeout 等等。</p>
-<p>然后，我们还有 <strong>事件循环 (event loop)</strong> 和 <strong>回调队列 (callback queue)</strong> 。</p>
-<h2 id="调用栈-Call-Stack"><a href="#调用栈-Call-Stack" class="headerlink" title="调用栈 (Call Stack)"></a>调用栈 (Call Stack)</h2><p>JavaScript 是一个单线程编程语言，这意味着它只有一个调用栈。因此在同一时间它执行一个任务。</p>
-<p>调用栈是一种我们程序中的基本记录的数据结构。如果进入一个函数，我们将它放在调用栈的顶层。如果返回一个函数，我们将其从调用栈的顶层弹出。这是调用栈能做的所有事情。</p>
-<p>让我们看一个示例。看下面的代码：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">multiply</span>(<span class="params">x, y</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> x * y</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">printSquare</span>(<span class="params">x</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> s = multiply(x, x)</span><br><span class="line">  <span class="built_in">console</span>.log(s)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">printSquare(<span class="number">5</span>)</span><br></pre></td></tr></table></figure>
-<p>当 JavaScript 引擎开始执行代码时，调用栈是空的。之后的步骤如下：</p>
-<p><img src="https://cdn-images-1.medium.com/max/1600/1*Yp1KOt_UJ47HChmS9y7KXw.png" alt="Call Stack"></p>
-<p>调用栈的每个入口称为 <strong>栈帧 (Stack Frame)</strong> 。</p>
-<p>当抛出异常可以看到堆栈追踪是如何构造的 —— 当发生异常时，它就是调用栈的状态。看下面的代码：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">'SessionStack will help you resolve crashes:'</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">bar</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  foo()</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">start</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  bar()</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">start()</span><br></pre></td></tr></table></figure>
-<p>如果在 Chrome 中执行 (假设是 foo.js 中的代码) ，将会生成下面的堆栈追踪：</p>
-<p><img src="https://cdn-images-1.medium.com/max/1600/1*T-W_ihvl-9rG4dn18kP3Qw.png" alt="Stack Trace"></p>
-<p>“<strong>堆栈溢出 (Blowing the stack)</strong>“ —— 当达到最大调用栈大小的时候发生。这很容易发生，特别是如果你使用递归但没有全面的测试。看下面的示例代码：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  foo()</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">foo()</span><br></pre></td></tr></table></figure>
-<p>当 JavaScript 引擎开始执行这段代码，开始调用 <code>foo</code> 函数。但是在没有终止条件的情况下 <code>foo</code> 会递归的调用自己。所以每执行一步，就会把这个相同的函数一次又一次的添加到调用栈中。看起来像下面这样：</p>
-<p><img src="https://cdn-images-1.medium.com/max/1600/1*AycFMDy9tlDmNoc5LXd9-g.png" alt="Blowing the stack"></p>
-<p>但是，在某一时刻，调用栈中的函数调用数量超过了调用栈的实际大小，浏览器通过抛出一个错误来结束它。如下所示：</p>
-<p><img src="https://cdn-images-1.medium.com/max/1600/1*e0nEd59RPKz9coyY8FX-uw.png" alt="Maximum"></p>
-<p>在单线程上运行代码非常简单，因为你不需处理多线程环境中出现的复杂场景 —— 例如 死锁 (deadlocks) 。</p>
-<p>但是单线程也有很大的限制。由于 JavaScript 只有一个调用栈，如果运行很慢会发生什么？</p>
-<h2 id="并发和事件循环-Concurrency-amp-Event-Loop"><a href="#并发和事件循环-Concurrency-amp-Event-Loop" class="headerlink" title="并发和事件循环 (Concurrency &amp; Event Loop)"></a>并发和事件循环 (Concurrency &amp; Event Loop)</h2><p>如果在调用栈中有函数需要花费大量时间才能处理，会发生什么？例如，假设你需要在浏览器中使用 JavaScript 进行一些复杂的图像转换。</p>
-<p>你可能会问，为什么这是一个问题？问题是，当调用栈有函数要执行，浏览器实际不会做其他任何事 —— 浏览器被阻塞了。这意味着浏览器不能渲染，不能运行任何其他代码，它被卡住了。如果你想要在 app 中拥有流畅的 UI 体验，这将是个问题。</p>
-<p>并且这不是唯一的问题。一旦你的浏览器开始在调用栈中处理如此多的任务，它可能在相当长的时间内停止响应。大多数浏览器会弹出一个错误，询问是否终止网页。</p>
-<p><img src="https://cdn-images-1.medium.com/max/1600/1*WlMXK3rs_scqKTRV41au7g.jpeg" alt="Unresponsive"></p>
-<p>这并不是最好的用户体验，不是吗？</p>
-<p>那么，如何在不阻塞 UI 和不弹出无响应的情况下执行复杂的代码？解决方法是 <strong>异步回调 (asynchronous callbacks)</strong> 。</p>
-<p>这将在 “How JavaScript actually works” 第2篇中详细解释：”<a href="https://blog.sessionstack.com/how-javascript-works-inside-the-v8-engine-5-tips-on-how-to-write-optimized-code-ac089e62b12e" target="_blank" rel="noopener">Inside the V8 engine + 5 tips on how to write optimized code</a>“ 。</p>
+<p>我在一个演讲中深入讨论过这其中的一些问题：“Classical Inheritance is Obsolete: How to Think in Prototypal OO”：</p>
+<div class="video-container"><iframe src="//www.youtube.com/embed/lKCCZTUx0sI" frameborder="0" allowfullscreen></iframe></div>
+<p>解决所有问题的方法是选择对象组合而不是类继承。</p>
+<blockquote>
+<p><em>“Favor object composition over class inheritance.”</em><br><em>~ The Gang of Four, <a href="http://www.amazon.com/gp/product/0201633612?ie=UTF8&amp;camp=213733&amp;creative=393185&amp;creativeASIN=0201633612&amp;linkCode=shr&amp;tag=eejs-20&amp;linkId=WMUILDJNIUXY4NSH" target="_blank" rel="noopener">“Design Patterns: Elements of Reusable Object Oriented Software”</a></em></p>
+</blockquote>
+<p>总结：</p>
+<div class="video-container"><iframe src="//www.youtube.com/embed/wfMtDGfHWpA" frameborder="0" allowfullscreen></iframe></div>
+<h2 id="是不是所有的继承都有问题？"><a href="#是不是所有的继承都有问题？" class="headerlink" title="是不是所有的继承都有问题？"></a>是不是所有的继承都有问题？</h2><p>人们说“优先选择对象组合而不是继承”的时候，其实是要表达“优先选择对象组合而不是类继承”(引用自 “Design Patterns” 的原文)。这是面向对象设计的常识。因为类继承有许多缺陷并会导致许多问题。</p>
+<p>当人们谈论类继承时，人们通常会忽略 <strong>class</strong> 这个单词，这看起来好像所有的继承都有问题–但事实并非如此。</p>
+<p>继承是有不同种类的，并且大部分的优秀的。</p>
+<h2 id="原型继承的三种方式"><a href="#原型继承的三种方式" class="headerlink" title="原型继承的三种方式"></a>原型继承的三种方式</h2><p>在我们深入研究其他类型的继承之前，让我们仔细观察一下类继承的含义：</p>
+<script src="//gist.github.com/fe1d8dfd036b43811c16d087d2e7fb8c.js?file=class-inheritance-example.js"></script>
+<p><code>BassAmp</code> 继承于 <code>GuitarAmp</code>， <code>ChannelStrip</code> 继承于 <code>BassAmp</code> 和 <code>GuitarAmp</code>。这是面向对象设计的一个错误示范。channel strip 并不是 guitar amp 的一种，而且它根本不需要 cabinet 这个属性。一个比较好的方法是创建一个新的基类给 amps 和 channel strip 继承，但是这种方法依然有局限。</p>
+<p>最终，新的基类策略也会失效。</p>
+<p>更好的方法是，可以使用对象组合继承你真正需要的东西：</p>
+<script src="//gist.github.com/d1997b0efa3119ec583ad6ff40da79d9.js?file=composition-example.js"></script>
+<p>认真看这段代码，你就会发现：通过对象组合，我们可以确切地保证对象可以按需继承。这和类继承不同。当你继承于一个类，你会继承所有的属性，即使是你不需要的。</p>
+<p>在这一点上，你可能会问自己，“这很好，但是原型在哪里呢？”</p>
+<p>为了理解这一点，你必须了解有三种不同的基于原型的面向对象设计。</p>
+<p><strong>拼接继承 (Concatenative inheritance)</strong>：通过复制源对象的属性直接一个对象继承另一个对象的过程。在 JavaScript 中，源对象的属性通常被称作 <strong>mixins</strong>。从 ES6 开始，JavaScript 使用 <code>Object.assign()</code> 来实现这个过程。在 ES6 之前，通常使用 <strong>Underscore/Lodash</strong> 的 <code>.extend()</code> 和 <strong>jQuery</strong> 的 <code>$.extend()</code> 等来实现。上面的对象组合的例子使用了连接继承。</p>
+<p><strong>原型委托 (Prototype delegation)</strong>：在 JavaScript 中，对象有自己委托的原型，这个原型也有自己委托的原型，以此类推一直到 <code>Object.prototype</code> 作为根原型，这样就形成了一个原型链。如果一个在对象中找不到的属性，可以沿着原型链一直查找。当你使用 <code>new</code> 创建实例以及 <code>Constructor.prototype</code> 连接到这个实例形成链接。你也可以使用 <code>Object.create()</code> 来实现，或者与拼接混用，从而可以把多个原型简化为单一委托，或者在对象创建后进行扩展。</p>
+<p><strong>函数继承 (Functional inheritance)</strong>：在 JavaScript 中，任何函数都可以创建对象。如果这个函数既不是构造函数也不是 <code>class</code>，那就是<strong>工厂函数 (factory function)</strong>。函数继承的原理是通过工厂函数创建对象并通过直接赋予属性(使用连接继承)。Douglas Crockford 创造了这个术语，但在 JavaScript 中已经广泛使用了。</p>
+<p>现在你会意识到，拼接继承是在 JavaScript 中实现对象组合的秘诀，这使得原型委托和函数继承更加有趣。</p>
+<p>大多数人提到 JavaScript 的面向对象设计时，首先想到的是原型委托。现在你会发现他们错过了很多。原型委托不是类继承的最佳替换，对象组合才是。</p>
+<h2 id="为什么对象组合能改避免脆弱基类问题"><a href="#为什么对象组合能改避免脆弱基类问题" class="headerlink" title="为什么对象组合能改避免脆弱基类问题"></a>为什么对象组合能改避免脆弱基类问题</h2><p>要搞清脆弱基类这个问题，首先你要理解这个问题是如何形成的：</p>
+<ol>
+<li><code>A</code> 是基类</li>
+<li><code>B</code> 继承于 <code>A</code></li>
+<li><code>C</code> 继承于 <code>B</code></li>
+<li><code>D</code> 继承于 <code>B</code></li>
+</ol>
+<p><code>C</code> 调用 <code>super</code>， 会执行 <code>B</code> 中的代码，<code>B</code> 调用 <code>super</code>， 会执行 <code>A</code> 中的代码。</p>
+<p><code>A</code> 和 <code>B</code> 中包含了 <code>C</code> 和 <code>D</code> 不需要的特性。 <code>D</code> 是一个新实例， <code>C</code> 和 <code>D</code> 在 <code>A</code> 初始化的代码有少许不同。所以萌新开发者会去调整 <code>A</code> 的初始化代码。由于依赖于之前 <code>A</code> 中的代码被修改了，尽管 <code>D</code> 正常工作了，但是 <code>C</code> 被破坏了。</p>
+<p>我们有不同的方式可以从 <code>A</code> 和 <code>B</code> 中得到 <code>C</code> 和 <code>D</code> 需要的属性。<code>C</code> 和 <code>D</code> 并不需要 <code>A</code> 和 <code>B</code> 的所有特性。它们只想继承一些已经定义在 <code>A</code> 和 <code>B</code> 中的属性。但是通过 <code>super</code> 来实现继承，这不是选择性的继承而是继承所有的属性。</p>
+<blockquote>
+<p><em>“…the problem with object-oriented languages is they’ve got all this implicit environment that they carry around with them. <strong>You wanted a banana but what you got was a gorilla holding the banana</strong> and the entire jungle.” ~ Joe Armstrong — “Coders at Work”</em></p>
+</blockquote>
+<h3 id="使用组合-Composition"><a href="#使用组合-Composition" class="headerlink" title="使用组合 (Composition)"></a>使用组合 (Composition)</h3><p>想象下你拥有的是特性 (features) 而不是类 (classes)：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">feat1, feat2, feat3, feat4</span><br></pre></td></tr></table></figure>
+<p><code>C</code> 需要 <code>feat1</code> 和 <code>feat3</code>， <code>D</code> 需要 <code>feat1</code>，<code>feat2</code>，<code>feat4</code></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> C = compose(feat1, feat3)</span><br><span class="line"><span class="keyword">const</span> D = compose(feat1, feat2, feat4)</span><br></pre></td></tr></table></figure>
+<p>现在你发现，<code>D</code> 需要 <code>feat1</code> 的行为有些许不同。这并不需要改变 <code>feat1</code>，而是创造一个自定义的 <code>feat1</code> 并且使用它。不需要改变 <code>feat2</code> 和 <code>feat4</code>。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> D = compose(custom1, feat2, feat4)</span><br></pre></td></tr></table></figure>
+<p><code>C</code> 不会受到影响。</p>
+<p>类继承无法实现这一点的原因是，当你使用类继承时，你得到的是类这个整体。</p>
+<p>如果你为了适配新的实例，要么复制现有类的一部分（必然性重复问题），要么重构依赖于现有类的所有内容使得修改有的类适配于新的实例，这会导致脆弱基类问题。</p>
+<p>对象组合可以避免这两个问题。</p>
+<h3 id="你自认为了解原型，但是…"><a href="#你自认为了解原型，但是…" class="headerlink" title="你自认为了解原型，但是…"></a>你自认为了解原型，但是…</h3><p>如果你的所学是，构建类或者构造函数而不是原型继承。那么你学到的是使用原型来模仿类继承。了解更多 – <a href="https://medium.com/javascript-scene/common-misconceptions-about-inheritance-in-javascript-d5d9bab29b0a" target="_blank" rel="noopener">Common Misconceptions About Inheritance in JavaScript</a></p>
+<p>在 JavaScript 中，长久以来类继承寄生在非常丰富灵活的原生的原型继承之上， ES6 以来的 <code>class</code> 也是一样，当你使用类继承，原型继承的强大能力和灵活性都不能得到应用。事实上，你正在把自己圈在角落并且选择所有的类继承和它所带来的问题。</p>
+<blockquote>
+<p><em>Using class inheritance in JavaScript is like driving your new Tesla Model S to the dealer and trading it in for a rusted out 1983 Ford Pinto.</em></p>
+</blockquote>
+<h2 id="Stamps：可组合的工厂函数"><a href="#Stamps：可组合的工厂函数" class="headerlink" title="Stamps：可组合的工厂函数"></a>Stamps：可组合的工厂函数</h2><p>大多数情况下，通过多个工厂函数实现对象组合：工厂函数是用来创建对象的。如果工厂函数也可以组合呢？它被称作 (Stamps) – <a href="https://github.com/stampit-org/stamp-specification" target="_blank" rel="noopener">The Stamp Specification</a></p>
+<h2 id="探索-‘Master-the-JavaScript-Interview’-系列"><a href="#探索-‘Master-the-JavaScript-Interview’-系列" class="headerlink" title="探索 ‘Master the JavaScript Interview’ 系列"></a>探索 ‘Master the JavaScript Interview’ 系列</h2><ul>
+<li><p><a href="https://medium.com/javascript-scene/master-the-javascript-interview-what-is-a-closure-b2f0d2152b36" target="_blank" rel="noopener">What is a Closure?</a></p>
+</li>
+<li><p><a href="https://medium.com/javascript-scene/master-the-javascript-interview-what-s-the-difference-between-class-prototypal-inheritance-e4cd0a7562e9" target="_blank" rel="noopener">What is the Difference Between Class and Prototypal Inheritance?</a></p>
+</li>
+<li><p><a href="https://medium.com/javascript-scene/master-the-javascript-interview-what-is-a-pure-function-d1c076bec976" target="_blank" rel="noopener">What is a Pure Function?</a></p>
+</li>
+<li><p><a href="https://medium.com/javascript-scene/master-the-javascript-interview-what-is-function-composition-20dfb109a1a0" target="_blank" rel="noopener">What is a Function Composition?</a></p>
+</li>
+<li><p><a href="https://medium.com/javascript-scene/master-the-javascript-interview-what-is-functional-programming-7f218c68b3a0" target="_blank" rel="noopener">What is a Function Programming?</a></p>
+</li>
+<li><p><a href="https://medium.com/javascript-scene/master-the-javascript-interview-what-is-a-promise-27fc71e77261" target="_blank" rel="noopener">What is a Promise?</a></p>
+</li>
+<li><p><a href="https://medium.com/javascript-scene/master-the-javascript-interview-soft-skills-a8a5fb02c466" target="_blank" rel="noopener">Soft Skills</a></p>
+</li>
+</ul>
 
       
     </div>
@@ -560,7 +611,7 @@
       
         <div class="post-tags">
           
-            <a href="/posts/tags/JavaScript/" rel="tag"># JavaScript</a>
+            <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
           
         </div>
       
@@ -593,8 +644,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/posts/8e5d7b3b/" rel="next" title="【译】精通 JavaScript： 什么是函数组合（Function Composition）？">
-                <i class="fa fa-chevron-left"></i> 【译】精通 JavaScript： 什么是函数组合（Function Composition）？
+              <a href="/posts/3b887bb4/" rel="next" title="【译】精通 JavaScript： 什么是闭包（Closure）？">
+                <i class="fa fa-chevron-left"></i> 【译】精通 JavaScript： 什么是闭包（Closure）？
               </a>
             
           </div>
@@ -603,8 +654,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/posts/4d26265b/" rel="prev" title="【译】JavaScript 工作原理：V8 引擎中5个优化代码的技巧">
-                【译】JavaScript 工作原理：V8 引擎中5个优化代码的技巧 <i class="fa fa-chevron-right"></i>
+              <a href="/posts/6a904bf2/" rel="prev" title="【译】精通 JavaScript： 什么是 Promise？">
+                【译】精通 JavaScript： 什么是 Promise？ <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -680,7 +731,7 @@
               
                 <div class="site-state-item site-state-posts">
                 
-                  <a href="/posts/archives/">
+                  <a href="/archives/">
                 
                     <span class="site-state-item-count">10</span>
                     <span class="site-state-item-name">posts</span>
@@ -694,7 +745,7 @@
                 
                 
                 <div class="site-state-item site-state-tags">
-                  <a href="/posts/tags/index.html">
+                  <a href="/tags/index.html">
                     
                     
                       
@@ -769,7 +820,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#概述"><span class="nav-number">1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JavaScript-引擎"><span class="nav-number">2.</span> <span class="nav-text">JavaScript 引擎</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#运行时-Runtime"><span class="nav-number">3.</span> <span class="nav-text">运行时 (Runtime)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#调用栈-Call-Stack"><span class="nav-number">4.</span> <span class="nav-text">调用栈 (Call Stack)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#并发和事件循环-Concurrency-amp-Event-Loop"><span class="nav-number">5.</span> <span class="nav-text">并发和事件循环 (Concurrency &amp; Event Loop)</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#类继承和原型继承的区别是什么？"><span class="nav-number">1.</span> <span class="nav-text">类继承和原型继承的区别是什么？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#为什么这个问题很重要？"><span class="nav-number">2.</span> <span class="nav-text">为什么这个问题很重要？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#是不是所有的继承都有问题？"><span class="nav-number">3.</span> <span class="nav-text">是不是所有的继承都有问题？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#原型继承的三种方式"><span class="nav-number">4.</span> <span class="nav-text">原型继承的三种方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#为什么对象组合能改避免脆弱基类问题"><span class="nav-number">5.</span> <span class="nav-text">为什么对象组合能改避免脆弱基类问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#使用组合-Composition"><span class="nav-number">5.1.</span> <span class="nav-text">使用组合 (Composition)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#你自认为了解原型，但是…"><span class="nav-number">5.2.</span> <span class="nav-text">你自认为了解原型，但是…</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Stamps：可组合的工厂函数"><span class="nav-number">6.</span> <span class="nav-text">Stamps：可组合的工厂函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#探索-‘Master-the-JavaScript-Interview’-系列"><span class="nav-number">7.</span> <span class="nav-text">探索 ‘Master the JavaScript Interview’ 系列</span></a></li></ol></div>
             
 
           </div>
@@ -880,49 +931,49 @@
 
   
   
-    <script type="text/javascript" src="/posts/lib/jquery/index.js?v=2.1.3"></script>
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
   
 
   
   
-    <script type="text/javascript" src="/posts/lib/velocity/velocity.min.js?v=1.2.1"></script>
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
   
 
   
   
-    <script type="text/javascript" src="/posts/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
   
-
-
-  
-
-
-  <script type="text/javascript" src="/posts/js/src/utils.js?v=6.4.0"></script>
-
-  <script type="text/javascript" src="/posts/js/src/motion.js?v=6.4.0"></script>
-
-
-
-  
-  
-
-
-  <script type="text/javascript" src="/posts/js/src/affix.js?v=6.4.0"></script>
-
-  <script type="text/javascript" src="/posts/js/src/schemes/pisces.js?v=6.4.0"></script>
-
-
-
-  
-  <script type="text/javascript" src="/posts/js/src/scrollspy.js?v=6.4.0"></script>
-<script type="text/javascript" src="/posts/js/src/post-details.js?v=6.4.0"></script>
-
 
 
   
 
 
-  <script type="text/javascript" src="/posts/js/src/bootstrap.js?v=6.4.0"></script>
+  <script type="text/javascript" src="/js/src/utils.js?v=6.4.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.4.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=6.4.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.4.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.4.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.4.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.4.0"></script>
 
 
 
@@ -991,7 +1042,7 @@
     } else if (/json$/i.test(search_path)) {
       isXml = false;
     }
-    var path = "/posts/" + search_path;
+    var path = "/" + search_path;
     // monitor main search box;
 
     var onPopupClose = function (e) {
@@ -1391,7 +1442,7 @@
   
   
   
-  <script src="/posts/lib/needsharebutton/needsharebutton.js"></script>
+  <script src="/lib/needsharebutton/needsharebutton.js"></script>
 
   <script>
     
@@ -1433,7 +1484,7 @@
   
   
   
-  <script src="/posts/lib/bookmark/bookmark.min.js?v=1.0"></script>
+  <script src="/lib/bookmark/bookmark.min.js?v=1.0"></script>
   <script type="text/javascript">
   
     bookmark.scrollToMark('auto', "#more");

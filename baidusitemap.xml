@@ -4,7 +4,7 @@
 
     
   <url>
-    <loc>lyn-ho.github.io/posts/posts/977269ff/</loc>
+    <loc>lyn-ho.github.io/posts/977269ff/</loc>
     <lastmod>2018-09-20T15:40:53.277Z</lastmod>
     <data>
         <display>
@@ -21,7 +21,7 @@
 
     
   <url>
-    <loc>lyn-ho.github.io/posts/posts/b2f2d94f/</loc>
+    <loc>lyn-ho.github.io/posts/b2f2d94f/</loc>
     <lastmod>2018-09-16T13:06:35.363Z</lastmod>
     <data>
         <display>
@@ -38,7 +38,7 @@
 
     
   <url>
-    <loc>lyn-ho.github.io/posts/posts/4d26265b/</loc>
+    <loc>lyn-ho.github.io/posts/4d26265b/</loc>
     <lastmod>2018-09-16T13:06:35.363Z</lastmod>
     <data>
         <display>
@@ -55,7 +55,7 @@
 
     
   <url>
-    <loc>lyn-ho.github.io/posts/posts/8e5d7b3b/</loc>
+    <loc>lyn-ho.github.io/posts/8e5d7b3b/</loc>
     <lastmod>2018-09-16T13:06:35.362Z</lastmod>
     <data>
         <display>
@@ -72,24 +72,7 @@
 
     
   <url>
-    <loc>lyn-ho.github.io/posts/posts/b4cbde14/</loc>
-    <lastmod>2018-09-16T13:06:35.361Z</lastmod>
-    <data>
-        <display>
-        <title>【译】精通 JavaScript： 什么是纯函数（Pure Function）？</title>
-        <pubTime>2018-09-03T09:13:58.000Z</pubTime>
-        
-        <tag>JavaScript</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>lyn-ho.github.io/posts/posts/6a904bf2/</loc>
+    <loc>lyn-ho.github.io/posts/6a904bf2/</loc>
     <lastmod>2018-09-16T13:06:35.361Z</lastmod>
     <data>
         <display>
@@ -106,7 +89,24 @@
 
     
   <url>
-    <loc>lyn-ho.github.io/posts/posts/48b81a71/</loc>
+    <loc>lyn-ho.github.io/posts/b4cbde14/</loc>
+    <lastmod>2018-09-16T13:06:35.361Z</lastmod>
+    <data>
+        <display>
+        <title>【译】精通 JavaScript： 什么是纯函数（Pure Function）？</title>
+        <pubTime>2018-09-03T09:13:58.000Z</pubTime>
+        
+        <tag>JavaScript</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>lyn-ho.github.io/posts/48b81a71/</loc>
     <lastmod>2018-09-16T13:06:35.360Z</lastmod>
     <data>
         <display>
@@ -123,24 +123,7 @@
 
     
   <url>
-    <loc>lyn-ho.github.io/posts/posts/3b887bb4/</loc>
-    <lastmod>2018-09-16T13:06:35.359Z</lastmod>
-    <data>
-        <display>
-        <title>【译】精通 JavaScript： 什么是闭包（Closure）？</title>
-        <pubTime>2018-08-27T04:34:58.000Z</pubTime>
-        
-        <tag>JavaScript</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>lyn-ho.github.io/posts/posts/25329c80/</loc>
+    <loc>lyn-ho.github.io/posts/25329c80/</loc>
     <lastmod>2018-09-16T13:06:35.359Z</lastmod>
     <data>
         <display>
@@ -157,7 +140,24 @@
 
     
   <url>
-    <loc>lyn-ho.github.io/posts/posts/637b26df/</loc>
+    <loc>lyn-ho.github.io/posts/3b887bb4/</loc>
+    <lastmod>2018-09-16T13:06:35.359Z</lastmod>
+    <data>
+        <display>
+        <title>【译】精通 JavaScript： 什么是闭包（Closure）？</title>
+        <pubTime>2018-08-27T04:34:58.000Z</pubTime>
+        
+        <tag>JavaScript</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>lyn-ho.github.io/posts/637b26df/</loc>
     <lastmod>2018-09-16T13:06:35.358Z</lastmod>
     <data>
         <display>

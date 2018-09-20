@@ -25,7 +25,7 @@
 
   
   
-  <link rel="stylesheet" href="/posts/lib/needsharebutton/needsharebutton.css">
+  <link rel="stylesheet" href="/lib/needsharebutton/needsharebutton.css">
 
 
 
@@ -92,21 +92,21 @@
 
 
 
-<link href="/posts/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
 
-<link href="/posts/css/main.css?v=6.4.0" rel="stylesheet" type="text/css" />
-
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/posts/images/apple-touch-icon-next.png?v=6.4.0">
+<link href="/css/main.css?v=6.4.0" rel="stylesheet" type="text/css" />
 
 
-  <link rel="icon" type="image/png" sizes="32x32" href="/posts/images/favicon-32x32-next.png?v=6.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.4.0">
 
 
-  <link rel="icon" type="image/png" sizes="16x16" href="/posts/images/favicon-16x16-next.png?v=6.4.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.4.0">
 
 
-  <link rel="mask-icon" href="/posts/images/logo.svg?v=6.4.0" color="#222">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.4.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.4.0" color="#222">
 
 
 
@@ -119,7 +119,7 @@
 <script type="text/javascript" id="hexo.configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
-    root: '/posts/',
+    root: '/',
     scheme: 'Pisces',
     version: '6.4.0',
     sidebar: {"position":"right","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
@@ -144,27 +144,34 @@
 
 
 
-  <meta name="description" content="原文：Master the JavaScript Interview: What is a Closure?   “精通 JavaScript 面试” 是一个系列的文章，旨在帮助面试者准备他们在申请中高级职位时可能遇到的常见问题。这些是我在现实面试中经常提出的问题。  什么是闭包通常是我 JavaScript 面试的第一个和最后一个问题。坦白说，如果你不理解闭包你就不能深入掌握 JavaSc">
+  <meta name="description" content="原文：How JavaScript works: an overview of the engine, the runtime, and the call stack  JavaScript 变得越来越流行，很多团队在他们技术栈的多个方面使用它：前端，后端，hybrid 应用，嵌入式设备等等。 这篇是本系列文章的第一篇，旨在深入挖掘 JavaScript 和其实际工作原理：我们认为，通过了解">
 <meta name="keywords" content="JavaScript">
 <meta property="og:type" content="article">
-<meta property="og:title" content="【译】精通 JavaScript： 什么是闭包（Closure）？">
-<meta property="og:url" content="lyn-ho.github.io/posts/3b887bb4/index.html">
+<meta property="og:title" content="【译】JavaScript 工作原理：JS 引擎，runtime 和调用栈的概述">
+<meta property="og:url" content="lyn-ho.github.io/posts/b2f2d94f/index.html">
 <meta property="og:site_name" content="Lyn&#39;s Blog">
-<meta property="og:description" content="原文：Master the JavaScript Interview: What is a Closure?   “精通 JavaScript 面试” 是一个系列的文章，旨在帮助面试者准备他们在申请中高级职位时可能遇到的常见问题。这些是我在现实面试中经常提出的问题。  什么是闭包通常是我 JavaScript 面试的第一个和最后一个问题。坦白说，如果你不理解闭包你就不能深入掌握 JavaSc">
+<meta property="og:description" content="原文：How JavaScript works: an overview of the engine, the runtime, and the call stack  JavaScript 变得越来越流行，很多团队在他们技术栈的多个方面使用它：前端，后端，hybrid 应用，嵌入式设备等等。 这篇是本系列文章的第一篇，旨在深入挖掘 JavaScript 和其实际工作原理：我们认为，通过了解">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="https://cdn-images-1.medium.com/max/2000/1*J-jjDviwGUfzka1HX5LG9A.jpeg">
-<meta property="og:updated_time" content="2018-09-16T13:06:35.359Z">
+<meta property="og:image" content="https://cdn-images-1.medium.com/max/1600/1*Zf4reZZJ9DCKsXf5CSXghg.png">
+<meta property="og:image" content="https://cdn-images-1.medium.com/max/1600/1*OnH_DlbNAPvB9KLxUCyMsA.png">
+<meta property="og:image" content="https://cdn-images-1.medium.com/max/1600/1*4lHHyfEhVB0LnQ3HlhSs8g.png">
+<meta property="og:image" content="https://cdn-images-1.medium.com/max/1600/1*Yp1KOt_UJ47HChmS9y7KXw.png">
+<meta property="og:image" content="https://cdn-images-1.medium.com/max/1600/1*T-W_ihvl-9rG4dn18kP3Qw.png">
+<meta property="og:image" content="https://cdn-images-1.medium.com/max/1600/1*AycFMDy9tlDmNoc5LXd9-g.png">
+<meta property="og:image" content="https://cdn-images-1.medium.com/max/1600/1*e0nEd59RPKz9coyY8FX-uw.png">
+<meta property="og:image" content="https://cdn-images-1.medium.com/max/1600/1*WlMXK3rs_scqKTRV41au7g.jpeg">
+<meta property="og:updated_time" content="2018-09-16T13:06:35.363Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="【译】精通 JavaScript： 什么是闭包（Closure）？">
-<meta name="twitter:description" content="原文：Master the JavaScript Interview: What is a Closure?   “精通 JavaScript 面试” 是一个系列的文章，旨在帮助面试者准备他们在申请中高级职位时可能遇到的常见问题。这些是我在现实面试中经常提出的问题。  什么是闭包通常是我 JavaScript 面试的第一个和最后一个问题。坦白说，如果你不理解闭包你就不能深入掌握 JavaSc">
-<meta name="twitter:image" content="https://cdn-images-1.medium.com/max/2000/1*J-jjDviwGUfzka1HX5LG9A.jpeg">
+<meta name="twitter:title" content="【译】JavaScript 工作原理：JS 引擎，runtime 和调用栈的概述">
+<meta name="twitter:description" content="原文：How JavaScript works: an overview of the engine, the runtime, and the call stack  JavaScript 变得越来越流行，很多团队在他们技术栈的多个方面使用它：前端，后端，hybrid 应用，嵌入式设备等等。 这篇是本系列文章的第一篇，旨在深入挖掘 JavaScript 和其实际工作原理：我们认为，通过了解">
+<meta name="twitter:image" content="https://cdn-images-1.medium.com/max/1600/1*Zf4reZZJ9DCKsXf5CSXghg.png">
 
 
 
 
 
 
-  <link rel="canonical" href="lyn-ho.github.io/posts/3b887bb4/"/>
+  <link rel="canonical" href="lyn-ho.github.io/posts/b2f2d94f/"/>
 
 
 
@@ -174,7 +181,7 @@
   };
 </script>
 
-  <title>【译】精通 JavaScript： 什么是闭包（Closure）？ | Lyn's Blog</title>
+  <title>【译】JavaScript 工作原理：JS 引擎，runtime 和调用栈的概述 | Lyn's Blog</title>
   
 
 
@@ -230,7 +237,7 @@
     
 
     <div class="custom-logo-site-title">
-      <a href="/posts/" class="brand" rel="start">
+      <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">Lyn's Blog</span>
         <span class="logo-line-after"><i></i></span>
@@ -259,7 +266,7 @@
         
           
           <li class="menu-item menu-item-home">
-    <a href="/posts/" rel="section">
+    <a href="/" rel="section">
       <i class="menu-item-icon fa fa-fw fa-home"></i> <br />Home</a>
   </li>
         
@@ -267,7 +274,7 @@
         
           
           <li class="menu-item menu-item-archives">
-    <a href="/posts/archives/" rel="section">
+    <a href="/archives/" rel="section">
       <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />Archives</a>
   </li>
         
@@ -275,7 +282,7 @@
         
           
           <li class="menu-item menu-item-tags">
-    <a href="/posts/tags/" rel="section">
+    <a href="/tags/" rel="section">
       <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />Tags</a>
   </li>
         
@@ -283,7 +290,7 @@
         
           
           <li class="menu-item menu-item-categories">
-    <a href="/posts/categories/" rel="section">
+    <a href="/categories/" rel="section">
       <i class="menu-item-icon fa fa-fw fa-th"></i> <br />Categories</a>
   </li>
 
@@ -366,12 +373,12 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="lyn-ho.github.io/posts/posts/3b887bb4/">
+    <link itemprop="mainEntityOfPage" href="lyn-ho.github.io/posts/b2f2d94f/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Lyn Ho">
       <meta itemprop="description" content="Stay Hungry Stay Foolish">
-      <meta itemprop="image" content="/posts/images/avatar.gif">
+      <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -383,7 +390,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">【译】精通 JavaScript： 什么是闭包（Closure）？
+          <h2 class="post-title" itemprop="name headline">【译】JavaScript 工作原理：JS 引擎，runtime 和调用栈的概述
               
             
           </h2>
@@ -408,7 +415,7 @@
                 
               
 
-              <time title="Created: 2018-08-27 12:34:58" itemprop="dateCreated datePublished" datetime="2018-08-27T12:34:58+08:00">2018-08-27</time>
+              <time title="Created: 2018-09-10 16:58:58" itemprop="dateCreated datePublished" datetime="2018-09-10T16:58:58+08:00">2018-09-10</time>
             
 
             
@@ -439,8 +446,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/posts/3b887bb4/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">Comments: </span> <span class="post-comments-count gitment-comments-count" data-xid="/posts/3b887bb4/" itemprop="commentsCount"></span>
+                <a href="/posts/b2f2d94f/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">Comments: </span> <span class="post-comments-count gitment-comments-count" data-xid="/posts/b2f2d94f/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -448,7 +455,7 @@
 
           
           
-             <span id="/posts/3b887bb4/" class="leancloud_visitors" data-flag-title="【译】精通 JavaScript： 什么是闭包（Closure）？">
+             <span id="/posts/b2f2d94f/" class="leancloud_visitors" data-flag-title="【译】JavaScript 工作原理：JS 引擎，runtime 和调用栈的概述">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -479,56 +486,60 @@
       
 
       
-        <p><img src="https://cdn-images-1.medium.com/max/2000/1*J-jjDviwGUfzka1HX5LG9A.jpeg" alt="closure"></p>
-<blockquote>
-<p>原文：<a href="https://medium.com/javascript-scene/master-the-javascript-interview-what-is-a-closure-b2f0d2152b36" target="_blank" rel="noopener">Master the JavaScript Interview: What is a Closure?</a></p>
+        <blockquote>
+<p>原文：<a href="https://blog.sessionstack.com/how-does-javascript-actually-work-part-1-b0bacc073cf" target="_blank" rel="noopener">How JavaScript works: an overview of the engine, the runtime, and the call stack</a></p>
 </blockquote>
-<blockquote>
-<p>“精通 JavaScript 面试” 是一个系列的文章，旨在帮助面试者准备他们在申请中高级职位时可能遇到的常见问题。这些是我在现实面试中经常提出的问题。</p>
-</blockquote>
-<p>什么是闭包通常是我 JavaScript 面试的第一个和最后一个问题。坦白说，如果你不理解闭包你就不能深入掌握 JavaScript。</p>
+<p>JavaScript 变得越来越流行，很多团队在他们技术栈的多个方面使用它：前端，后端，hybrid 应用，嵌入式设备等等。</p>
+<p>这篇是本系列文章的第一篇，旨在深入挖掘 JavaScript 和其实际工作原理：我们认为，通过了解 JavaScript 的构建块以及它们是如何协同工作的，你将能编写更好的代码和应用程序。我们还将分享我们在构建 <a href="https://www.sessionstack.com/?utm_source=medium&amp;utm_medium=source&amp;utm_content=javascript-series-post1-intro" target="_blank" rel="noopener">SessionStack</a> 时使用的一些经验规则，SessionStack 是一个轻量级 JavaScript 应用，它稳定且性能强大以保持竞争力。</p>
 <a id="more"></a>
-<p>你别含糊其辞，但是你真的理解如何构建一个严肃的 JavaScript 程序吗？你真的明白发生了什么，或者程序是如何运行的。我有疑虑，如果不知道这个问题的答案是一个非常危险的信号。</p>
-<p>你不仅应该知道闭包的机制，还应该知道闭包为什么重要，并且可以轻易回答闭包的几个应用场景。</p>
-<p>在 JavaScript 中，闭包通常用于数据私有，事件处理和毁掉函数，以及 <a href="https://medium.com/javascript-scene/curry-or-partial-application-8150044c78b8#.l4b6l1i3x" target="_blank" rel="noopener">偏函数应用(Partial Applications)和柯里化(Currying)</a> ,还有其他函数式编程模式。</p>
-<p>我不在乎面试者是否知道 “closure” 这个单词或它的专业定义。我只想知道他们是否知道闭包的基本原理。如果不知道，通常代表他们没有很多构建真正 JavaScript 应用的经验。</p>
-<blockquote>
-<p><em>If you can’t answer this question, you’re a junior developer. I don’t care how long you’ve been coding.</em></p>
-</blockquote>
-<blockquote>
-<p>That may sound mean, but it’s not. What I mean is that most competent interviewers will ask you what a closure is, and most of the time, getting the answer wrong will cost you the job. Or if you’re lucky enough to get an offer anyway, it will cost you potentially tens of thousands of dollars per year in pay because you’ll be hired as a junior instead of a senior level developer, regardless of how long you’ve been coding.</p>
-</blockquote>
-<p>快速准备一下：“你能说出两种闭包的通用场景？”</p>
-<h2 id="什么是闭包"><a href="#什么是闭包" class="headerlink" title="什么是闭包"></a>什么是闭包</h2><p>闭包是绑定函数和引用其周围的状态的组合 <strong>(词法环境 lexical environment)</strong>。换句话说，闭包可以让内部函数访问外部函数的作用域。在 JavaScript 中，每次创建函数时，都会在创建函数时创建闭包。</p>
-<p>使用闭包，只需在另一个函数内定义一个函数并且公开出来。通过返回或传递给另一个函数来公开这个函数。</p>
-<p>内部函数可以访问外部函数作用域的变量，即使外部函数完成返回了。</p>
-<h2 id="使用闭包-例子"><a href="#使用闭包-例子" class="headerlink" title="使用闭包 (例子)"></a>使用闭包 (例子)</h2><p>闭包通常用于对象数据私有化。数据私有是让我们能够面向接口编程而不是实现编程的基础。这是可以帮助我们构建强壮软件的一个重要概念。因为实现细节比接口更容易改变。</p>
-<blockquote>
-<p><em>“Program to an interface, not an implementation.”</em></p>
-</blockquote>
-<blockquote>
-<p><em><a href="http://www.amazon.com/gp/product/B000SEIBB8?ie=UTF8&amp;camp=213733&amp;creative=393177&amp;creativeASIN=B000SEIBB8&amp;linkCode=shr&amp;tag=eejs-20&amp;linkId=CSQYBHTUP625XI4T" target="_blank" rel="noopener">Design Patterns: Elements of Reusable Object Oriented Software</a></em></p>
-</blockquote>
-<p>在 JavaScript 中，闭包是用于实现数据私有的主要机制。当你使用闭包实现数据私有时，被封装的数据只能在闭包函数作用域中使用。你无法绕过对象 <strong>被授权的方法(privileged methods)</strong> 在外部访问这些数据。任何在闭包作用域内定义的公开方法都是特权方法。例如：</p>
-<script src="//gist.github.com/6fb9890ce1ffb14bad9f059adc4a2f0d.js?file=data-privacy-example.js"></script>
-<p>在上面的例子中，’.get()’ 方法定义在 <code>getSecret()</code> 方法的作用域内，它可以访问<code>getSecret()</code> 中的任何变量，于是它就是一个被授权的方法。在这个例子中，它可以访问参数 <code>secret</code>。</p>
-<p>对象不是产生数据私有的唯一方法。闭包也可以用于创建有状态函数，其返回值可能受其内部状态影响，e.g.:</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> secret = <span class="function"><span class="params">msg</span> =&gt;</span> () =&gt; msg;</span><br></pre></td></tr></table></figure>
-<script src="//gist.github.com/b16af817ec53ad8bbb49875aa4795e74.js?file=secret.js"></script>
-<p>在函数式编程中，闭包通常用于偏函数应用和柯里化。为了理解这些，我们需要一些定义：</p>
-<p><strong>应用程序</strong>：一个应用给定参数并产生一个返回值的过程。</p>
-<p><strong>偏函数应用</strong>：一个应用部分参数的函数的过程。并返回一个新函数作为参数。换句话说，应用一个具有多个参数的函数并返回一个较少参数的函数。偏函数应用先使用一个或部分参数在将要返回的函数中，等待返回的函数调用剩余的参数来完成整个应用。</p>
-<p>偏函数应用利用闭包作用域来提前使用部分参数。你可以实现一个通用函数来赋予指定函数部分参数。如下所示：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">partialApply(targetFunction: <span class="built_in">Function</span>, ...fixedArgs: Any[]) =&gt;</span><br><span class="line">  functionWithFewerParams(...remainingArgs: Any[])</span><br></pre></td></tr></table></figure>
-<p>如果你想进一步了解，请看 <a href="https://github.com/ericelliott/rtype#reading-function-signatures" target="_blank" rel="noopener">Rtype: Reading Function Signatures</a></p>
-<p>利用一个接受任意参数的函数，赋予我们指定的参数。并且返回一个新函数接受剩余的参数。</p>
-<p>这个例子将会帮助你理解。你现在又一个 求两个数的和 的函数：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> add = <span class="function">(<span class="params">a, b</span>) =&gt;</span> a + b;</span><br></pre></td></tr></table></figure>
-<p>现在你想要一个 10 加任意数字的函数。我们称它为 <code>add10()</code>。<code>add10(5)</code> 的结果应该是15. <code>partialApply()</code> 函数将会实现它。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> add10 = partialApply(add, <span class="number">10</span>)</span><br><span class="line">add10(<span class="number">5</span>)</span><br></pre></td></tr></table></figure>
-<p>在这个例子中，’10‘ 作为 <strong>固定参数(fixed parameter)</strong> 通过闭包作用域提前赋予给 <code>add()</code>, 从而我们获得了 <code>add10()</code>。</p>
-<p>让我们来看一下如何实现 <code>partialApply()</code>：<br><br><script src="//gist.github.com/543442825c8519c03e19584daab41bc9.js?file=partial-apply.js"></script></p>
-<p>如你所见，它只是简单地返回一个函数，这个函数通过闭包访问了传给 <code>partialApply()</code> 函数的 fixedArgs 参数。</p>
+<p>根据 <a href="http://githut.info/" target="_blank" rel="noopener">GitHut stars</a> 显示，就 Active Repositories 和 Total Pushes 而言 JavaScript 在 GitHub 中是最高的。在其他类别中也没有落后很多。</p>
+<p><img src="https://cdn-images-1.medium.com/max/1600/1*Zf4reZZJ9DCKsXf5CSXghg.png" alt="GitHut"></p>
+<p><a href="https://madnight.github.io/githut/" target="_blank" rel="noopener">(Check out up-to-date GitHub language stats)</a></p>
+<p>如果项目越发的依赖于 JavaScript，这意味着为了构建令人惊叹的软件，开发人员必须利用 JS 语言和生态所提供的所有内容，对其内部深入理解。</p>
+<p>事实证明，有很多开发者每天都在使用 JavaScript ，但却不了解其内部原理。</p>
+<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>几乎所有开发人员都知道 V8 引擎的概念，并且大多数开发人员了解 JavaScript 是单线程 (single-threaded) 的或者说它使用了回调队列 (callback queue)。</p>
+<p>在这篇文章中，我们将详细介绍这些概念并解释 JavaScript 的实际运行方式。通过了解这些细节，你可以正确利用提供的 APIs 来编写更好的非阻塞的应用。</p>
+<p>如果你是 JavaScript 萌新，这篇文章将会帮助你理解为什么 JavaScript 与其他编程语言相比如此“奇怪”。</p>
+<p>如果你是一位资深 JavaScript 开发人员，希望这篇文章可以为你提供一些关于你每天使用的 JavaScript Runtime 实际工作原理的新见解。</p>
+<h2 id="JavaScript-引擎"><a href="#JavaScript-引擎" class="headerlink" title="JavaScript 引擎"></a>JavaScript 引擎</h2><p>Google 的 V8 引擎是一个流行的 JavaScript 引擎。V8 引擎应用与 Chrome 和 Node.js 。下面是它的一个非常简化的视图：</p>
+<p><img src="https://cdn-images-1.medium.com/max/1600/1*OnH_DlbNAPvB9KLxUCyMsA.png" alt="V8 engine"></p>
+<p>V8 引擎包含两个主要组件：</p>
+<ul>
+<li>内存堆 —— 进行内存分配</li>
+<li>调用栈 —— 代码执行/栈帧</li>
+</ul>
+<h2 id="运行时-Runtime"><a href="#运行时-Runtime" class="headerlink" title="运行时 (Runtime)"></a>运行时 (Runtime)</h2><p>几乎所有 JavaScript 开发人员都使用过浏览器中的 APIs (e.g. <code>setTimeout</code>) 。但是这些 APIs 不是由 JavaScript 引擎提供的。</p>
+<p>所以，它们从何而来？</p>
+<p>事实正面现实有点复杂。</p>
+<p><img src="https://cdn-images-1.medium.com/max/1600/1*4lHHyfEhVB0LnQ3HlhSs8g.png" alt="APIs"></p>
+<p>所以，我们有 JavaScript 引擎，但是实际上还有更多。我们有一些由浏览器提供的叫做 Web APIs 的东西，比如 DOM, AJAX, setTimeout 等等。</p>
+<p>然后，我们还有 <strong>事件循环 (event loop)</strong> 和 <strong>回调队列 (callback queue)</strong> 。</p>
+<h2 id="调用栈-Call-Stack"><a href="#调用栈-Call-Stack" class="headerlink" title="调用栈 (Call Stack)"></a>调用栈 (Call Stack)</h2><p>JavaScript 是一个单线程编程语言，这意味着它只有一个调用栈。因此在同一时间它执行一个任务。</p>
+<p>调用栈是一种我们程序中的基本记录的数据结构。如果进入一个函数，我们将它放在调用栈的顶层。如果返回一个函数，我们将其从调用栈的顶层弹出。这是调用栈能做的所有事情。</p>
+<p>让我们看一个示例。看下面的代码：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">multiply</span>(<span class="params">x, y</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> x * y</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">printSquare</span>(<span class="params">x</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> s = multiply(x, x)</span><br><span class="line">  <span class="built_in">console</span>.log(s)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">printSquare(<span class="number">5</span>)</span><br></pre></td></tr></table></figure>
+<p>当 JavaScript 引擎开始执行代码时，调用栈是空的。之后的步骤如下：</p>
+<p><img src="https://cdn-images-1.medium.com/max/1600/1*Yp1KOt_UJ47HChmS9y7KXw.png" alt="Call Stack"></p>
+<p>调用栈的每个入口称为 <strong>栈帧 (Stack Frame)</strong> 。</p>
+<p>当抛出异常可以看到堆栈追踪是如何构造的 —— 当发生异常时，它就是调用栈的状态。看下面的代码：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">'SessionStack will help you resolve crashes:'</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">bar</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  foo()</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">start</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  bar()</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">start()</span><br></pre></td></tr></table></figure>
+<p>如果在 Chrome 中执行 (假设是 foo.js 中的代码) ，将会生成下面的堆栈追踪：</p>
+<p><img src="https://cdn-images-1.medium.com/max/1600/1*T-W_ihvl-9rG4dn18kP3Qw.png" alt="Stack Trace"></p>
+<p>“<strong>堆栈溢出 (Blowing the stack)</strong>“ —— 当达到最大调用栈大小的时候发生。这很容易发生，特别是如果你使用递归但没有全面的测试。看下面的示例代码：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  foo()</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">foo()</span><br></pre></td></tr></table></figure>
+<p>当 JavaScript 引擎开始执行这段代码，开始调用 <code>foo</code> 函数。但是在没有终止条件的情况下 <code>foo</code> 会递归的调用自己。所以每执行一步，就会把这个相同的函数一次又一次的添加到调用栈中。看起来像下面这样：</p>
+<p><img src="https://cdn-images-1.medium.com/max/1600/1*AycFMDy9tlDmNoc5LXd9-g.png" alt="Blowing the stack"></p>
+<p>但是，在某一时刻，调用栈中的函数调用数量超过了调用栈的实际大小，浏览器通过抛出一个错误来结束它。如下所示：</p>
+<p><img src="https://cdn-images-1.medium.com/max/1600/1*e0nEd59RPKz9coyY8FX-uw.png" alt="Maximum"></p>
+<p>在单线程上运行代码非常简单，因为你不需处理多线程环境中出现的复杂场景 —— 例如 死锁 (deadlocks) 。</p>
+<p>但是单线程也有很大的限制。由于 JavaScript 只有一个调用栈，如果运行很慢会发生什么？</p>
+<h2 id="并发和事件循环-Concurrency-amp-Event-Loop"><a href="#并发和事件循环-Concurrency-amp-Event-Loop" class="headerlink" title="并发和事件循环 (Concurrency &amp; Event Loop)"></a>并发和事件循环 (Concurrency &amp; Event Loop)</h2><p>如果在调用栈中有函数需要花费大量时间才能处理，会发生什么？例如，假设你需要在浏览器中使用 JavaScript 进行一些复杂的图像转换。</p>
+<p>你可能会问，为什么这是一个问题？问题是，当调用栈有函数要执行，浏览器实际不会做其他任何事 —— 浏览器被阻塞了。这意味着浏览器不能渲染，不能运行任何其他代码，它被卡住了。如果你想要在 app 中拥有流畅的 UI 体验，这将是个问题。</p>
+<p>并且这不是唯一的问题。一旦你的浏览器开始在调用栈中处理如此多的任务，它可能在相当长的时间内停止响应。大多数浏览器会弹出一个错误，询问是否终止网页。</p>
+<p><img src="https://cdn-images-1.medium.com/max/1600/1*WlMXK3rs_scqKTRV41au7g.jpeg" alt="Unresponsive"></p>
+<p>这并不是最好的用户体验，不是吗？</p>
+<p>那么，如何在不阻塞 UI 和不弹出无响应的情况下执行复杂的代码？解决方法是 <strong>异步回调 (asynchronous callbacks)</strong> 。</p>
+<p>这将在 “How JavaScript actually works” 第2篇中详细解释：”<a href="https://blog.sessionstack.com/how-javascript-works-inside-the-v8-engine-5-tips-on-how-to-write-optimized-code-ac089e62b12e" target="_blank" rel="noopener">Inside the V8 engine + 5 tips on how to write optimized code</a>“ 。</p>
 
       
     </div>
@@ -549,7 +560,7 @@
       
         <div class="post-tags">
           
-            <a href="/posts/tags/JavaScript/" rel="tag"># JavaScript</a>
+            <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
           
         </div>
       
@@ -582,8 +593,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/posts/25329c80/" rel="next" title="【译】精通 JavaScript： 什么是函数式编程（Functional Programming）？">
-                <i class="fa fa-chevron-left"></i> 【译】精通 JavaScript： 什么是函数式编程（Functional Programming）？
+              <a href="/posts/8e5d7b3b/" rel="next" title="【译】精通 JavaScript： 什么是函数组合（Function Composition）？">
+                <i class="fa fa-chevron-left"></i> 【译】精通 JavaScript： 什么是函数组合（Function Composition）？
               </a>
             
           </div>
@@ -592,8 +603,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/posts/48b81a71/" rel="prev" title="【译】精通 JavaScript： 类继承和原型继承的区别？">
-                【译】精通 JavaScript： 类继承和原型继承的区别？ <i class="fa fa-chevron-right"></i>
+              <a href="/posts/4d26265b/" rel="prev" title="【译】JavaScript 工作原理：V8 引擎中5个优化代码的技巧">
+                【译】JavaScript 工作原理：V8 引擎中5个优化代码的技巧 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -669,7 +680,7 @@
               
                 <div class="site-state-item site-state-posts">
                 
-                  <a href="/posts/archives/">
+                  <a href="/archives/">
                 
                     <span class="site-state-item-count">10</span>
                     <span class="site-state-item-name">posts</span>
@@ -683,7 +694,7 @@
                 
                 
                 <div class="site-state-item site-state-tags">
-                  <a href="/posts/tags/index.html">
+                  <a href="/tags/index.html">
                     
                     
                       
@@ -758,7 +769,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是闭包"><span class="nav-number">1.</span> <span class="nav-text">什么是闭包</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用闭包-例子"><span class="nav-number">2.</span> <span class="nav-text">使用闭包 (例子)</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#概述"><span class="nav-number">1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JavaScript-引擎"><span class="nav-number">2.</span> <span class="nav-text">JavaScript 引擎</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#运行时-Runtime"><span class="nav-number">3.</span> <span class="nav-text">运行时 (Runtime)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#调用栈-Call-Stack"><span class="nav-number">4.</span> <span class="nav-text">调用栈 (Call Stack)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#并发和事件循环-Concurrency-amp-Event-Loop"><span class="nav-number">5.</span> <span class="nav-text">并发和事件循环 (Concurrency &amp; Event Loop)</span></a></li></ol></div>
             
 
           </div>
@@ -869,49 +880,49 @@
 
   
   
-    <script type="text/javascript" src="/posts/lib/jquery/index.js?v=2.1.3"></script>
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
   
 
   
   
-    <script type="text/javascript" src="/posts/lib/velocity/velocity.min.js?v=1.2.1"></script>
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
   
 
   
   
-    <script type="text/javascript" src="/posts/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
   
-
-
-  
-
-
-  <script type="text/javascript" src="/posts/js/src/utils.js?v=6.4.0"></script>
-
-  <script type="text/javascript" src="/posts/js/src/motion.js?v=6.4.0"></script>
-
-
-
-  
-  
-
-
-  <script type="text/javascript" src="/posts/js/src/affix.js?v=6.4.0"></script>
-
-  <script type="text/javascript" src="/posts/js/src/schemes/pisces.js?v=6.4.0"></script>
-
-
-
-  
-  <script type="text/javascript" src="/posts/js/src/scrollspy.js?v=6.4.0"></script>
-<script type="text/javascript" src="/posts/js/src/post-details.js?v=6.4.0"></script>
-
 
 
   
 
 
-  <script type="text/javascript" src="/posts/js/src/bootstrap.js?v=6.4.0"></script>
+  <script type="text/javascript" src="/js/src/utils.js?v=6.4.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.4.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=6.4.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.4.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.4.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.4.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.4.0"></script>
 
 
 
@@ -980,7 +991,7 @@
     } else if (/json$/i.test(search_path)) {
       isXml = false;
     }
-    var path = "/posts/" + search_path;
+    var path = "/" + search_path;
     // monitor main search box;
 
     var onPopupClose = function (e) {
@@ -1380,7 +1391,7 @@
   
   
   
-  <script src="/posts/lib/needsharebutton/needsharebutton.js"></script>
+  <script src="/lib/needsharebutton/needsharebutton.js"></script>
 
   <script>
     
@@ -1422,7 +1433,7 @@
   
   
   
-  <script src="/posts/lib/bookmark/bookmark.min.js?v=1.0"></script>
+  <script src="/lib/bookmark/bookmark.min.js?v=1.0"></script>
   <script type="text/javascript">
   
     bookmark.scrollToMark('auto', "#more");

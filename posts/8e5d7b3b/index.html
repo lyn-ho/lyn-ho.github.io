@@ -25,7 +25,7 @@
 
   
   
-  <link rel="stylesheet" href="/posts/lib/needsharebutton/needsharebutton.css">
+  <link rel="stylesheet" href="/lib/needsharebutton/needsharebutton.css">
 
 
 
@@ -92,21 +92,21 @@
 
 
 
-<link href="/posts/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
 
-<link href="/posts/css/main.css?v=6.4.0" rel="stylesheet" type="text/css" />
-
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/posts/images/apple-touch-icon-next.png?v=6.4.0">
+<link href="/css/main.css?v=6.4.0" rel="stylesheet" type="text/css" />
 
 
-  <link rel="icon" type="image/png" sizes="32x32" href="/posts/images/favicon-32x32-next.png?v=6.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.4.0">
 
 
-  <link rel="icon" type="image/png" sizes="16x16" href="/posts/images/favicon-16x16-next.png?v=6.4.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.4.0">
 
 
-  <link rel="mask-icon" href="/posts/images/logo.svg?v=6.4.0" color="#222">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.4.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.4.0" color="#222">
 
 
 
@@ -119,7 +119,7 @@
 <script type="text/javascript" id="hexo.configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
-    root: '/posts/',
+    root: '/',
     scheme: 'Pisces',
     version: '6.4.0',
     sidebar: {"position":"right","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
@@ -144,33 +144,27 @@
 
 
 
-  <meta name="description" content="原文：How JavaScript works: inside the V8 engine + 5 tips on how to write optimized code  几个星期之前，我们开始了一个旨在深入挖掘 JavaScript 及其实际工作原理的系列文章，我们认为，通过了解 JavaScript 的底层构建以及它们是如何协作的，你将能够编写更好的代码和应用。 第一篇文章主要关注引擎，">
+  <meta name="description" content="原文：Master the JavaScript Interview: What is Function Composition?    “精通 JavaScript 面试” 是一个系列的文章，旨在帮助面试者准备他们在申请中高级职位时可能遇到的常见问题。这些是我在现实面试中经常提出的问题。  函数式编程已经成为了 JavaScript 世界的一个热门话题。仅仅在几年前，甚至只有很少 JavaS">
 <meta name="keywords" content="JavaScript">
 <meta property="og:type" content="article">
-<meta property="og:title" content="【译】JavaScript 工作原理：V8 引擎中5个优化代码的技巧">
-<meta property="og:url" content="lyn-ho.github.io/posts/4d26265b/index.html">
+<meta property="og:title" content="【译】精通 JavaScript： 什么是函数组合（Function Composition）？">
+<meta property="og:url" content="lyn-ho.github.io/posts/8e5d7b3b/index.html">
 <meta property="og:site_name" content="Lyn&#39;s Blog">
-<meta property="og:description" content="原文：How JavaScript works: inside the V8 engine + 5 tips on how to write optimized code  几个星期之前，我们开始了一个旨在深入挖掘 JavaScript 及其实际工作原理的系列文章，我们认为，通过了解 JavaScript 的底层构建以及它们是如何协作的，你将能够编写更好的代码和应用。 第一篇文章主要关注引擎，">
+<meta property="og:description" content="原文：Master the JavaScript Interview: What is Function Composition?    “精通 JavaScript 面试” 是一个系列的文章，旨在帮助面试者准备他们在申请中高级职位时可能遇到的常见问题。这些是我在现实面试中经常提出的问题。  函数式编程已经成为了 JavaScript 世界的一个热门话题。仅仅在几年前，甚至只有很少 JavaS">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="https://cdn-images-1.medium.com/max/1600/1*AKKvE3QmN_ZQmEzSj16oXg.png">
-<meta property="og:image" content="https://cdn-images-1.medium.com/max/1600/0*RRgTDdRfLGEhuR7U.png">
-<meta property="og:image" content="https://cdn-images-1.medium.com/max/1600/1*pVnIrMZiB9iAz5sW28AixA.png">
-<meta property="og:image" content="https://cdn-images-1.medium.com/max/1600/1*QsVUE3snZD9abYXccg6Sgw.png">
-<meta property="og:image" content="https://user-gold-cdn.xitu.io/2017/11/18/15fcec13180b6f2e?imageView2/0/w/1280/h/960/format/webp/ignore-error/1">
-<meta property="og:image" content="https://cdn-images-1.medium.com/max/1600/1*iHfI6MQ-YKQvWvo51J-P0w.png">
-<meta property="og:image" content="https://cdn-images-1.medium.com/max/1600/0*pohqKvj9psTPRlOv.png">
-<meta property="og:updated_time" content="2018-09-16T13:06:35.363Z">
+<meta property="og:image" content="https://cdn-images-1.medium.com/max/2000/1*4trMikhKRHhSUlI2D6h_mA.jpeg">
+<meta property="og:updated_time" content="2018-09-16T13:06:35.362Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="【译】JavaScript 工作原理：V8 引擎中5个优化代码的技巧">
-<meta name="twitter:description" content="原文：How JavaScript works: inside the V8 engine + 5 tips on how to write optimized code  几个星期之前，我们开始了一个旨在深入挖掘 JavaScript 及其实际工作原理的系列文章，我们认为，通过了解 JavaScript 的底层构建以及它们是如何协作的，你将能够编写更好的代码和应用。 第一篇文章主要关注引擎，">
-<meta name="twitter:image" content="https://cdn-images-1.medium.com/max/1600/1*AKKvE3QmN_ZQmEzSj16oXg.png">
+<meta name="twitter:title" content="【译】精通 JavaScript： 什么是函数组合（Function Composition）？">
+<meta name="twitter:description" content="原文：Master the JavaScript Interview: What is Function Composition?    “精通 JavaScript 面试” 是一个系列的文章，旨在帮助面试者准备他们在申请中高级职位时可能遇到的常见问题。这些是我在现实面试中经常提出的问题。  函数式编程已经成为了 JavaScript 世界的一个热门话题。仅仅在几年前，甚至只有很少 JavaS">
+<meta name="twitter:image" content="https://cdn-images-1.medium.com/max/2000/1*4trMikhKRHhSUlI2D6h_mA.jpeg">
 
 
 
 
 
 
-  <link rel="canonical" href="lyn-ho.github.io/posts/4d26265b/"/>
+  <link rel="canonical" href="lyn-ho.github.io/posts/8e5d7b3b/"/>
 
 
 
@@ -180,7 +174,7 @@
   };
 </script>
 
-  <title>【译】JavaScript 工作原理：V8 引擎中5个优化代码的技巧 | Lyn's Blog</title>
+  <title>【译】精通 JavaScript： 什么是函数组合（Function Composition）？ | Lyn's Blog</title>
   
 
 
@@ -236,7 +230,7 @@
     
 
     <div class="custom-logo-site-title">
-      <a href="/posts/" class="brand" rel="start">
+      <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">Lyn's Blog</span>
         <span class="logo-line-after"><i></i></span>
@@ -265,7 +259,7 @@
         
           
           <li class="menu-item menu-item-home">
-    <a href="/posts/" rel="section">
+    <a href="/" rel="section">
       <i class="menu-item-icon fa fa-fw fa-home"></i> <br />Home</a>
   </li>
         
@@ -273,7 +267,7 @@
         
           
           <li class="menu-item menu-item-archives">
-    <a href="/posts/archives/" rel="section">
+    <a href="/archives/" rel="section">
       <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />Archives</a>
   </li>
         
@@ -281,7 +275,7 @@
         
           
           <li class="menu-item menu-item-tags">
-    <a href="/posts/tags/" rel="section">
+    <a href="/tags/" rel="section">
       <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />Tags</a>
   </li>
         
@@ -289,7 +283,7 @@
         
           
           <li class="menu-item menu-item-categories">
-    <a href="/posts/categories/" rel="section">
+    <a href="/categories/" rel="section">
       <i class="menu-item-icon fa fa-fw fa-th"></i> <br />Categories</a>
   </li>
 
@@ -372,12 +366,12 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="lyn-ho.github.io/posts/posts/4d26265b/">
+    <link itemprop="mainEntityOfPage" href="lyn-ho.github.io/posts/8e5d7b3b/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Lyn Ho">
       <meta itemprop="description" content="Stay Hungry Stay Foolish">
-      <meta itemprop="image" content="/posts/images/avatar.gif">
+      <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -389,7 +383,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">【译】JavaScript 工作原理：V8 引擎中5个优化代码的技巧
+          <h2 class="post-title" itemprop="name headline">【译】精通 JavaScript： 什么是函数组合（Function Composition）？
               
             
           </h2>
@@ -414,7 +408,7 @@
                 
               
 
-              <time title="Created: 2018-09-14 14:50:58" itemprop="dateCreated datePublished" datetime="2018-09-14T14:50:58+08:00">2018-09-14</time>
+              <time title="Created: 2018-09-04 17:08:58" itemprop="dateCreated datePublished" datetime="2018-09-04T17:08:58+08:00">2018-09-04</time>
             
 
             
@@ -445,8 +439,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/posts/4d26265b/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">Comments: </span> <span class="post-comments-count gitment-comments-count" data-xid="/posts/4d26265b/" itemprop="commentsCount"></span>
+                <a href="/posts/8e5d7b3b/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">Comments: </span> <span class="post-comments-count gitment-comments-count" data-xid="/posts/8e5d7b3b/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -454,7 +448,7 @@
 
           
           
-             <span id="/posts/4d26265b/" class="leancloud_visitors" data-flag-title="【译】JavaScript 工作原理：V8 引擎中5个优化代码的技巧">
+             <span id="/posts/8e5d7b3b/" class="leancloud_visitors" data-flag-title="【译】精通 JavaScript： 什么是函数组合（Function Composition）？">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -486,119 +480,96 @@
 
       
         <blockquote>
-<p>原文：<a href="https://blog.sessionstack.com/how-javascript-works-inside-the-v8-engine-5-tips-on-how-to-write-optimized-code-ac089e62b12e" target="_blank" rel="noopener">How JavaScript works: inside the V8 engine + 5 tips on how to write optimized code</a></p>
+<p>原文：<a href="https://medium.com/javascript-scene/master-the-javascript-interview-what-is-function-composition-20dfb109a1a0" target="_blank" rel="noopener">Master the JavaScript Interview: What is Function Composition?</a></p>
 </blockquote>
-<p>几个星期之前，我们开始了一个旨在深入挖掘 JavaScript 及其实际工作原理的系列文章，我们认为，通过了解 JavaScript 的底层构建以及它们是如何协作的，你将能够编写更好的代码和应用。</p>
-<p><a href="https://blog.sessionstack.com/how-does-javascript-actually-work-part-1-b0bacc073cf" target="_blank" rel="noopener">第一篇文章</a>主要关注引擎，运行时和调用栈的概述。 第二篇文章将深入探讨 Google’s V8 引擎内部。我们还提供了一些关于如何编写更好的 JavaScript 代码的快速提示 —— 我们 <a href="https://www.sessionstack.com/" target="_blank" rel="noopener">SessionStack</a> 开发团队在构建产品时  遵循的最佳实践。</p>
-<h2 id="概述-Overview"><a href="#概述-Overview" class="headerlink" title="概述 (Overview)"></a>概述 (Overview)</h2><p><strong>JavaScript 引擎</strong>是一个可以执行 JavaScript 代码的程序或解释器。 JavaScript 引擎可以是标准实现解释器或者是可以以某种方式实现编译 JavaScript 为字节码的即时编译器。</p>
+<p><img src="https://cdn-images-1.medium.com/max/2000/1*4trMikhKRHhSUlI2D6h_mA.jpeg" alt="Google Datacenter Pipes — Jorge Jorquera — (CC-BY-NC-ND-2.0)"></p>
+<blockquote>
+<p>“精通 JavaScript 面试” 是一个系列的文章，旨在帮助面试者准备他们在申请中高级职位时可能遇到的常见问题。这些是我在现实面试中经常提出的问题。</p>
+</blockquote>
+<p>函数式编程已经成为了 JavaScript 世界的一个热门话题。仅仅在几年前，甚至只有很少 JavaScript 开发者知道函数式编程，但是在过去的3年中我看到了大量使用函数式编程思维构建的应用。</p>
+<p>函数组合是将两个或多个函数组合以产生新函数的过程。将函数组合在一起就像是将一系列管道拼凑在一起，以便我们的数据流过。</p>
 <a id="more"></a>
-<p>下面是流行 JavaScript 引擎列表：</p>
-<ul>
-<li><p><a href="https://en.wikipedia.org/wiki/V8_%28JavaScript_engine%29" target="_blank" rel="noopener"><strong>V8</strong></a> —— 开源， Google 开发， C++ 编写</p>
+<p>简而言之，函数 <code>f</code> 和 <code>g</code> 的组合可以定义为 <code>f(g(x))</code> ，它从内到外，从右到左进行求值。换句话说，求值顺序是：</p>
+<ol>
+<li><p><code>x</code></p>
 </li>
-<li><p><a href="https://en.wikipedia.org/wiki/Rhino_%28JavaScript_engine%29" target="_blank" rel="noopener"><strong>Rhino</strong></a> —— Mozilla 基金会管理，开源，全 Java 开发</p>
+<li><p><code>g</code></p>
 </li>
-<li><p><a href="https://en.wikipedia.org/wiki/SpiderMonkey_%28JavaScript_engine%29" target="_blank" rel="noopener"><strong>SpiderMonkey</strong></a> —— 第一个 JavaScript 引擎，当时支持 Netscape Navigator ， 现在支持 FireFox</p>
-</li>
-<li><p><a href="https://en.wikipedia.org/wiki/JavaScriptCore" target="_blank" rel="noopener"><strong>JavaScriptCore</strong></a> —— 开源， Apple 公司 为 Safari 浏览器开发并以 Nitro 为名字推广</p>
-</li>
-<li><p><a href="https://en.wikipedia.org/wiki/KJS_%28KDE%29" target="_blank" rel="noopener"><strong>KJS</strong></a> ——  KDE 的引擎，最初是由 Harri Porten 为 KDE 项目的 Konqueror 网络浏览器开发</p>
-</li>
-<li><p><a href="https://en.wikipedia.org/wiki/Chakra_%28JScript_engine%29" target="_blank" rel="noopener"><strong>Chakra</strong> (JScript9)</a> —— Internet Explorer</p>
-</li>
-<li><p><a href="https://en.wikipedia.org/wiki/Chakra_%28JavaScript_engine%29" target="_blank" rel="noopener"><strong>Chakra</strong> (JavaScript)</a> —— Microsoft Edge</p>
-</li>
-<li><p><a href="https://en.wikipedia.org/wiki/Nashorn_%28JavaScript_engine%29" target="_blank" rel="noopener"><strong>Nashorn</strong></a> —— 开源，由 Oracle 的 Java 语言工具组开发，是 OpenJDK 的一部分</p>
-</li>
-<li><p><a href="https://en.wikipedia.org/wiki/JerryScript" target="_blank" rel="noopener"><strong>JerryScript</strong></a> —— 物联网轻量级引擎</p>
-</li>
-</ul>
-<h2 id="为什么创建了-V8-引擎"><a href="#为什么创建了-V8-引擎" class="headerlink" title="为什么创建了 V8 引擎"></a>为什么创建了 V8 引擎</h2><p>V8 引擎是由 Google 开发 C++ 编写的开源引擎。它被用于 Google Chrome 。但是，和其他引擎不一样，V8 也被用于 Node.js runtime 。</p>
-<p><img src="https://cdn-images-1.medium.com/max/1600/1*AKKvE3QmN_ZQmEzSj16oXg.png" alt="V8"></p>
-<p>V8 最初是为了提高 Web 浏览器中 JavaScript 执行的性能。为了获得更快的速度，V8 将 JavaScript 转换为更高效的机器码，而不是使用解释器。它像 SpiderMonkey 或者 Rhino (Mozilla) 等很多现代 JavaScript 引擎一样，通过 <strong>JIT(Just-In-Time)编译器</strong> 将 JavaScript 代码编译成机器码。区别是 V8 不生成字节码或任何中间代码。</p>
-<h2 id="V8-曾经有两个编译器"><a href="#V8-曾经有两个编译器" class="headerlink" title="V8 曾经有两个编译器"></a>V8 曾经有两个编译器</h2><p>在 V8 的 v5.9 版本出来之前，它曾经拥有两个  编译器：</p>
-<ul>
-<li><p>full-codegen —— 一个简单且快速的编译器，可以生成简单但相对  较慢的机器码。</p>
-</li>
-<li><p>Grankshaft —— 一个较复杂的即时优化编译器，可以生成  高度优化的代码</p>
-</li>
-</ul>
-<p>V8 引擎内部使用了多线程：</p>
-<ul>
-<li><p>主线程完成你所期望的任务：获取你的代码，编译执行</p>
-</li>
-<li><p>还有一个单独的线程用于编译，以便主线程可以继续执行，而前者可以优化代码</p>
-</li>
-<li><p>Profiler 线程，它将通知  运行时  哪些  方法花费大量时间，以便 Crankshaft 可以优化它们</p>
-</li>
-<li><p> 少许线程来处理垃圾收集器扫描</p>
-</li>
-</ul>
-<p>首次执行 JavaScript 代码，V8 利用 <strong>full-codegen</strong> 直接将解析后的 JavaScript 不经任何转换地编译为机器码。这使它可以非常快速地  开始执行机器码。注意， V8 不使用中间字节码，因此不需要解释器。</p>
-<p>当代码运行一段时间后， profiler 线程以及收集来足够的数据来通知运行时应该优化哪个方法。</p>
-<p>然后， <strong>Crankshaft</strong> 在另一个线程开始优化。它将 JavaScript 抽象语法树转换为名为 <strong>Hydrogen</strong> 的高级静态单元分配表示 (SSA) ，并尝试去优化这个 Hydrogen 图。大多数优化在这个层级完成。</p>
-<h2 id="代码嵌入-Inlining"><a href="#代码嵌入-Inlining" class="headerlink" title="代码嵌入 (Inlining)"></a>代码嵌入 (Inlining)</h2><p>首次优化是尽可能的提前嵌入更多的代码。代码嵌入就是将使用函数的地方( 函数被调用的那一行代码)替换成调用函数的本体。这个简单的步骤使下面的优化更有意义。</p>
-<p><img src="https://cdn-images-1.medium.com/max/1600/0*RRgTDdRfLGEhuR7U.png" alt="inlining"></p>
-<h2 id="隐藏类-Hidden-class"><a href="#隐藏类-Hidden-class" class="headerlink" title="隐藏类 (Hidden class)"></a>隐藏类 (Hidden class)</h2><p>JavaScript 是一门基于原型的语言：没有通过克隆创建的类和对象。 JavaScript 也是一门动态语言，这意味着可以在对象实例化后轻易地向它添加或删除属性。</p>
-<p> 大多数 JavaScript 解释器使用类似字典的结构 (基于<a href="http://en.wikipedia.org/wiki/Hash_function" target="_blank" rel="noopener">散列函数</a>) 来存储对象属性在内存中的位置。这种结构使得在 JavaScript 中检索属性的值比在 Java 或 C＃ 等非动态编程语言中的计算成本更高。在 Java 中，所有对象属性都是在编译之前由固定对象布局确定的，并且无法在运行时动态添加或删除 (C＃具有 <a href="https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/dynamic" target="_blank" rel="noopener">动态类型</a>，这是另一个主题) 。因此，属性值（或指向这些属性的指针）可以作为连续 buffer 存储在存储器中，每个值之间具有固定偏移值。可以根据属性类型轻易确定偏移的长度，而在运行时可以更改属性类型的 JavaScript 中，这是不可能的。</p>
-<p>由于使用字典在内存中查找对象属性的位置效率非常低，因此 V8 使用不同的方法：<strong>隐藏类 (hidden classes)</strong> 。隐藏类的工作方式类似于 Java 等语言中使用的固定对象布局（类），除了它们是在运行时创建的。现在，让我们看看它们实际上是什么样的：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Point</span>(<span class="params">x, y</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.x = x</span><br><span class="line">  <span class="keyword">this</span>.y = y</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> p1 = <span class="keyword">new</span> Point(<span class="number">1</span>, <span class="number">2</span>)</span><br></pre></td></tr></table></figure>
-<p>一旦 <code>new Point(1, 2)</code> 被调用，V8 会生成一个 <code>C0</code> 的隐藏类。</p>
-<p><img src="https://cdn-images-1.medium.com/max/1600/1*pVnIrMZiB9iAz5sW28AixA.png" alt="C0"></p>
-<p>到现在还没有为 <code>Point</code> 定义任何属性，所以 <code>C0</code> 是空的。</p>
-<p> 一旦第一条语句 <code>this.x = x</code> (<code>Point</code> 函数内的) 执行后，V8 将创建一个基于 <code>C0</code> 的第二个隐藏类 <code>C1</code> 。<code>C1</code> 描述了属性值 <code>x</code> 在内存中的位置(相对于对象指针) 。在这个例子中，<code>x</code> 存储在<a href="">偏移值</a>为 0 的地方，这意味着当在内存中把 <code>point</code> 对象视为一段连续的 buffer 时，它的第一偏移量对应的属性就是 <code>x</code> 。V8  还会使用 “ 类转换 (class transition)” 更新 <code>C0</code> ，如果将属性 <code>x</code> 添加到 <code>Point</code> 对象， 隐藏类就会从 <code>C0</code> 切换到 <code>C1</code> 。现在 <code>Point</code> 对象的隐藏类为 <code>C1</code> 。</p>
-<p><img src="https://cdn-images-1.medium.com/max/1600/1*QsVUE3snZD9abYXccg6Sgw.png" alt="C1"></p>
-<p>每当一个新属性添加到对象，旧的隐藏类就会通过一个转换路径更新成一个新的隐藏类。隐藏类转换非常重要，因为它们允许在以相同方式创建的对象之间共享隐藏类。如果两个对象共享一个隐藏类，并给它们添加相同的属性，隐藏类转换能够确保这两个对象都获得新的隐藏类以及与之相关联的优化代码。</p>
-<p>当执行语句 <code>this.y = y</code> (同样，在 <code>Point</code> 函数内部，<code>this.x = x</code> 语句之后) 时，将重复此过程。</p>
-<p>一个新的隐藏类 <code>C2</code> 被创建了，如果属性 <code>y</code> 被添加到 Point 对象(已经包含了 <code>x</code> 属性)，同样的过程，类型转换被添加到 <code>C1</code> 上，然后隐藏类开始更新成 <code>C2</code>，并且 Point 对象的隐藏类就要更新成 <code>C2</code> 了。</p>
-<p><img src="https://user-gold-cdn.xitu.io/2017/11/18/15fcec13180b6f2e?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" alt="C2"></p>
-<p>隐藏类转换是根据属性被添加到对象上的顺序而发生变化。我们看看下面这一小段代码：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Point</span>(<span class="params">x, y</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.x = x</span><br><span class="line">  <span class="keyword">this</span>.y = y</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> p1 = <span class="keyword">new</span> Point(<span class="number">1</span>, <span class="number">2</span>)</span><br><span class="line">p1.a = <span class="number">5</span></span><br><span class="line">p1.b = <span class="number">6</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> p2 = <span class="keyword">new</span> Point(<span class="number">3</span>, <span class="number">4</span>)</span><br><span class="line">p2.b = <span class="number">7</span></span><br><span class="line">p2.a = <span class="number">8</span></span><br></pre></td></tr></table></figure>
-<p>现在，你可能认为 <code>p1</code> 和 <code>p2</code> 使用了相同的隐藏类和类转换。其实不然，对于 <code>p1</code> 先添加属性 <code>a</code> 再添加属性 <code>b</code> ，但是 <code>p2</code> 先添加 <code>b</code> 后添加 <code>a</code> 。因此，<code>p1</code> 和 <code>p2</code> 以不同转换路径的结束，它们的隐藏类也不同。<strong>在这种情况下， 最好以相同的顺序初始化动态属性，以便可以复用隐藏类。</strong></p>
-<h2 id="内联缓存-Inline-caching"><a href="#内联缓存-Inline-caching" class="headerlink" title="内联缓存 (Inline caching)"></a>内联缓存 (Inline caching)</h2><p>V8 利用另一种被称为内联缓存的技术来优化动态类型语言。内联缓存依赖于观察到：发生在相同类型的对象上的同一个方法的重复调用。关于内联缓存深入解释请看<a href="https://github.com/sq/JSIL/wiki/Optimizing-dynamic-JavaScript-with-inline-caches" target="_blank" rel="noopener">这里</a>。</p>
-<p>我们将讨论内联缓存的一般概念（如果您没有时间进行上面的深入解释）。</p>
-<p>那么它是怎样工作的？V8 会维护一个在最近的方法调用的参数的对象类型的缓存，并使用这些信息去预测将要传入参数的对象类型。如果 V8 对传递给方法的对象类型做出了很好的预测，那么它就能够绕开获取对象属性的计算过程，取而代之的是使用先前查找这个对象的隐藏类时所存储的信息。</p>
-<p>那么隐藏类和内联缓存的概念是如何  关联的？每当在特定对象上调用方法时，V8 引擎必须执行对该对象的隐藏类的查找，以确定访问特定属性的偏移量。在将同一方法成功调用两次到同一个隐藏类之后，，V8 就会略过查找隐藏类，将这个属性的偏移值添加到对象本身的指针上。未来这个方法的所有调用，V8 引擎都会假设隐藏类没有更改，并使用先前查找中存储的偏移  值直接跳转到特定属性的内存地址。这极大的提高了 V8 的执行速度。</p>
-<p>内联缓存也是同类型对象共享隐藏类非常重要的原因。如果创建两个相同类型且具有不同隐藏类的对象(如同我们之前的示例)，V8 将无法使用内联缓存，因为即使两个对象属于同一类型，其对应的隐藏类也会为其属性分配不同的偏移值。</p>
-<p><img src="https://cdn-images-1.medium.com/max/1600/1*iHfI6MQ-YKQvWvo51J-P0w.png" alt="inline caching"></p>
-<p>这两个对象基本相同，但 <code>a</code> 和 <code>b</code> 属性的创建顺序不同。</p>
-<h2 id="编译成机器码-Compilation-to-machine-code"><a href="#编译成机器码-Compilation-to-machine-code" class="headerlink" title="编译成机器码 (Compilation to machine code)"></a>编译成机器码 (Compilation to machine code)</h2><p>经 Hydrogen graph 优化后，Crankshaft 将其降低到一个较低层次 Lithium 。大多数 Lithium 实现都是特定于体系结构的。寄存器分配发生在这个级别。</p>
-<p>最后， Lithium 会被编译成机器码。然后，触发 OSR 一种运行时替换正在运行的栈帧的技术 (on-stack replacement) 。这我们开始编译和优化一个明显耗时的方法之前，我们可能正在运行它。V8 不会  遗弃  正在缓慢执行的代码而直接开始执行优化  后的。相反，它将转换所有的上下文环境 (堆栈，寄存器) ，以便我们可以这执行过程中切换到优化的版本。这是一项非常复杂的任务，请记住，在其他优化中，V8 原来已经内联了代码。V8 并不是唯一能够做到这一点的引擎。</p>
-<p>V8 有一种称为去优化的保护措施可以进行相反的转换，并在发动机制造的假设不再适用的情况下恢复到非优化代码。</p>
-<h2 id="垃圾回收-Garbage-collection"><a href="#垃圾回收-Garbage-collection" class="headerlink" title="垃圾回收 (Garbage collection)"></a>垃圾回收 (Garbage collection)</h2><p>对于垃圾收集，V8 采用传统的标记和扫描方式来清理旧数据。标记阶段会阻止 JavaScript 执行。为了控制 GC 成本并使运行更稳定，V8 使用增量标记：不是遍历整个堆，尝试标记每个可能的对象，它只是遍历堆的一部分，然后恢复正常执行。下一个 GC 将从上一个堆遍历停止的位置继续。这允许在正常执行期间非常短暂的暂停。如前所述，扫描阶段由单独的线程处理。</p>
-<h2 id="Ignition-和-TurboFan"><a href="#Ignition-和-TurboFan" class="headerlink" title="Ignition 和 TurboFan"></a>Ignition 和 TurboFan</h2><p>随着 2017 年早些时候发布 V8 v5.9，引入了新的执行管道。这个新的管道在实际的 JavaScript 应用程序中实现了更大的性能提升和显着的内存节省。</p>
-<p>新的执行管道建立在 V8 解释器 <a href="https://github.com/v8/v8/wiki/Interpreter" target="_blank" rel="noopener">Ignition</a>，和最新优化的 V8 编译器 <a href="https://github.com/v8/v8/wiki/TurboFan" target="_blank" rel="noopener">TurboFan</a> 之上。</p>
-<p>您可以在<a href="https://v8project.blogspot.bg/2017/05/launching-ignition-and-turbofan.html" target="_blank" rel="noopener">这里</a>查看 V8 团队关于该主题的博客文章。</p>
-<p>自从 V8 的 v5.9 版本问世以来，V8 已经不再使用 full-codegen 和 Crankshaft（自 2010 年以来为 V8 提供服务的技术）用于执行 JavaScript，因为 V8 团队一直在努力跟上新的 JavaScript 语言功能以及功能优化。</p>
-<p>这意味着整体 V8 将具有更简单，更易维护的架构。</p>
-<p><img src="https://cdn-images-1.medium.com/max/1600/0*pohqKvj9psTPRlOv.png" alt="Improvements on Web and Node.js benchmarks
-"></p>
-<p>这些改进只是一个开始。新的 Ignition 和 TurboFan 管道为进一步优化铺平了道路，这些优化将在未来几年内提升 JavaScript 性能并缩小 V8 在 Chrome 和 Node.js 中的占用空间。</p>
-<p>最后，这里有一些关于如何编写优化良好的 JavaScript 的技巧和窍门。您可以从上面的内容中轻松地推导出这些内容，但是，这里是为方便起见的摘要：</p>
-<h2 id="如何编写优化的-JavaScript"><a href="#如何编写优化的-JavaScript" class="headerlink" title="如何编写优化的 JavaScript"></a>如何编写优化的 JavaScript</h2><ol>
-<li><p><strong>对象属性的顺序</strong> ：始终以相同的顺序实例化对象属性，以便可以共享隐藏类和随后优化的代码。</p>
-</li>
-<li><p><strong>动态属性</strong> ：在向实例化的对象添加属性将强制更改隐藏类并减慢为先前隐藏类优化的任何方法。而是在其构造函数中分配所有对象的属性。</p>
-</li>
-<li><p><strong>方法</strong> ：重复执行相同方法的代码将比仅执行一次许多不同方法的代码运行得更快（因为内联缓存）。</p>
-</li>
-<li><p><strong> 数组</strong> ：避免 keys 不是增量数字的稀疏数组。含有空元素的稀疏数组是<strong>哈希表</strong>。这种数组中的元素访问起来更加昂贵。另外，尽量避免预先分配大数组。最好的做法是随着你的需要慢慢的增大数组。最后，不要删除数组中的元素。它使 keys 稀疏。</p>
-</li>
-<li><p><strong>标记值</strong> ：V8 使用 32 位表示对象和数字。它使用一个位来知道它是一个对象（flag = 1）还是一个称为 SMI（SMall Integer）的整数（flag = 0），因为它是 31 位的。然后，如果数值大于 31 位，V8 将对该数字进行  封装 (box) ，将其变为双精度 (double) 并创建一个新对象以将数字放入其中。尽可能使用 31 位带符号的数字，以避免对 JS 对象进行昂贵的装箱操作。尽可能使用 31 位带符号的数字，以避免对 JS 对象进行昂贵的封装操作。</p>
+<li><p><code>f</code></p>
 </li>
 </ol>
-<h2 id="资源-Resources"><a href="#资源-Resources" class="headerlink" title="资源 (Resources)"></a>资源 (Resources)</h2><ul>
-<li><p><a href="https://docs.google.com/document/u/1/d/1hOaE7vbwdLLXWj3C8hTnnkpE0qSa2P--dtDvwXXEeD0/pub" target="_blank" rel="noopener">Crankshafting from the ground up</a></p>
+<p>让我们在代码中进一步观察这个概念。想象一下，你希望将用户的全名转换为 URL slugs ，以便为每个用户提供一个 profile 页面。为了实现这一点，你需要完成一系列的步骤：</p>
+<ol>
+<li><p>将姓名以空格拆分到一个数组中</p>
 </li>
-<li><p><a href="https://github.com/thlorenz/v8-perf" target="_blank" rel="noopener">Notes and resources related to V8 and thus Node.js performance</a></p>
+<li><p>将名字映射为小写</p>
 </li>
-<li><p><a href="https://bugs.chromium.org/p/v8/adminIntro" target="_blank" rel="noopener">Project: v8</a></p>
+<li><p>用破折号 <code>-</code> 链接数组中的名字</p>
 </li>
-<li><p><a href="https://mrale.ph/v8/resources.html" target="_blank" rel="noopener">V8 Resources</a></p>
+<li><p>编码为 URI component</p>
 </li>
-<li><p><a href="https://www.youtube.com/watch?v=UJPdhx5zTaw" target="_blank" rel="noopener">Google I/O 2012 - Breaking the JavaScript Speed Limit with V8</a></p>
+</ol>
+<p>下面是一个简单的实现：</p>
+<script src="//gist.github.com/abc20e52b727ad246be4afe8dcf21f16.js?file=toSlug.js"></script>
+<p>还不错，但如果我告诉你让它更具可读性呢？</p>
+<p>想象一下，每个操作都对应一个可组合的函数。它可以写成这样：</p>
+<script src="//gist.github.com/ad816466c9540132b59561b56cb7720f.js?file=nesting-composition.js"></script>
+<p>这看起来比我们的第一次尝试更难阅读，但先忍一下，我们就要解决了。</p>
+<p>为了实现这一点，我们使用可组合形式的常用工具函数，例如 <code>split()</code> <code>join()</code> 和 <code>map()</code> 。下面是它们的实现：</p>
+<script src="//gist.github.com/a51511a34c803c758422ed4e5fcd2efe.js?file=composables.js"></script>
+<p>除了 <code>toLowerCase()</code> 之外，这些函数都可以从 Lodash/fp 获得。你可以像这样导入它们：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; curry, map, join, split &#125; <span class="keyword">from</span> <span class="string">'lodash/fp'</span></span><br></pre></td></tr></table></figure>
+<p>或者像这样：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> curry = <span class="built_in">require</span>(<span class="string">'lodash/fp/curry'</span>)</span><br><span class="line"><span class="keyword">const</span> map = <span class="built_in">require</span>(<span class="string">'lodash/fp/map'</span>)</span><br><span class="line"><span class="comment">//...</span></span><br></pre></td></tr></table></figure>
+<p>在这我偷懒了。注意这个 curry 不是真正的技术上的柯里化函数，真正的柯里化函数总是产生一元函数。这里的 curry 只是一个简单的偏函数应用。参考 <a href="https://medium.com/javascript-scene/curry-or-partial-application-8150044c78b8" target="_blank" rel="noopener"> “What’s the Difference Between Curry and Partial Application?”</a> ,但是为了这次演示的目的，将它作为真正的柯里化函数。</p>
+<p>回头看我们的 <code>toSlug()</code> 的实现，有一些东西真的困扰了我：</p>
+<script src="//gist.github.com/ad816466c9540132b59561b56cb7720f.js?file=nesting-composition.js"></script>
+<p>在我看来它似乎有很深的嵌套，读起来有点混乱。我们可以使用一个自动组合这些函数的函数来展平嵌套，这意味着它将从一个函数获得输出并自动传入到下一个函数的输入，直到输出最终值。</p>
+<p>想想看，好像数组中有一个函数可以做到差不多的事情。这个函数就是 <code>reduce()</code> ，它拿到一个值的列表并对这每个值应用一个函数，累计得出一个结果。这些值可以是函数。但是为了和上面的行为组合相匹配，我们需要 <code>reduce()</code> 从右向左递减而不是从左到右递减。</p>
+<p>好事情是有一个 <code>reduceRight()</code> 函数做到了我们需要的事情：</p>
+<script src="//gist.github.com/fce3416828f389618623fcfcef387756.js?file=compose.js"></script>
+<p>和 <code>.reduce()</code> 一样， <code>.reduceRight()</code> 方法也有一个 reducer 函数和初始值 <code>x</code> 。我们从右向左迭代数组中的函数，依次将每个函数应用后的值累计到最终值 <code>v</code> 。</p>
+<p>使用 compose ， 我们可以不使用嵌套来重写上面的组合函数：</p>
+<script src="//gist.github.com/e9c02710a62e68683b6aa38d7729408f.js?file=using-compose.js"></script>
+<p>当然， <code>compose()</code> 在 lodash/fp 中也有：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; compose &#125; <span class="keyword">from</span> <span class="string">'lodash/fp'</span></span><br></pre></td></tr></table></figure>
+<p>或者：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> compose = <span class="built_in">require</span>(<span class="string">'lodash/fp/compose'</span>)</span><br></pre></td></tr></table></figure>
+<p>当以数学形式从内到外的角度思考时， compose 是很棒的，但是如果你想从左到右顺序的角度来思考，该如何去做？</p>
+<p>通常还有另外一种方式称作 <code>pipe()</code> 。在 Lodash 中称作 <code>flow()</code> 。</p>
+<script src="//gist.github.com/8287dd95e9d7be38e9c33a948dfc63e2.js?file=pipe.js"></script>
+<p>注意，<code>pipe()</code> 和 <code>compose()</code> 的实现完全相同，除了使用了 <code>.reduce()</code> 而不是 <code>.reduceRight()</code> ，即是从左到右缩减而不是从右到左。</p>
+<p>让我们看看用 <code>pipe()</code> 实现的 <code>toSlug()</code> 函数：</p>
+<script src="//gist.github.com/c0ce31c7534a5b693c32547877aac2ac.js?file=using-pipe.js"></script>
+<p>这对我来说更易阅读。</p>
+<p>硬核函数式程序员使用函数组合定义他们的整个应用程序。我经常使用它来消除对临时变量的需求。仔细观察 <code>pipe()</code> 版本的 <code>toSlug()</code> 函数，你可能会注意到一些特别的事情。</p>
+<p>在命令式编程中，当您对某个变量执行转换时，您将在转换的每个步骤中找到对该变量的引用。上面 <code>pipe()</code> 的实现是以 <strong>无参(points-free)</strong> 风格的方式编写，这意味着它根本不识别它运行的参数。</p>
+<p>我经常在单元测试和 Redux state reducers 之类的实现中使用 pipes 来消除对中间变量的需求，这些中间变量仅存于一个操作和下一个操作之间的瞬间值。</p>
+<p>这听起来可能很奇怪，但是随着你使用它，你会发现在函数式编程中，你是在和相当抽象广义的函数打交道，其中事物的名称并不重要。名称只是妨碍。你可能开始将变量视为不必要的样板。</p>
+<p>也就是说，我认为无参风格可能被过度使用。它可能变得过于密集，难以理解，但是如果你感到困惑，这里有一个小小的建议，你可以进入流程来跟踪发生了什么：</p>
+<script src="//gist.github.com/6f354876134011f0fbcb1355ce9da6f4.js?file=trace.js"></script>
+<p>下面如何使用它：</p>
+<script src="//gist.github.com/16fd8336b32ab0ec71e6c4be61ce355f.js?file=using-trace.js"></script>
+<p><code>trace()</code> 只是更通用的 <code>tap()</code> 的一种特殊形式，它允许你为流经管道的每个值执行一些操作。明白了吗？ Pipe ？ Tap ？ 你可以这么编写 <code>tap()</code> ：</p>
+<script src="//gist.github.com/459b2bc590b89c2e0bea27ebac385e7f.js?file=tap.js"></script>
+<p>现在你知道为什么 <code>trace()</code> 是 <code>tap()</code> 的一个特例：</p>
+<script src="//gist.github.com/4981bbb10a15deab96ecbf34da3c9f34.js?file=tapped-trace.js"></script>
+<p>你应该开始了解函数式编程是什么了，以及 <strong>偏函数应用(partial application)</strong> 和 <strong>柯里化(currying)</strong> 是如何协同 <strong>函数组合(function composition)</strong> 来帮助你编写更易读且更少样板的程序。</p>
+<p><strong>探索 ‘Master the JavaScript Interview’ 系列</strong></p>
+<ul>
+<li><p><a href="https://medium.com/javascript-scene/master-the-javascript-interview-what-is-a-closure-b2f0d2152b36" target="_blank" rel="noopener">What is a Closure?</a></p>
 </li>
-<li><p><a href="https://www.youtube.com/watch?v=hWhMKalEicY" target="_blank" rel="noopener">V8: an open source JavaScript engine</a></p>
+<li><p><a href="https://medium.com/javascript-scene/master-the-javascript-interview-what-s-the-difference-between-class-prototypal-inheritance-e4cd0a7562e9" target="_blank" rel="noopener">What is the Difference Between Class and Prototypal Inheritance?</a></p>
+</li>
+<li><p><a href="https://medium.com/javascript-scene/master-the-javascript-interview-what-is-a-pure-function-d1c076bec976" target="_blank" rel="noopener">What is a Pure Function?</a></p>
+</li>
+<li><p><a href="https://medium.com/javascript-scene/master-the-javascript-interview-what-is-function-composition-20dfb109a1a0" target="_blank" rel="noopener">What is a Function Composition?</a></p>
+</li>
+<li><p><a href="https://medium.com/javascript-scene/master-the-javascript-interview-what-is-functional-programming-7f218c68b3a0" target="_blank" rel="noopener">What is a Function Programming?</a></p>
+</li>
+<li><p><a href="https://medium.com/javascript-scene/master-the-javascript-interview-what-is-a-promise-27fc71e77261" target="_blank" rel="noopener">What is a Promise?</a></p>
+</li>
+<li><p><a href="https://medium.com/javascript-scene/master-the-javascript-interview-soft-skills-a8a5fb02c466" target="_blank" rel="noopener">Soft Skills</a></p>
 </li>
 </ul>
 
@@ -621,7 +592,7 @@
       
         <div class="post-tags">
           
-            <a href="/posts/tags/JavaScript/" rel="tag"># JavaScript</a>
+            <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
           
         </div>
       
@@ -654,8 +625,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/posts/b2f2d94f/" rel="next" title="【译】JavaScript 工作原理：JS 引擎，runtime 和调用栈的概述">
-                <i class="fa fa-chevron-left"></i> 【译】JavaScript 工作原理：JS 引擎，runtime 和调用栈的概述
+              <a href="/posts/b4cbde14/" rel="next" title="【译】精通 JavaScript： 什么是纯函数（Pure Function）？">
+                <i class="fa fa-chevron-left"></i> 【译】精通 JavaScript： 什么是纯函数（Pure Function）？
               </a>
             
           </div>
@@ -664,8 +635,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/posts/977269ff/" rel="prev" title="【译】JavaScript 工作原理：内存管理+如何处理4个常见的内存泄漏">
-                【译】JavaScript 工作原理：内存管理+如何处理4个常见的内存泄漏 <i class="fa fa-chevron-right"></i>
+              <a href="/posts/b2f2d94f/" rel="prev" title="【译】JavaScript 工作原理：JS 引擎，runtime 和调用栈的概述">
+                【译】JavaScript 工作原理：JS 引擎，runtime 和调用栈的概述 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -718,17 +689,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            Table of Contents
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            Overview
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -741,7 +703,7 @@
               
                 <div class="site-state-item site-state-posts">
                 
-                  <a href="/posts/archives/">
+                  <a href="/archives/">
                 
                     <span class="site-state-item-count">10</span>
                     <span class="site-state-item-name">posts</span>
@@ -755,7 +717,7 @@
                 
                 
                 <div class="site-state-item site-state-tags">
-                  <a href="/posts/tags/index.html">
+                  <a href="/tags/index.html">
                     
                     
                       
@@ -820,22 +782,6 @@
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#概述-Overview"><span class="nav-number">1.</span> <span class="nav-text">概述 (Overview)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#为什么创建了-V8-引擎"><span class="nav-number">2.</span> <span class="nav-text">为什么创建了 V8 引擎</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#V8-曾经有两个编译器"><span class="nav-number">3.</span> <span class="nav-text">V8 曾经有两个编译器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码嵌入-Inlining"><span class="nav-number">4.</span> <span class="nav-text">代码嵌入 (Inlining)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#隐藏类-Hidden-class"><span class="nav-number">5.</span> <span class="nav-text">隐藏类 (Hidden class)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#内联缓存-Inline-caching"><span class="nav-number">6.</span> <span class="nav-text">内联缓存 (Inline caching)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#编译成机器码-Compilation-to-machine-code"><span class="nav-number">7.</span> <span class="nav-text">编译成机器码 (Compilation to machine code)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#垃圾回收-Garbage-collection"><span class="nav-number">8.</span> <span class="nav-text">垃圾回收 (Garbage collection)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Ignition-和-TurboFan"><span class="nav-number">9.</span> <span class="nav-text">Ignition 和 TurboFan</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#如何编写优化的-JavaScript"><span class="nav-number">10.</span> <span class="nav-text">如何编写优化的 JavaScript</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#资源-Resources"><span class="nav-number">11.</span> <span class="nav-text">资源 (Resources)</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
@@ -941,49 +887,49 @@
 
   
   
-    <script type="text/javascript" src="/posts/lib/jquery/index.js?v=2.1.3"></script>
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
   
 
   
   
-    <script type="text/javascript" src="/posts/lib/velocity/velocity.min.js?v=1.2.1"></script>
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
   
 
   
   
-    <script type="text/javascript" src="/posts/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
   
-
-
-  
-
-
-  <script type="text/javascript" src="/posts/js/src/utils.js?v=6.4.0"></script>
-
-  <script type="text/javascript" src="/posts/js/src/motion.js?v=6.4.0"></script>
-
-
-
-  
-  
-
-
-  <script type="text/javascript" src="/posts/js/src/affix.js?v=6.4.0"></script>
-
-  <script type="text/javascript" src="/posts/js/src/schemes/pisces.js?v=6.4.0"></script>
-
-
-
-  
-  <script type="text/javascript" src="/posts/js/src/scrollspy.js?v=6.4.0"></script>
-<script type="text/javascript" src="/posts/js/src/post-details.js?v=6.4.0"></script>
-
 
 
   
 
 
-  <script type="text/javascript" src="/posts/js/src/bootstrap.js?v=6.4.0"></script>
+  <script type="text/javascript" src="/js/src/utils.js?v=6.4.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.4.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=6.4.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.4.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.4.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.4.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.4.0"></script>
 
 
 
@@ -1052,7 +998,7 @@
     } else if (/json$/i.test(search_path)) {
       isXml = false;
     }
-    var path = "/posts/" + search_path;
+    var path = "/" + search_path;
     // monitor main search box;
 
     var onPopupClose = function (e) {
@@ -1452,7 +1398,7 @@
   
   
   
-  <script src="/posts/lib/needsharebutton/needsharebutton.js"></script>
+  <script src="/lib/needsharebutton/needsharebutton.js"></script>
 
   <script>
     
@@ -1494,7 +1440,7 @@
   
   
   
-  <script src="/posts/lib/bookmark/bookmark.min.js?v=1.0"></script>
+  <script src="/lib/bookmark/bookmark.min.js?v=1.0"></script>
   <script type="text/javascript">
   
     bookmark.scrollToMark('auto', "#more");

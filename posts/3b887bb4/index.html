@@ -25,7 +25,7 @@
 
   
   
-  <link rel="stylesheet" href="/posts/lib/needsharebutton/needsharebutton.css">
+  <link rel="stylesheet" href="/lib/needsharebutton/needsharebutton.css">
 
 
 
@@ -92,21 +92,21 @@
 
 
 
-<link href="/posts/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
 
-<link href="/posts/css/main.css?v=6.4.0" rel="stylesheet" type="text/css" />
-
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/posts/images/apple-touch-icon-next.png?v=6.4.0">
+<link href="/css/main.css?v=6.4.0" rel="stylesheet" type="text/css" />
 
 
-  <link rel="icon" type="image/png" sizes="32x32" href="/posts/images/favicon-32x32-next.png?v=6.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.4.0">
 
 
-  <link rel="icon" type="image/png" sizes="16x16" href="/posts/images/favicon-16x16-next.png?v=6.4.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.4.0">
 
 
-  <link rel="mask-icon" href="/posts/images/logo.svg?v=6.4.0" color="#222">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.4.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.4.0" color="#222">
 
 
 
@@ -119,7 +119,7 @@
 <script type="text/javascript" id="hexo.configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
-    root: '/posts/',
+    root: '/',
     scheme: 'Pisces',
     version: '6.4.0',
     sidebar: {"position":"right","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
@@ -144,27 +144,27 @@
 
 
 
-  <meta name="description" content="原文：Master the JavaScript Interview: What’s the Difference Between Class &amp;amp; Prototypal Inheritance?  “精通 JavaScript 面试” 是一个系列的文章，旨在帮助面试者准备他们在申请中高级职位时可能遇到的常见问题。这些是我在现实面试中经常提出的问题。如果你想从头开始，可以看 “What">
+  <meta name="description" content="原文：Master the JavaScript Interview: What is a Closure?   “精通 JavaScript 面试” 是一个系列的文章，旨在帮助面试者准备他们在申请中高级职位时可能遇到的常见问题。这些是我在现实面试中经常提出的问题。  什么是闭包通常是我 JavaScript 面试的第一个和最后一个问题。坦白说，如果你不理解闭包你就不能深入掌握 JavaSc">
 <meta name="keywords" content="JavaScript">
 <meta property="og:type" content="article">
-<meta property="og:title" content="【译】精通 JavaScript： 类继承和原型继承的区别？">
-<meta property="og:url" content="lyn-ho.github.io/posts/48b81a71/index.html">
+<meta property="og:title" content="【译】精通 JavaScript： 什么是闭包（Closure）？">
+<meta property="og:url" content="lyn-ho.github.io/posts/3b887bb4/index.html">
 <meta property="og:site_name" content="Lyn&#39;s Blog">
-<meta property="og:description" content="原文：Master the JavaScript Interview: What’s the Difference Between Class &amp;amp; Prototypal Inheritance?  “精通 JavaScript 面试” 是一个系列的文章，旨在帮助面试者准备他们在申请中高级职位时可能遇到的常见问题。这些是我在现实面试中经常提出的问题。如果你想从头开始，可以看 “What">
+<meta property="og:description" content="原文：Master the JavaScript Interview: What is a Closure?   “精通 JavaScript 面试” 是一个系列的文章，旨在帮助面试者准备他们在申请中高级职位时可能遇到的常见问题。这些是我在现实面试中经常提出的问题。  什么是闭包通常是我 JavaScript 面试的第一个和最后一个问题。坦白说，如果你不理解闭包你就不能深入掌握 JavaSc">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="https://cdn-images-1.medium.com/max/2000/1*rtVyaoswTo9iljufAz7Y8A.jpeg">
-<meta property="og:updated_time" content="2018-09-16T13:06:35.360Z">
+<meta property="og:image" content="https://cdn-images-1.medium.com/max/2000/1*J-jjDviwGUfzka1HX5LG9A.jpeg">
+<meta property="og:updated_time" content="2018-09-16T13:06:35.359Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="【译】精通 JavaScript： 类继承和原型继承的区别？">
-<meta name="twitter:description" content="原文：Master the JavaScript Interview: What’s the Difference Between Class &amp;amp; Prototypal Inheritance?  “精通 JavaScript 面试” 是一个系列的文章，旨在帮助面试者准备他们在申请中高级职位时可能遇到的常见问题。这些是我在现实面试中经常提出的问题。如果你想从头开始，可以看 “What">
-<meta name="twitter:image" content="https://cdn-images-1.medium.com/max/2000/1*rtVyaoswTo9iljufAz7Y8A.jpeg">
+<meta name="twitter:title" content="【译】精通 JavaScript： 什么是闭包（Closure）？">
+<meta name="twitter:description" content="原文：Master the JavaScript Interview: What is a Closure?   “精通 JavaScript 面试” 是一个系列的文章，旨在帮助面试者准备他们在申请中高级职位时可能遇到的常见问题。这些是我在现实面试中经常提出的问题。  什么是闭包通常是我 JavaScript 面试的第一个和最后一个问题。坦白说，如果你不理解闭包你就不能深入掌握 JavaSc">
+<meta name="twitter:image" content="https://cdn-images-1.medium.com/max/2000/1*J-jjDviwGUfzka1HX5LG9A.jpeg">
 
 
 
 
 
 
-  <link rel="canonical" href="lyn-ho.github.io/posts/48b81a71/"/>
+  <link rel="canonical" href="lyn-ho.github.io/posts/3b887bb4/"/>
 
 
 
@@ -174,7 +174,7 @@
   };
 </script>
 
-  <title>【译】精通 JavaScript： 类继承和原型继承的区别？ | Lyn's Blog</title>
+  <title>【译】精通 JavaScript： 什么是闭包（Closure）？ | Lyn's Blog</title>
   
 
 
@@ -230,7 +230,7 @@
     
 
     <div class="custom-logo-site-title">
-      <a href="/posts/" class="brand" rel="start">
+      <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">Lyn's Blog</span>
         <span class="logo-line-after"><i></i></span>
@@ -259,7 +259,7 @@
         
           
           <li class="menu-item menu-item-home">
-    <a href="/posts/" rel="section">
+    <a href="/" rel="section">
       <i class="menu-item-icon fa fa-fw fa-home"></i> <br />Home</a>
   </li>
         
@@ -267,7 +267,7 @@
         
           
           <li class="menu-item menu-item-archives">
-    <a href="/posts/archives/" rel="section">
+    <a href="/archives/" rel="section">
       <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />Archives</a>
   </li>
         
@@ -275,7 +275,7 @@
         
           
           <li class="menu-item menu-item-tags">
-    <a href="/posts/tags/" rel="section">
+    <a href="/tags/" rel="section">
       <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />Tags</a>
   </li>
         
@@ -283,7 +283,7 @@
         
           
           <li class="menu-item menu-item-categories">
-    <a href="/posts/categories/" rel="section">
+    <a href="/categories/" rel="section">
       <i class="menu-item-icon fa fa-fw fa-th"></i> <br />Categories</a>
   </li>
 
@@ -366,12 +366,12 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="lyn-ho.github.io/posts/posts/48b81a71/">
+    <link itemprop="mainEntityOfPage" href="lyn-ho.github.io/posts/3b887bb4/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Lyn Ho">
       <meta itemprop="description" content="Stay Hungry Stay Foolish">
-      <meta itemprop="image" content="/posts/images/avatar.gif">
+      <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -383,7 +383,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">【译】精通 JavaScript： 类继承和原型继承的区别？
+          <h2 class="post-title" itemprop="name headline">【译】精通 JavaScript： 什么是闭包（Closure）？
               
             
           </h2>
@@ -408,7 +408,7 @@
                 
               
 
-              <time title="Created: 2018-08-29 14:38:58" itemprop="dateCreated datePublished" datetime="2018-08-29T14:38:58+08:00">2018-08-29</time>
+              <time title="Created: 2018-08-27 12:34:58" itemprop="dateCreated datePublished" datetime="2018-08-27T12:34:58+08:00">2018-08-27</time>
             
 
             
@@ -439,8 +439,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/posts/48b81a71/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">Comments: </span> <span class="post-comments-count gitment-comments-count" data-xid="/posts/48b81a71/" itemprop="commentsCount"></span>
+                <a href="/posts/3b887bb4/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">Comments: </span> <span class="post-comments-count gitment-comments-count" data-xid="/posts/3b887bb4/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -448,7 +448,7 @@
 
           
           
-             <span id="/posts/48b81a71/" class="leancloud_visitors" data-flag-title="【译】精通 JavaScript： 类继承和原型继承的区别？">
+             <span id="/posts/3b887bb4/" class="leancloud_visitors" data-flag-title="【译】精通 JavaScript： 什么是闭包（Closure）？">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -479,118 +479,56 @@
       
 
       
-        <p><img src="https://cdn-images-1.medium.com/max/2000/1*rtVyaoswTo9iljufAz7Y8A.jpeg" alt="Electric Guitar"></p>
-<p>原文：<a href="https://medium.com/javascript-scene/master-the-javascript-interview-what-s-the-difference-between-class-prototypal-inheritance-e4cd0a7562e9" target="_blank" rel="noopener">Master the JavaScript Interview: What’s the Difference Between Class &amp; Prototypal Inheritance?</a></p>
+        <p><img src="https://cdn-images-1.medium.com/max/2000/1*J-jjDviwGUfzka1HX5LG9A.jpeg" alt="closure"></p>
 <blockquote>
-<p>“精通 JavaScript 面试” 是一个系列的文章，旨在帮助面试者准备他们在申请中高级职位时可能遇到的常见问题。这些是我在现实面试中经常提出的问题。如果你想从头开始，可以看 <a href="https://medium.com/javascript-scene/master-the-javascript-interview-what-is-a-closure-b2f0d2152b36#.6xq65f6f5" target="_blank" rel="noopener">“What is a Closure?”</a> 开始。</p>
+<p>原文：<a href="https://medium.com/javascript-scene/master-the-javascript-interview-what-is-a-closure-b2f0d2152b36" target="_blank" rel="noopener">Master the JavaScript Interview: What is a Closure?</a></p>
 </blockquote>
 <blockquote>
-<p>注意：这篇文章的例子使用的是 ES6。如果你不知从何开始， 可以参阅 <a href="https://medium.com/javascript-scene/how-to-learn-es6-47d9a1ac2620" target="_blank" rel="noopener">“How to Learn ES6”</a></p>
+<p>“精通 JavaScript 面试” 是一个系列的文章，旨在帮助面试者准备他们在申请中高级职位时可能遇到的常见问题。这些是我在现实面试中经常提出的问题。</p>
 </blockquote>
-<p>与其他大多数语言不同的是， JavaScript 的对象系统是基于 <strong>原型(prototypes)</strong> ， 而不是 <strong>类(classes)</strong> 。不幸的是，大多数 JavaScript 开发人员都不能深入了解 JavaScript 的对象系统，或者不能充分利用它。其他人确实理解，但是希望它表现得更像基于类继承。导致 JavaScript 中的对象系统十分混乱，这意味着 JavaScript 开发者对 <strong>原型(prototypes)和类(classes)</strong> 都要了解。</p>
+<p>什么是闭包通常是我 JavaScript 面试的第一个和最后一个问题。坦白说，如果你不理解闭包你就不能深入掌握 JavaScript。</p>
 <a id="more"></a>
-<h2 id="类继承和原型继承的区别是什么？"><a href="#类继承和原型继承的区别是什么？" class="headerlink" title="类继承和原型继承的区别是什么？"></a>类继承和原型继承的区别是什么？</h2><p>这可能是一个棘手的问题，你可能需要后续的问答来完善这个答案，因此要特别注意了解它们的差异，以及如何利用这些知识来写出更好的代码。</p>
-<p><strong>类继承：类相当于蓝图–对将要创建的对象的描述。</strong></p>
-<p>实例通常是使用构建函数和 <code>new</code> 关键字来创建的。ES6 中新增了 <code>class</code> 关键字可以使用。从技术上来说，像 Java 中的类这个概念在 JavaScript 中是不存在的。而是使用构造函数。ES6 中的 <code>class</code> 关键字就是构造函数的语法糖：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Foo</span> </span>&#123;&#125;</span><br><span class="line"><span class="keyword">typeof</span> Foo <span class="comment">// 'function'</span></span><br></pre></td></tr></table></figure>
-<p>在 JavaScript 中，类继承的实现建立在原型继承之上，但这并不意味着它们做了同样的事情：</p>
-<p>JavaScript 类继承是使用原型链链接子 <code>Constructor.prototype</code> 和父  <code>Constructor.prototype</code> 的委托关系。通常，<code>super()</code>构造器也会被调用。这种机制，形成了<strong>单一继承结构</strong>，并且创建了<strong>面向对象设计的最紧密耦合行为</strong>。</p>
+<p>你别含糊其辞，但是你真的理解如何构建一个严肃的 JavaScript 程序吗？你真的明白发生了什么，或者程序是如何运行的。我有疑虑，如果不知道这个问题的答案是一个非常危险的信号。</p>
+<p>你不仅应该知道闭包的机制，还应该知道闭包为什么重要，并且可以轻易回答闭包的几个应用场景。</p>
+<p>在 JavaScript 中，闭包通常用于数据私有，事件处理和毁掉函数，以及 <a href="https://medium.com/javascript-scene/curry-or-partial-application-8150044c78b8#.l4b6l1i3x" target="_blank" rel="noopener">偏函数应用(Partial Applications)和柯里化(Currying)</a> ,还有其他函数式编程模式。</p>
+<p>我不在乎面试者是否知道 “closure” 这个单词或它的专业定义。我只想知道他们是否知道闭包的基本原理。如果不知道，通常代表他们没有很多构建真正 JavaScript 应用的经验。</p>
 <blockquote>
-<p><em>“Classes inherit from classes and create subclass relationships: hierarchical class taxonomies.”</em></p>
+<p><em>If you can’t answer this question, you’re a junior developer. I don’t care how long you’ve been coding.</em></p>
 </blockquote>
 <blockquote>
-<p><strong>Prototypal Inheritance: A prototype is a working object instance.</strong> Objects inherit directly from other objects.</p>
+<p>That may sound mean, but it’s not. What I mean is that most competent interviewers will ask you what a closure is, and most of the time, getting the answer wrong will cost you the job. Or if you’re lucky enough to get an offer anyway, it will cost you potentially tens of thousands of dollars per year in pay because you’ll be hired as a junior instead of a senior level developer, regardless of how long you’ve been coding.</p>
 </blockquote>
-<p>原型继承模式下，对象实例可以由多个对象源组成，这样使继承更灵活且 [[Prototype]] 委托继承层次浅。换句话说，基于原型继承的面向对象设计不会产生层级分类这样的副作用–这是决定性的区别。</p>
-<p>JavaScript 中的实例通常是通过构造函数，对象字面量或 <code>Object.create()</code> 来创建。</p>
+<p>快速准备一下：“你能说出两种闭包的通用场景？”</p>
+<h2 id="什么是闭包"><a href="#什么是闭包" class="headerlink" title="什么是闭包"></a>什么是闭包</h2><p>闭包是绑定函数和引用其周围的状态的组合 <strong>(词法环境 lexical environment)</strong>。换句话说，闭包可以让内部函数访问外部函数的作用域。在 JavaScript 中，每次创建函数时，都会在创建函数时创建闭包。</p>
+<p>使用闭包，只需在另一个函数内定义一个函数并且公开出来。通过返回或传递给另一个函数来公开这个函数。</p>
+<p>内部函数可以访问外部函数作用域的变量，即使外部函数完成返回了。</p>
+<h2 id="使用闭包-例子"><a href="#使用闭包-例子" class="headerlink" title="使用闭包 (例子)"></a>使用闭包 (例子)</h2><p>闭包通常用于对象数据私有化。数据私有是让我们能够面向接口编程而不是实现编程的基础。这是可以帮助我们构建强壮软件的一个重要概念。因为实现细节比接口更容易改变。</p>
 <blockquote>
-<p><em>“A prototype is a working object instance. Objects inherit directly from other objects.”</em></p>
+<p><em>“Program to an interface, not an implementation.”</em></p>
 </blockquote>
-<h2 id="为什么这个问题很重要？"><a href="#为什么这个问题很重要？" class="headerlink" title="为什么这个问题很重要？"></a>为什么这个问题很重要？</h2><p>继承是代码重用机制的根本：不同对象分享代码的方式。分享代码的方式的重要性是因为如果你弄错了，会产生很多问题，特别是：</p>
-<p><strong>类继承产生的 parent/child 对象分类是一个副作用。</strong></p>
-<p>这些分类几乎不可能适用于所有的新实例，并且基类的广泛使用导致了<strong>脆弱的基类问题</strong>，这导致了修复 bug 的难度。事实上，类继承在面向对象设计中引起了许多众所周知的问题：</p>
-<ul>
-<li><p><strong>紧耦合问题</strong> (类继承是面向对象设计中耦合度最高的)，这导致了下一个问题</p>
-</li>
-<li><p>脆弱基类问题</p>
-</li>
-<li><p>不灵活的层级问题 (新实例最终会导致所有的类都是错误的)</p>
-</li>
-<li><p>必要的重复问题 (由于层次机构不灵活，新的实例通常是通过复制而不是调整现有代码来实现)</p>
-</li>
-<li><p>猩猩/香蕉问题 (你需要的是一个香蕉，但是得到的是一个拿着香蕉的猩猩以及整个丛林)</p>
-</li>
-</ul>
-<p>我在一个演讲中深入讨论过这其中的一些问题：“Classical Inheritance is Obsolete: How to Think in Prototypal OO”：</p>
-<div class="video-container"><iframe src="//www.youtube.com/embed/lKCCZTUx0sI" frameborder="0" allowfullscreen></iframe></div>
-<p>解决所有问题的方法是选择对象组合而不是类继承。</p>
 <blockquote>
-<p><em>“Favor object composition over class inheritance.”</em><br><em>~ The Gang of Four, <a href="http://www.amazon.com/gp/product/0201633612?ie=UTF8&amp;camp=213733&amp;creative=393185&amp;creativeASIN=0201633612&amp;linkCode=shr&amp;tag=eejs-20&amp;linkId=WMUILDJNIUXY4NSH" target="_blank" rel="noopener">“Design Patterns: Elements of Reusable Object Oriented Software”</a></em></p>
+<p><em><a href="http://www.amazon.com/gp/product/B000SEIBB8?ie=UTF8&amp;camp=213733&amp;creative=393177&amp;creativeASIN=B000SEIBB8&amp;linkCode=shr&amp;tag=eejs-20&amp;linkId=CSQYBHTUP625XI4T" target="_blank" rel="noopener">Design Patterns: Elements of Reusable Object Oriented Software</a></em></p>
 </blockquote>
-<p>总结：</p>
-<div class="video-container"><iframe src="//www.youtube.com/embed/wfMtDGfHWpA" frameborder="0" allowfullscreen></iframe></div>
-<h2 id="是不是所有的继承都有问题？"><a href="#是不是所有的继承都有问题？" class="headerlink" title="是不是所有的继承都有问题？"></a>是不是所有的继承都有问题？</h2><p>人们说“优先选择对象组合而不是继承”的时候，其实是要表达“优先选择对象组合而不是类继承”(引用自 “Design Patterns” 的原文)。这是面向对象设计的常识。因为类继承有许多缺陷并会导致许多问题。</p>
-<p>当人们谈论类继承时，人们通常会忽略 <strong>class</strong> 这个单词，这看起来好像所有的继承都有问题–但事实并非如此。</p>
-<p>继承是有不同种类的，并且大部分的优秀的。</p>
-<h2 id="原型继承的三种方式"><a href="#原型继承的三种方式" class="headerlink" title="原型继承的三种方式"></a>原型继承的三种方式</h2><p>在我们深入研究其他类型的继承之前，让我们仔细观察一下类继承的含义：</p>
-<script src="//gist.github.com/fe1d8dfd036b43811c16d087d2e7fb8c.js?file=class-inheritance-example.js"></script>
-<p><code>BassAmp</code> 继承于 <code>GuitarAmp</code>， <code>ChannelStrip</code> 继承于 <code>BassAmp</code> 和 <code>GuitarAmp</code>。这是面向对象设计的一个错误示范。channel strip 并不是 guitar amp 的一种，而且它根本不需要 cabinet 这个属性。一个比较好的方法是创建一个新的基类给 amps 和 channel strip 继承，但是这种方法依然有局限。</p>
-<p>最终，新的基类策略也会失效。</p>
-<p>更好的方法是，可以使用对象组合继承你真正需要的东西：</p>
-<script src="//gist.github.com/d1997b0efa3119ec583ad6ff40da79d9.js?file=composition-example.js"></script>
-<p>认真看这段代码，你就会发现：通过对象组合，我们可以确切地保证对象可以按需继承。这和类继承不同。当你继承于一个类，你会继承所有的属性，即使是你不需要的。</p>
-<p>在这一点上，你可能会问自己，“这很好，但是原型在哪里呢？”</p>
-<p>为了理解这一点，你必须了解有三种不同的基于原型的面向对象设计。</p>
-<p><strong>拼接继承 (Concatenative inheritance)</strong>：通过复制源对象的属性直接一个对象继承另一个对象的过程。在 JavaScript 中，源对象的属性通常被称作 <strong>mixins</strong>。从 ES6 开始，JavaScript 使用 <code>Object.assign()</code> 来实现这个过程。在 ES6 之前，通常使用 <strong>Underscore/Lodash</strong> 的 <code>.extend()</code> 和 <strong>jQuery</strong> 的 <code>$.extend()</code> 等来实现。上面的对象组合的例子使用了连接继承。</p>
-<p><strong>原型委托 (Prototype delegation)</strong>：在 JavaScript 中，对象有自己委托的原型，这个原型也有自己委托的原型，以此类推一直到 <code>Object.prototype</code> 作为根原型，这样就形成了一个原型链。如果一个在对象中找不到的属性，可以沿着原型链一直查找。当你使用 <code>new</code> 创建实例以及 <code>Constructor.prototype</code> 连接到这个实例形成链接。你也可以使用 <code>Object.create()</code> 来实现，或者与拼接混用，从而可以把多个原型简化为单一委托，或者在对象创建后进行扩展。</p>
-<p><strong>函数继承 (Functional inheritance)</strong>：在 JavaScript 中，任何函数都可以创建对象。如果这个函数既不是构造函数也不是 <code>class</code>，那就是<strong>工厂函数 (factory function)</strong>。函数继承的原理是通过工厂函数创建对象并通过直接赋予属性(使用连接继承)。Douglas Crockford 创造了这个术语，但在 JavaScript 中已经广泛使用了。</p>
-<p>现在你会意识到，拼接继承是在 JavaScript 中实现对象组合的秘诀，这使得原型委托和函数继承更加有趣。</p>
-<p>大多数人提到 JavaScript 的面向对象设计时，首先想到的是原型委托。现在你会发现他们错过了很多。原型委托不是类继承的最佳替换，对象组合才是。</p>
-<h2 id="为什么对象组合能改避免脆弱基类问题"><a href="#为什么对象组合能改避免脆弱基类问题" class="headerlink" title="为什么对象组合能改避免脆弱基类问题"></a>为什么对象组合能改避免脆弱基类问题</h2><p>要搞清脆弱基类这个问题，首先你要理解这个问题是如何形成的：</p>
-<ol>
-<li><code>A</code> 是基类</li>
-<li><code>B</code> 继承于 <code>A</code></li>
-<li><code>C</code> 继承于 <code>B</code></li>
-<li><code>D</code> 继承于 <code>B</code></li>
-</ol>
-<p><code>C</code> 调用 <code>super</code>， 会执行 <code>B</code> 中的代码，<code>B</code> 调用 <code>super</code>， 会执行 <code>A</code> 中的代码。</p>
-<p><code>A</code> 和 <code>B</code> 中包含了 <code>C</code> 和 <code>D</code> 不需要的特性。 <code>D</code> 是一个新实例， <code>C</code> 和 <code>D</code> 在 <code>A</code> 初始化的代码有少许不同。所以萌新开发者会去调整 <code>A</code> 的初始化代码。由于依赖于之前 <code>A</code> 中的代码被修改了，尽管 <code>D</code> 正常工作了，但是 <code>C</code> 被破坏了。</p>
-<p>我们有不同的方式可以从 <code>A</code> 和 <code>B</code> 中得到 <code>C</code> 和 <code>D</code> 需要的属性。<code>C</code> 和 <code>D</code> 并不需要 <code>A</code> 和 <code>B</code> 的所有特性。它们只想继承一些已经定义在 <code>A</code> 和 <code>B</code> 中的属性。但是通过 <code>super</code> 来实现继承，这不是选择性的继承而是继承所有的属性。</p>
-<blockquote>
-<p><em>“…the problem with object-oriented languages is they’ve got all this implicit environment that they carry around with them. <strong>You wanted a banana but what you got was a gorilla holding the banana</strong> and the entire jungle.” ~ Joe Armstrong — “Coders at Work”</em></p>
-</blockquote>
-<h3 id="使用组合-Composition"><a href="#使用组合-Composition" class="headerlink" title="使用组合 (Composition)"></a>使用组合 (Composition)</h3><p>想象下你拥有的是特性 (features) 而不是类 (classes)：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">feat1, feat2, feat3, feat4</span><br></pre></td></tr></table></figure>
-<p><code>C</code> 需要 <code>feat1</code> 和 <code>feat3</code>， <code>D</code> 需要 <code>feat1</code>，<code>feat2</code>，<code>feat4</code></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> C = compose(feat1, feat3)</span><br><span class="line"><span class="keyword">const</span> D = compose(feat1, feat2, feat4)</span><br></pre></td></tr></table></figure>
-<p>现在你发现，<code>D</code> 需要 <code>feat1</code> 的行为有些许不同。这并不需要改变 <code>feat1</code>，而是创造一个自定义的 <code>feat1</code> 并且使用它。不需要改变 <code>feat2</code> 和 <code>feat4</code>。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> D = compose(custom1, feat2, feat4)</span><br></pre></td></tr></table></figure>
-<p><code>C</code> 不会受到影响。</p>
-<p>类继承无法实现这一点的原因是，当你使用类继承时，你得到的是类这个整体。</p>
-<p>如果你为了适配新的实例，要么复制现有类的一部分（必然性重复问题），要么重构依赖于现有类的所有内容使得修改有的类适配于新的实例，这会导致脆弱基类问题。</p>
-<p>对象组合可以避免这两个问题。</p>
-<h3 id="你自认为了解原型，但是…"><a href="#你自认为了解原型，但是…" class="headerlink" title="你自认为了解原型，但是…"></a>你自认为了解原型，但是…</h3><p>如果你的所学是，构建类或者构造函数而不是原型继承。那么你学到的是使用原型来模仿类继承。了解更多 – <a href="https://medium.com/javascript-scene/common-misconceptions-about-inheritance-in-javascript-d5d9bab29b0a" target="_blank" rel="noopener">Common Misconceptions About Inheritance in JavaScript</a></p>
-<p>在 JavaScript 中，长久以来类继承寄生在非常丰富灵活的原生的原型继承之上， ES6 以来的 <code>class</code> 也是一样，当你使用类继承，原型继承的强大能力和灵活性都不能得到应用。事实上，你正在把自己圈在角落并且选择所有的类继承和它所带来的问题。</p>
-<blockquote>
-<p><em>Using class inheritance in JavaScript is like driving your new Tesla Model S to the dealer and trading it in for a rusted out 1983 Ford Pinto.</em></p>
-</blockquote>
-<h2 id="Stamps：可组合的工厂函数"><a href="#Stamps：可组合的工厂函数" class="headerlink" title="Stamps：可组合的工厂函数"></a>Stamps：可组合的工厂函数</h2><p>大多数情况下，通过多个工厂函数实现对象组合：工厂函数是用来创建对象的。如果工厂函数也可以组合呢？它被称作 (Stamps) – <a href="https://github.com/stampit-org/stamp-specification" target="_blank" rel="noopener">The Stamp Specification</a></p>
-<h2 id="探索-‘Master-the-JavaScript-Interview’-系列"><a href="#探索-‘Master-the-JavaScript-Interview’-系列" class="headerlink" title="探索 ‘Master the JavaScript Interview’ 系列"></a>探索 ‘Master the JavaScript Interview’ 系列</h2><ul>
-<li><p><a href="https://medium.com/javascript-scene/master-the-javascript-interview-what-is-a-closure-b2f0d2152b36" target="_blank" rel="noopener">What is a Closure?</a></p>
-</li>
-<li><p><a href="https://medium.com/javascript-scene/master-the-javascript-interview-what-s-the-difference-between-class-prototypal-inheritance-e4cd0a7562e9" target="_blank" rel="noopener">What is the Difference Between Class and Prototypal Inheritance?</a></p>
-</li>
-<li><p><a href="https://medium.com/javascript-scene/master-the-javascript-interview-what-is-a-pure-function-d1c076bec976" target="_blank" rel="noopener">What is a Pure Function?</a></p>
-</li>
-<li><p><a href="https://medium.com/javascript-scene/master-the-javascript-interview-what-is-function-composition-20dfb109a1a0" target="_blank" rel="noopener">What is a Function Composition?</a></p>
-</li>
-<li><p><a href="https://medium.com/javascript-scene/master-the-javascript-interview-what-is-functional-programming-7f218c68b3a0" target="_blank" rel="noopener">What is a Function Programming?</a></p>
-</li>
-<li><p><a href="https://medium.com/javascript-scene/master-the-javascript-interview-what-is-a-promise-27fc71e77261" target="_blank" rel="noopener">What is a Promise?</a></p>
-</li>
-<li><p><a href="https://medium.com/javascript-scene/master-the-javascript-interview-soft-skills-a8a5fb02c466" target="_blank" rel="noopener">Soft Skills</a></p>
-</li>
-</ul>
+<p>在 JavaScript 中，闭包是用于实现数据私有的主要机制。当你使用闭包实现数据私有时，被封装的数据只能在闭包函数作用域中使用。你无法绕过对象 <strong>被授权的方法(privileged methods)</strong> 在外部访问这些数据。任何在闭包作用域内定义的公开方法都是特权方法。例如：</p>
+<script src="//gist.github.com/6fb9890ce1ffb14bad9f059adc4a2f0d.js?file=data-privacy-example.js"></script>
+<p>在上面的例子中，’.get()’ 方法定义在 <code>getSecret()</code> 方法的作用域内，它可以访问<code>getSecret()</code> 中的任何变量，于是它就是一个被授权的方法。在这个例子中，它可以访问参数 <code>secret</code>。</p>
+<p>对象不是产生数据私有的唯一方法。闭包也可以用于创建有状态函数，其返回值可能受其内部状态影响，e.g.:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> secret = <span class="function"><span class="params">msg</span> =&gt;</span> () =&gt; msg;</span><br></pre></td></tr></table></figure>
+<script src="//gist.github.com/b16af817ec53ad8bbb49875aa4795e74.js?file=secret.js"></script>
+<p>在函数式编程中，闭包通常用于偏函数应用和柯里化。为了理解这些，我们需要一些定义：</p>
+<p><strong>应用程序</strong>：一个应用给定参数并产生一个返回值的过程。</p>
+<p><strong>偏函数应用</strong>：一个应用部分参数的函数的过程。并返回一个新函数作为参数。换句话说，应用一个具有多个参数的函数并返回一个较少参数的函数。偏函数应用先使用一个或部分参数在将要返回的函数中，等待返回的函数调用剩余的参数来完成整个应用。</p>
+<p>偏函数应用利用闭包作用域来提前使用部分参数。你可以实现一个通用函数来赋予指定函数部分参数。如下所示：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">partialApply(targetFunction: <span class="built_in">Function</span>, ...fixedArgs: Any[]) =&gt;</span><br><span class="line">  functionWithFewerParams(...remainingArgs: Any[])</span><br></pre></td></tr></table></figure>
+<p>如果你想进一步了解，请看 <a href="https://github.com/ericelliott/rtype#reading-function-signatures" target="_blank" rel="noopener">Rtype: Reading Function Signatures</a></p>
+<p>利用一个接受任意参数的函数，赋予我们指定的参数。并且返回一个新函数接受剩余的参数。</p>
+<p>这个例子将会帮助你理解。你现在又一个 求两个数的和 的函数：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> add = <span class="function">(<span class="params">a, b</span>) =&gt;</span> a + b;</span><br></pre></td></tr></table></figure>
+<p>现在你想要一个 10 加任意数字的函数。我们称它为 <code>add10()</code>。<code>add10(5)</code> 的结果应该是15. <code>partialApply()</code> 函数将会实现它。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> add10 = partialApply(add, <span class="number">10</span>)</span><br><span class="line">add10(<span class="number">5</span>)</span><br></pre></td></tr></table></figure>
+<p>在这个例子中，’10‘ 作为 <strong>固定参数(fixed parameter)</strong> 通过闭包作用域提前赋予给 <code>add()</code>, 从而我们获得了 <code>add10()</code>。</p>
+<p>让我们来看一下如何实现 <code>partialApply()</code>：<br><br><script src="//gist.github.com/543442825c8519c03e19584daab41bc9.js?file=partial-apply.js"></script></p>
+<p>如你所见，它只是简单地返回一个函数，这个函数通过闭包访问了传给 <code>partialApply()</code> 函数的 fixedArgs 参数。</p>
 
       
     </div>
@@ -611,7 +549,7 @@
       
         <div class="post-tags">
           
-            <a href="/posts/tags/JavaScript/" rel="tag"># JavaScript</a>
+            <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
           
         </div>
       
@@ -644,8 +582,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/posts/3b887bb4/" rel="next" title="【译】精通 JavaScript： 什么是闭包（Closure）？">
-                <i class="fa fa-chevron-left"></i> 【译】精通 JavaScript： 什么是闭包（Closure）？
+              <a href="/posts/25329c80/" rel="next" title="【译】精通 JavaScript： 什么是函数式编程（Functional Programming）？">
+                <i class="fa fa-chevron-left"></i> 【译】精通 JavaScript： 什么是函数式编程（Functional Programming）？
               </a>
             
           </div>
@@ -654,8 +592,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/posts/6a904bf2/" rel="prev" title="【译】精通 JavaScript： 什么是 Promise？">
-                【译】精通 JavaScript： 什么是 Promise？ <i class="fa fa-chevron-right"></i>
+              <a href="/posts/48b81a71/" rel="prev" title="【译】精通 JavaScript： 类继承和原型继承的区别？">
+                【译】精通 JavaScript： 类继承和原型继承的区别？ <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -731,7 +669,7 @@
               
                 <div class="site-state-item site-state-posts">
                 
-                  <a href="/posts/archives/">
+                  <a href="/archives/">
                 
                     <span class="site-state-item-count">10</span>
                     <span class="site-state-item-name">posts</span>
@@ -745,7 +683,7 @@
                 
                 
                 <div class="site-state-item site-state-tags">
-                  <a href="/posts/tags/index.html">
+                  <a href="/tags/index.html">
                     
                     
                       
@@ -820,7 +758,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#类继承和原型继承的区别是什么？"><span class="nav-number">1.</span> <span class="nav-text">类继承和原型继承的区别是什么？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#为什么这个问题很重要？"><span class="nav-number">2.</span> <span class="nav-text">为什么这个问题很重要？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#是不是所有的继承都有问题？"><span class="nav-number">3.</span> <span class="nav-text">是不是所有的继承都有问题？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#原型继承的三种方式"><span class="nav-number">4.</span> <span class="nav-text">原型继承的三种方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#为什么对象组合能改避免脆弱基类问题"><span class="nav-number">5.</span> <span class="nav-text">为什么对象组合能改避免脆弱基类问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#使用组合-Composition"><span class="nav-number">5.1.</span> <span class="nav-text">使用组合 (Composition)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#你自认为了解原型，但是…"><span class="nav-number">5.2.</span> <span class="nav-text">你自认为了解原型，但是…</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Stamps：可组合的工厂函数"><span class="nav-number">6.</span> <span class="nav-text">Stamps：可组合的工厂函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#探索-‘Master-the-JavaScript-Interview’-系列"><span class="nav-number">7.</span> <span class="nav-text">探索 ‘Master the JavaScript Interview’ 系列</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是闭包"><span class="nav-number">1.</span> <span class="nav-text">什么是闭包</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用闭包-例子"><span class="nav-number">2.</span> <span class="nav-text">使用闭包 (例子)</span></a></li></ol></div>
             
 
           </div>
@@ -931,49 +869,49 @@
 
   
   
-    <script type="text/javascript" src="/posts/lib/jquery/index.js?v=2.1.3"></script>
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
   
 
   
   
-    <script type="text/javascript" src="/posts/lib/velocity/velocity.min.js?v=1.2.1"></script>
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
   
 
   
   
-    <script type="text/javascript" src="/posts/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
   
-
-
-  
-
-
-  <script type="text/javascript" src="/posts/js/src/utils.js?v=6.4.0"></script>
-
-  <script type="text/javascript" src="/posts/js/src/motion.js?v=6.4.0"></script>
-
-
-
-  
-  
-
-
-  <script type="text/javascript" src="/posts/js/src/affix.js?v=6.4.0"></script>
-
-  <script type="text/javascript" src="/posts/js/src/schemes/pisces.js?v=6.4.0"></script>
-
-
-
-  
-  <script type="text/javascript" src="/posts/js/src/scrollspy.js?v=6.4.0"></script>
-<script type="text/javascript" src="/posts/js/src/post-details.js?v=6.4.0"></script>
-
 
 
   
 
 
-  <script type="text/javascript" src="/posts/js/src/bootstrap.js?v=6.4.0"></script>
+  <script type="text/javascript" src="/js/src/utils.js?v=6.4.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.4.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=6.4.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.4.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.4.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.4.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.4.0"></script>
 
 
 
@@ -1042,7 +980,7 @@
     } else if (/json$/i.test(search_path)) {
       isXml = false;
     }
-    var path = "/posts/" + search_path;
+    var path = "/" + search_path;
     // monitor main search box;
 
     var onPopupClose = function (e) {
@@ -1442,7 +1380,7 @@
   
   
   
-  <script src="/posts/lib/needsharebutton/needsharebutton.js"></script>
+  <script src="/lib/needsharebutton/needsharebutton.js"></script>
 
   <script>
     
@@ -1484,7 +1422,7 @@
   
   
   
-  <script src="/posts/lib/bookmark/bookmark.min.js?v=1.0"></script>
+  <script src="/lib/bookmark/bookmark.min.js?v=1.0"></script>
   <script type="text/javascript">
   
     bookmark.scrollToMark('auto', "#more");
