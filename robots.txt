@@ -11,7 +11,8 @@ Disallow: /fonts/
 Disallow: /vendors/
 Disallow: /fancybox/
 
-Sitemap: https://lyn-ho.github.io/search.xml
 
 Sitemap: https://lyn-ho.github.io/sitemap.xml
 Sitemap: https://lyn-ho.github.io/baidusitemap.xml
+
+Sitemap: https://lyn-ho.github.io/search.xml
