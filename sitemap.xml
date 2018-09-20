@@ -2,17 +2,17 @@
 <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
     <sitemap>
-        <loc>lyn-ho.github.io/post-sitemap.xml</loc>
+        <loc>https://lyn-ho.github.io/post-sitemap.xml</loc>
         <lastmod>2018-09-20T15:40:53.277Z</lastmod>
     </sitemap>
 
     <sitemap>
-        <loc>lyn-ho.github.io/page-sitemap.xml</loc>
+        <loc>https://lyn-ho.github.io/page-sitemap.xml</loc>
         <lastmod>2018-08-24T12:35:11.680Z</lastmod>
     </sitemap>
 
     <sitemap>
-        <loc>lyn-ho.github.io/tag-sitemap.xml</loc>
+        <loc>https://lyn-ho.github.io/tag-sitemap.xml</loc>
         <lastmod>2018-09-20T15:40:53.277Z</lastmod>
     </sitemap>
 

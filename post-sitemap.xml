@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type="text/xsl" href="sitemap.xsl"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-        <loc>lyn-ho.github.io</loc>
+        <loc>https://lyn-ho.github.io</loc>
         <changefreq>daily</changefreq>
         <priority>1</priority>
     </url>
 
     <url>
-        <loc>lyn-ho.github.io/posts/977269ff/</loc>
+        <loc>https://lyn-ho.github.io/posts/977269ff/</loc>
         <lastmod>2018-09-20T15:40:53.277Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -15,7 +15,7 @@
     </url>
 
     <url>
-        <loc>lyn-ho.github.io/posts/4d26265b/</loc>
+        <loc>https://lyn-ho.github.io/posts/4d26265b/</loc>
         <lastmod>2018-09-16T13:06:35.363Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -23,7 +23,7 @@
     </url>
 
     <url>
-        <loc>lyn-ho.github.io/posts/b2f2d94f/</loc>
+        <loc>https://lyn-ho.github.io/posts/b2f2d94f/</loc>
         <lastmod>2018-09-16T13:06:35.363Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -31,7 +31,7 @@
     </url>
 
     <url>
-        <loc>lyn-ho.github.io/posts/8e5d7b3b/</loc>
+        <loc>https://lyn-ho.github.io/posts/8e5d7b3b/</loc>
         <lastmod>2018-09-16T13:06:35.362Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -39,7 +39,7 @@
     </url>
 
     <url>
-        <loc>lyn-ho.github.io/posts/b4cbde14/</loc>
+        <loc>https://lyn-ho.github.io/posts/b4cbde14/</loc>
         <lastmod>2018-09-16T13:06:35.361Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -47,7 +47,7 @@
     </url>
 
     <url>
-        <loc>lyn-ho.github.io/posts/6a904bf2/</loc>
+        <loc>https://lyn-ho.github.io/posts/6a904bf2/</loc>
         <lastmod>2018-09-16T13:06:35.361Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -55,7 +55,7 @@
     </url>
 
     <url>
-        <loc>lyn-ho.github.io/posts/48b81a71/</loc>
+        <loc>https://lyn-ho.github.io/posts/48b81a71/</loc>
         <lastmod>2018-09-16T13:06:35.360Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -63,7 +63,7 @@
     </url>
 
     <url>
-        <loc>lyn-ho.github.io/posts/3b887bb4/</loc>
+        <loc>https://lyn-ho.github.io/posts/3b887bb4/</loc>
         <lastmod>2018-09-16T13:06:35.359Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -71,7 +71,7 @@
     </url>
 
     <url>
-        <loc>lyn-ho.github.io/posts/25329c80/</loc>
+        <loc>https://lyn-ho.github.io/posts/25329c80/</loc>
         <lastmod>2018-09-16T13:06:35.359Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -79,7 +79,7 @@
     </url>
 
     <url>
-        <loc>lyn-ho.github.io/posts/637b26df/</loc>
+        <loc>https://lyn-ho.github.io/posts/637b26df/</loc>
         <lastmod>2018-09-16T13:06:35.358Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
