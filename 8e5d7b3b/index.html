@@ -144,29 +144,27 @@
 
 
 
-  <meta name="description" content="原文：Master the JavaScript Interview: What is a Promise?    “精通 JavaScript 面试” 是一个系列的文章，旨在帮助面试者准备他们在申请中高级职位时可能遇到的常见问题。这些是我在现实面试中经常提出的问题。  什么是 Promise？Promise 是一个对象，在未来的某个时刻产生一个值：已完成 (resolved) 的值或者是未完">
+  <meta name="description" content="原文：Master the JavaScript Interview: What is Function Composition?    “精通 JavaScript 面试” 是一个系列的文章，旨在帮助面试者准备他们在申请中高级职位时可能遇到的常见问题。这些是我在现实面试中经常提出的问题。  函数式编程已经成为了 JavaScript 世界的一个热门话题。仅仅在几年前，甚至只有很少 JavaS">
 <meta name="keywords" content="JavaScript">
 <meta property="og:type" content="article">
-<meta property="og:title" content="【译】精通 JavaScript： 什么是 Promise？">
-<meta property="og:url" content="lyn-ho.github.io/posts/posts/6a904bf2/index.html">
+<meta property="og:title" content="【译】精通 JavaScript： 什么是函数组合（Function Composition）？">
+<meta property="og:url" content="lyn-ho.github.io/posts/8e5d7b3b/index.html">
 <meta property="og:site_name" content="Lyn&#39;s Blog">
-<meta property="og:description" content="原文：Master the JavaScript Interview: What is a Promise?    “精通 JavaScript 面试” 是一个系列的文章，旨在帮助面试者准备他们在申请中高级职位时可能遇到的常见问题。这些是我在现实面试中经常提出的问题。  什么是 Promise？Promise 是一个对象，在未来的某个时刻产生一个值：已完成 (resolved) 的值或者是未完">
+<meta property="og:description" content="原文：Master the JavaScript Interview: What is Function Composition?    “精通 JavaScript 面试” 是一个系列的文章，旨在帮助面试者准备他们在申请中高级职位时可能遇到的常见问题。这些是我在现实面试中经常提出的问题。  函数式编程已经成为了 JavaScript 世界的一个热门话题。仅仅在几年前，甚至只有很少 JavaS">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="https://cdn-images-1.medium.com/max/1600/1*agGENodMcD6hhwIFdqGwrw.jpeg">
-<meta property="og:image" content="https://cdn-images-1.medium.com/max/1600/1*5Z_vNz6xHn9mjTgvrqa2Aw.png">
-<meta property="og:image" content="https://cdn-images-1.medium.com/max/1600/1*vRaV9sYpYKdxBj3Ld7KM1Q.png">
-<meta property="og:updated_time" content="2018-09-16T13:06:35.361Z">
+<meta property="og:image" content="https://cdn-images-1.medium.com/max/2000/1*4trMikhKRHhSUlI2D6h_mA.jpeg">
+<meta property="og:updated_time" content="2018-09-16T13:06:35.362Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="【译】精通 JavaScript： 什么是 Promise？">
-<meta name="twitter:description" content="原文：Master the JavaScript Interview: What is a Promise?    “精通 JavaScript 面试” 是一个系列的文章，旨在帮助面试者准备他们在申请中高级职位时可能遇到的常见问题。这些是我在现实面试中经常提出的问题。  什么是 Promise？Promise 是一个对象，在未来的某个时刻产生一个值：已完成 (resolved) 的值或者是未完">
-<meta name="twitter:image" content="https://cdn-images-1.medium.com/max/1600/1*agGENodMcD6hhwIFdqGwrw.jpeg">
+<meta name="twitter:title" content="【译】精通 JavaScript： 什么是函数组合（Function Composition）？">
+<meta name="twitter:description" content="原文：Master the JavaScript Interview: What is Function Composition?    “精通 JavaScript 面试” 是一个系列的文章，旨在帮助面试者准备他们在申请中高级职位时可能遇到的常见问题。这些是我在现实面试中经常提出的问题。  函数式编程已经成为了 JavaScript 世界的一个热门话题。仅仅在几年前，甚至只有很少 JavaS">
+<meta name="twitter:image" content="https://cdn-images-1.medium.com/max/2000/1*4trMikhKRHhSUlI2D6h_mA.jpeg">
 
 
 
 
 
 
-  <link rel="canonical" href="lyn-ho.github.io/posts/posts/6a904bf2/"/>
+  <link rel="canonical" href="lyn-ho.github.io/posts/8e5d7b3b/"/>
 
 
 
@@ -176,7 +174,7 @@
   };
 </script>
 
-  <title>【译】精通 JavaScript： 什么是 Promise？ | Lyn's Blog</title>
+  <title>【译】精通 JavaScript： 什么是函数组合（Function Composition）？ | Lyn's Blog</title>
   
 
 
@@ -368,7 +366,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="lyn-ho.github.io/posts/posts/posts/6a904bf2/">
+    <link itemprop="mainEntityOfPage" href="lyn-ho.github.io/posts/posts/8e5d7b3b/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Lyn Ho">
@@ -385,7 +383,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">【译】精通 JavaScript： 什么是 Promise？
+          <h2 class="post-title" itemprop="name headline">【译】精通 JavaScript： 什么是函数组合（Function Composition）？
               
             
           </h2>
@@ -410,7 +408,7 @@
                 
               
 
-              <time title="Created: 2018-08-30 15:43:58" itemprop="dateCreated datePublished" datetime="2018-08-30T15:43:58+08:00">2018-08-30</time>
+              <time title="Created: 2018-09-04 17:08:58" itemprop="dateCreated datePublished" datetime="2018-09-04T17:08:58+08:00">2018-09-04</time>
             
 
             
@@ -441,8 +439,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/posts/posts/6a904bf2/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">Comments: </span> <span class="post-comments-count gitment-comments-count" data-xid="/posts/posts/6a904bf2/" itemprop="commentsCount"></span>
+                <a href="/posts/8e5d7b3b/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">Comments: </span> <span class="post-comments-count gitment-comments-count" data-xid="/posts/8e5d7b3b/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -450,7 +448,7 @@
 
           
           
-             <span id="/posts/posts/6a904bf2/" class="leancloud_visitors" data-flag-title="【译】精通 JavaScript： 什么是 Promise？">
+             <span id="/posts/8e5d7b3b/" class="leancloud_visitors" data-flag-title="【译】精通 JavaScript： 什么是函数组合（Function Composition）？">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -482,160 +480,83 @@
 
       
         <blockquote>
-<p>原文：<a href="https://medium.com/javascript-scene/master-the-javascript-interview-what-is-a-promise-27fc71e77261" target="_blank" rel="noopener">Master the JavaScript Interview: What is a Promise?</a></p>
+<p>原文：<a href="https://medium.com/javascript-scene/master-the-javascript-interview-what-is-function-composition-20dfb109a1a0" target="_blank" rel="noopener">Master the JavaScript Interview: What is Function Composition?</a></p>
 </blockquote>
-<p><img src="https://cdn-images-1.medium.com/max/1600/1*agGENodMcD6hhwIFdqGwrw.jpeg" alt="Photo by Kabun (CC BY NC SA 2.0)"></p>
+<p><img src="https://cdn-images-1.medium.com/max/2000/1*4trMikhKRHhSUlI2D6h_mA.jpeg" alt="Google Datacenter Pipes — Jorge Jorquera — (CC-BY-NC-ND-2.0)"></p>
 <blockquote>
 <p>“精通 JavaScript 面试” 是一个系列的文章，旨在帮助面试者准备他们在申请中高级职位时可能遇到的常见问题。这些是我在现实面试中经常提出的问题。</p>
 </blockquote>
-<h2 id="什么是-Promise？"><a href="#什么是-Promise？" class="headerlink" title="什么是 Promise？"></a>什么是 Promise？</h2><p>Promise 是一个对象，在未来的某个时刻产生一个值：已完成 (resolved) 的值或者是未完成的原因(e.g. 网络错误)。Promise 可能是下面三种状态中的一种：fulfilled，rejected，pending 。Promise 提供回调来处理 fulfilled 返回的值或者 rejection 的原因。</p>
+<p>函数式编程已经成为了 JavaScript 世界的一个热门话题。仅仅在几年前，甚至只有很少 JavaScript 开发者知道函数式编程，但是在过去的3年中我看到了大量使用函数式编程思维构建的应用。</p>
+<p>函数组合是将两个或多个函数组合以产生新函数的过程。将函数组合在一起就像是将一系列管道拼凑在一起，以便我们的数据流过。</p>
 <a id="more"></a>
-<p>Promise 会立即执行，这意味着一旦 promise 构造函数被调用，promise 就会开始执行你给它的任何任务。如果你需要 promise 懒加载，参考 <a href="https://github.com/Reactive-Extensions/RxJS" target="_blank" rel="noopener">observables</a> 或者 <a href="https://github.com/rpominov/fun-task" target="_blank" rel="noopener">tasks</a>。</p>
-<h2 id="Promise-的不完全历史"><a href="#Promise-的不完全历史" class="headerlink" title="Promise 的不完全历史"></a>Promise 的不完全历史</h2><p>早在1980年代，promise 和 futures (类似/相关的想法) 的早期实现开始出现在 MultiLisp 和 Concurrent Prolog 等语言中。“promise” 这个概念是由 Barbara Liskov 和 Liuba Shrira 在1998年提出。</p>
-<p>我第一次听说 JavaScript 中的 promise，Node 才刚刚出现，Node 社区正在讨论异步行为的最佳方案。社区实验了一段时间 promise，但最终选择了 error-first 回调作为 Node 标准。</p>
-<p>大概在同一时间，Dojo 通过 Deferred API 添加了 promises 。不断增长的兴趣和活跃度最终导致了新的 Promises/A 规范的形成，提高了不同 promises 之间的互操作性。</p>
-<p>jQuery 的异步操作是围绕 promises 的重构。jQuery 的 promise 和 Dojo 的 Deferred 非常相似，并且由于 jQuery 的流行，它一度在 JavaScript 中被广泛使用。但是 <a href="https://blog.domenic.me/youre-missing-the-point-of-promises/" target="_blank" rel="noopener"> it did not support the two channel (fulfilled/rejected) chaining behavior &amp; exception management</a> 人们期望在 promise 上的构建工具。</p>
-<p>尽管有这些缺点，jQuery 让 JavaScript promise 成为主流，并且一下更好的独立的 promise 库，例如 Q ， When ， 和 Bluebird 变得非常流行。jQuery 的实现的不兼容性促使 promise 规范中的一些重要说明，它被重写并重命名为 <a href="https://promisesaplus.com/" target="_blank" rel="noopener">Promises/A+ specification</a> 。</p>
-<p>ES6 使用了遵循 Promises/A+ 兼容的 Promise 作为全局变量，并且一些非常重要的 API 构建在新的 Promise 标准之上：特别是 <a href="https://fetch.spec.whatwg.org/" target="_blank" rel="noopener">WHATWG Fetch</a> 规范和 <a href="https://tc39.github.io/ecmascript-asyncawait/" target="_blank" rel="noopener">Async Functions</a> 标准(第3阶段草案)</p>
-<p>本文描述的是与 Promises/A+ 规范兼容的 promise，着重于基于 ECMAScript 标准的 <code>Promise</code> 实现。</p>
-<h2 id="Promises-是如何工作的"><a href="#Promises-是如何工作的" class="headerlink" title="Promises 是如何工作的"></a>Promises 是如何工作的</h2><p>promise 是一个从异步函数同步返回的对象。它有3种可能的状态：</p>
-<ul>
-<li><p><strong>Fulfilled：</strong> 将会调用 <code>onFulfilled()</code> (e.g.， 调用 <code>resolve()</code>)</p>
-</li>
-<li><p><strong>Rejected：</strong> 将会调用 <code>onRejected()</code> (e.g.， 调用 <code>reject()</code>)</p>
-</li>
-<li><p><strong>Pending：</strong> 非 fulfilled 或者 rejected</p>
-</li>
-</ul>
-<p>如果 promise 不在 pending 状态，它就固定了(处于 fulfilled 或 rejected)。有时我们用 <em>resolved</em> 或 <em>settled</em> 表示同一件事：<em>not pending</em> 。</p>
-<p>promise 一旦被固定，就不能重新固定。调用 <code>resolve()</code> 或 <code>reject()</code> 将没有效果。被固定的 promise 的不可变性是一个重要的特性。</p>
-<p>原生 JavaScript promise 不暴露 promise 状态。相反，你应该把 promise 视为一个黑盒。只有创建这个 promise 的函数才知道 promise 的状态，或者说有 <code>resolve</code> 或 <code>reject</code> 的权限。</p>
-<p>这是一个返回一个 promise 的函数，并在制定的时间延迟后 <code>resolve</code> 。</p>
-<script src="//gist.github.com/2dbea5f98fde8a0a77eb93775aa97468.js?file=wait.js"></script>
-<p>调用 <code>wait(3000)</code> 会等待3000毫秒 (3秒) ，然后调用打印 <code>&#39;Hello!&#39;</code> 。所以与规范兼容的 promise 都定义了 <code>.then()</code> 方法，你可以传入一个函数来处理 <code>resolve</code> 或 <code>reject</code> 返回的值。</p>
-<p>ES6 promise 的构造函数需要一个函数。这个函数需要两个参数，<code>resovle()</code> 和 <code>reject()</code> 。在上面的例子中，我们只使用了 <code>resolve()</code> ,将 <code>reject()</code> 从参数列表中删除了。我们调用 <code>setTimeout()</code> 来创建延迟，并在完成后调用 <code>resolve()</code> 。</p>
-<p>你可以按需向 <code>resolve()</code> 或 <code>reject()</code> 中传值，这个值会作为参数传入 <code>.then()</code> 的回调函数。</p>
-<p>当我调用 <code>reject()</code> 并且传入一个值，我总是传入一个 <code>Error</code> 对象。一般来说，我想要两种可能的解决状态：正常的或异常的 (阻碍正常状态) 。传入一个 <code>Error</code> 对象来表示。</p>
-<h2 id="Promise-的重要规则"><a href="#Promise-的重要规则" class="headerlink" title="Promise 的重要规则"></a>Promise 的重要规则</h2><p>标准的 Promise 是由 <a href="https://promisesaplus.com/implementations" target="_blank" rel="noopener">Promises/A+ specification</a> 社区定义的。有很多符合标准的实现，包括 JavaScript ECMAScript promise。</p>
-<p>Promise 必须遵循下面的规则：</p>
-<ul>
-<li><p>Promise 或 “thenable” 需要提供标准的 <code>.then()</code> 方法。</p>
-</li>
-<li><p>pending 状态的 promise 可以转换为 fulfilled 或 rejected 状态。</p>
-</li>
-<li><p>fulfilled 或 rejected 状态的 promise 是固定的，不能转换为其他状态。</p>
-</li>
-<li><p>一旦 promise 固定，一定有一个值 (可以是 undefined) 。这个值不可变。</p>
-</li>
-</ul>
-<p>在这个上下午的变更指的是恒等 (===) 。fulfilled 的值可以是一个对象，这个对象的属性是可变的。</p>
-<p>所以的 promise 都必须实现具有下面方法签名的 <code>.then()</code> 方法：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">promise.then(</span><br><span class="line">    onFulfilled? : <span class="built_in">Function</span>,</span><br><span class="line">    onRejected? : <span class="built_in">Function</span></span><br><span class="line">) =&gt; <span class="built_in">Promise</span></span><br></pre></td></tr></table></figure>
-<p><code>.then()</code> 方法必须符合一下规则：</p>
-<ul>
-<li><p><code>onFulfilled()</code> 和 <code>onRejected()</code> 都是可选的。</p>
-</li>
-<li><p>如果提供的参数不是函数，必须忽略。</p>
-</li>
-<li><p><code>onFulfilled()</code> 在 promise 转换为 fulfilled 状态时被调用，promise 的值作为这个函数第一个参数。</p>
-</li>
-<li><p><code>onRejected()</code> 在 promise 转换为 rejected 状态后被调用，拒绝的原因作为第一个参数。原因可以是任何有效的 JavaScript 值，但是拒绝基本和异常是同义词，所以我建议使用 Error 对象。</p>
-</li>
-<li><p><code>onFulfilled()</code> 和 <code>onRejected()</code> 都不能多次调用。</p>
-</li>
-<li><p><code>.then()</code> 可以在同一个 promise 上多次调用。换句话说，可以使用 promise 来聚合回调。</p>
-</li>
-<li><p><code>.then()</code> 一定会返回一个 promise， <code>promise2</code> 。</p>
-</li>
-<li><p>如果 <code>onFulfilled()</code> 或 <code>onRejected()</code> 的返回值为 <code>x</code> ，并且 <code>x</code> 是一个 promise ， <code>promise2</code>  会被锁定 (假设和 <code>x</code> 有相同的状态和值) 。 否则， <code>promise2</code> 将会转换为 fulfilled 状态并且值为 <code>x</code> 。</p>
-</li>
-<li><p>不论 <code>onFulfilled</code> 或 <code>onRejected</code> 跑出一个异常 <code>e</code> ， <code>promise2</code> 一定会 rejected 并且 <code>e</code> 作为原因。</p>
-</li>
-<li><p>如果 <code>onFulfilled</code> 不是一个函数并且 <code>promise1</code> 处于 fulfilled 状态， <code>promise2</code> 一定是 fulfilled 状态并且和 <code>promise1</code> 有同样的值。</p>
-</li>
-<li><p>如果 <code>onRejected</code> 不是一个函数并且 <code>promise1</code> 处于 rejected 状态， <code>promise2</code> 一定是 rejected 状态并且和 <code>promise1</code> 的原因相同。</p>
-</li>
-</ul>
-<h2 id="Promise-链"><a href="#Promise-链" class="headerlink" title="Promise 链"></a>Promise 链</h2><p>因为 <code>.then()</code> 总是返回一个新的 promise ，所以可以链接 promises 并精确控制错误的处理方式和位置。Promises 允许你模仿同步代码的 <code>try/catch</code> 方式。</p>
-<p>链式调用会形成一个有序的序列，类似于同步代码。换句话说，你可以这么做：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">fetch(url)</span><br><span class="line">    .then(process)</span><br><span class="line">    .then(save)</span><br><span class="line">    .catch(handleErrors)</span><br></pre></td></tr></table></figure>
-<p>假设 <code>fetch()</code> <code>process()</code> <code>save()</code> 每个函数都返回 promises ， <code>fetch()</code> 完成后 <code>process()</code> 才开始执行， <code>process()</code> 完成后 <code>save()</code> 才开始执行。任何一个 promise reject 后 <code>handleErrors()</code> 才会执行。</p>
-<p>这是一个复杂的 promise 链 的例子，并具有多个 rejection：</p>
-<script src="//gist.github.com/8a49bbbf15e697182a5dd9edafd765e9.js?file=promise-chaining.js"></script>
-<h2 id="Error-处理"><a href="#Error-处理" class="headerlink" title="Error 处理"></a>Error 处理</h2><p>注意 promise 同时有成功和错误的 handler ，下面的代码很常见：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">save().then(</span><br><span class="line">    handleSuccess,</span><br><span class="line">    handleError</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
-<p>但是 <code>handleSuccess()</code> 抛出错误应该怎么做？从 <code>.then()</code> 返回的 promise 将会 rejected ，但是没有捕捉到这个 rejection 。意味着你的 app 的这个错误被吞了。</p>
-<p>出于这个原因，有些人认为上面的代码是反模式的，并推荐下面的代码：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">save()</span><br><span class="line">    .then(handleSuccess)</span><br><span class="line">    .catch(handleError)</span><br></pre></td></tr></table></figure>
-<p>差异很微妙但是很重要。在第一个示例中， 源自 <code>save()</code> 的错误将会被捕获， 但源自 <code>handleSuccess()</code> 的错误将会被吞掉。</p>
-<p><img src="https://cdn-images-1.medium.com/max/1600/1*5Z_vNz6xHn9mjTgvrqa2Aw.png" alt="Without .catch(), an error in the success handler is uncaught."></p>
-<p>在第二个示例中，<code>.catch()</code> 可以处理 <code>save()</code> 和 <code>handleSuccess()</code> 两者的 rejection 。</p>
-<p><img src="https://cdn-images-1.medium.com/max/1600/1*vRaV9sYpYKdxBj3Ld7KM1Q.png" alt="With .catch(), both error sources are handled."></p>
-<p>当然， <code>save()</code> 的错误可能是网络错误，但 <code>handleSuccess()</code> 的错误可能是开发人员忘记处理特定的状态码。如果你想以不同的方式处理它们，你可以选择这样处理：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">save()</span><br><span class="line">    .then(</span><br><span class="line">        handleSuccess,</span><br><span class="line">        handleNetworkError</span><br><span class="line">    )</span><br><span class="line">    .catch(handleProgrammerError)</span><br></pre></td></tr></table></figure>
-<p>无论你喜欢哪一种方式，我都建议在所有的 promise 链都是以 <code>.catch()</code> 结尾。重复这么做是值得的：</p>
-<blockquote>
-<p><em>I recommend ending all promise chains with a .catch().</em></p>
-</blockquote>
-<h2 id="如何取消一个-Promise？"><a href="#如何取消一个-Promise？" class="headerlink" title="如何取消一个 Promise？"></a>如何取消一个 Promise？</h2><p>promises 萌新经常想知道的第一件事是如何取消一个 promise。这是一个想法：以 “Cancelled” 为原因 reject promise 。如果你想和 “normal” 错误以不同的处理方式，在 error handler 中添加一个处理分支。</p>
-<p>以下是人们在取消 promise 时所犯的一些常见错误：</p>
-<h3 id="在-promise-中添加-cancel"><a href="#在-promise-中添加-cancel" class="headerlink" title="在 promise 中添加 .cancel()"></a>在 promise 中添加 .cancel()</h3><p>添加 .cancel() 使 promise 不符合标准，而且也违反了一些 promises 的规则：只有创建 promise 的函数才能 resolve， reject，或者 cancel 这个 promise 。暴露出来会破坏 promise 的封装，并且会鼓励人们在不应该知道 promise 的地方编写操作 promise 的代码。避免意大利面式的代码以及破坏 promises 。</p>
-<h3 id="忘记清理"><a href="#忘记清理" class="headerlink" title="忘记清理"></a>忘记清理</h3><p>有一些聪明的人发现可以使用 <code>Promise.race()</code> 组委取消机制。问题是使用了创建 promise 的函数来做取消控制，只有这个函数可以清理活动内容，例如清理 timeouts 或者清理数据引用的内存空间等等。</p>
-<h3 id="忘记处理-rejected-状态下取消-promise"><a href="#忘记处理-rejected-状态下取消-promise" class="headerlink" title="忘记处理 rejected 状态下取消 promise"></a>忘记处理 rejected 状态下取消 promise</h3><p>你知道吗当你忘记处理 promise rejection ， Chrome 控制台会抛出一个警告信息。</p>
-<h3 id="过度复杂"><a href="#过度复杂" class="headerlink" title="过度复杂"></a>过度复杂</h3><p><a href="https://github.com/tc39/proposal-cancelable-promises" target="_blank" rel="noopener">withdrawn TC39 proposal</a> 提出了使用独立的消息通道实现取消 promise 。它提出了一个叫做 cancellation token 的新概念。在我看来，这个解决方案会让 promise 规范变得臃肿，它的唯一作用是分离了 rejections 和 cancellations ，这是没有必要的。</p>
-<p>你是否希望基于 exception 或者 cancellation 来进行切换？这确实是 promise 的工作？我认为不是。</p>
-<h3 id="重新思考-Promise-Cancellation"><a href="#重新思考-Promise-Cancellation" class="headerlink" title="重新思考 Promise Cancellation"></a>重新思考 Promise Cancellation</h3><p>通常，在 promise 创建时传入所有需要的信息以确定如何 resolve / reject / cancel 这个promise 。这样就没有必要在 promise 上添加 <code>.cancel()</code> 函数了。你可能会有疑问，在 promise 创建的时候怎么知道是否可以取消。</p>
-<blockquote>
-<p><em>“If I don’t yet know whether or not to cancel, how will I know what to pass in when I create the promise?”</em></p>
-</blockquote>
-<p>如果只有某种对象可以代替未来的潜在的值…等一下。</p>
-<p>我们传入的那个代表是否取消的值可以是一个 promise 。可能是这样：</p>
-<script src="//gist.github.com/acb7f555a2f8b4ba93807105da5e11ae.js?file=cancellable-wait.js"></script>
-<p>我们使用的默认参数默认是不取消的。<code>cancel</code> 参数是可选的。像之前一样设定一个 settimeout ，不过会保存这个 timeout 的 ID 以便于在之后清理。</p>
-<p>我们使用 <code>cancel.then()</code> 方法来处理 cancellation 和资源清理。这个方法只会在 promise resolve 之前取消了才会执行。如果你太晚取消，你就错过了你的机会。火车已经驶离了车站。</p>
-<blockquote>
-<p><em>注意：你可能想知道 <code>noop()</code> 函数是做什么的。单词 noop 代表了 no-op，意思是空函数什么都不做。如果没有这个函数，V8 引擎会抛出警告：<code>UnhandledPromiseRejectionWarning: Unhandled promise rejection</code> 。永远都要处理 promise rejections 是一个好主意，即使是 <code>noop()</code> 函数。</em></p>
-</blockquote>
-<blockquote>
-<p><em>Note: You may be wondering what the noop() function is for. The word noop stands for no-op, meaning a function that does nothing. Without it, V8 will throw warnings: UnhandledPromiseRejectionWarning: Unhandled promise rejection. It’s a good idea to <strong>always handle promise rejections</strong>, even if your handler is a noop().</em></p>
-</blockquote>
-<h3 id="抽象-Promise-Cancellation"><a href="#抽象-Promise-Cancellation" class="headerlink" title="抽象 Promise Cancellation"></a>抽象 Promise Cancellation</h3><p>这对于 <code>wait()</code> 计时器是很好的，但是我们可以进一步抽象这个想法，封装所有你需要的：</p>
+<p>简而言之，函数 <code>f</code> 和 <code>g</code> 的组合可以定义为 <code>f(g(x))</code> ，它从内到外，从右到左进行求值。换句话说，求值顺序是：</p>
 <ol>
-<li><p>默认拒绝 cancel promise – 如果没有传入 cancel 到 promise ，我们不希望 cancel 或抛错。</p>
+<li><p><code>x</code></p>
 </li>
-<li><p>记住因 cancellations 而 reject 时要进行清理。</p>
+<li><p><code>g</code></p>
 </li>
-<li><p>记住 <code>onCancel</code> 的清理工作本身也会抛错，这个错误也需要处理。(注意上面的示例中省略了错误处理 – 很容易忘记！)</p>
+<li><p><code>f</code></p>
 </li>
 </ol>
-<p>让我们来创建一个可取消的 promise 工具，你可以使用它来包装任何 promise 。例如，处理网络请求等… 方法前面如下所示：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">speculation(fn: SpecFunction, <span class="attr">shouldCancel</span>: <span class="built_in">Promise</span>) =&gt; <span class="built_in">Promise</span></span><br></pre></td></tr></table></figure>
-<p>SpecFunction 就像你传入 <code>Promis</code> 的构造函数一样，有一点不同 – 它有一个 <code>onCancel()</code> handler：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SpecFunction(resolve: <span class="built_in">Function</span>, <span class="attr">reject</span>: <span class="built_in">Function</span>, <span class="attr">onCancel</span>: <span class="built_in">Function</span>) =&gt; <span class="keyword">void</span></span><br></pre></td></tr></table></figure>
-<script src="//gist.github.com/3dcf478645b131c3259456794861840a.js?file=speculation.js"></script>
-<p>注意这个例子只是向你解释它是如何工作的。还有一些其他边界问题需要考虑。例如，这个版本的代码，promise 已经固定了，取消 promise 依然会调用 <code>handleCancel</code> 函数。</p>
-<p>我实现了一个生产版本，处理了边界问题的开源库，<a href="https://github.com/ericelliott/speculation" target="_blank" rel="noopener">Speculation</a> .</p>
-<p>让我们使用这个改进的抽象库来重写之前的 <code>wait()</code> 工具函数。首先安装 speculation：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --save speculation</span><br></pre></td></tr></table></figure>
-<p>现在你可以导入和使用它：</p>
-<script src="//gist.github.com/36ab3548b44a0833ddb3bb69745e18b9.js?file=wait-speculation.js"></script>
-<p>这简化了一些，因为你不需要关心 <code>noop()</code> ， 捕获 <code>onCancel()</code> ，函数或其他边界问题的错误。这些细节都被抽象到 <code>speculation()</code> 中了。随时在真实项目中使用它。</p>
-<h2 id="原生-JS-Promise-的附加内容"><a href="#原生-JS-Promise-的附加内容" class="headerlink" title="原生 JS Promise 的附加内容"></a>原生 JS Promise 的附加内容</h2><p>原生 Promise 对象有一些你可能感兴趣的附加内容：</p>
+<p>让我们在代码中进一步观察这个概念。想象一下，你希望将用户的全名转换为 URL slugs ，以便为每个用户提供一个 profile 页面。为了实现这一点，你需要完成一系列的步骤：</p>
+<ol>
+<li><p>将姓名以空格拆分到一个数组中</p>
+</li>
+<li><p>将名字映射为小写</p>
+</li>
+<li><p>用破折号 <code>-</code> 链接数组中的名字</p>
+</li>
+<li><p>编码为 URI component</p>
+</li>
+</ol>
+<p>下面是一个简单的实现：</p>
+<script src="//gist.github.com/abc20e52b727ad246be4afe8dcf21f16.js?file=toSlug.js"></script>
+<p>还不错，但如果我告诉你让它更具可读性呢？</p>
+<p>想象一下，每个操作都对应一个可组合的函数。它可以写成这样：</p>
+<script src="//gist.github.com/ad816466c9540132b59561b56cb7720f.js?file=nesting-composition.js"></script>
+<p>这看起来比我们的第一次尝试更难阅读，但先忍一下，我们就要解决了。</p>
+<p>为了实现这一点，我们使用可组合形式的常用工具函数，例如 <code>split()</code> <code>join()</code> 和 <code>map()</code> 。下面是它们的实现：</p>
+<script src="//gist.github.com/a51511a34c803c758422ed4e5fcd2efe.js?file=composables.js"></script>
+<p>除了 <code>toLowerCase()</code> 之外，这些函数都可以从 Lodash/fp 获得。你可以像这样导入它们：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; curry, map, join, split &#125; <span class="keyword">from</span> <span class="string">'lodash/fp'</span></span><br></pre></td></tr></table></figure>
+<p>或者像这样：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> curry = <span class="built_in">require</span>(<span class="string">'lodash/fp/curry'</span>)</span><br><span class="line"><span class="keyword">const</span> map = <span class="built_in">require</span>(<span class="string">'lodash/fp/map'</span>)</span><br><span class="line"><span class="comment">//...</span></span><br></pre></td></tr></table></figure>
+<p>在这我偷懒了。注意这个 curry 不是真正的技术上的柯里化函数，真正的柯里化函数总是产生一元函数。这里的 curry 只是一个简单的偏函数应用。参考 <a href="https://medium.com/javascript-scene/curry-or-partial-application-8150044c78b8" target="_blank" rel="noopener"> “What’s the Difference Between Curry and Partial Application?”</a> ,但是为了这次演示的目的，将它作为真正的柯里化函数。</p>
+<p>回头看我们的 <code>toSlug()</code> 的实现，有一些东西真的困扰了我：</p>
+<script src="//gist.github.com/ad816466c9540132b59561b56cb7720f.js?file=nesting-composition.js"></script>
+<p>在我看来它似乎有很深的嵌套，读起来有点混乱。我们可以使用一个自动组合这些函数的函数来展平嵌套，这意味着它将从一个函数获得输出并自动传入到下一个函数的输入，直到输出最终值。</p>
+<p>想想看，好像数组中有一个函数可以做到差不多的事情。这个函数就是 <code>reduce()</code> ，它拿到一个值的列表并对这每个值应用一个函数，累计得出一个结果。这些值可以是函数。但是为了和上面的行为组合相匹配，我们需要 <code>reduce()</code> 从右向左递减而不是从左到右递减。</p>
+<p>好事情是有一个 <code>reduceRight()</code> 函数做到了我们需要的事情：</p>
+<script src="//gist.github.com/fce3416828f389618623fcfcef387756.js?file=compose.js"></script>
+<p>和 <code>.reduce()</code> 一样， <code>.reduceRight()</code> 方法也有一个 reducer 函数和初始值 <code>x</code> 。我们从右向左迭代数组中的函数，依次将每个函数应用后的值累计到最终值 <code>v</code> 。</p>
+<p>使用 compose ， 我们可以不使用嵌套来重写上面的组合函数：</p>
+<script src="//gist.github.com/e9c02710a62e68683b6aa38d7729408f.js?file=using-compose.js"></script>
+<p>当然， <code>compose()</code> 在 lodash/fp 中也有：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; compose &#125; <span class="keyword">from</span> <span class="string">'lodash/fp'</span></span><br></pre></td></tr></table></figure>
+<p>或者：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> compose = <span class="built_in">require</span>(<span class="string">'lodash/fp/compose'</span>)</span><br></pre></td></tr></table></figure>
+<p>当以数学形式从内到外的角度思考时， compose 是很棒的，但是如果你想从左到右顺序的角度来思考，该如何去做？</p>
+<p>通常还有另外一种方式称作 <code>pipe()</code> 。在 Lodash 中称作 <code>flow()</code> 。</p>
+<script src="//gist.github.com/8287dd95e9d7be38e9c33a948dfc63e2.js?file=pipe.js"></script>
+<p>注意，<code>pipe()</code> 和 <code>compose()</code> 的实现完全相同，除了使用了 <code>.reduce()</code> 而不是 <code>.reduceRight()</code> ，即是从左到右缩减而不是从右到左。</p>
+<p>让我们看看用 <code>pipe()</code> 实现的 <code>toSlug()</code> 函数：</p>
+<script src="//gist.github.com/c0ce31c7534a5b693c32547877aac2ac.js?file=using-pipe.js"></script>
+<p>这对我来说更易阅读。</p>
+<p>硬核函数式程序员使用函数组合定义他们的整个应用程序。我经常使用它来消除对临时变量的需求。仔细观察 <code>pipe()</code> 版本的 <code>toSlug()</code> 函数，你可能会注意到一些特别的事情。</p>
+<p>在命令式编程中，当您对某个变量执行转换时，您将在转换的每个步骤中找到对该变量的引用。上面 <code>pipe()</code> 的实现是以 <strong>无参(points-free)</strong> 风格的方式编写，这意味着它根本不识别它运行的参数。</p>
+<p>我经常在单元测试和 Redux state reducers 之类的实现中使用 pipes 来消除对中间变量的需求，这些中间变量仅存于一个操作和下一个操作之间的瞬间值。</p>
+<p>这听起来可能很奇怪，但是随着你使用它，你会发现在函数式编程中，你是在和相当抽象广义的函数打交道，其中事物的名称并不重要。名称只是妨碍。你可能开始将变量视为不必要的样板。</p>
+<p>也就是说，我认为无参风格可能被过度使用。它可能变得过于密集，难以理解，但是如果你感到困惑，这里有一个小小的建议，你可以进入流程来跟踪发生了什么：</p>
+<script src="//gist.github.com/6f354876134011f0fbcb1355ce9da6f4.js?file=trace.js"></script>
+<p>下面如何使用它：</p>
+<script src="//gist.github.com/16fd8336b32ab0ec71e6c4be61ce355f.js?file=using-trace.js"></script>
+<p><code>trace()</code> 只是更通用的 <code>tap()</code> 的一种特殊形式，它允许你为流经管道的每个值执行一些操作。明白了吗？ Pipe ？ Tap ？ 你可以这么编写 <code>tap()</code> ：</p>
+<script src="//gist.github.com/459b2bc590b89c2e0bea27ebac385e7f.js?file=tap.js"></script>
+<p>现在你知道为什么 <code>trace()</code> 是 <code>tap()</code> 的一个特例：</p>
+<script src="//gist.github.com/4981bbb10a15deab96ecbf34da3c9f34.js?file=tapped-trace.js"></script>
+<p>你应该开始了解函数式编程是什么了，以及 <strong>偏函数应用(partial application)</strong> 和 <strong>柯里化(currying)</strong> 是如何协同 <strong>函数组合(function composition)</strong> 来帮助你编写更易读且更少样板的程序。</p>
+<p><strong>探索 ‘Master the JavaScript Interview’ 系列</strong></p>
 <ul>
-<li><p><code>Promise.reject()</code> 返回一个 rejected promise 。</p>
-</li>
-<li><p><code>Promise.resolve()</code> 返回一个 resolved promise 。</p>
-</li>
-<li><p><code>Promise.race()</code> 接收一个 promise 数组 (或任何迭代器) 并且返回第一个 resolved (值) 或 rejected (原因) 的 promise 。</p>
-</li>
-<li><p><code>Promise.all()</code> 接收一个 promise 数组 (或任何迭代器) 并且当迭代器中所有 promises 都 resolved 后返回一个 promise ，或者返回第一个 rejected (原因) 的 promise。</p>
-</li>
-</ul>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>Promises 已称为 JavaScript 语法的重要部分，包括用于 ajax 请求的 <a href="https://fetch.spec.whatwg.org/" target="_blank" rel="noopener">WHATWG Fetch</a> 标准，用于让异步代码看起来像同步代码的 <a href="https://tc39.github.io/ecmascript-asyncawait/" target="_blank" rel="noopener">Async Functions</a> 标准。</p>
-<p>在撰写本文时 (2017.1.23)，Async functions 还处于第3阶段，但我预测它们很快将成为 JavaScript 中异步编程的一种非常流行，非常有效的解决方案 – 这意味着在不久的将来，学习 promises 对 JavaScript 开发人员来说将变得更加重要。</p>
-<p>例如，如果你正在使用 Redux ，我建议你看下 <a href="">redux-saga</a>：一个用于管理 Redux 中副作用的库，整个文档都依赖于异步函数。</p>
-<p>我希望即使是有着丰富 promise 使用经验的开发人员在阅读完本文之后，能够对 promise 有更好的理解和 promise 是如何工作的，以及更好地去使用 promise 。</p>
-<h2 id="探索-‘Master-the-JavaScript-Interview’-系列"><a href="#探索-‘Master-the-JavaScript-Interview’-系列" class="headerlink" title="探索 ‘Master the JavaScript Interview’ 系列"></a>探索 ‘Master the JavaScript Interview’ 系列</h2><ul>
 <li><p><a href="https://medium.com/javascript-scene/master-the-javascript-interview-what-is-a-closure-b2f0d2152b36" target="_blank" rel="noopener">What is a Closure?</a></p>
 </li>
 <li><p><a href="https://medium.com/javascript-scene/master-the-javascript-interview-what-s-the-difference-between-class-prototypal-inheritance-e4cd0a7562e9" target="_blank" rel="noopener">What is the Difference Between Class and Prototypal Inheritance?</a></p>
@@ -704,8 +625,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/posts/posts/48b81a71/" rel="next" title="【译】精通 JavaScript： 类继承和原型继承的区别？">
-                <i class="fa fa-chevron-left"></i> 【译】精通 JavaScript： 类继承和原型继承的区别？
+              <a href="/posts/b4cbde14/" rel="next" title="【译】精通 JavaScript： 什么是纯函数（Pure Function）？">
+                <i class="fa fa-chevron-left"></i> 【译】精通 JavaScript： 什么是纯函数（Pure Function）？
               </a>
             
           </div>
@@ -714,8 +635,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/posts/posts/b4cbde14/" rel="prev" title="【译】精通 JavaScript： 什么是纯函数（Pure Function）？">
-                【译】精通 JavaScript： 什么是纯函数（Pure Function）？ <i class="fa fa-chevron-right"></i>
+              <a href="/posts/b2f2d94f/" rel="prev" title="【译】JavaScript 工作原理：JS 引擎，runtime 和调用栈的概述">
+                【译】JavaScript 工作原理：JS 引擎，runtime 和调用栈的概述 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -768,17 +689,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            Table of Contents
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            Overview
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -870,22 +782,6 @@
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是-Promise？"><span class="nav-number">1.</span> <span class="nav-text">什么是 Promise？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Promise-的不完全历史"><span class="nav-number">2.</span> <span class="nav-text">Promise 的不完全历史</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Promises-是如何工作的"><span class="nav-number">3.</span> <span class="nav-text">Promises 是如何工作的</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Promise-的重要规则"><span class="nav-number">4.</span> <span class="nav-text">Promise 的重要规则</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Promise-链"><span class="nav-number">5.</span> <span class="nav-text">Promise 链</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Error-处理"><span class="nav-number">6.</span> <span class="nav-text">Error 处理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#如何取消一个-Promise？"><span class="nav-number">7.</span> <span class="nav-text">如何取消一个 Promise？</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#在-promise-中添加-cancel"><span class="nav-number">7.1.</span> <span class="nav-text">在 promise 中添加 .cancel()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#忘记清理"><span class="nav-number">7.2.</span> <span class="nav-text">忘记清理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#忘记处理-rejected-状态下取消-promise"><span class="nav-number">7.3.</span> <span class="nav-text">忘记处理 rejected 状态下取消 promise</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#过度复杂"><span class="nav-number">7.4.</span> <span class="nav-text">过度复杂</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#重新思考-Promise-Cancellation"><span class="nav-number">7.5.</span> <span class="nav-text">重新思考 Promise Cancellation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#抽象-Promise-Cancellation"><span class="nav-number">7.6.</span> <span class="nav-text">抽象 Promise Cancellation</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#原生-JS-Promise-的附加内容"><span class="nav-number">8.</span> <span class="nav-text">原生 JS Promise 的附加内容</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">9.</span> <span class="nav-text">总结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#探索-‘Master-the-JavaScript-Interview’-系列"><span class="nav-number">10.</span> <span class="nav-text">探索 ‘Master the JavaScript Interview’ 系列</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
