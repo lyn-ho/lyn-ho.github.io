@@ -148,7 +148,7 @@
 <meta name="keywords" content="JavaScript">
 <meta property="og:type" content="article">
 <meta property="og:title" content="【译】JavaScript 工作原理：内存管理+如何处理4个常见的内存泄漏">
-<meta property="og:url" content="lyn-ho.github.io/posts/977269ff/index.html">
+<meta property="og:url" content="lyn-ho.github.io/posts/977269ff">
 <meta property="og:site_name" content="Lyn&#39;s Blog">
 <meta property="og:description" content="How JavaScript works: memory management + how to handle 4 common memory leaks  几个星期之前，我们开始了一个旨在深入挖掘 JavaScript 及其实际工作原理的系列文章，我们认为，通过了解 JavaScript 的底层构建以及它们是如何协作的，你将能够编写更好的代码和应用。 本系列的第一篇文章重点介绍了引擎，运行时和">
 <meta property="og:locale" content="default">
@@ -170,7 +170,7 @@
 
 
 
-  <link rel="canonical" href="lyn-ho.github.io/posts/977269ff/"/>
+  <link rel="canonical" href="lyn-ho.github.io/posts/977269ff"/>
 
 
 
@@ -372,7 +372,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="lyn-ho.github.io/posts/977269ff/">
+    <link itemprop="mainEntityOfPage" href="lyn-ho.github.io/posts/977269ff">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Lyn Ho">
@@ -433,8 +433,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/posts/977269ff/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">Comments: </span> <span class="post-comments-count gitment-comments-count" data-xid="/posts/977269ff/" itemprop="commentsCount"></span>
+                <a href="/posts/977269ff#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">Comments: </span> <span class="post-comments-count gitment-comments-count" data-xid="/posts/977269ff" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -442,7 +442,7 @@
 
           
           
-             <span id="/posts/977269ff/" class="leancloud_visitors" data-flag-title="【译】JavaScript 工作原理：内存管理+如何处理4个常见的内存泄漏">
+             <span id="/posts/977269ff" class="leancloud_visitors" data-flag-title="【译】JavaScript 工作原理：内存管理+如何处理4个常见的内存泄漏">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -674,7 +674,7 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/posts/4d26265b/" rel="next" title="【译】JavaScript 工作原理：V8 引擎中5个优化代码的技巧">
+              <a href="/posts/4d26265b" rel="next" title="【译】JavaScript 工作原理：V8 引擎中5个优化代码的技巧">
                 <i class="fa fa-chevron-left"></i> 【译】JavaScript 工作原理：V8 引擎中5个优化代码的技巧
               </a>
             

@@ -144,34 +144,27 @@
 
 
 
-  <meta name="description" content="原文：How JavaScript works: an overview of the engine, the runtime, and the call stack  JavaScript 变得越来越流行，很多团队在他们技术栈的多个方面使用它：前端，后端，hybrid 应用，嵌入式设备等等。 这篇是本系列文章的第一篇，旨在深入挖掘 JavaScript 和其实际工作原理：我们认为，通过了解">
+  <meta name="description" content="原文：Master the JavaScript Interview: What is Functional Programming?    “精通 JavaScript 面试” 是一个系列的文章，旨在帮助面试者准备他们在申请中高级职位时可能遇到的常见问题。这些是我在现实面试中经常提出的问题。  函数式编程已经成为了 JavaScript 世界的一个热门话题。仅仅在几年前，甚至只有很少 Ja">
 <meta name="keywords" content="JavaScript">
 <meta property="og:type" content="article">
-<meta property="og:title" content="【译】JavaScript 工作原理：JS 引擎，runtime 和调用栈的概述">
-<meta property="og:url" content="lyn-ho.github.io/posts/b2f2d94f/index.html">
+<meta property="og:title" content="【译】精通 JavaScript： 什么是函数式编程（Functional Programming）？">
+<meta property="og:url" content="lyn-ho.github.io/posts/25329c80">
 <meta property="og:site_name" content="Lyn&#39;s Blog">
-<meta property="og:description" content="原文：How JavaScript works: an overview of the engine, the runtime, and the call stack  JavaScript 变得越来越流行，很多团队在他们技术栈的多个方面使用它：前端，后端，hybrid 应用，嵌入式设备等等。 这篇是本系列文章的第一篇，旨在深入挖掘 JavaScript 和其实际工作原理：我们认为，通过了解">
+<meta property="og:description" content="原文：Master the JavaScript Interview: What is Functional Programming?    “精通 JavaScript 面试” 是一个系列的文章，旨在帮助面试者准备他们在申请中高级职位时可能遇到的常见问题。这些是我在现实面试中经常提出的问题。  函数式编程已经成为了 JavaScript 世界的一个热门话题。仅仅在几年前，甚至只有很少 Ja">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="https://cdn-images-1.medium.com/max/1600/1*Zf4reZZJ9DCKsXf5CSXghg.png">
-<meta property="og:image" content="https://cdn-images-1.medium.com/max/1600/1*OnH_DlbNAPvB9KLxUCyMsA.png">
-<meta property="og:image" content="https://cdn-images-1.medium.com/max/1600/1*4lHHyfEhVB0LnQ3HlhSs8g.png">
-<meta property="og:image" content="https://cdn-images-1.medium.com/max/1600/1*Yp1KOt_UJ47HChmS9y7KXw.png">
-<meta property="og:image" content="https://cdn-images-1.medium.com/max/1600/1*T-W_ihvl-9rG4dn18kP3Qw.png">
-<meta property="og:image" content="https://cdn-images-1.medium.com/max/1600/1*AycFMDy9tlDmNoc5LXd9-g.png">
-<meta property="og:image" content="https://cdn-images-1.medium.com/max/1600/1*e0nEd59RPKz9coyY8FX-uw.png">
-<meta property="og:image" content="https://cdn-images-1.medium.com/max/1600/1*WlMXK3rs_scqKTRV41au7g.jpeg">
-<meta property="og:updated_time" content="2018-09-16T13:06:35.363Z">
+<meta property="og:image" content="https://cdn-images-1.medium.com/max/1600/1*1OxglOpkZHLITbIKEVCy2g.jpeg">
+<meta property="og:updated_time" content="2018-09-16T13:06:35.359Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="【译】JavaScript 工作原理：JS 引擎，runtime 和调用栈的概述">
-<meta name="twitter:description" content="原文：How JavaScript works: an overview of the engine, the runtime, and the call stack  JavaScript 变得越来越流行，很多团队在他们技术栈的多个方面使用它：前端，后端，hybrid 应用，嵌入式设备等等。 这篇是本系列文章的第一篇，旨在深入挖掘 JavaScript 和其实际工作原理：我们认为，通过了解">
-<meta name="twitter:image" content="https://cdn-images-1.medium.com/max/1600/1*Zf4reZZJ9DCKsXf5CSXghg.png">
+<meta name="twitter:title" content="【译】精通 JavaScript： 什么是函数式编程（Functional Programming）？">
+<meta name="twitter:description" content="原文：Master the JavaScript Interview: What is Functional Programming?    “精通 JavaScript 面试” 是一个系列的文章，旨在帮助面试者准备他们在申请中高级职位时可能遇到的常见问题。这些是我在现实面试中经常提出的问题。  函数式编程已经成为了 JavaScript 世界的一个热门话题。仅仅在几年前，甚至只有很少 Ja">
+<meta name="twitter:image" content="https://cdn-images-1.medium.com/max/1600/1*1OxglOpkZHLITbIKEVCy2g.jpeg">
 
 
 
 
 
 
-  <link rel="canonical" href="lyn-ho.github.io/posts/b2f2d94f/"/>
+  <link rel="canonical" href="lyn-ho.github.io/posts/25329c80"/>
 
 
 
@@ -181,7 +174,7 @@
   };
 </script>
 
-  <title>【译】JavaScript 工作原理：JS 引擎，runtime 和调用栈的概述 | Lyn's Blog</title>
+  <title>【译】精通 JavaScript： 什么是函数式编程（Functional Programming）？ | Lyn's Blog</title>
   
 
 
@@ -373,7 +366,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="lyn-ho.github.io/posts/b2f2d94f/">
+    <link itemprop="mainEntityOfPage" href="lyn-ho.github.io/posts/25329c80">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Lyn Ho">
@@ -390,7 +383,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">【译】JavaScript 工作原理：JS 引擎，runtime 和调用栈的概述
+          <h2 class="post-title" itemprop="name headline">【译】精通 JavaScript： 什么是函数式编程（Functional Programming）？
               
             
           </h2>
@@ -415,7 +408,7 @@
                 
               
 
-              <time title="Created: 2018-09-10 16:58:58" itemprop="dateCreated datePublished" datetime="2018-09-10T16:58:58+08:00">2018-09-10</time>
+              <time title="Created: 2018-08-24 15:26:58" itemprop="dateCreated datePublished" datetime="2018-08-24T15:26:58+08:00">2018-08-24</time>
             
 
             
@@ -446,8 +439,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/posts/b2f2d94f/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">Comments: </span> <span class="post-comments-count gitment-comments-count" data-xid="/posts/b2f2d94f/" itemprop="commentsCount"></span>
+                <a href="/posts/25329c80#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">Comments: </span> <span class="post-comments-count gitment-comments-count" data-xid="/posts/25329c80" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -455,7 +448,7 @@
 
           
           
-             <span id="/posts/b2f2d94f/" class="leancloud_visitors" data-flag-title="【译】JavaScript 工作原理：JS 引擎，runtime 和调用栈的概述">
+             <span id="/posts/25329c80" class="leancloud_visitors" data-flag-title="【译】精通 JavaScript： 什么是函数式编程（Functional Programming）？">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -487,59 +480,141 @@
 
       
         <blockquote>
-<p>原文：<a href="https://blog.sessionstack.com/how-does-javascript-actually-work-part-1-b0bacc073cf" target="_blank" rel="noopener">How JavaScript works: an overview of the engine, the runtime, and the call stack</a></p>
+<p>原文：<a href="https://medium.com/javascript-scene/master-the-javascript-interview-what-is-functional-programming-7f218c68b3a0" target="_blank" rel="noopener">Master the JavaScript Interview: What is Functional Programming?</a></p>
 </blockquote>
-<p>JavaScript 变得越来越流行，很多团队在他们技术栈的多个方面使用它：前端，后端，hybrid 应用，嵌入式设备等等。</p>
-<p>这篇是本系列文章的第一篇，旨在深入挖掘 JavaScript 和其实际工作原理：我们认为，通过了解 JavaScript 的构建块以及它们是如何协同工作的，你将能编写更好的代码和应用程序。我们还将分享我们在构建 <a href="https://www.sessionstack.com/?utm_source=medium&amp;utm_medium=source&amp;utm_content=javascript-series-post1-intro" target="_blank" rel="noopener">SessionStack</a> 时使用的一些经验规则，SessionStack 是一个轻量级 JavaScript 应用，它稳定且性能强大以保持竞争力。</p>
+<p><img src="https://cdn-images-1.medium.com/max/1600/1*1OxglOpkZHLITbIKEVCy2g.jpeg" alt="Structure Synth — Orihaus (CC BY 2.0)"></p>
+<blockquote>
+<p>“精通 JavaScript 面试” 是一个系列的文章，旨在帮助面试者准备他们在申请中高级职位时可能遇到的常见问题。这些是我在现实面试中经常提出的问题。</p>
+</blockquote>
+<p>函数式编程已经成为了 JavaScript 世界的一个热门话题。仅仅在几年前，甚至只有很少 JavaScript 开发者知道函数式编程，但是在过去的3年中我看到了大量使用函数式编程思维构建的应用。</p>
 <a id="more"></a>
-<p>根据 <a href="http://githut.info/" target="_blank" rel="noopener">GitHut stars</a> 显示，就 Active Repositories 和 Total Pushes 而言 JavaScript 在 GitHub 中是最高的。在其他类别中也没有落后很多。</p>
-<p><img src="https://cdn-images-1.medium.com/max/1600/1*Zf4reZZJ9DCKsXf5CSXghg.png" alt="GitHut"></p>
-<p><a href="https://madnight.github.io/githut/" target="_blank" rel="noopener">(Check out up-to-date GitHub language stats)</a></p>
-<p>如果项目越发的依赖于 JavaScript，这意味着为了构建令人惊叹的软件，开发人员必须利用 JS 语言和生态所提供的所有内容，对其内部深入理解。</p>
-<p>事实证明，有很多开发者每天都在使用 JavaScript ，但却不了解其内部原理。</p>
-<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>几乎所有开发人员都知道 V8 引擎的概念，并且大多数开发人员了解 JavaScript 是单线程 (single-threaded) 的或者说它使用了回调队列 (callback queue)。</p>
-<p>在这篇文章中，我们将详细介绍这些概念并解释 JavaScript 的实际运行方式。通过了解这些细节，你可以正确利用提供的 APIs 来编写更好的非阻塞的应用。</p>
-<p>如果你是 JavaScript 萌新，这篇文章将会帮助你理解为什么 JavaScript 与其他编程语言相比如此“奇怪”。</p>
-<p>如果你是一位资深 JavaScript 开发人员，希望这篇文章可以为你提供一些关于你每天使用的 JavaScript Runtime 实际工作原理的新见解。</p>
-<h2 id="JavaScript-引擎"><a href="#JavaScript-引擎" class="headerlink" title="JavaScript 引擎"></a>JavaScript 引擎</h2><p>Google 的 V8 引擎是一个流行的 JavaScript 引擎。V8 引擎应用与 Chrome 和 Node.js 。下面是它的一个非常简化的视图：</p>
-<p><img src="https://cdn-images-1.medium.com/max/1600/1*OnH_DlbNAPvB9KLxUCyMsA.png" alt="V8 engine"></p>
-<p>V8 引擎包含两个主要组件：</p>
+<p><strong>函数式编程</strong> （简称 FP）是通过纯函数组合来构建软件，避免<strong>共享状态(shared state)</strong>， <strong>可变数据(mutable data)</strong>，以及<strong>副作用(side-effects)</strong>。函数式编程是<strong>声明式(declarative)</strong>的而不是<strong>命令式(imperative)</strong> 的，应用程序状态通过纯函数而改变。与面向对象编程相比，应用程序的状态和对象的方法是共享和共存的。</p>
+<p>函数式编程是一种<strong>编程范式(programming paradigm)</strong>，意思是它是一种基于一些基本的，确定的原则来思考软件构建的一种方式。编程范式的其他例子有包括面向对象编程和过程编程。</p>
+<p>与命令式和面向对象代码相比，函数式的代码通常更简洁，可预测和易于测试。但是如果你不熟悉函数式编程以及与之相关的常见模式，它看起来更愚钝，而且对于新手来说相关文献也难以理解。</p>
+<p>如果你使用谷歌搜索函数式编程，你很快会发现学术术语的高墙，对于初学者来说会非常令人生畏。函数式编程有一个恐怖的学习曲线。但是如果你已经使用了 JavaScript 一段时间，你很可能在真实编程中是用了很多函数式编程的概念和工具。</p>
+<p><strong><em>Don’t let all the new words scare you away. It’s a lot easier than it sounds.</em></strong></p>
+<p>最困难的部分是关于不熟悉的词汇的思维转变。在你掌握函数式编程的意义之前，你还需要理解下面这些定义：</p>
 <ul>
-<li>内存堆 —— 进行内存分配</li>
-<li>调用栈 —— 代码执行/栈帧</li>
+<li><p>纯函数</p>
+</li>
+<li><p>函数组合</p>
+</li>
+<li><p>避免共享状态</p>
+</li>
+<li><p>避免可变状态</p>
+</li>
+<li><p>避免副作用</p>
+</li>
 </ul>
-<h2 id="运行时-Runtime"><a href="#运行时-Runtime" class="headerlink" title="运行时 (Runtime)"></a>运行时 (Runtime)</h2><p>几乎所有 JavaScript 开发人员都使用过浏览器中的 APIs (e.g. <code>setTimeout</code>) 。但是这些 APIs 不是由 JavaScript 引擎提供的。</p>
-<p>所以，它们从何而来？</p>
-<p>事实正面现实有点复杂。</p>
-<p><img src="https://cdn-images-1.medium.com/max/1600/1*4lHHyfEhVB0LnQ3HlhSs8g.png" alt="APIs"></p>
-<p>所以，我们有 JavaScript 引擎，但是实际上还有更多。我们有一些由浏览器提供的叫做 Web APIs 的东西，比如 DOM, AJAX, setTimeout 等等。</p>
-<p>然后，我们还有 <strong>事件循环 (event loop)</strong> 和 <strong>回调队列 (callback queue)</strong> 。</p>
-<h2 id="调用栈-Call-Stack"><a href="#调用栈-Call-Stack" class="headerlink" title="调用栈 (Call Stack)"></a>调用栈 (Call Stack)</h2><p>JavaScript 是一个单线程编程语言，这意味着它只有一个调用栈。因此在同一时间它执行一个任务。</p>
-<p>调用栈是一种我们程序中的基本记录的数据结构。如果进入一个函数，我们将它放在调用栈的顶层。如果返回一个函数，我们将其从调用栈的顶层弹出。这是调用栈能做的所有事情。</p>
-<p>让我们看一个示例。看下面的代码：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">multiply</span>(<span class="params">x, y</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> x * y</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">printSquare</span>(<span class="params">x</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> s = multiply(x, x)</span><br><span class="line">  <span class="built_in">console</span>.log(s)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">printSquare(<span class="number">5</span>)</span><br></pre></td></tr></table></figure>
-<p>当 JavaScript 引擎开始执行代码时，调用栈是空的。之后的步骤如下：</p>
-<p><img src="https://cdn-images-1.medium.com/max/1600/1*Yp1KOt_UJ47HChmS9y7KXw.png" alt="Call Stack"></p>
-<p>调用栈的每个入口称为 <strong>栈帧 (Stack Frame)</strong> 。</p>
-<p>当抛出异常可以看到堆栈追踪是如何构造的 —— 当发生异常时，它就是调用栈的状态。看下面的代码：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">'SessionStack will help you resolve crashes:'</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">bar</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  foo()</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">start</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  bar()</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">start()</span><br></pre></td></tr></table></figure>
-<p>如果在 Chrome 中执行 (假设是 foo.js 中的代码) ，将会生成下面的堆栈追踪：</p>
-<p><img src="https://cdn-images-1.medium.com/max/1600/1*T-W_ihvl-9rG4dn18kP3Qw.png" alt="Stack Trace"></p>
-<p>“<strong>堆栈溢出 (Blowing the stack)</strong>“ —— 当达到最大调用栈大小的时候发生。这很容易发生，特别是如果你使用递归但没有全面的测试。看下面的示例代码：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  foo()</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">foo()</span><br></pre></td></tr></table></figure>
-<p>当 JavaScript 引擎开始执行这段代码，开始调用 <code>foo</code> 函数。但是在没有终止条件的情况下 <code>foo</code> 会递归的调用自己。所以每执行一步，就会把这个相同的函数一次又一次的添加到调用栈中。看起来像下面这样：</p>
-<p><img src="https://cdn-images-1.medium.com/max/1600/1*AycFMDy9tlDmNoc5LXd9-g.png" alt="Blowing the stack"></p>
-<p>但是，在某一时刻，调用栈中的函数调用数量超过了调用栈的实际大小，浏览器通过抛出一个错误来结束它。如下所示：</p>
-<p><img src="https://cdn-images-1.medium.com/max/1600/1*e0nEd59RPKz9coyY8FX-uw.png" alt="Maximum"></p>
-<p>在单线程上运行代码非常简单，因为你不需处理多线程环境中出现的复杂场景 —— 例如 死锁 (deadlocks) 。</p>
-<p>但是单线程也有很大的限制。由于 JavaScript 只有一个调用栈，如果运行很慢会发生什么？</p>
-<h2 id="并发和事件循环-Concurrency-amp-Event-Loop"><a href="#并发和事件循环-Concurrency-amp-Event-Loop" class="headerlink" title="并发和事件循环 (Concurrency &amp; Event Loop)"></a>并发和事件循环 (Concurrency &amp; Event Loop)</h2><p>如果在调用栈中有函数需要花费大量时间才能处理，会发生什么？例如，假设你需要在浏览器中使用 JavaScript 进行一些复杂的图像转换。</p>
-<p>你可能会问，为什么这是一个问题？问题是，当调用栈有函数要执行，浏览器实际不会做其他任何事 —— 浏览器被阻塞了。这意味着浏览器不能渲染，不能运行任何其他代码，它被卡住了。如果你想要在 app 中拥有流畅的 UI 体验，这将是个问题。</p>
-<p>并且这不是唯一的问题。一旦你的浏览器开始在调用栈中处理如此多的任务，它可能在相当长的时间内停止响应。大多数浏览器会弹出一个错误，询问是否终止网页。</p>
-<p><img src="https://cdn-images-1.medium.com/max/1600/1*WlMXK3rs_scqKTRV41au7g.jpeg" alt="Unresponsive"></p>
-<p>这并不是最好的用户体验，不是吗？</p>
-<p>那么，如何在不阻塞 UI 和不弹出无响应的情况下执行复杂的代码？解决方法是 <strong>异步回调 (asynchronous callbacks)</strong> 。</p>
-<p>这将在 “How JavaScript actually works” 第2篇中详细解释：”<a href="https://blog.sessionstack.com/how-javascript-works-inside-the-v8-engine-5-tips-on-how-to-write-optimized-code-ac089e62b12e" target="_blank" rel="noopener">Inside the V8 engine + 5 tips on how to write optimized code</a>“ 。</p>
+<p>换句话说，如果你想真正理解函数式编程的含义，你必须首先理解这些核心概念。</p>
+<h2 id="纯函数-Pure-Function"><a href="#纯函数-Pure-Function" class="headerlink" title="纯函数 (Pure Function)"></a>纯函数 (Pure Function)</h2><p>纯函数是：</p>
+<ul>
+<li><p>输入相同，输出一定相同</p>
+</li>
+<li><p>没有副作用</p>
+</li>
+</ul>
+<p>纯函数具有很多在函数式编程中非常重要的属性，包括<strong>引用透明</strong> （你可以在不改变程序的定义下替换函数调用及返回值）。更多细节 – <a href="https://medium.com/javascript-scene/master-the-javascript-interview-what-is-a-pure-function-d1c076bec976" target="_blank" rel="noopener">“What is a Pure Function?”</a></p>
+<h2 id="函数组合-Function-Composition"><a href="#函数组合-Function-Composition" class="headerlink" title="函数组合 (Function Composition)"></a>函数组合 (Function Composition)</h2><p><strong>函数组合</strong>是组合两个或多个函数以产生新的函数或执行某些计算的程序。例如 <code>f.g</code> 等同于 JavaScript 中的 <code>f(g(x))</code>。理解函数组合是了解如何使用函数式编程构建软件的重要一步。补充学习 – <a href="https://medium.com/javascript-scene/master-the-javascript-interview-what-is-function-composition-20dfb109a1a0" target="_blank" rel="noopener">“What is Function Composition?”</a></p>
+<h2 id="共享状态-Shared-State"><a href="#共享状态-Shared-State" class="headerlink" title="共享状态 (Shared State)"></a>共享状态 (Shared State)</h2><p><strong>共享状态</strong> 是存在于共享作用域的任何变量，对象或内存空间，或者是在不同作用域之间传递的一个对象的属性。共享作用域可以是全局或闭包。通常，在面向对象编程中，不同作用域直接通过想另一对象添加属性来进行共享对象。</p>
+<p>例如，在电子游戏中又一个主对象，这个主对象将游戏角色和物品作为属性。函数式编程避免了共享状态，依赖于不可变数据结构或从已有数据计算而得到的新数据。有关软件函数如何处理软件状态的更多详细信息 – <a href="https://medium.com/javascript-scene/10-tips-for-better-redux-architecture-69250425af44" target="_blank" rel="noopener">“10 Tips for Better Redux Architecture”</a></p>
+<p>共享状态的问题在于，为了理解函数的结果，你必须要了解所有函数使用或影响每个共享变量的完整历史记录。</p>
+<p>想象一下，你有一个需要保存的用户对象。<code>saveUser()</code> 是一个向服务器发送请求的 API。当 <code>saveUser()</code> 执行时，用户使用 <code>updateAvatar()</code> 函数更改个人资料图片并触发了另一个 <code>saveUser()</code> 函数。保存时，为了保持与服务器同步或响应其他 API 调用，服务器返回一个用户对象来替换内存中的对象。</p>
+<p>不幸的是，第二个响应在第一个响应之前被接收，所以当第一个（现在是过时的）响应返回时，内存中的旧对象已经被覆盖了图片的对象替换了。这是一个条件竞争的例子–一个与共享状态相关的常见错误。</p>
+<p>另一个与共享状态的常见问题是，更改函数调用顺序可能会导致级联错误，因为作用于共享状态的函数与调用时机有关：</p>
+<script src="//gist.github.com/23f93290914912816211c9041ddd856d.js?file=timing-dependency.js"></script>
+<p>当你避免了共享状态，函数调用的时机和顺序不会改变返回结果。使用纯函数，相同的输入，总能得到相同的输出。这使得函数调用完全独立于其他函数调用，这从根本上简化了修改和重构。一个函数的修改或函数调用的时机不会改变或破坏程序的其他部分。</p>
+<script src="//gist.github.com/a9768374c9084bb3cae6d64b5827024d.js?file=no-timing-dependency.js"></script>
+<p>上面的例子中，我们使用 <code>Object.assign()</code> 并传入一个空对象作为第一个参数来复制 x 的属性而不是直接修改它。在这种情况下，它相当于从头创建了一个新对象。 <code>Object.assign()</code> 是 JavaScript 中复制已存在的属性来创建对象的常用模式而不是使用直接修改，我们在第一个例子中演示了直接修改赋值。</p>
+<p>如果你仔细观察了这个例子中的 <code>console.log()</code> 语句，你应该注意到我已经提到过的事情：函数组合。回想之前提到的，函数组成如下所示： <code>f(g(x))</code> 。我们使用了 <code>x1()</code> 和 <code>x2()</code> 替换了 <code>f()</code> 和 <code>g()</code>。</p>
+<p>如果你改变了组合的顺序，输出会发生改变。操作顺序依然是一个麻烦。 <code>f(g(x))</code> 不总是等同于 <code>g(f(x))</code>，但是函数外部的变量发生了什么是无所谓的–这个是重点。使用非纯函数，除非你知道函数使用或影响的每个变量的完整历史记录，否则无法完全理解函数的作用。</p>
+<p>移除函数调用顺序的依赖，并且消除整个类潜在的错误。</p>
+<h2 id="不可变性-Immutability"><a href="#不可变性-Immutability" class="headerlink" title="不可变性 (Immutability)"></a>不可变性 (Immutability)</h2><p><strong>不可变(immutable)</strong> 对象指的是一个对象在创建后无法修改。反过来说，一个 <strong>可变(mutable)</strong> 对象指的是一个对象在创建后可以修改。</p>
+<p><strong>不可变性(Immutability)</strong> 是函数式编程的一个核心概念，因为没有她，你的程序中的数据流是有损的。状态历史被丢弃，你的软件会蔓延奇怪的错误。关于不可变性的更多信息 – <a href="https://medium.com/javascript-scene/the-dao-of-immutability-9f91a70c88cd" target="_blank" rel="noopener">“The Dao of Immutability.”</a></p>
+<p>在 JavaScript 中，重要的是不要将 <code>const</code> 和不可变性混淆。<code>const</code> 创建了一个变量和变量名的绑定，在创建后无法重新赋值。<code>const</code> 不是创建了一个不可变对象。你无法修改绑定引用的对象，但可以修改对象的属性，也就是说这个 <code>const</code> 创建的绑定是可变的。</p>
+<p>不可变对象是从根本上无法修改的。你可以深度冻结一个对象是这个值无法修改。JavaScript 有一个方法可以冻结对象的一层：</p>
+<script src="//gist.github.com/e01b161efad12f9615fba55b15c684f7.js?file=frozen-objects.js"></script>
+<p>但是冻结的对象只是表面上的不可变。例如，下面这个对象是可变的：</p>
+<script src="//gist.github.com/18585681ea1079101307fa269ec4716c.js?file=frozen-not-immutable.js"></script>
+<p>如你所见，冻结对象的顶层原始属性不能修改，但任何是对象的属性（包括数组等）仍然可以修改。所以，即使冻结对象也不是不可变的，除非你遍历这个对象数并冻结每个对象属性。</p>
+<p>在许多函数式编程语言中，有一种特殊的不可变数据结构称为 <strong>trie 数据结构</strong>，它们被有效地深度冻结。意味着任何层次的属性都无法修改。</p>
+<p>Tries 使用 <strong>结构共享(structural sharing)</strong> 被复制过的不可变对象的所有部分是共享引用内存位置的，这样可以减少使用内存空间，并且可以显著提高某些操作的性能。</p>
+<p>例如，你可以在对象树的根部标识进行比较。如果标识相同，就不必遍历整个树来检查差异。</p>
+<p>JavaScript 中有几个库利用了 tries，包括 <a href="https://github.com/facebook/immutable-js" target="_blank" rel="noopener">Immutable.js</a> 和 <a href="https://github.com/swannodette/mori" target="_blank" rel="noopener">Mori</a>.</p>
+<p>我已经对两者进行了实验，并且倾向于在需要大量不可变状态的大型项目中使用 Immutable.js 。有关更多信息 – <a href="https://medium.com/javascript-scene/10-tips-for-better-redux-architecture-69250425af44" target="_blank" rel="noopener">“10 Tips for Better Redux Architecture”</a></p>
+<h2 id="副作用-Side-Effects"><a href="#副作用-Side-Effects" class="headerlink" title="副作用 (Side Effects)"></a>副作用 (Side Effects)</h2><p>副作用是除了被调用函数的返回值外还有应用程序状态的更改。副作用包括：</p>
+<ul>
+<li><p>修改了任何外部变量或对象属性（e.g., 全局变量或者在父函数作用域链的变量）</p>
+</li>
+<li><p>控制台日志</p>
+</li>
+<li><p>屏幕输出</p>
+</li>
+<li><p>写入文件</p>
+</li>
+<li><p>写入网络</p>
+</li>
+<li><p>触发任何外部进程</p>
+</li>
+<li><p>调用任何其他函数</p>
+</li>
+</ul>
+<p>函数式编程大多避免了副作用，这使得程序更易理解，也更易测试。</p>
+<p>Haskell 和其他函数式语言经常使用 <strong><a href="https://en.wikipedia.org/wiki/Monad_%28functional_programming%29" target="_blank" rel="noopener">monads</a></strong> 来隔离和封装来自纯函数的副作用。</p>
+<p>你现在需要知道的是，具有副作用的操作需要和软件的其他部分隔离。如果将副作用和程序逻辑其余部分分开，你的软件将更容易扩展，重构，调试，测试和维护。</p>
+<p>这就是大部分前端框架鼓励用户将状态和组件渲染分开，松耦合的原因。</p>
+<h2 id="高阶函数的可重用性-Reusability-Through-Higher-Order-Functions"><a href="#高阶函数的可重用性-Reusability-Through-Higher-Order-Functions" class="headerlink" title="高阶函数的可重用性 (Reusability Through Higher Order Functions)"></a>高阶函数的可重用性 (Reusability Through Higher Order Functions)</h2><p>函数式编程倾向于复用一组通用的工具函数来处理数据。面向对象编程倾向于方法和数据共存在对象中。这些方法只能处理专门设计的数据，并且通常只能操作同一实例的数据。</p>
+<p>在函数式编程中，所有类型的数据都是公平的。同一个工具函数 <code>map()</code> 可以处理对象，字符串，数字或其他任何类型的数据，因为它将函数作为处理给定类型数据的一个参数。FP 使用高阶函数作为通用技巧。</p>
+<p>JavaScript 的 <strong>头等函数(First Class Functions)</strong> ,允许将函数作为数据。将函数作为变量，参数或返回值等等。。。</p>
+<p><strong>高阶函数(Height Order Function)</strong>, 将函数作为参数或返回值，或两者都有。高阶函数通常用于：</p>
+<ul>
+<li><p>抽象或隔离动作，结果，或者通过回调，promise，monads 等等来实现异步函数。</p>
+</li>
+<li><p>创建可以处理各种类型数据的工具函数</p>
+</li>
+<li><p>将函数作为参数或创建柯里化函数，目的是复用或函数组合</p>
+</li>
+<li><p>输入一组函数并返回这些函数的组合</p>
+</li>
+</ul>
+<h2 id="容器，函子，列表和流-Containers-Functors-Lists-and-Streams"><a href="#容器，函子，列表和流-Containers-Functors-Lists-and-Streams" class="headerlink" title="容器，函子，列表和流(Containers, Functors, Lists, and Streams)"></a>容器，函子，列表和流(Containers, Functors, Lists, and Streams)</h2><p>函子是可以映射的。换句话说，他是一个拥有使用函数替换其中的值的接口的容器。当你看到函子时，你应该想到“可映射的”。</p>
+<p>之前我们学习了可以处理各种数据类型的工具函数 <code>map()</code>。它提供一种映射操作作为函子 API。<code>map()</code> 使用的流程控制操作利用了这个接口。在 <code>Array.prototype.map()</code> 这种情况下，容器时数组，但是只要支持 mapping API，其他的数据结构也可以作为函子。</p>
+<p>让我们来看看 <code>Array.prototype.map()</code>，它时如何允许你从映射工具中抽象数据类型，使 <code>map()</code> 可用于任何数据类型。我们将创建一个简单的 <code>double()</code> 映射，将传入的值双倍输出。</p>
+<script src="//gist.github.com/3e62d5c301c70a6c29eaaafe15009405.js?file=double-mapping.js"></script>
+<p>如果我们想要在游戏中的点数翻倍，需要怎么做？我们所要做的就是传入 <code>map()</code> 的 <code>double()</code> 函数进行微妙的修改，并且一切正常：</p>
+<script src="//gist.github.com/0238c8e291b2c2c5a2f33d3333c51fb2.js?file=map-custom-data-type.js"></script>
+<p>在函数式编程中，为了操作任意数量的不同数据类型，使用如同函子和高阶函数等的抽象的通用工具函数是一个重要概念。你可以看到类似的概念 – <a href="https://github.com/fantasyland/fantasy-land" target="_blank" rel="noopener">all sorts of different ways</a></p>
+<p><em>“A list expressed over time is a stream.”</em></p>
+<p>现在你需要知道的是，数组和函子不是容器应用中容器和值的唯一概念。例如，数组只是事物列表。随时间改变的列表是流，所以你可以使用相同类型的方法来处理传入事件的流，当你真正开始用 FP 构建软件时，你会看到很多东西。</p>
+<h2 id="声明式-vs-命令式-Declarative-vs-Imperative"><a href="#声明式-vs-命令式-Declarative-vs-Imperative" class="headerlink" title="声明式 vs 命令式(Declarative vs Imperative)"></a>声明式 vs 命令式(Declarative vs Imperative)</h2><p>函数式编程是一种声明式范式，意味着程序逻辑不需要确定流程控制来表达。</p>
+<p><strong>命令式(Imperative)</strong> 程序使用特定步骤来获得需要的结果 – <strong>流程控制(flow control)</strong>：<strong>如何(how)</strong> 去做。</p>
+<p><strong>声明式(Declarative)</strong> 程序抽象流程控制 – <strong>做什么(what)</strong>。抽象做的方式。</p>
+<p>例如，命令式映射传入一个数字数组，返回一个这个数组且其中的值都加倍：</p>
+<script src="//gist.github.com/8b5c98dc2b324ee8cfea451762d07bfe.js?file=imperative-example.js"></script>
+<p>这个声明式映射做了相同的事情，但是使用了 <code>Array.prototype.map()</code> 工具来抽象流程控制，这使你更清楚地表达数据流：</p>
+<script src="//gist.github.com/a3fe04fe9f099cb54492bedea6a33fc1.js?file=declarative-example.js"></script>
+<p>命令式代码经常使用语句。语句是执行某些操作的一段代码。常用语句包括 <code>for</code>， <code>if</code>， <code>switch</code>， <code>throw</code> 等等。</p>
+<p>声明式代码更多依赖于表达式。表达式是一段计算一些值的代码。表达式通常组合函数调用，值和操作来计算得出结果。</p>
+<p>下面都是表达式的例子</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">2</span> * <span class="number">2</span></span><br><span class="line">doubleMap([<span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>])</span><br><span class="line"><span class="built_in">Math</span>.max(<span class="number">4</span>, <span class="number">3</span>, <span class="number">2</span>)</span><br></pre></td></tr></table></figure>
+<p>通常，表达式在代码中作为变量，函数返回值或函数参数。表达式在赋值，返回或者出入之前，需要先计算出它的结果。</p>
+<h2 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h2><p>函数式编程的偏好：</p>
+<ul>
+<li><p>纯函数而不是共享状态和副作用</p>
+</li>
+<li><p>不可变性高于可变数据</p>
+</li>
+<li><p>函数组合高于命令式的流程控制</p>
+</li>
+<li><p>很多使用高阶函数处理各种数据类型的通用的，可复用的工具函数而不是只能处理同一对象数据的方法</p>
+</li>
+<li><p>声明式而不是命令式 (做什么，而不是怎么做)</p>
+</li>
+<li><p>表达式而不是语句</p>
+</li>
+<li><p>容器 &amp; 高阶函数优于特定多态(ad-hoc polymorphism)</p>
+</li>
+</ul>
 
       
     </div>
@@ -593,8 +668,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/posts/8e5d7b3b/" rel="next" title="【译】精通 JavaScript： 什么是函数组合（Function Composition）？">
-                <i class="fa fa-chevron-left"></i> 【译】精通 JavaScript： 什么是函数组合（Function Composition）？
+              <a href="/posts/637b26df" rel="next" title="【译】JavaScript 工程师需要知道的十道面试题">
+                <i class="fa fa-chevron-left"></i> 【译】JavaScript 工程师需要知道的十道面试题
               </a>
             
           </div>
@@ -603,8 +678,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/posts/4d26265b/" rel="prev" title="【译】JavaScript 工作原理：V8 引擎中5个优化代码的技巧">
-                【译】JavaScript 工作原理：V8 引擎中5个优化代码的技巧 <i class="fa fa-chevron-right"></i>
+              <a href="/posts/3b887bb4" rel="prev" title="【译】精通 JavaScript： 什么是闭包（Closure）？">
+                【译】精通 JavaScript： 什么是闭包（Closure）？ <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -769,7 +844,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#概述"><span class="nav-number">1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JavaScript-引擎"><span class="nav-number">2.</span> <span class="nav-text">JavaScript 引擎</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#运行时-Runtime"><span class="nav-number">3.</span> <span class="nav-text">运行时 (Runtime)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#调用栈-Call-Stack"><span class="nav-number">4.</span> <span class="nav-text">调用栈 (Call Stack)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#并发和事件循环-Concurrency-amp-Event-Loop"><span class="nav-number">5.</span> <span class="nav-text">并发和事件循环 (Concurrency &amp; Event Loop)</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#纯函数-Pure-Function"><span class="nav-number">1.</span> <span class="nav-text">纯函数 (Pure Function)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数组合-Function-Composition"><span class="nav-number">2.</span> <span class="nav-text">函数组合 (Function Composition)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#共享状态-Shared-State"><span class="nav-number">3.</span> <span class="nav-text">共享状态 (Shared State)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#不可变性-Immutability"><span class="nav-number">4.</span> <span class="nav-text">不可变性 (Immutability)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#副作用-Side-Effects"><span class="nav-number">5.</span> <span class="nav-text">副作用 (Side Effects)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#高阶函数的可重用性-Reusability-Through-Higher-Order-Functions"><span class="nav-number">6.</span> <span class="nav-text">高阶函数的可重用性 (Reusability Through Higher Order Functions)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#容器，函子，列表和流-Containers-Functors-Lists-and-Streams"><span class="nav-number">7.</span> <span class="nav-text">容器，函子，列表和流(Containers, Functors, Lists, and Streams)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#声明式-vs-命令式-Declarative-vs-Imperative"><span class="nav-number">8.</span> <span class="nav-text">声明式 vs 命令式(Declarative vs Imperative)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#结论"><span class="nav-number">9.</span> <span class="nav-text">结论</span></a></li></ol></div>
             
 
           </div>
