@@ -123,12 +123,12 @@
 
     
   <url>
-    <loc>https://lyn-ho.github.io/posts/25329c80/</loc>
+    <loc>https://lyn-ho.github.io/posts/3b887bb4/</loc>
     <lastmod>2018-09-16T13:06:35.359Z</lastmod>
     <data>
         <display>
-        <title>【译】精通 JavaScript： 什么是函数式编程（Functional Programming）？</title>
-        <pubTime>2018-08-24T07:26:58.000Z</pubTime>
+        <title>【译】精通 JavaScript： 什么是闭包（Closure）？</title>
+        <pubTime>2018-08-27T04:34:58.000Z</pubTime>
         
         <tag>JavaScript</tag>
          
@@ -140,12 +140,12 @@
 
     
   <url>
-    <loc>https://lyn-ho.github.io/posts/3b887bb4/</loc>
+    <loc>https://lyn-ho.github.io/posts/25329c80/</loc>
     <lastmod>2018-09-16T13:06:35.359Z</lastmod>
     <data>
         <display>
-        <title>【译】精通 JavaScript： 什么是闭包（Closure）？</title>
-        <pubTime>2018-08-27T04:34:58.000Z</pubTime>
+        <title>【译】精通 JavaScript： 什么是函数式编程（Functional Programming）？</title>
+        <pubTime>2018-08-24T07:26:58.000Z</pubTime>
         
         <tag>JavaScript</tag>
          
